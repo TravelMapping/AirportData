@@ -39,7 +39,7 @@ LHR A
 
 #Trip to Sardinia '05
 ##OUT##
-STN D
+LTN D
 AHO A
 ##HOME##
 AGO D
@@ -55,7 +55,7 @@ STN A
 
 #Trip to Lombardy '06
 ##OUT##
-LTN D
+STN D
 BGY A
 ##HOME##
 BGY D
@@ -115,3 +115,25 @@ DUB A
 ##HOME##
 DUB D
 LHR A
+
+#Summary#
+LHR D A #Heathrow A=6 D=6
+LGW D A #Gatwick A=2 D=2
+STN D A #Stansted A=3 D=2
+LTN D #Luton D=1
+BOH D A #Bournemouth
+DUB A D #Dublin A=1 D=1
+GRO A D #Girona A=1 D=1
+AHO A D #Alghero A=1 D=1
+BGY A D #Bergamo A=1 D=1
+FRA A D #Frankfurt A=1 D=1
+MLA A D #Malta A=1 D=1
+LAX A D #Los Angeles A=5 D=5
+LAS A D #Las Vegas A=2 D=2
+DTW L #Detroit L=2
+MCO A D #Orlando A=2 D=2
+BKK L #Bangkok L=3
+CNX A D #Chiang Mai A=1 D=1
+CGK A D #Jakarta A=2 D=2
+BDJ A #Banjarmasin A=1
+PKY #Palangkaraya D=1
