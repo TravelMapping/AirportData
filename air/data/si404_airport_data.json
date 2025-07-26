@@ -8,6 +8,14 @@
     "visits": []
   },
   {
+    "code": "AXA",
+    "name": "Clayton J. Lloyd International Airport",
+    "lat": 18.2048,
+    "lon": -63.0536,
+    "country": "AIA",
+    "visits": []
+  },
+  {
     "code": "ASP",
     "name": "Alice Springs Airport",
     "lat": -23.8045,
@@ -80,11 +88,75 @@
     "visits": []
   },
   {
+    "code": "BDA",
+    "name": "L.F. Wade International Airport",
+    "lat": 32.36417,
+    "lon": -64.67861,
+    "country": "BMU",
+    "visits": []
+  },
+  {
     "code": "BGI",
     "name": "Grantley Adams International Airport",
     "lat": 13.0744,
     "lon": -59.4922,
     "country": "BRB",
+    "visits": []
+  },
+  {
+    "code": "YCB",
+    "name": "Cambridge Bay Airport",
+    "lat": 69.1081,
+    "lon": -105.1383,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YCO",
+    "name": "Kugluktuk Airport",
+    "lat": 67.8167,
+    "lon": -115.1439,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YEG",
+    "name": "Edmonton International Airport",
+    "lat": 53.31,
+    "lon": -113.5794,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YEV",
+    "name": "Inuvik (Mike Zubko) Airport",
+    "lat": 68.3039,
+    "lon": -133.4831,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YFP",
+    "name": "Fort Resolution Airport",
+    "lat": 61.18,
+    "lon": -113.69,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YHO",
+    "name": "Hopedale Airport",
+    "lat": 55.4489,
+    "lon": -60.2281,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YHZ",
+    "name": "Halifax Stanfield International Airport",
+    "lat": 44.8808,
+    "lon": -63.5086,
+    "country": "CAN",
     "visits": []
   },
   {
@@ -96,10 +168,42 @@
     "visits": []
   },
   {
+    "code": "YRT",
+    "name": "Rankin Inlet Airport",
+    "lat": 62.8106,
+    "lon": -92.1147,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YSO",
+    "name": "Postville Airport",
+    "lat": 54.9103,
+    "lon": -59.7853,
+    "country": "CAN",
+    "visits": []
+  },
+  {
     "code": "YUL",
     "name": "Montr\u00e9al\u2013Trudeau International Airport",
     "lat": 45.4657,
     "lon": -73.7481,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YVP",
+    "name": "Kuujjuaq Airport",
+    "lat": 58.095,
+    "lon": -68.4222,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YVQ",
+    "name": "Norman Wells Airport",
+    "lat": 65.2814,
+    "lon": -126.7986,
     "country": "CAN",
     "visits": []
   },
@@ -120,11 +224,43 @@
     "visits": []
   },
   {
+    "code": "YYR",
+    "name": "Goose Bay Airport",
+    "lat": 53.3192,
+    "lon": -60.4258,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YYT",
+    "name": "St. John's International Airport",
+    "lat": 47.6186,
+    "lon": -52.7519,
+    "country": "CAN",
+    "visits": []
+  },
+  {
     "code": "YYZ",
     "name": "Toronto Pearson International Airport",
     "lat": 43.6777,
     "lon": -79.6248,
     "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YZF",
+    "name": "Yellowknife Airport",
+    "lat": 62.4631,
+    "lon": -114.4403,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "ZRH",
+    "name": "Zurich Airport",
+    "lat": 47.4647,
+    "lon": 8.5492,
+    "country": "CHE",
     "visits": []
   },
   {
@@ -149,6 +285,22 @@
     "lat": 34.3767,
     "lon": 109.12,
     "country": "CHN",
+    "visits": []
+  },
+  {
+    "code": "LIR",
+    "name": "Daniel Oduber Quir\u00f3s International Airport",
+    "lat": 10.5933,
+    "lon": -85.5444,
+    "country": "CRI",
+    "visits": []
+  },
+  {
+    "code": "CUR",
+    "name": "Cura\u00e7ao International Airport",
+    "lat": 12.1889,
+    "lon": -68.9598,
+    "country": "CUW",
     "visits": []
   },
   {
@@ -194,10 +346,34 @@
     "visits": []
   },
   {
+    "code": "GPS",
+    "name": "Seymour Airport",
+    "lat": -0.4538,
+    "lon": -90.2659,
+    "country": "ECU",
+    "visits": []
+  },
+  {
+    "code": "GYE",
+    "name": "Jos\u00e9 Joaqu\u00edn de Olmedo International Airport",
+    "lat": -2.1571,
+    "lon": -79.8836,
+    "country": "ECU",
+    "visits": []
+  },
+  {
     "code": "CAI",
     "name": "Cairo International Airport",
     "lat": 30.1198,
     "lon": 31.4033,
+    "country": "EGY",
+    "visits": []
+  },
+  {
+    "code": "HRG",
+    "name": "Hurghada International Airport",
+    "lat": 27.1783,
+    "lon": 33.7994,
     "country": "EGY",
     "visits": []
   },
@@ -220,11 +396,27 @@
     ]
   },
   {
+    "code": "TLL",
+    "name": "Lennart Meri Tallinn Airport",
+    "lat": 59.4133,
+    "lon": 24.8328,
+    "country": "EST",
+    "visits": []
+  },
+  {
     "code": "HEL",
     "name": "Helsinki-Vantaa Airport",
     "lat": 60.3172,
     "lon": 24.9633,
     "country": "FIN",
+    "visits": []
+  },
+  {
+    "code": "NAN",
+    "name": "Nadi International Airport",
+    "lat": -17.7554,
+    "lon": 177.4434,
+    "country": "FJI",
     "visits": []
   },
   {
@@ -249,6 +441,14 @@
     "lat": 48.7262,
     "lon": 2.3652,
     "country": "FRA",
+    "visits": []
+  },
+  {
+    "code": "TKK",
+    "name": "Chuuk International Airport",
+    "lat": 7.4619,
+    "lon": 151.843,
+    "country": "FSM",
     "visits": []
   },
   {
@@ -326,11 +526,27 @@
     ]
   },
   {
+    "code": "PTP",
+    "name": "Pointe-\u00e0-Pitre International Airport",
+    "lat": 16.2645,
+    "lon": -61.5318,
+    "country": "GLP",
+    "visits": []
+  },
+  {
     "code": "ATH",
     "name": "Athens International Airport",
     "lat": 37.9372,
     "lon": 23.9452,
     "country": "GRC",
+    "visits": []
+  },
+  {
+    "code": "PAP",
+    "name": "Toussaint Louverture International Airport",
+    "lat": 18.5796,
+    "lon": -72.292,
+    "country": "HTI",
     "visits": []
   },
   {
@@ -414,6 +630,14 @@
     ]
   },
   {
+    "code": "SNN",
+    "name": "Shannon Airport",
+    "lat": 52.7019,
+    "lon": -8.9248,
+    "country": "IRL",
+    "visits": []
+  },
+  {
     "code": "KEF",
     "name": "Keflav\u00edk International Airport",
     "lat": 63.985,
@@ -450,6 +674,22 @@
     "visits": []
   },
   {
+    "code": "CIA",
+    "name": "Rome Ciampino Airport",
+    "lat": 41.7994,
+    "lon": 12.5979,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "KCQ",
+    "name": "Chignik Lake Airport",
+    "lat": 56.2556,
+    "lon": -158.775,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "FCO",
     "name": "Leonardo da Vinci\u2013Fiumicino Airport",
     "lat": 41.8003,
@@ -462,6 +702,22 @@
     "name": "Florence Airport, Peretola",
     "lat": 43.81,
     "lon": 11.2051,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "LIN",
+    "name": "Milan Linate Airport",
+    "lat": 45.445,
+    "lon": 9.2767,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "MXP",
+    "name": "Milan Malpensa Airport",
+    "lat": 45.63,
+    "lon": 8.7231,
     "country": "ITA",
     "visits": []
   },
@@ -511,6 +767,14 @@
     "lat": -1.3192,
     "lon": 36.9275,
     "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "LUX",
+    "name": "Luxembourg Airport",
+    "lat": 49.6266,
+    "lon": 6.2115,
+    "country": "LUX",
     "visits": []
   },
   {
@@ -620,6 +884,14 @@
     "visits": []
   },
   {
+    "code": "VQX",
+    "name": "Vieques Airport",
+    "lat": 18.1158,
+    "lon": -65.4227,
+    "country": "PRI",
+    "visits": []
+  },
+  {
     "code": "LIS",
     "name": "Humberto Delgado Airport",
     "lat": 38.7742,
@@ -660,6 +932,14 @@
     "visits": []
   },
   {
+    "code": "SXM",
+    "name": "Princess Juliana International Airport",
+    "lat": 18.041,
+    "lon": -63.1089,
+    "country": "SXM",
+    "visits": []
+  },
+  {
     "code": "PLS",
     "name": "Providenciales International Airport",
     "lat": 21.7736,
@@ -688,7 +968,7 @@
     ]
   },
   {
-    "code": "NAN",
+    "code": "NNT",
     "name": "Nan Nakhon Airport",
     "lat": 18.8078,
     "lon": 100.7833,
@@ -802,6 +1082,14 @@
     "visits": []
   },
   {
+    "code": "BET",
+    "name": "Bethel Airport",
+    "lat": 60.7798,
+    "lon": -161.838,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BGR",
     "name": "Bangor International Airport",
     "lat": 44.8072,
@@ -846,6 +1134,14 @@
     "name": "Nashville International Airport",
     "lat": 36.1317,
     "lon": -86.6688,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "BNF",
+    "name": "Baranof Warm Springs Seaplane Base",
+    "lat": 57.0864,
+    "lon": -134.833,
     "country": "USA",
     "visits": []
   },
@@ -910,6 +1206,14 @@
     "name": "Columbia Metropolitan Airport",
     "lat": 33.9389,
     "lon": -81.1194,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "CDB",
+    "name": "Cold Bay Airport",
+    "lat": 55.2028,
+    "lon": -162.717,
     "country": "USA",
     "visits": []
   },
@@ -1010,6 +1314,14 @@
     "visits": []
   },
   {
+    "code": "DLG",
+    "name": "Dillingham Airport",
+    "lat": 59.0454,
+    "lon": -158.505,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "DSM",
     "name": "Des Moines International Airport",
     "lat": 41.53389,
@@ -1026,6 +1338,14 @@
     "visits": [
       "L"
     ]
+  },
+  {
+    "code": "DUT",
+    "name": "Unalaska Airport (Tom Madsen)",
+    "lat": 53.9001,
+    "lon": -166.544,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "ELP",
@@ -1100,10 +1420,34 @@
     "visits": []
   },
   {
+    "code": "GON",
+    "name": "Groton-New London Airport",
+    "lat": 41.33006,
+    "lon": -72.04514,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "GSO",
     "name": "Piedmont Triad International Airport",
     "lat": 36.0978,
     "lon": -79.9372,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "GST",
+    "name": "Gustavus Airport",
+    "lat": 58.4253,
+    "lon": -135.707,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "GUM",
+    "name": "Antonio B. Won Pat International Airport",
+    "lat": 13.4839,
+    "lon": 144.797,
     "country": "USA",
     "visits": []
   },
@@ -1120,6 +1464,14 @@
     "name": "William P. Hobby Airport",
     "lat": 29.6456,
     "lon": -95.2789,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "HPN",
+    "name": "Westchester County Airport",
+    "lat": 41.067,
+    "lon": -73.7076,
     "country": "USA",
     "visits": []
   },
@@ -1156,6 +1508,14 @@
     "visits": []
   },
   {
+    "code": "ITO",
+    "name": "Hilo International Airport",
+    "lat": 19.7214,
+    "lon": -155.048,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "JAN",
     "name": "Jackson\u2013Medgar Wiley Evers International Airport",
     "lat": 32.3111,
@@ -1188,10 +1548,34 @@
     "visits": []
   },
   {
+    "code": "KCG",
+    "name": "Chignik Fisheries Airport",
+    "lat": 56.3119,
+    "lon": -158.373,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "KOA",
     "name": "Kona International Airport",
     "lat": 19.738889,
     "lon": -156.045556,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "KSM",
+    "name": "St Mary's Airport",
+    "lat": 62.0608,
+    "lon": -163.3019,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "KTN",
+    "name": "Ketchikan International Airport",
+    "lat": 55.3556,
+    "lon": -131.7131,
     "country": "USA",
     "visits": []
   },
@@ -1240,6 +1624,14 @@
     "visits": []
   },
   {
+    "code": "LGB",
+    "name": "Long Beach Airport",
+    "lat": 33.8178,
+    "lon": -118.1516,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "LIH",
     "name": "Lihue Airport",
     "lat": 21.976111,
@@ -1260,6 +1652,14 @@
     "name": "Lincoln Airport",
     "lat": 40.85208,
     "lon": -96.75777,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "LNY",
+    "name": "Lanai Airport",
+    "lat": 20.7856,
+    "lon": -156.9514,
     "country": "USA",
     "visits": []
   },
@@ -1374,6 +1774,14 @@
     "name": "Minot International Airport",
     "lat": 48.2594,
     "lon": -101.2803,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MOU",
+    "name": "Mountain Village Airport",
+    "lat": 62.0954,
+    "lon": -163.6823,
     "country": "USA",
     "visits": []
   },
@@ -1538,6 +1946,22 @@
     "visits": []
   },
   {
+    "code": "PSG",
+    "name": "Petersburg James A. Johnson Airport",
+    "lat": 56.8017,
+    "lon": -132.945,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "PTH",
+    "name": "Port Heiden Airport",
+    "lat": 56.959,
+    "lon": -158.632,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "PVD",
     "name": "Theodore Francis Green Memorial State Airport",
     "lat": 41.7239,
@@ -1634,6 +2058,22 @@
     "visits": []
   },
   {
+    "code": "SBP",
+    "name": "San Luis Obispo County Regional Airport",
+    "lat": 35.2368,
+    "lon": -120.6413,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "SCC",
+    "name": "Deadhorse Airport",
+    "lat": 70.1947,
+    "lon": -148.4644,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "SDP",
     "name": "Sand Point Airport",
     "lat": 55.3137,
@@ -1654,6 +2094,14 @@
     "name": "San Francisco International Airport",
     "lat": 37.6213,
     "lon": -122.379,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "SIT",
+    "name": "Sitka Rocky Gutierrez Airport",
+    "lat": 57.0471,
+    "lon": -135.3616,
     "country": "USA",
     "visits": []
   },
@@ -1722,10 +2170,34 @@
     "visits": []
   },
   {
+    "code": "TKA",
+    "name": "Talkeetna Airport",
+    "lat": 62.3205,
+    "lon": -150.0937,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "TKE",
+    "name": "Tenakee Seaplane Base",
+    "lat": 57.7797,
+    "lon": -135.2189,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "TPA",
     "name": "Tampa International Airport",
     "lat": 27.9755,
     "lon": -82.5332,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "TRI",
+    "name": "Tri-Cities Regional Airport",
+    "lat": 36.4752,
+    "lon": -82.4074,
     "country": "USA",
     "visits": []
   },
@@ -1738,10 +2210,26 @@
     "visits": []
   },
   {
+    "code": "TVC",
+    "name": "Cherry Capital Airport",
+    "lat": 44.7415,
+    "lon": -85.5822,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "VPS",
     "name": "Destin\u2013Fort Walton Beach Airport",
     "lat": 30.4955,
     "lon": -86.5498,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "WRG",
+    "name": "Wrangell Airport",
+    "lat": 56.4843,
+    "lon": -132.3698,
     "country": "USA",
     "visits": []
   },
@@ -1754,86 +2242,6 @@
     "visits": []
   },
   {
-    "code": "BDA",
-    "name": "L.F. Wade International Airport",
-    "lat": 32.36417,
-    "lon": -64.67861,
-    "country": "BMU",
-    "visits": []
-  },
-  {
-    "code": "CUR",
-    "name": "Cura\u00e7ao International Airport",
-    "lat": 12.1889,
-    "lon": -68.9598,
-    "country": "CUW",
-    "visits": []
-  },
-  {
-    "code": "GON",
-    "name": "Groton-New London Airport",
-    "lat": 41.33006,
-    "lon": -72.04514,
-    "country": "USA",
-    "visits": []
-  },
-  {
-    "code": "GUM",
-    "name": "Antonio B. Won Pat International Airport",
-    "lat": 13.4839,
-    "lon": 144.797,
-    "country": "USA",
-    "visits": []
-  },
-  {
-    "code": "GYE",
-    "name": "Jos\u00e9 Joaqu\u00edn de Olmedo International Airport",
-    "lat": -2.1571,
-    "lon": -79.8836,
-    "country": "ECU",
-    "visits": []
-  },
-  {
-    "code": "HPN",
-    "name": "Westchester County Airport",
-    "lat": 41.067,
-    "lon": -73.7076,
-    "country": "USA",
-    "visits": []
-  },
-  {
-    "code": "HRG",
-    "name": "Hurghada International Airport",
-    "lat": 27.1783,
-    "lon": 33.7994,
-    "country": "EGY",
-    "visits": []
-  },
-  {
-    "code": "LIR",
-    "name": "Daniel Oduber Quir\u00f3s International Airport",
-    "lat": 10.5933,
-    "lon": -85.5444,
-    "country": "CRI",
-    "visits": []
-  },
-  {
-    "code": "LUX",
-    "name": "Luxembourg Airport",
-    "lat": 49.6266,
-    "lon": 6.2115,
-    "country": "LUX",
-    "visits": []
-  },
-  {
-    "code": "SNN",
-    "name": "Shannon Airport",
-    "lat": 52.7019,
-    "lon": -8.9248,
-    "country": "IRL",
-    "visits": []
-  },
-  {
     "code": "STT",
     "name": "Cyril E. King Airport",
     "lat": 18.3373,
@@ -1842,75 +2250,27 @@
     "visits": []
   },
   {
-    "code": "SXM",
-    "name": "Princess Juliana International Airport",
-    "lat": 18.041,
-    "lon": -63.1089,
-    "country": "SXM",
-    "visits": []
-  },
-  {
-    "code": "TKK",
-    "name": "Chuuk International Airport",
-    "lat": 7.4619,
-    "lon": 151.843,
-    "country": "FSM",
-    "visits": []
-  },
-  {
-    "code": "TLL",
-    "name": "Lennart Meri Tallinn Airport",
-    "lat": 59.4133,
-    "lon": 24.8328,
-    "country": "EST",
-    "visits": []
-  },
-  {
-    "code": "TRI",
-    "name": "Tri-Cities Regional Airport",
-    "lat": 36.4752,
-    "lon": -82.4074,
+    "code": "AGS",
+    "name": "Augusta Regional Airport",
+    "lat": 33.3699,
+    "lon": -81.9644,
     "country": "USA",
     "visits": []
   },
   {
-    "code": "YHZ",
-    "name": "Halifax Stanfield International Airport",
-    "lat": 44.8808,
-    "lon": -63.5086,
+    "code": "BTR",
+    "name": "Baton Rouge Metropolitan Airport",
+    "lat": 30.5328,
+    "lon": -91.15,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "YFB",
+    "name": "Iqaluit Airport",
+    "lat": 63.7567,
+    "lon": -68.5561,
     "country": "CAN",
-    "visits": []
-  },
-  {
-    "code": "YYT",
-    "name": "St. John's International Airport",
-    "lat": 47.6186,
-    "lon": -52.7519,
-    "country": "CAN",
-    "visits": []
-  },
-  {
-    "code": "ZRH",
-    "name": "Zurich Airport",
-    "lat": 47.4647,
-    "lon": 8.5492,
-    "country": "CHE",
-    "visits": []
-  },
-  {
-    "code": "AXA",
-    "name": "Clayton J. Lloyd International Airport",
-    "lat": 18.2048,
-    "lon": -63.0536,
-    "country": "AIA",
-    "visits": []
-  },
-  {
-    "code": "GPS",
-    "name": "Seymour Airport",
-    "lat": -0.4538,
-    "lon": -90.2659,
-    "country": "ECU",
     "visits": []
   }
 ]

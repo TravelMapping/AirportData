@@ -38,18 +38,25 @@ jobs:
       - name: Check for unknown airport codes
         run: python air/scripts/check_unknown_codes.py
 
-      - name: Commit unknown_codes.txt
+      - name: Show modified files
+        run: |
+          git status
+          git diff --name-only
+
+      - name: Commit all modified files safely
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git add air/data/unknown_codes.txt
-          git commit -m "Update list of unknown airport codes" || echo "Nothing to commit"
-          git push origin master
+          git add -A
+          git commit -m "Auto-commit modified files from build" || echo "Nothing to commit"
+          git pull --rebase origin master
+          git push
 
       - name: Commit and push updated JSON
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
+          git pull --rebase origin master
           git add air/data/*.json
           git commit -m "Auto-update JSON from .alist" || echo "Nothing to commit"
           git push origin master

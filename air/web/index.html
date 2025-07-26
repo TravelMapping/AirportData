@@ -117,7 +117,7 @@
 
   <script>
 function populateDropdown() {
-  fetch('../data/manifest.json')
+  fetch('/AirportData/air/data/manifest.json')
     .then(response => response.json())
     .then(users => {
       const selector = document.getElementById('userSelector');
@@ -125,7 +125,7 @@ function populateDropdown() {
 
       users.forEach(user => {
         const option = document.createElement('option');
-        option.value = `../data/${user}_airport_data.json`;
+        option.value = `/AirportData/air/data/${user}_airport_data.json`;
         option.textContent = user;
         selector.appendChild(option);
       });

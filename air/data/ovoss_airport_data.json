@@ -109,7 +109,10 @@
     "lat": 69.1081,
     "lon": -105.1383,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YCO",
@@ -117,7 +120,9 @@
     "lat": 67.8167,
     "lon": -115.1439,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "YEG",
@@ -125,7 +130,9 @@
     "lat": 53.31,
     "lon": -113.5794,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "YEV",
@@ -133,7 +140,10 @@
     "lat": 68.3039,
     "lon": -133.4831,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YFP",
@@ -149,7 +159,10 @@
     "lat": 55.4489,
     "lon": -60.2281,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YHZ",
@@ -157,7 +170,10 @@
     "lat": 44.8808,
     "lon": -63.5086,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YQX",
@@ -173,7 +189,10 @@
     "lat": 62.8106,
     "lon": -92.1147,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YSO",
@@ -181,7 +200,9 @@
     "lat": 54.9103,
     "lon": -59.7853,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "YUL",
@@ -189,7 +210,10 @@
     "lat": 45.4657,
     "lon": -73.7481,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YVP",
@@ -197,7 +221,10 @@
     "lat": 58.095,
     "lon": -68.4222,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YVQ",
@@ -205,7 +232,10 @@
     "lat": 65.2814,
     "lon": -126.7986,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YVR",
@@ -229,7 +259,10 @@
     "lat": 53.3192,
     "lon": -60.4258,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YYT",
@@ -245,7 +278,9 @@
     "lat": 43.6777,
     "lon": -79.6248,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "YZF",
@@ -253,7 +288,10 @@
     "lat": 62.4631,
     "lon": -114.4403,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ZRH",
@@ -429,10 +467,7 @@
     "lat": 43.6597,
     "lon": 7.2133,
     "country": "FRA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "ORY",
@@ -488,7 +523,11 @@
     "lat": 51.47,
     "lon": -0.4543,
     "country": "GBR",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "LTN",
@@ -520,7 +559,10 @@
     "lat": 16.2645,
     "lon": -61.5318,
     "country": "GLP",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ATH",
@@ -536,7 +578,9 @@
     "lat": 18.5796,
     "lon": -72.292,
     "country": "HTI",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "BUD",
@@ -616,7 +660,9 @@
     "lat": 52.7019,
     "lon": -8.9248,
     "country": "IRL",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "KEF",
@@ -656,7 +702,10 @@
     "lat": 41.7994,
     "lon": 12.5979,
     "country": "ITA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "KCQ",
@@ -664,7 +713,9 @@
     "lat": 56.2556,
     "lon": -158.775,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "FCO",
@@ -688,7 +739,9 @@
     "lat": 45.445,
     "lon": 9.2767,
     "country": "ITA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "MXP",
@@ -696,7 +749,9 @@
     "lat": 45.63,
     "lon": 8.7231,
     "country": "ITA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "NAP",
@@ -864,7 +919,9 @@
     "lat": 18.1158,
     "lon": -65.4227,
     "country": "PRI",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "LIS",
@@ -968,7 +1025,10 @@
     "lat": 57.75,
     "lon": -152.4939,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "AGO",
@@ -984,7 +1044,10 @@
     "lat": 58.6767,
     "lon": -156.6492,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ALB",
@@ -992,10 +1055,7 @@
     "lat": 42.7492,
     "lon": -73.8017,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "ANC",
@@ -1003,7 +1063,11 @@
     "lat": 61.1743,
     "lon": -149.9975,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "APN",
@@ -1020,7 +1084,8 @@
     "lon": -84.4277,
     "country": "USA",
     "visits": [
-      "L"
+      "A",
+      "D"
     ]
   },
   {
@@ -1053,10 +1118,7 @@
     "lat": 41.9389,
     "lon": -72.6833,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "BET",
@@ -1064,7 +1126,10 @@
     "lat": 60.7798,
     "lon": -161.838,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "BGR",
@@ -1080,10 +1145,7 @@
     "lat": 33.5629,
     "lon": -86.7535,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "BIL",
@@ -1123,7 +1185,10 @@
     "lat": 57.0864,
     "lon": -134.833,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "BOI",
@@ -1139,7 +1204,10 @@
     "lat": 42.3656,
     "lon": -71.0096,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "BRW",
@@ -1147,7 +1215,9 @@
     "lat": 71.2856,
     "lon": -156.7661,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "BTV",
@@ -1172,7 +1242,8 @@
     "lon": -76.6684,
     "country": "USA",
     "visits": [
-      "L"
+      "A",
+      "D"
     ]
   },
   {
@@ -1197,7 +1268,9 @@
     "lat": 55.2028,
     "lon": -162.717,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "CDV",
@@ -1205,7 +1278,11 @@
     "lat": 60.4917,
     "lon": -145.4775,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "CIU",
@@ -1296,7 +1373,11 @@
     "lat": 32.8998,
     "lon": -97.0403,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "DLG",
@@ -1304,7 +1385,10 @@
     "lat": 59.0454,
     "lon": -158.505,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "DSM",
@@ -1320,9 +1404,7 @@
     "lat": 42.2162,
     "lon": -83.3554,
     "country": "USA",
-    "visits": [
-      "L"
-    ]
+    "visits": []
   },
   {
     "code": "DUT",
@@ -1330,7 +1412,10 @@
     "lat": 53.9001,
     "lon": -166.544,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ELP",
@@ -1365,7 +1450,9 @@
     "lat": 64.815,
     "lon": -147.8564,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "FLL",
@@ -1429,7 +1516,9 @@
     "lat": 58.4253,
     "lon": -135.707,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "GUM",
@@ -1445,7 +1534,11 @@
     "lat": 21.3187,
     "lon": -157.9225,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "HOU",
@@ -1469,7 +1562,10 @@
     "lat": 38.9519,
     "lon": -77.4481,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "IAH",
@@ -1477,7 +1573,10 @@
     "lat": 29.9902,
     "lon": -95.3368,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ICT",
@@ -1501,7 +1600,10 @@
     "lat": 19.7214,
     "lon": -155.048,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "JAN",
@@ -1509,7 +1611,10 @@
     "lat": 32.3111,
     "lon": -90.0758,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "JAX",
@@ -1525,10 +1630,7 @@
     "lat": 40.6413,
     "lon": -73.7781,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "JNU",
@@ -1536,7 +1638,11 @@
     "lat": 58.355,
     "lon": -134.5764,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "KCG",
@@ -1544,7 +1650,9 @@
     "lat": 56.3119,
     "lon": -158.373,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "KOA",
@@ -1552,7 +1660,10 @@
     "lat": 19.738889,
     "lon": -156.045556,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "KSM",
@@ -1560,7 +1671,10 @@
     "lat": 62.0608,
     "lon": -163.3019,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "KTN",
@@ -1568,7 +1682,9 @@
     "lat": 55.3556,
     "lon": -131.7131,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "LAR",
@@ -1595,7 +1711,11 @@
     "lat": 33.9416,
     "lon": -118.4085,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "LFT",
@@ -1611,7 +1731,10 @@
     "lat": 40.7769,
     "lon": -73.874,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "LGB",
@@ -1619,7 +1742,10 @@
     "lat": 33.8178,
     "lon": -118.1516,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "LIH",
@@ -1627,7 +1753,10 @@
     "lat": 21.976111,
     "lon": -159.338889,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "LIT",
@@ -1651,7 +1780,10 @@
     "lat": 20.7856,
     "lon": -156.9514,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "LUP",
@@ -1667,7 +1799,10 @@
     "lat": 39.2975,
     "lon": -94.7139,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MCO",
@@ -1739,7 +1874,10 @@
     "lat": 21.152778,
     "lon": -157.096389,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MLI",
@@ -1779,7 +1917,9 @@
     "lat": 62.0954,
     "lon": -163.6823,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "MSO",
@@ -1795,7 +1935,10 @@
     "lat": 44.8848,
     "lon": -93.2223,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MSY",
@@ -1803,7 +1946,10 @@
     "lat": 29.9933,
     "lon": -90.2581,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "OAK",
@@ -1811,7 +1957,10 @@
     "lat": 37.7214,
     "lon": -122.2208,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "OGG",
@@ -1819,7 +1968,10 @@
     "lat": 20.898611,
     "lon": -156.430556,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "OKC",
@@ -1843,7 +1995,10 @@
     "lat": 64.5122,
     "lon": -165.4453,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ONT",
@@ -1859,7 +2014,11 @@
     "lat": 41.9742,
     "lon": -87.9073,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "ORF",
@@ -1883,7 +2042,10 @@
     "lat": 66.8906,
     "lon": -162.6042,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "PDX",
@@ -1915,7 +2077,9 @@
     "lat": 33.4353,
     "lon": -112.0,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "PIE",
@@ -1947,7 +2111,9 @@
     "lat": 56.8017,
     "lon": -132.945,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "PTH",
@@ -1955,7 +2121,9 @@
     "lat": 56.959,
     "lon": -158.632,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "PVD",
@@ -1963,7 +2131,10 @@
     "lat": 41.7239,
     "lon": -71.4283,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "PWM",
@@ -2043,7 +2214,11 @@
     "lat": 32.7338,
     "lon": -117.1933,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "SAT",
@@ -2059,7 +2234,10 @@
     "lat": 35.2368,
     "lon": -120.6413,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SCC",
@@ -2067,7 +2245,9 @@
     "lat": 70.1947,
     "lon": -148.4644,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "SDP",
@@ -2083,7 +2263,11 @@
     "lat": 47.4502,
     "lon": -122.3088,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "SFO",
@@ -2091,7 +2275,11 @@
     "lat": 37.6213,
     "lon": -122.379,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "SIT",
@@ -2099,7 +2287,10 @@
     "lat": 57.0471,
     "lon": -135.3616,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SJC",
@@ -2123,7 +2314,10 @@
     "lat": 38.6956,
     "lon": -121.5908,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SNA",
@@ -2131,7 +2325,10 @@
     "lat": 33.6756,
     "lon": -117.8683,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SRQ",
@@ -2147,7 +2344,10 @@
     "lat": 38.7487,
     "lon": -90.37,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SUX",
@@ -2163,10 +2363,7 @@
     "lat": 41.5042,
     "lon": -74.1047,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "TKA",
@@ -2174,7 +2371,10 @@
     "lat": 62.3205,
     "lon": -150.0937,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "TKE",
@@ -2182,7 +2382,10 @@
     "lat": 57.7797,
     "lon": -135.2189,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "TPA",
@@ -2214,7 +2417,10 @@
     "lat": 44.7415,
     "lon": -85.5822,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "VPS",
@@ -2230,7 +2436,11 @@
     "lat": 56.4843,
     "lon": -132.3698,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "YAK",
@@ -2238,7 +2448,11 @@
     "lat": 59.5033,
     "lon": -139.6603,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "STT",
@@ -2254,7 +2468,10 @@
     "lat": 33.3699,
     "lon": -81.9644,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "BTR",
@@ -2262,7 +2479,10 @@
     "lat": 30.5328,
     "lon": -91.15,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YFB",
@@ -2270,6 +2490,9 @@
     "lat": 63.7567,
     "lon": -68.5561,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   }
 ]
