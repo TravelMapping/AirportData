@@ -318,7 +318,11 @@
     "lon": 8.5622,
     "country": "DEU",
     "visits": [
-      "D"
+      "#Frankfurt",
+      "A",
+      "A=1",
+      "D",
+      "D=1"
     ]
   },
   {
@@ -392,7 +396,11 @@
     "lon": 2.760556,
     "country": "ESP",
     "visits": [
-      "D"
+      "#Girona",
+      "A",
+      "A=1",
+      "D",
+      "D=1"
     ]
   },
   {
@@ -458,7 +466,9 @@
     "lon": -1.8425,
     "country": "GBR",
     "visits": [
-      "A"
+      "#Bournemouth",
+      "A",
+      "D"
     ]
   },
   {
@@ -484,7 +494,11 @@
     "lon": -0.1822,
     "country": "GBR",
     "visits": [
-      "A"
+      "#Gatwick",
+      "A",
+      "A=2",
+      "D",
+      "D=2"
     ]
   },
   {
@@ -494,7 +508,11 @@
     "lon": -0.4543,
     "country": "GBR",
     "visits": [
-      "A"
+      "#Heathrow",
+      "A",
+      "A=6",
+      "D",
+      "D=6"
     ]
   },
   {
@@ -504,7 +522,9 @@
     "lon": -0.368333,
     "country": "GBR",
     "visits": [
-      "D"
+      "#Luton",
+      "D",
+      "D=1"
     ]
   },
   {
@@ -522,7 +542,11 @@
     "lon": 0.235,
     "country": "GBR",
     "visits": [
-      "A"
+      "#Stansted",
+      "A",
+      "A=3",
+      "D",
+      "D=2"
     ]
   },
   {
@@ -564,7 +588,9 @@
     "lon": 114.7625,
     "country": "IDN",
     "visits": [
-      "A"
+      "#Banjarmasin",
+      "A",
+      "A=1"
     ]
   },
   {
@@ -574,7 +600,11 @@
     "lon": 106.655833,
     "country": "IDN",
     "visits": [
-      "D"
+      "#Jakarta",
+      "A",
+      "A=2",
+      "D",
+      "D=2"
     ]
   },
   {
@@ -584,7 +614,8 @@
     "lon": 113.9425,
     "country": "IDN",
     "visits": [
-      "D"
+      "#Palangkaraya",
+      "D=1"
     ]
   },
   {
@@ -626,7 +657,11 @@
     "lon": -6.2625,
     "country": "IRL",
     "visits": [
-      "D"
+      "#Dublin",
+      "A",
+      "A=1",
+      "D",
+      "D=1"
     ]
   },
   {
@@ -652,7 +687,11 @@
     "lon": 8.288611,
     "country": "ITA",
     "visits": [
-      "A"
+      "#Alghero",
+      "A",
+      "A=1",
+      "D",
+      "D=1"
     ]
   },
   {
@@ -662,7 +701,11 @@
     "lon": 9.700278,
     "country": "ITA",
     "visits": [
-      "D"
+      "#Bergamo",
+      "A",
+      "A=1",
+      "D",
+      "D=1"
     ]
   },
   {
@@ -808,7 +851,11 @@
     "lon": 14.4775,
     "country": "MLT",
     "visits": [
-      "D"
+      "#Malta",
+      "A",
+      "A=1",
+      "D",
+      "D=1"
     ]
   },
   {
@@ -954,7 +1001,9 @@
     "lon": 100.75,
     "country": "THA",
     "visits": [
-      "L"
+      "#Bangkok",
+      "L",
+      "L=3"
     ]
   },
   {
@@ -964,7 +1013,12 @@
     "lon": 98.9625,
     "country": "THA",
     "visits": [
-      "D"
+      "#Chiang",
+      "A",
+      "A=1",
+      "D",
+      "D=1",
+      "Mai"
     ]
   },
   {
@@ -1336,7 +1390,9 @@
     "lon": -83.3554,
     "country": "USA",
     "visits": [
-      "L"
+      "#Detroit",
+      "L",
+      "L=2"
     ]
   },
   {
@@ -1594,7 +1650,12 @@
     "lon": -115.1537,
     "country": "USA",
     "visits": [
-      "D"
+      "#Las",
+      "A",
+      "A=2",
+      "D",
+      "D=2",
+      "Vegas"
     ]
   },
   {
@@ -1604,7 +1665,12 @@
     "lon": -118.4085,
     "country": "USA",
     "visits": [
-      "D"
+      "#Los",
+      "A",
+      "A=5",
+      "Angeles",
+      "D",
+      "D=5"
     ]
   },
   {
@@ -1686,7 +1752,11 @@
     "lon": -81.3081,
     "country": "USA",
     "visits": [
-      "D"
+      "#Orlando",
+      "A",
+      "A=2",
+      "D",
+      "D=2"
     ]
   },
   {
