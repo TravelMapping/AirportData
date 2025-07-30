@@ -111,6 +111,16 @@ async function loadData() {
   manifest = await manifestRes.json();
 
   populateUserDropdown();
+
+  const params = new URLSearchParams(window.location.search);
+  const selectedUser = params.get('user');
+  if (selectedUser) {
+    loadUser(selectedUser);
+    document.getElementById('userSummary').style.display = 'none';
+  } else {
+    document.getElementById('userSummary').style.display = 'block';
+    generateUserSummary();
+  }
 }
 
 function populateUserDropdown() {
@@ -131,6 +141,36 @@ function populateUserDropdown() {
     const newUser = select.value;
     window.location.search = `?user=${newUser}`;
   });
+}
+
+async function loadData() {
+  const airportsRes = await fetch('../data/airports.csv');
+  const airportsText = await airportsRes.text();
+  airportsData = airportsText.trim().split('\n').slice(1).map(line => {
+    const [country, iata, name, lat, lon] = line.split(';');
+    return {
+      country,
+      iata,
+      name,
+      lat: parseFloat(lat),
+      lon: parseFloat(lon)
+    };
+  });
+
+  const manifestRes = await fetch('../data/manifest.json');
+  manifest = await manifestRes.json();
+
+  populateUserDropdown();
+
+  const params = new URLSearchParams(window.location.search);
+  const selectedUser = params.get('user');
+  if (selectedUser) {
+    loadUser(selectedUser);
+    document.getElementById('userSummary').style.display = 'none';
+  } else {
+    document.getElementById('userSummary').style.display = 'block';
+    generateUserSummary();
+  }
 }
 
 async function loadUser(username) {
