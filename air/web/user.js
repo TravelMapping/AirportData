@@ -138,7 +138,7 @@ async function loadData() {
     airportTable.style.display = 'none';             // Hide single user airport table
     mapDiv.style.display = 'none';                    // Hide map
     titleEl.textContent = 'Traveler Summary';
-    generateUserSummary();                            // Populate user summary table
+    await generateUserSummary();                            // Populate user summary table
   }
 
 }
