@@ -1,4 +1,3 @@
-window.generateUserSummary = async function generateUserSummary() {
 console.log("user.js loaded, generateUserSummary typeof:", typeof generateUserSummary);
 console.log("At user.js start, global L:", window.L);
 const mapInstance = window.L.map('map').setView([20, 0], 5);
