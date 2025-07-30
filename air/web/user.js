@@ -1,3 +1,4 @@
+console.log("🔁 Loaded FINAL version of user.js - 2025-07-30");
 console.log("user.js loaded");
 
 const mapInstance = window.L.map('map').setView([20, 0], 5);
