@@ -144,12 +144,21 @@ function populateUserDropdown() {
   });
 
   const params = new URLSearchParams(window.location.search);
-  const selectedUser = params.get('user') || manifest[0];
-  select.value = selectedUser;
+  const selectedUser = params.get('user') || '';
+
+  if (selectedUser) {
+    select.value = selectedUser;
+  } else {
+    select.value = ''; // or set to a placeholder option if needed
+  }
 
   select.addEventListener('change', () => {
     const newUser = select.value;
-    window.location.search = `?user=${newUser}`;
+    if (newUser) {
+      window.location.search = `?user=${newUser}`;
+    } else {
+      window.location.search = '';
+    }
   });
 }
 
