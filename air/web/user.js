@@ -196,12 +196,12 @@ async function loadUser(username) {
 // Populate the user dropdown list with all users from manifest.json
 function populateUserDropdown() {
   const select = document.getElementById('userSelect');
-  select.innerHTML = ''; // Clear previous options if any
 
-  const emptyOption = document.createElement('option');
-  emptyOption.value = '';
-  emptyOption.textContent = '-- Select a user --';
-  select.appendChild(emptyOption);
+  // First option: blank/default
+  const defaultOpt = document.createElement('option');
+  defaultOpt.value = '';
+  defaultOpt.textContent = '-- Select a user --';
+  select.appendChild(defaultOpt);
 
   manifest.forEach(user => {
     const opt = document.createElement('option');
@@ -211,19 +211,26 @@ function populateUserDropdown() {
   });
 
   const params = new URLSearchParams(window.location.search);
-  const selectedUser = params.get('user') || '';
+  const selectedUser = params.get('user');
 
-  select.value = selectedUser;
+  // Only set dropdown if URL has a user selected
+  if (selectedUser) {
+    select.value = selectedUser;
+  } else {
+    select.value = ''; // Explicitly select the blank option
+  }
 
   select.addEventListener('change', () => {
     const newUser = select.value;
     if (newUser) {
-      window.location.search = `?user=${encodeURIComponent(newUser)}`;
+      window.location.search = `?user=${newUser}`;
     } else {
+      // Clear query string to show summary view
       window.location.search = '';
     }
   });
 }
+
 
 // Main load function that fetches data, sets up UI, and calls appropriate views depending on presence of ?user=
 async function loadData() {
@@ -261,25 +268,18 @@ async function loadData() {
   const titleEl = document.getElementById('title');
 
   if (selectedUser) {
-    // --- USER SELECTED MODE ---
     userSummaryDiv.style.display = 'none';
     userSummaryTable.style.display = 'none';
     airportTable.style.display = 'table';
     mapDiv.style.display = 'block';
-    totalsSpan.style.display = 'inline';
     titleEl.textContent = `${selectedUser}'s Visited Airports`;
-
-    await loadUser(selectedUser);
-
+    loadUser(selectedUser);
   } else {
-    // --- NO USER SELECTED MODE ---
     userSummaryDiv.style.display = 'block';
     userSummaryTable.style.display = 'table';
     airportTable.style.display = 'none';
     mapDiv.style.display = 'none';
-    totalsSpan.style.display = 'none';
     titleEl.textContent = 'Traveler Summary';
-
     await generateUserSummary();
   }
 }
