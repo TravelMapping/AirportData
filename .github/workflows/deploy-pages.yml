@@ -13,6 +13,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -30,4 +31,3 @@ jobs:
 
       - name: Build and Deploy to GitHub Pages
         uses: actions/configure-pages@v3
-      # Add additional steps here as needed based on your actual deployment logic

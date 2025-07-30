@@ -1,143 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Airport Visit Map</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
+  <meta charset="UTF-8" />
+  <title>TM Airports Home</title>
   <style>
-#map {
-  height: calc(100vh - 150px); /* Adjust based on your header + controls height */
-}
-    .svg-icon { width: 24px; height: 24px; }
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    a.button {
+      display: inline-block;
+      padding: 1em 2em;
+      margin: 1em;
+      font-size: 1.1em;
+      text-decoration: none;
+      color: white;
+      background-color: #0077cc;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+    }
+    a.button:hover {
+      background-color: #005fa3;
+    }
   </style>
 </head>
-<body onload="populateDropdown()">
-  <label for="userSelector">Choose user:</label>
-  <select id="userSelector" onchange="loadAirportData(this.value)"></select>
-
-  <label style="margin-left: 10px;">
-    <input type="checkbox" id="visitedOnlyToggle">
-    Show only visited airports
-  </label>
-
-  <div id="legend" style="margin: 10px 0;">
-    <strong>Legend:</strong>
-    <svg width="24" height="24" style="vertical-align: middle;">
-      <circle cx="12" cy="12" r="10" stroke="black" fill="blue" />
-    </svg> Layover
-    &nbsp;&nbsp;
-    <svg width="24" height="24" style="vertical-align: middle;">
-      <polygon points="12,5 5,12 19,12" fill="green" stroke="black" />
-    </svg> Departure
-    &nbsp;&nbsp;
-    <svg width="24" height="24" style="vertical-align: middle;">
-      <polygon points="12,19 5,12 19,12" fill="red" stroke="black" />
-    </svg> Arrival
-  </div>
-
-  <div id="visitStats" style="margin-bottom: 10px; font-family: sans-serif;">
-    <strong>Visited Counts:</strong>
-    <span id="countA">A: 0</span>,
-    <span id="countD">D: 0</span>,
-    <span id="countL">L: 0</span>
-    <span id="countTotal">Total: 0</span>
-  </div>
-
-  <div id="map"></div>
-
-  <script>
-    const map = L.map('map').setView([39.8283, -98.5795], 4);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors',
-      maxZoom: 18
-    }).addTo(map);
-
-    function loadAirportData(jsonFile) {
-      fetch(jsonFile)
-        .then(response => response.json())
-        .then(data => {
-          if (window.airportLayer) {
-            map.removeLayer(window.airportLayer);
-          }
-
-          const visitedOnly = document.getElementById('visitedOnlyToggle').checked;
-          window.airportLayer = L.layerGroup();
-
-          let countA = 0, countD = 0, countL = 0, countVisited = 0;
-
-          data.forEach(airport => {
-            const { lat, lon, code, name, visits } = airport;
-            const d = visits.includes('D'), a = visits.includes('A'), l = visits.includes('L');
-            if (visits.length > 0) countVisited++;
-            if (visitedOnly && visits.length === 0) return;
-            
-            if (a) countA++;
-            if (d) countD++;
-            if (l) countL++;
-
-            const svgParts = [];
-            svgParts.push(`<circle cx="12" cy="12" r="10" stroke="black" fill="${l ? 'blue' : 'white'}" />`);
-            svgParts.push(`<polygon points="12,5 5,12 19,12" fill="${d ? 'green' : 'white'}" stroke="black" />`);
-            svgParts.push(`<polygon points="12,19 5,12 19,12" fill="${a ? 'red' : 'white'}" stroke="black" />`);
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
-            const icon = L.divIcon({ html: svg, className: 'svg-icon', iconSize: [24, 24] });
-
-            L.marker([lat, lon], { icon })
-              .bindPopup(`${code} – ${name}`)
-              .on('mouseover', function () { this.openPopup(); })
-              .on('mouseout', function () { this.closePopup(); })
-              .addTo(window.airportLayer);
-          });
-
-          window.airportLayer.addTo(map);
-
-          document.getElementById('countA').textContent = `A: ${countA}`;
-          document.getElementById('countD').textContent = `D: ${countD}`;
-          document.getElementById('countL').textContent = `L: ${countL}`;
-          document.getElementById('countTotal').textContent = `Total: ${countVisited}`;
-        });
-    }
-
-    const selector = document.getElementById('userSelector');
-    selector.addEventListener('change', () => {
-      loadAirportData(selector.value);
-    });
-
-    const visitedToggle = document.getElementById('visitedOnlyToggle');
-    visitedToggle.addEventListener('change', () => {
-      loadAirportData(selector.value);
-    });
-
-    loadAirportData(selector.value);
-  </script>
-
-  <script>
-function populateDropdown() {
-  fetch('/AirportData/air/data/manifest.json')
-    .then(response => response.json())
-    .then(users => {
-      const selector = document.getElementById('userSelector');
-      selector.innerHTML = '';
-
-      users.forEach(user => {
-        const option = document.createElement('option');
-        option.value = `/AirportData/air/data/${user}_airport_data.json`;
-        option.textContent = user;
-        selector.appendChild(option);
-      });
-
-      if (users.length > 0) {
-        loadAirportData(`../data/${users[0]}_airport_data.json`);
-      }
-    });
-}
-
-  // Trigger it after everything loads
-  window.onload = populateDropdown;
-</script>
+<body>
+  <h1>Welcome to TM Airports</h1>
+  <p>Select a view:</p>
+  <a href="airports.html" class="button">Browse Airports</a>
+  <a href="user.html" class="button">View Users</a>
 </body>
 </html>

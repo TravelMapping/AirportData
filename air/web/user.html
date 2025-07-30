@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User's Visited Airports</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <style>
+    #map { height: 500px; margin: 1em 0; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 0.4em; border: 1px solid #ccc; text-align: center; }
+    .svg-icon { text-align: center; }
+  </style>
+</head>
+<body>
+  <h1 id="title">Visited Airports</h1>
+  <label for="userSelect">Select user:</label>
+  <select id="userSelect"></select>
+  <span id="totals" style="margin-left: 1em; font-weight: bold;"></span>
+  <label style="margin-left: 1em;">
+    <input type="checkbox" id="showAllCheckbox"> Show all airports
+  </label>
+  <div id="map"></div>
+  <table id="airportTable">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>IATA</th>
+        <th>Airport</th>
+        <th>Arrival</th>
+        <th>Departure</th>
+        <th>Layover</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  console.log("Leaflet loaded?", typeof L, "L.marker?", typeof L.marker);
+</script>
+<script src="user.js" defer></script>
+
+</body>
+</html>

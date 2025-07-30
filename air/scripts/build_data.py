@@ -88,3 +88,10 @@ if __name__ == '__main__':
     with open(manifest_path, 'w', encoding='utf-8') as f:
         json.dump(sorted(manifest), f)
     print(f'📄 Manifest file written to {manifest_path}')
+
+    # Write users.txt
+    users_txt_path = 'air/data/users.txt'
+    with open(users_txt_path, 'w', encoding='utf-8') as f:
+        for user in sorted(manifest):
+            f.write(user + '\n')
+    print(f'🧾 Users file written to {users_txt_path}')

@@ -32,6 +32,9 @@ jobs:
       - name: Extract airport codes  # ✅ NEW STEP
         run: python air/scripts/extract_codes.py
 
+      - name: Generate users.txt from manifest.json
+        run: python air/scripts/generate_users_txt.py
+
       - name: Run build script
         run: python air/scripts/build_data.py
 

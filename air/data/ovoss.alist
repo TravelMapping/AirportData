@@ -3,7 +3,7 @@ BNF A D
 KCG D
 KCQ L
 PTH L
-AKN A D
+AKN L
 DUT A D
 CDB L
 DLG A D
@@ -67,6 +67,11 @@ MSP A D
 AGS A D
 JAN A D
 BTR A D
+LAN A D
+GSO A D
+TPA A D
+RSW A D
+SJC D
 # Canada
 YUL A D
 YVP A D
@@ -84,7 +89,7 @@ YYR A D
 YHO A D
 YSO L
 # maybe refueling stop on 1957 trip to/from Italy
-VQX L
+YQX L
 # Europe
 SNN L
 CIA A D
@@ -94,3 +99,4 @@ LIN A
 # Caribbean
 PAP L
 PTP A D
+SJU A D
