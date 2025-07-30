@@ -1,5 +1,6 @@
 console.log("user.js loaded, generateUserSummary typeof:", typeof generateUserSummary);
 console.log("At user.js start, global L:", window.L);
+
 const mapInstance = window.L.map('map').setView([20, 0], 5);
 
 window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,45 +9,13 @@ window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 let airportsData = [];
 let manifest = [];
+
 const countryMap = {
   AFG: "Afghanistan", ALB: "Albania", DZA: "Algeria", AND: "Andorra",
   // ... (rest of your countryMap here)
   ZWE: "Zimbabwe"
 };
 
-function createSVGIcon(hasA, hasD, hasL) {
-  const svgParts = [];
-  svgParts.push(`<circle cx="12" cy="12" r="10" stroke="black" fill="${hasL ? 'blue' : 'white'}" />`);
-  svgParts.push(`<polygon points="12,5 5,12 19,12" fill="${hasD ? 'green' : 'white'}" stroke="black" />`);
-  svgParts.push(`<polygon points="12,19 5,12 19,12" fill="${hasA ? 'red' : 'white'}" stroke="black" />`);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
-  return window.L.divIcon({
-    html: svg,
-    className: 'svg-icon',
-    iconSize: [24, 24],
-  });
-}
-
-function parseALIST(text) {
-  const visits = {};
-  text.split('\n').forEach(line => {
-    line = line.trim();
-    if (line.startsWith('#') || line === '') return;
-    const parts = line.split(/\s+/);
-    if (parts.length >= 2) {
-      const code = parts[0].toUpperCase();
-      const types = parts.slice(1).join('');
-      visits[code] = {
-        A: types.includes('A'),
-        D: types.includes('D'),
-        L: types.includes('L'),
-      };
-    }
-  });
-  return visits;
-}
-
-// --- MOVE generateUserSummary ABOVE loadData ---
 async function generateUserSummary() {
   const visitsByAirport = {};
 
@@ -91,6 +60,38 @@ async function generateUserSummary() {
 
   if (window.markersLayer) mapInstance.removeLayer(window.markersLayer);
   mapInstance.setView([20, 0], 2);
+}
+
+function createSVGIcon(hasA, hasD, hasL) {
+  const svgParts = [];
+  svgParts.push(`<circle cx="12" cy="12" r="10" stroke="black" fill="${hasL ? 'blue' : 'white'}" />`);
+  svgParts.push(`<polygon points="12,5 5,12 19,12" fill="${hasD ? 'green' : 'white'}" stroke="black" />`);
+  svgParts.push(`<polygon points="12,19 5,12 19,12" fill="${hasA ? 'red' : 'white'}" stroke="black" />`);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
+  return window.L.divIcon({
+    html: svg,
+    className: 'svg-icon',
+    iconSize: [24, 24],
+  });
+}
+
+function parseALIST(text) {
+  const visits = {};
+  text.split('\n').forEach(line => {
+    line = line.trim();
+    if (line.startsWith('#') || line === '') return;
+    const parts = line.split(/\s+/);
+    if (parts.length >= 2) {
+      const code = parts[0].toUpperCase();
+      const types = parts.slice(1).join('');
+      visits[code] = {
+        A: types.includes('A'),
+        D: types.includes('D'),
+        L: types.includes('L'),
+      };
+    }
+  });
+  return visits;
 }
 
 async function loadData() {
@@ -223,7 +224,5 @@ async function loadUser(username) {
   }
 }
 
-// --- Check if generateUserSummary is defined ---
 console.log("Is generateUserSummary defined?", typeof generateUserSummary);
-
 loadData();
