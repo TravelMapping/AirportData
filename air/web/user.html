@@ -16,29 +16,41 @@
 </head>
 <body>
   <h1 id="title">Visited Airports</h1>
+  
+  <!-- User dropdown is always visible -->
   <label for="userSelect">Select user:</label>
   <select id="userSelect"></select>
-  <span id="totals" style="margin-left: 1em; font-weight: bold;"></span>
-  <label style="margin-left: 1em;">
+  
+  <!-- Show totals only in user mode -->
+  <span id="totals" style="margin-left: 1em; font-weight: bold; display:none;"></span>
+  
+  <!-- Optional checkbox, hide by default if unused -->
+  <label style="margin-left: 1em; display:none;" id="showAllLabel">
     <input type="checkbox" id="showAllCheckbox"> Show all airports
   </label>
-  <div id="map"></div>
+  
+  <!-- Map only visible in user mode -->
+  <div id="map" style="display:none;"></div>
+  
+  <!-- Summary only visible when no user -->
   <div id="userSummary" style="display:none; margin-top: 1em;">
-  <h2>Traveler Summary</h2>
-  <table id="userSummaryTable">
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Total</th>
-        <th>Arrivals</th>
-        <th>Departures</th>
-        <th>Layovers</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</div>
-<table id="airportTable">
+    <h2>Traveler Summary</h2>
+    <table id="userSummaryTable">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Total</th>
+          <th>Arrivals</th>
+          <th>Departures</th>
+          <th>Layovers</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  
+  <!-- Airport table visible only in user mode -->
+  <table id="airportTable" style="display:none;">
     <thead>
       <tr>
         <th>Country</th>
