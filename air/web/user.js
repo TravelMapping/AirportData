@@ -45,11 +45,10 @@ function parseALIST(text) {
   return visits;
 }
 
-// NEW: Async generateUserSummary that waits for all user data
+// --- MOVE generateUserSummary ABOVE loadData ---
 async function generateUserSummary() {
   const visitsByAirport = {};
 
-  // Wait for all user alist files to load and accumulate visits
   await Promise.all(manifest.map(async user => {
     const res = await fetch(`../data/${user}.alist`);
     const text = await res.text();
@@ -66,7 +65,6 @@ async function generateUserSummary() {
     }
   }));
 
-  // Populate table with summary
   const tbody = document.querySelector('#airportTable tbody');
   tbody.innerHTML = '';
 
@@ -90,7 +88,6 @@ async function generateUserSummary() {
     tbody.appendChild(row);
   });
 
-  // Clear markers and map view for summary mode (optional)
   if (window.markersLayer) mapInstance.removeLayer(window.markersLayer);
   mapInstance.setView([20, 0], 2);
 }
@@ -125,23 +122,20 @@ async function loadData() {
   const titleEl = document.getElementById('title');
 
   if (selectedUser) {
-    // USER view
-    userSummaryDiv.style.display = 'none';          // Hide summary of all users
-    userSummaryTable.style.display = 'none';        // Hide summary table (optional)
-    airportTable.style.display = 'table';           // Show single user airport table
-    mapDiv.style.display = 'block';                  // Show map
+    userSummaryDiv.style.display = 'none';
+    userSummaryTable.style.display = 'none';
+    airportTable.style.display = 'table';
+    mapDiv.style.display = 'block';
     titleEl.textContent = `${selectedUser}'s Visited Airports`;
     loadUser(selectedUser);
   } else {
-    // SUMMARY view
-    userSummaryDiv.style.display = 'block';         // Show user summary container
-    userSummaryTable.style.display = 'table';       // Show user summary table
-    airportTable.style.display = 'none';             // Hide single user airport table
-    mapDiv.style.display = 'none';                    // Hide map
+    userSummaryDiv.style.display = 'block';
+    userSummaryTable.style.display = 'table';
+    airportTable.style.display = 'none';
+    mapDiv.style.display = 'none';
     titleEl.textContent = 'Traveler Summary';
-    await generateUserSummary();                            // Populate user summary table
+    await generateUserSummary();
   }
-
 }
 
 function populateUserDropdown() {
@@ -159,7 +153,7 @@ function populateUserDropdown() {
   if (selectedUser) {
     select.value = selectedUser;
   } else {
-    select.value = ''; // or set to a placeholder option if needed
+    select.value = '';
   }
 
   select.addEventListener('change', () => {
@@ -186,7 +180,7 @@ async function loadUser(username) {
   });
   const totalAirports = Object.keys(visits).length;
   document.getElementById('totals').textContent =
-  `Visited: ${totalAirports} | Arrivals: ${totalA} | Departures: ${totalD} | Layovers: ${totalL}`;
+    `Visited: ${totalAirports} | Arrivals: ${totalA} | Departures: ${totalD} | Layovers: ${totalL}`;
 
   const tableBody = document.querySelector('#airportTable tbody');
   tableBody.innerHTML = '';
@@ -223,9 +217,12 @@ async function loadUser(username) {
 
   if (visitedAirports.length > 0) {
     const avgLat = visitedAirports.reduce((sum, a) => sum + a.lat, 0) / visitedAirports.length;
-    const avgLon = visitedAirports.reduce((sum, a) => sum + a.lon, 0) / visitedAirports.length;
+    const avgLon = visitedAirports.reduce((sum, a) => a.lon + sum, 0) / visitedAirports.length;
     mapInstance.setView([avgLat, avgLon], 5);
   }
 }
+
+// --- Check if generateUserSummary is defined ---
+console.log("Is generateUserSummary defined?", typeof generateUserSummary);
 
 loadData();
