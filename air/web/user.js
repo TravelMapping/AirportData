@@ -116,12 +116,21 @@ async function loadData() {
 
   const params = new URLSearchParams(window.location.search);
   const selectedUser = params.get('user');
+
+  const userSummaryDiv = document.getElementById('userSummary');
+  const airportTable = document.getElementById('airportTable');
+  const mapDiv = document.getElementById('map');
+
   if (selectedUser) {
-    document.getElementById('userSummary').style.display = 'none';
+    userSummaryDiv.style.display = 'none';
+    airportTable.style.display = 'table';   // Show user table
+    mapDiv.style.display = 'block';         // Show map
     loadUser(selectedUser);
   } else {
-    document.getElementById('userSummary').style.display = 'block';
-    await generateUserSummary();
+    userSummaryDiv.style.display = 'block';
+    airportTable.style.display = 'none';    // Hide user table
+    mapDiv.style.display = 'none';          // Hide map
+    generateUserSummary();
   }
 }
 
