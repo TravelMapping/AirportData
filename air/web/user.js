@@ -118,20 +118,29 @@ async function loadData() {
   const selectedUser = params.get('user');
 
   const userSummaryDiv = document.getElementById('userSummary');
+  const userSummaryTable = document.getElementById('userSummaryTable');
   const airportTable = document.getElementById('airportTable');
   const mapDiv = document.getElementById('map');
+  const titleEl = document.getElementById('title');
 
   if (selectedUser) {
-    userSummaryDiv.style.display = 'none';
-    airportTable.style.display = 'table';   // Show user table
-    mapDiv.style.display = 'block';         // Show map
+    // USER view
+    userSummaryDiv.style.display = 'none';          // Hide summary of all users
+    userSummaryTable.style.display = 'none';        // Hide summary table (optional)
+    airportTable.style.display = 'table';           // Show single user airport table
+    mapDiv.style.display = 'block';                  // Show map
+    titleEl.textContent = `${selectedUser}'s Visited Airports`;
     loadUser(selectedUser);
   } else {
-    userSummaryDiv.style.display = 'block';
-    airportTable.style.display = 'none';    // Hide user table
-    mapDiv.style.display = 'none';          // Hide map
-    generateUserSummary();
+    // SUMMARY view
+    userSummaryDiv.style.display = 'block';         // Show user summary container
+    userSummaryTable.style.display = 'table';       // Show user summary table
+    airportTable.style.display = 'none';             // Hide single user airport table
+    mapDiv.style.display = 'none';                    // Hide map
+    titleEl.textContent = 'Traveler Summary';
+    generateUserSummary();                            // Populate user summary table
   }
+
 }
 
 function populateUserDropdown() {
