@@ -73,6 +73,9 @@ TPA A D
 RSW A D
 SJC D
 JAX A D
+DEN X
+MVY X
+STS X
 # Canada
 YUL A D
 YVP A D
@@ -89,7 +92,8 @@ YHZ A D
 YYR A D
 YHO A D
 YSO L
-# maybe refueling stop on 1957 trip to/from Italy
+YUB X
+# maybe refueling stop on 1957 trip to/from Italy?
 YQX L
 # Europe
 SNN L
