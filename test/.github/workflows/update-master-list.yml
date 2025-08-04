@@ -1,0 +1,31 @@
+name: Generate airports-master.csv
+
+on:
+  push:
+    paths:
+      - air/data/airports.csv
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run script to extract IATA codes
+        run: |
+          python air/scripts/extract_codes.py
+
+      - name: Commit generated file safely
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add air/data/airports-master.csv
+          git commit -m "Update airports-master.csv automatically" || echo "Nothing to commit"
+          git pull --rebase origin master
+          git push
