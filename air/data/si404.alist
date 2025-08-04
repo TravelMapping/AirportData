@@ -28,7 +28,7 @@ LGW A
 ##OUT##
 LHR D
 LAX A
-##SIDETRIP##
+##SIDETRIP to Vegas##
 LAX D
 LAS A
 LAS D
@@ -42,7 +42,7 @@ LHR A
 LTN D
 AHO A
 ##HOME##
-AGO D
+AHO D
 STN A
 
 #Trip to Malta '05
@@ -76,7 +76,7 @@ BKK L
 CGK A
 CGK D
 BDJ A
-##SIDETRIP##
+##SIDETRIP to Chiang Mai##
 PKY D
 CGK A
 CGK D
@@ -91,7 +91,7 @@ LHR A
 ##OUT##
 LHR D
 LAX A
-##SIDETRIP##
+##SIDETRIP to Vegas##
 LAX D
 LAS A
 LAS D
