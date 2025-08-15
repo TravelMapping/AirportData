@@ -1,0 +1,34 @@
+# USA
+ORD A D L   # both origin and dest - has layovers
+MSP D L     # origin - has layovers
+RHI D       # origin
+CWA D       # origin
+DEN A L     # destination - has layovers
+MSN D       # origin
+DBQ D       # origin
+HNL A D     # origin and destination
+PHX A       # destination
+MEM A       # destination
+MSO A       # destination
+PHL A       # destination
+LAS A       # destination
+MLI D       # origin
+MKE D       # origin
+LAX D       # origin
+BIL A       # destination
+GTF A       # destination
+GEG A       # destination
+OAK A       # destination
+SMF A       # destination
+BUR A       # destination
+DTW A       # destination
+BOS A       # destination
+BWI A       # destination
+KOA A       # destination
+EWR A       # destination
+
+# CANADA
+YYC A       # destination
+
+# UK
+LHR A       # destination

@@ -69,7 +69,11 @@ const countryMap = {
   UKR: "Ukraine", ARE: "United Arab Emirates", GBR: "United Kingdom",
   USA: "United States", URY: "Uruguay", UZB: "Uzbekistan", VUT: "Vanuatu",
   VAT: "Vatican City", VEN: "Venezuela", VNM: "Vietnam", ZMB: "Zambia",
-  ZWE: "Zimbabwe"
+  ZWE: "Zimbabwe", BLM: "Saint Barthélemy", CUW: "Curaçao", FJI: "Fiji",
+  FSM: "Micronesia", MAF: "Saint-Martin", PRI: "Puerto Rico",
+  SXM: "Sint Maarten", VIR: "U.S. Virgin Islands", PYF:"French Polynesia",
+  MAC: "Macau", TWN: "Taiwan", GLP: "Guadeloupe", TCA: "Turks and Caicos Islands",
+  SPM: "Saint Pierre & Miquelon"
 };
 
 function setTitleAndVisibility(user) {
@@ -106,7 +110,20 @@ function addRow(tableBody, values) {
   tableBody.appendChild(tr);
 }
 
-function createSVGIcon(hasA, hasD, hasL) {
+function createSVGIcon(hasA, hasD, hasL, hasX) {
+  if (hasX && !hasA && !hasD && !hasL) {
+    // Only 'X': draw a smaller black circle instead of square
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+      <circle cx="12" cy="12" r="5" fill="black" />
+    </svg>`;
+    return window.L.divIcon({
+      html: svg,
+      className: 'svg-icon',
+      iconSize: [24, 24],
+    });
+  }
+
+  // Normal logic for A/D/L icons
   const svgParts = [];
   svgParts.push(`<circle cx="12" cy="12" r="10" stroke="black" fill="${hasL ? 'blue' : 'white'}" />`);
   svgParts.push(`<polygon points="12,5 5,12 19,12" fill="${hasD ? 'green' : 'white'}" stroke="black" />`);
@@ -161,7 +178,8 @@ function displayUserAirports(airportList) {
     const visited =
       ap.visits.includes("A") ||
       ap.visits.includes("D") ||
-      ap.visits.includes("L");
+      ap.visits.includes("L") ||
+      ap.visits.includes("X");
 
     if (!showAllCheckbox.checked && !visited) return;
 
@@ -178,6 +196,7 @@ function displayUserAirports(airportList) {
       ap.visits.includes("A") ? "✔" : "",
       ap.visits.includes("D") ? "✔" : "",
       ap.visits.includes("L") ? "✔" : "",
+      ap.visits.includes("X") ? "✔" : "",
     ];
     addRow(airportTableBody, row);
 
@@ -185,11 +204,12 @@ function displayUserAirports(airportList) {
     if (ap.visits.includes("D")) stats.departures++;
     if (ap.visits.includes("L")) stats.layovers++;
 
-    if (ap.lat && ap.lon) {
+        if (ap.lat && ap.lon) {
       const hasA = ap.visits.includes("A");
       const hasD = ap.visits.includes("D");
       const hasL = ap.visits.includes("L");
-      const icon = createSVGIcon(hasA, hasD, hasL);
+      const hasX = ap.visits.includes("X");
+      const icon = createSVGIcon(hasA, hasD, hasL, hasX);
 
       const marker = L.marker([ap.lat, ap.lon], { icon })
         .bindPopup(`<b>${ap.code} - ${ap.name}</b><br><a href="airports.html?airport=${ap.code}">View details</a>`);
@@ -220,16 +240,23 @@ function displayUserSummary(userList) {
       const airportList = await fetchUserData(user);
       let arrivals = 0, departures = 0, layovers = 0;
       let visitedCount = 0;
+      let other = 0;
 
       airportList.forEach(ap => {
         const hasA = ap.visits.includes("A");
         const hasD = ap.visits.includes("D");
         const hasL = ap.visits.includes("L");
+        const hasX = ap.visits.includes("X");
 
         if (hasA || hasD || hasL) visitedCount++;
         if (hasA) arrivals++;
         if (hasD) departures++;
         if (hasL) layovers++;
+
+        // If has visits, but none of A, D, L — count as Other
+        if (!hasA && !hasD && !hasL && (ap.visits.length > 0)) {
+          other++;
+        }
       });
 
       const total = visitedCount;
@@ -240,6 +267,7 @@ function displayUserSummary(userList) {
         arrivals.toString(),
         departures.toString(),
         layovers.toString(),
+        other.toString()   // <-- Add this for Other
       ];
 
       addRow(userSummaryTableBody, row);
@@ -305,7 +333,7 @@ function loadData() {
   fetch("../data/manifest.json")
     .then(res => res.json())
     .then(async users => {
-      users.sort();
+      users.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true }));
       users.forEach(user => {
         const option = document.createElement("option");
         option.value = user;

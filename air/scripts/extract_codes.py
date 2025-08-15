@@ -16,10 +16,6 @@ with open("air/data/airports.csv", newline='', encoding="utf-8") as f:
                 if alt_code:
                     codes.add(alt_code)
 
-# Debug print to confirm IDL is in the set
-if "IDL" in codes:
-    print("✅ IDL is in the set of codes")
-
 # Write to airports-master.csv
 with open("air/data/airports-master.csv", "w", encoding="utf-8") as out:
     for code in sorted(codes):
