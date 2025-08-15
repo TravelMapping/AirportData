@@ -1,34 +1,34 @@
-# USA
-ORD A D L   # both origin and dest - has layovers
-MSP D L     # origin - has layovers
-RHI D       # origin
-CWA D       # origin
-DEN A L     # destination - has layovers
-MSN D       # origin
-DBQ D       # origin
-HNL A D     # origin and destination
-PHX A       # destination
-MEM A       # destination
-MSO A       # destination
-PHL A       # destination
-LAS A       # destination
-MLI D       # origin
-MKE D       # origin
-LAX D       # origin
-BIL A       # destination
-GTF A       # destination
-GEG A       # destination
-OAK A       # destination
-SMF A       # destination
-BUR A       # destination
-DTW A       # destination
-BOS A       # destination
-BWI A       # destination
-KOA A       # destination
-EWR A       # destination
+# USA D
+ORD A D L
+MSP A D L
+RHI A D
+CWA A D
+DEN A D L
+MSN A D
+DBQ A D
+HNL A D
+PHX A D
+MEM A D
+MSO A D
+PHL A D
+LAS A D
+MLI A D
+MKE A D
+LAX A D
+BIL A
+GTF D
+GEG A D
+OAK A D
+SMF A D
+BUR A D
+DTW A D
+BOS A D
+BWI A D
+KOA A D
+EWR A D
 
-# CANADA
-YYC A       # destination
+# CANADA D
+YYC A D
 
 # UK
-LHR A       # destination
+LHR A D
