@@ -116,12 +116,24 @@ DUB A
 DUB D
 LHR A
 
+#Airports Visited but no planes involved#
+SOU X #many times as walkable from home, was an easy cycle, terminus of the bus and had the station
+LCY X #twice when road clinching
+LHR X #many times to pick up people, plus a few times while railfanning
+LGW X #once to pick up brother and bump into grandparents
+EGSU X #visit to IWM Duxford
+ZZ X #Bovingdon for market. Sadly not for stealing death star plans
+
 #Summary#
-LHR D A #Heathrow A=6 D=6
-LGW D A #Gatwick A=2 D=2
+LHR D A X #Heathrow A=6 D=6 V=lots
+LGW D A X #Gatwick A=2 D=2 V=1
 STN D A #Stansted A=3 D=2
 LTN D #Luton D=1
-BOH D A #Bournemouth
+BOH D A #Bournemouth A=1 D=1
+SOU X #Southampton V=lots
+LCY X #London City V=2
+EGSU X #Duxford V=1
+ZZ X #Bovingdon V=many
 DUB A D #Dublin A=1 D=1
 GRO A D #Girona A=1 D=1
 AHO A D #Alghero A=1 D=1
@@ -136,4 +148,4 @@ BKK L #Bangkok L=3
 CNX A D #Chiang Mai A=1 D=1
 CGK A D #Jakarta A=2 D=2
 BDJ A #Banjarmasin A=1
-PKY #Palangkaraya D=1
+PKY D #Palangkaraya D=1
