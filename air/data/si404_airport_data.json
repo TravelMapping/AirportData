@@ -534,6 +534,7 @@
     "lon": 8.5622,
     "country": "DEU",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -656,6 +657,7 @@
     "lon": 2.760556,
     "country": "ESP",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -770,7 +772,8 @@
     "lon": -1.8425,
     "country": "GBR",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -804,7 +807,8 @@
     "lon": -0.1822,
     "country": "GBR",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -814,7 +818,8 @@
     "lon": -0.4543,
     "country": "GBR",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -842,7 +847,8 @@
     "lon": 0.235,
     "country": "GBR",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -902,6 +908,7 @@
     "lon": 106.655833,
     "country": "IDN",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -954,6 +961,7 @@
     "lon": -6.27,
     "country": "IRL",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -980,6 +988,7 @@
     "lon": 8.288611,
     "country": "ITA",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -990,6 +999,7 @@
     "lon": 9.700278,
     "country": "ITA",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -1288,6 +1298,7 @@
     "lon": 14.4775,
     "country": "MLT",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -1476,6 +1487,7 @@
     "lon": 98.9625,
     "country": "THA",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -2848,6 +2860,7 @@
     "lon": -115.1537,
     "country": "USA",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -2858,6 +2871,7 @@
     "lon": -118.4085,
     "country": "USA",
     "visits": [
+      "A",
       "D"
     ]
   },
@@ -3012,6 +3026,7 @@
     "lon": -81.3081,
     "country": "USA",
     "visits": [
+      "A",
       "D"
     ]
   },
