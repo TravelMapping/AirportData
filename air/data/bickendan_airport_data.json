@@ -4007,6 +4007,14 @@
     "visits": []
   },
   {
+    "code": "TOL",
+    "name": "Eugene F. Kranz Toledo Express Airport",
+    "lat": 41.5868,
+    "lon": -83.8078,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "TPA",
     "name": "Tampa International Airport",
     "lat": 27.9755,
