@@ -980,7 +980,7 @@
     "lon": 8.288611,
     "country": "ITA",
     "visits": [
-      "A"
+      "D"
     ]
   },
   {
@@ -1589,9 +1589,7 @@
     "lat": 33.2275,
     "lon": -93.2169,
     "country": "USA",
-    "visits": [
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "AGS",
