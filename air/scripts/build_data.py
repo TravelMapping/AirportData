@@ -28,11 +28,18 @@ def load_user_visits(filename):
     visits = {}
     with open(filename, encoding='utf-8') as f:
         for line in f:
-            parts = line.strip().split()
+            line = line.strip()
+            # Skip comments and blank lines
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split()
             if len(parts) >= 2:
                 code = parts[0].upper()
                 types = set(parts[1:])
-                visits[code] = types
+                if code in visits:
+                    visits[code].update(types)
+                else:
+                    visits[code] = set(types)
     return visits
 
 def match_user_visits(airport_data, user_visits):
