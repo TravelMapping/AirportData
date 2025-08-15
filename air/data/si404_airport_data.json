@@ -780,7 +780,9 @@
     "visits": [
       "#Bournemouth",
       "A",
-      "D"
+      "A=1",
+      "D",
+      "D=1"
     ]
   },
   {
@@ -808,6 +810,19 @@
     "visits": []
   },
   {
+    "code": "LCY",
+    "name": "London City Airport",
+    "lat": 51.505299,
+    "lon": 0.055278,
+    "country": "GBR",
+    "visits": [
+      "#London",
+      "City",
+      "V=2",
+      "X"
+    ]
+  },
+  {
     "code": "LGW",
     "name": "London Gatwick Airport",
     "lat": 51.1536,
@@ -818,7 +833,9 @@
       "A",
       "A=2",
       "D",
-      "D=2"
+      "D=2",
+      "V=1",
+      "X"
     ]
   },
   {
@@ -832,7 +849,9 @@
       "A",
       "A=6",
       "D",
-      "D=6"
+      "D=6",
+      "V=lots",
+      "X"
     ]
   },
   {
@@ -854,6 +873,18 @@
     "lon": -2.2775,
     "country": "GBR",
     "visits": []
+  },
+  {
+    "code": "SOU",
+    "name": "Southampton Airport",
+    "lat": 50.950298,
+    "lon": -1.3568,
+    "country": "GBR",
+    "visits": [
+      "#Southampton",
+      "V=lots",
+      "X"
+    ]
   },
   {
     "code": "STN",
@@ -943,6 +974,7 @@
     "country": "IDN",
     "visits": [
       "#Palangkaraya",
+      "D",
       "D=1"
     ]
   },

@@ -795,6 +795,14 @@
     "visits": []
   },
   {
+    "code": "LCY",
+    "name": "London City Airport",
+    "lat": 51.505299,
+    "lon": 0.055278,
+    "country": "GBR",
+    "visits": []
+  },
+  {
     "code": "LGW",
     "name": "London Gatwick Airport",
     "lat": 51.1536,
@@ -826,6 +834,14 @@
     "name": "Manchester Airport",
     "lat": 53.3554,
     "lon": -2.2775,
+    "country": "GBR",
+    "visits": []
+  },
+  {
+    "code": "SOU",
+    "name": "Southampton Airport",
+    "lat": 50.950298,
+    "lon": -1.3568,
     "country": "GBR",
     "visits": []
   },
