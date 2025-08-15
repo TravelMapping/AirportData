@@ -36,6 +36,7 @@ def map_to_custom_format(row):
     }
 
 def main():
+    # Load unknown codes from file
     unknown_codes = set()
     with open(UNKNOWN_CODES_FILE, encoding='utf-8') as f:
         for line in f:
@@ -43,21 +44,43 @@ def main():
             if code:
                 unknown_codes.add(code)
 
+    # Load current IATA codes and lookup table
     current_iata = load_iata_set(CURRENT_DB_FILE)
     lookup = load_lookup_dict(LOOKUP_FILE)
 
+    # Find missing codes
     missing = sorted(unknown_codes - current_iata)
     print(f"Found {len(missing)} missing IATA codes.")
 
+    # Map missing codes to your CSV format
     new_rows = [map_to_custom_format(lookup[code]) for code in missing if code in lookup]
 
     if new_rows:
+        fieldnames = ["country", "iata_code", "name", "latitude", "longitude", "alt_codes"]
+
+        # Step 1: Append new rows
         with open(OUTPUT_FILE, "a", newline='', encoding='utf-8') as f:
-            fieldnames = ["country", "iata_code", "name", "latitude", "longitude", "alt_codes"]
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=';')
             for row in new_rows:
                 writer.writerow(row)
         print(f"Appended {len(new_rows)} new airports to {OUTPUT_FILE}")
+
+        # Step 2: Read full file and sort (excluding header)
+        with open(OUTPUT_FILE, newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f, delimiter=';')
+            all_rows = list(reader)  # all rows without header
+
+        # Sort rows by country first, then IATA code
+        all_rows.sort(key=lambda r: (r["country"], r["iata_code"]))
+
+        # Step 3: Write back sorted CSV with header
+        with open(OUTPUT_FILE, "w", newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=';')
+            writer.writeheader()
+            writer.writerows(all_rows)
+
+        print(f"Sorted {OUTPUT_FILE} alphabetically by country, then IATA code.")
+
     else:
         print("No matching airports found in lookup file.")
 

@@ -260,6 +260,14 @@
     "visits": []
   },
   {
+    "code": "YOW",
+    "name": "Ottawa Macdonald-Cartier International Airport",
+    "lat": 45.322498,
+    "lon": -75.669197,
+    "country": "CAN",
+    "visits": []
+  },
+  {
     "code": "YQB",
     "name": "Qu\u00e9bec City Jean Lesage International Airport",
     "lat": 46.7911,
@@ -2608,6 +2616,14 @@
     "visits": []
   },
   {
+    "code": "GTF",
+    "name": "Great Falls International Airport",
+    "lat": 47.48199844,
+    "lon": -111.3710022,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "GUM",
     "name": "Antonio B. Won Pat International Airport",
     "lat": 13.4839,
@@ -3692,6 +3708,14 @@
     ]
   },
   {
+    "code": "RHI",
+    "name": "Rhinelander Oneida County Airport",
+    "lat": 45.63119888305664,
+    "lon": -89.46749877929688,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "RIC",
     "name": "Richmond International Airport",
     "lat": 37.505,
@@ -4230,30 +4254,6 @@
     "lat": 21.2139,
     "lon": 105.8031,
     "country": "VNM",
-    "visits": []
-  },
-  {
-    "code": "GTF",
-    "name": "Great Falls International Airport",
-    "lat": 47.48199844,
-    "lon": -111.3710022,
-    "country": "USA",
-    "visits": []
-  },
-  {
-    "code": "RHI",
-    "name": "Rhinelander Oneida County Airport",
-    "lat": 45.63119888305664,
-    "lon": -89.46749877929688,
-    "country": "USA",
-    "visits": []
-  },
-  {
-    "code": "SAC",
-    "name": "Sacramento Executive Airport",
-    "lat": 38.5125007629,
-    "lon": -121.492996216,
-    "country": "USA",
     "visits": []
   }
 ]
