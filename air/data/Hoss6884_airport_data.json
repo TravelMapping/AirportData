@@ -3147,7 +3147,9 @@
     "lat": 41.4486,
     "lon": -90.5075,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "MLU",
@@ -3838,7 +3840,9 @@
     "lat": 37.2456,
     "lon": -93.3886,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "SHV",
