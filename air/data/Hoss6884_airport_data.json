@@ -3730,7 +3730,9 @@
     "lat": 26.5361,
     "lon": -81.7553,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "SAF",
