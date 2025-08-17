@@ -1523,7 +1523,9 @@
     "lat": 40.6523,
     "lon": -75.4405,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "ABQ",
@@ -2152,7 +2154,9 @@
     "lat": 39.9025,
     "lon": -84.2194,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "DBQ",
