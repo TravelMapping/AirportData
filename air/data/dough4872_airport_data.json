@@ -2843,6 +2843,14 @@
     "visits": []
   },
   {
+    "code": "LBE",
+    "name": "Arnold Palmer Regional Airport",
+    "lat": 40.275902,
+    "lon": -79.4048,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "LEX",
     "name": "Blue Grass Airport",
     "lat": 38.0364,

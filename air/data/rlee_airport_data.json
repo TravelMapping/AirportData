@@ -1979,7 +1979,9 @@
     "lat": 35.214,
     "lon": -80.9431,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "CMH",
@@ -2858,6 +2860,14 @@
     "visits": []
   },
   {
+    "code": "LBE",
+    "name": "Arnold Palmer Regional Airport",
+    "lat": 40.275902,
+    "lon": -79.4048,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "LEX",
     "name": "Blue Grass Airport",
     "lat": 38.0364,
@@ -3312,7 +3322,10 @@
     "lat": 41.9742,
     "lon": -87.9073,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ORF",
