@@ -2,7 +2,7 @@
 
 ATL A D L
 BNA L
-#CLT L
+CLT L
 CNY X
 DFW L
 GPT A D
@@ -15,7 +15,7 @@ MCO A D
 MEI A D
 MSY A D
 #old and new terminals
-#ORD A D
+ORD A D
 PDX A D
 PHX A D
 SNA A D
