@@ -947,6 +947,14 @@
     "visits": []
   },
   {
+    "code": "LCY",
+    "name": "London City Airport",
+    "lat": 51.505299,
+    "lon": 0.055278,
+    "country": "GBR",
+    "visits": []
+  },
+  {
     "code": "LGW",
     "name": "London Gatwick Airport",
     "lat": 51.1536,
@@ -2827,6 +2835,14 @@
     "visits": []
   },
   {
+    "code": "EUG",
+    "name": "Mahlon Sweet Field",
+    "lat": 44.12459945678711,
+    "lon": -123.21199798583984,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "EVV",
     "name": "Evansville Regional Airport",
     "lat": 38.0383,
@@ -2969,6 +2985,14 @@
       "A",
       "D"
     ]
+  },
+  {
+    "code": "FSM",
+    "name": "Fort Smith Regional Airport",
+    "lat": 35.336601,
+    "lon": -94.367401,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "FWA",
@@ -3681,6 +3705,14 @@
     "name": "Molokai Airport",
     "lat": 21.152778,
     "lon": -157.096389,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MKO",
+    "name": "Muskogee-Davis Regional Airport",
+    "lat": 35.656502,
+    "lon": -95.366699,
     "country": "USA",
     "visits": []
   },
@@ -4722,6 +4754,14 @@
     "name": "Destin\u2013Fort Walton Beach Airport",
     "lat": 30.4955,
     "lon": -86.5498,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "WDG",
+    "name": "Enid Woodring Regional Airport",
+    "lat": 36.3791999817,
+    "lon": -97.7910995483,
     "country": "USA",
     "visits": []
   },
