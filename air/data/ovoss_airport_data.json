@@ -1439,6 +1439,14 @@
     "visits": []
   },
   {
+    "code": "BSZ",
+    "name": "Manas International Airport",
+    "lat": 43.061298,
+    "lon": 74.4776,
+    "country": "KGZ",
+    "visits": []
+  },
+  {
     "code": "GMP",
     "name": "Gimpo International Airport",
     "lat": 37.5583,
@@ -2172,6 +2180,14 @@
       "D",
       "L"
     ]
+  },
+  {
+    "code": "APA",
+    "name": "Centennial Airport",
+    "lat": 39.57009888,
+    "lon": -104.848999,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "APF",
