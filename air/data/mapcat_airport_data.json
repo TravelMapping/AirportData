@@ -3654,7 +3654,9 @@
     "lat": 40.1932,
     "lon": -76.7626,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "MDW",
