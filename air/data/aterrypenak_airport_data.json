@@ -2770,7 +2770,9 @@
     "lat": 41.53389,
     "lon": -93.66306,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "DTW",
