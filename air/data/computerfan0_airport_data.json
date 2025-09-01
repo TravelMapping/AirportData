@@ -863,6 +863,17 @@
     "visits": []
   },
   {
+    "code": "BOD",
+    "name": "Bordeaux\u2013M\u00e9rignac Airport",
+    "lat": 44.82865,
+    "lon": -0.715356,
+    "country": "FRA",
+    "visits": [
+      "A",
+      "D"
+    ]
+  },
+  {
     "code": "CDG",
     "name": "Charles de Gaulle Airport",
     "lat": 49.0097,
