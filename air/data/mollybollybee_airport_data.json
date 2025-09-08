@@ -3444,7 +3444,9 @@
     "lat": 36.084,
     "lon": -115.1537,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "LAX",
