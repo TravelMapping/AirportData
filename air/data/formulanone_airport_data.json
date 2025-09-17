@@ -2664,7 +2664,8 @@
     "lon": -88.2781,
     "country": "USA",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -3179,7 +3180,10 @@
     "lat": 43.582,
     "lon": -96.7419,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "FSM",
