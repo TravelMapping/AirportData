@@ -3400,6 +3400,8 @@
     "lon": -118.4085,
     "country": "USA",
     "visits": [
+      "A",
+      "D",
       "L"
     ]
   },
@@ -3811,7 +3813,8 @@
     "country": "USA",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
@@ -4418,7 +4421,9 @@
     "lat": 38.6956,
     "lon": -121.5908,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "SNA",
