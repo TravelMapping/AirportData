@@ -3573,6 +3573,17 @@
     "visits": []
   },
   {
+    "code": "ISP",
+    "name": "Long Island Mac Arthur Airport",
+    "lat": 40.79520035,
+    "lon": -73.10019684,
+    "country": "USA",
+    "visits": [
+      "A",
+      "D"
+    ]
+  },
+  {
     "code": "ITH",
     "name": "Ithaca Tompkins International Airport",
     "lat": 42.4914,

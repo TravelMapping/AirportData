@@ -2362,7 +2362,9 @@
     "lat": 42.3656,
     "lon": -71.0096,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "BPT",
@@ -3344,6 +3346,14 @@
     "visits": [
       "A"
     ]
+  },
+  {
+    "code": "ISP",
+    "name": "Long Island Mac Arthur Airport",
+    "lat": 40.79520035,
+    "lon": -73.10019684,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "ITH",
