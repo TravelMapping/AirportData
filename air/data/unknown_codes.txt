@@ -1,3 +1,7 @@
 1H2
+FFA
+FLD
+GCN
+MCD
 NOL
 ZZZ
