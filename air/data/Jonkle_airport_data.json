@@ -3114,6 +3114,14 @@
     ]
   },
   {
+    "code": "FFA",
+    "name": "First Flight Airport",
+    "lat": 36.0181999207,
+    "lon": -75.67130279540001,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "FFO",
     "name": "Wright-Patterson Air Force Base",
     "lat": 39.826099,
@@ -3133,6 +3141,14 @@
       "A",
       "D"
     ]
+  },
+  {
+    "code": "FLD",
+    "name": "Fond du Lac County Airport",
+    "lat": 43.7711982727,
+    "lon": -88.48840332030001,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "FLL",
@@ -3225,6 +3241,14 @@
     "name": "Gillette-Campbell County Airport",
     "lat": 44.34889,
     "lon": -105.53944,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "GCN",
+    "name": "Grand Canyon National Park Airport",
+    "lat": 35.9524,
+    "lon": -112.147003,
     "country": "USA",
     "visits": []
   },
@@ -3860,6 +3884,14 @@
     "name": "MBS International Airport",
     "lat": 43.5328,
     "lon": -84.0797,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MCD",
+    "name": "Mackinac Island Airport",
+    "lat": 45.86489868,
+    "lon": -84.63729858,
     "country": "USA",
     "visits": []
   },
