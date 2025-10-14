@@ -1,0 +1,42 @@
+name: Enrich Airports CSV
+
+on:
+  workflow_dispatch:    # Manual trigger
+  push:
+    paths:
+      - 'air/data/unknown_codes.txt'
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'   # You can pin to '3.11' or '3.13' if you want
+
+      - name: Check Python version
+        run: python --version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pycountry
+
+      - name: Download OurAirports lookup CSV
+        run: curl -o ourairports.csv https://github.com/davidmegginson/ourairports-data/raw/master/airports.csv
+
+      - name: Run enrichment script
+        run: python air/scripts/enrich_airports.py
+
+      - name: Commit updated airports.csv
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add air/data/airports.csv
+          git commit -m "Automatically enriched airports.csv" || echo "No changes to commit"
+          git push

@@ -21,10 +21,12 @@ jobs:
         run: |
           python air/scripts/extract_codes.py
 
-      - name: Commit generated file
+      - name: Commit generated file safely
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add air/data/airports-master.csv
-          git commit -m "Update airports-master.csv automatically"
+          git commit -m "Update airports-master.csv automatically" || echo "Nothing to commit"
+          git pull --rebase origin master
           git push
+
