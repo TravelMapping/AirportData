@@ -841,7 +841,11 @@
     "lat": 40.4722,
     "lon": -3.5608,
     "country": "ESP",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "OZP",
@@ -4775,6 +4779,7 @@
     "lon": -121.92894,
     "country": "USA",
     "visits": [
+      "A",
       "D"
     ]
   },
