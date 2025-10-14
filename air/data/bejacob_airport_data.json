@@ -3358,6 +3358,14 @@
     "visits": []
   },
   {
+    "code": "HIO",
+    "name": "Portland Hillsboro Airport",
+    "lat": 45.540401,
+    "lon": -122.949997,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "HLN",
     "name": "Helena Regional Airport",
     "lat": 46.6068,
