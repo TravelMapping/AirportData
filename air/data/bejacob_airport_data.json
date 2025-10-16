@@ -841,7 +841,11 @@
     "lat": 40.4722,
     "lon": -3.5608,
     "country": "ESP",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "OZP",
@@ -3358,6 +3362,14 @@
     "visits": []
   },
   {
+    "code": "HIO",
+    "name": "Portland Hillsboro Airport",
+    "lat": 45.540401,
+    "lon": -122.949997,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "HLN",
     "name": "Helena Regional Airport",
     "lat": 46.6068,
@@ -3722,7 +3734,9 @@
     "lat": 33.8178,
     "lon": -118.1516,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "LIH",
@@ -4767,6 +4781,7 @@
     "lon": -121.92894,
     "country": "USA",
     "visits": [
+      "A",
       "D"
     ]
   },
