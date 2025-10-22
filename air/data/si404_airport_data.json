@@ -1799,6 +1799,14 @@
     "visits": []
   },
   {
+    "code": "GDN",
+    "name": "Gda\u0144sk Lech Wa\u0142\u0119sa Airport",
+    "lat": 54.377602,
+    "lon": 18.4662,
+    "country": "POL",
+    "visits": []
+  },
+  {
     "code": "KRK",
     "name": "John Paul II International Airport Krak\u00f3w-Balice",
     "lat": 50.07778,
