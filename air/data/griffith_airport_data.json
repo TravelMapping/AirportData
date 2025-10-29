@@ -196,6 +196,14 @@
     "visits": []
   },
   {
+    "code": "SPR",
+    "name": "John Greif II Airport",
+    "lat": 17.9139,
+    "lon": -87.9711,
+    "country": "BLZ",
+    "visits": []
+  },
+  {
     "code": "BDA",
     "name": "L.F. Wade International Airport",
     "lat": 32.36417,
@@ -928,6 +936,14 @@
     ]
   },
   {
+    "code": "MRS",
+    "name": "Marseille Provence Airport",
+    "lat": 43.438088,
+    "lon": 5.2125,
+    "country": "FRA",
+    "visits": []
+  },
+  {
     "code": "NCE",
     "name": "Nice C\u00f4te d'Azur Airport",
     "lat": 43.6597,
@@ -940,6 +956,14 @@
     "name": "Paris Orly Airport",
     "lat": 48.7262,
     "lon": 2.3652,
+    "country": "FRA",
+    "visits": []
+  },
+  {
+    "code": "TLS",
+    "name": "Toulouse-Blagnac Airport",
+    "lat": 43.629101,
+    "lon": 1.36382,
     "country": "FRA",
     "visits": []
   },
@@ -3829,6 +3853,14 @@
     "visits": []
   },
   {
+    "code": "MFE",
+    "name": "McAllen Miller International Airport",
+    "lat": 26.176141,
+    "lon": -98.237965,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "MFR",
     "name": "Rogue Valley International\u2013Medford Airport",
     "lat": 42.3742,
@@ -4230,6 +4262,14 @@
     "visits": []
   },
   {
+    "code": "PGV",
+    "name": "Pitt-Greenville Airport",
+    "lat": 35.635535,
+    "lon": -77.384262,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "PHF",
     "name": "Newport News/Williamsburg International Airport",
     "lat": 37.1319,
@@ -4506,6 +4546,14 @@
     "name": "Southwest Florida International Airport",
     "lat": 26.5361,
     "lon": -81.7553,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "RWI",
+    "name": "Rocky Mount Wilson Regional Airport",
+    "lat": 35.8563,
+    "lon": -77.891899,
     "country": "USA",
     "visits": []
   },
