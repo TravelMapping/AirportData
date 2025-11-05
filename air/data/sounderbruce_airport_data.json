@@ -440,7 +440,8 @@
     "country": "CAN",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
@@ -3431,7 +3432,9 @@
     "lat": 40.6413,
     "lon": -73.7781,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "JNU",
@@ -3439,7 +3442,10 @@
     "lat": 58.355,
     "lon": -134.5764,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "KCG",
@@ -3479,7 +3485,11 @@
     "lat": 55.3556,
     "lon": -131.7131,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "LAN",
@@ -3562,7 +3572,9 @@
     "lat": 40.7769,
     "lon": -73.874,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "LGB",
