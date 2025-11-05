@@ -4560,6 +4560,14 @@
     "visits": []
   },
   {
+    "code": "STK",
+    "name": "Sterling Municipal Airport",
+    "lat": 40.613497,
+    "lon": -103.263833,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "STL",
     "name": "St. Louis Lambert International Airport",
     "lat": 38.7487,

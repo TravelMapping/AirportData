@@ -4536,7 +4536,11 @@
     "lat": 57.0471,
     "lon": -135.3616,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "SJC",
@@ -4625,6 +4629,14 @@
     "name": "Stinson Municipal Airport",
     "lat": 29.336999893188,
     "lon": -98.471099853516,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "STK",
+    "name": "Sterling Municipal Airport",
+    "lat": 40.613497,
+    "lon": -103.263833,
     "country": "USA",
     "visits": []
   },
