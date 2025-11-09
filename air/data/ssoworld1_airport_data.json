@@ -644,6 +644,22 @@
     "visits": []
   },
   {
+    "code": "JCL",
+    "name": "\u010cesk\u00e9 Bud\u011bjovice South Bohemian Airport",
+    "lat": 48.9464,
+    "lon": 14.4275,
+    "country": "CZE",
+    "visits": []
+  },
+  {
+    "code": "OSR",
+    "name": "Ostrava Leos Jan\u00e1\u010dek Airport",
+    "lat": 49.696301,
+    "lon": 18.111099,
+    "country": "CZE",
+    "visits": []
+  },
+  {
     "code": "PRG",
     "name": "V\u00e1clav Havel Airport Prague",
     "lat": 50.10083,

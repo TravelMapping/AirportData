@@ -1,5 +1,3 @@
 1H2
-JCL
 NOL
-OSR
 ZZZ
