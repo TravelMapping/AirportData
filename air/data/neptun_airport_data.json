@@ -1330,6 +1330,27 @@
     "visits": []
   },
   {
+    "code": "TRS",
+    "name": "Trieste\u2013Friuli Venezia Giulia Airport",
+    "lat": 45.827499,
+    "lon": 13.4722,
+    "country": "ITA",
+    "visits": [
+      "X"
+    ]
+  },
+  {
+    "code": "TSF",
+    "name": "Treviso Antonio Canova Airport",
+    "lat": 45.648399,
+    "lon": 12.1944,
+    "country": "ITA",
+    "visits": [
+      "A",
+      "D"
+    ]
+  },
+  {
     "code": "KIN",
     "name": "Norman Manley International Airport",
     "lat": 17.9356,

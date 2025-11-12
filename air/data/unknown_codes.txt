@@ -1,5 +1,3 @@
 1H2
 NOL
-TRS
-TSF
 ZZZ
