@@ -405,7 +405,9 @@
     "lat": 45.4657,
     "lon": -73.7481,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "YVP",
@@ -2826,7 +2828,9 @@
     "lat": 42.2162,
     "lon": -83.3554,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "DUT",
