@@ -406,7 +406,8 @@
     "lon": -73.7481,
     "country": "CAN",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -3572,7 +3573,9 @@
     "lat": 40.7769,
     "lon": -73.874,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "LGB",
