@@ -4747,6 +4747,14 @@
     "visits": []
   },
   {
+    "code": "TOA",
+    "name": "Zamperini Field",
+    "lat": 33.803398132324,
+    "lon": -118.33999633789,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "TOL",
     "name": "Eugene F. Kranz Toledo Express Airport",
     "lat": 41.5868,
@@ -4760,7 +4768,10 @@
     "lat": 27.9755,
     "lon": -82.5332,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "TRI",
