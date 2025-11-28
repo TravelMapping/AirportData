@@ -4114,7 +4114,10 @@
     "lat": 26.6831,
     "lon": -80.0956,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "PDK",
