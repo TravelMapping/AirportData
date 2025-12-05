@@ -4209,7 +4209,9 @@
     "lat": 45.5898,
     "lon": -122.5951,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "PGD",
