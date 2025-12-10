@@ -460,7 +460,8 @@
     "country": "CAN",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
@@ -846,6 +847,7 @@
     "country": "ESP",
     "visits": [
       "A",
+      "D",
       "L"
     ]
   },
@@ -2486,7 +2488,8 @@
     "country": "USA",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
