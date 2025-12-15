@@ -1,12 +1,12 @@
 #ignore ZZZ  
 ZZZ L  
-BWI X  
-DEN X  
-FFO X  
-GTF X  
-IND X  
-MDT X  
-YYZ X  
+BWI X 
+FFO X
+GTF X
+IND X
+MDT X
+YUL X
+YYZ X
 ABQ A D 
 ADQ D  
 AKN A D 
@@ -22,6 +22,7 @@ CUN A D
 CVG A D 
 CXC A D 
 DAY A D 
+DEN L
 DFW A D L
 FAI A D 
 HNL A D 
@@ -47,6 +48,7 @@ ORD A D L
 ORF A D 
 OSU A D 
 OTZ L  
+PDX A D
 PHL A D L
 PHX L  
 SDP A  

@@ -187,6 +187,14 @@
     "visits": []
   },
   {
+    "code": "SPR",
+    "name": "John Greif II Airport",
+    "lat": 17.9139,
+    "lon": -87.9711,
+    "country": "BLZ",
+    "visits": []
+  },
+  {
     "code": "BDA",
     "name": "L.F. Wade International Airport",
     "lat": 32.36417,
@@ -323,6 +331,14 @@
     "visits": []
   },
   {
+    "code": "YKA",
+    "name": "Kamloops John Moose Fulton Field Regional Airport",
+    "lat": 50.703038,
+    "lon": -120.448641,
+    "country": "CAN",
+    "visits": []
+  },
+  {
     "code": "YLW",
     "name": "Kelowna International Airport",
     "lat": 49.9561,
@@ -400,7 +416,10 @@
     "lat": 45.4657,
     "lon": -73.7481,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YVP",
@@ -638,6 +657,22 @@
     "visits": []
   },
   {
+    "code": "JCL",
+    "name": "\u010cesk\u00e9 Bud\u011bjovice South Bohemian Airport",
+    "lat": 48.9464,
+    "lon": 14.4275,
+    "country": "CZE",
+    "visits": []
+  },
+  {
+    "code": "OSR",
+    "name": "Ostrava Leos Jan\u00e1\u010dek Airport",
+    "lat": 49.696301,
+    "lon": 18.111099,
+    "country": "CZE",
+    "visits": []
+  },
+  {
     "code": "PRG",
     "name": "V\u00e1clav Havel Airport Prague",
     "lat": 50.10083,
@@ -872,6 +907,14 @@
     ]
   },
   {
+    "code": "MRS",
+    "name": "Marseille Provence Airport",
+    "lat": 43.438088,
+    "lon": 5.2125,
+    "country": "FRA",
+    "visits": []
+  },
+  {
     "code": "NCE",
     "name": "Nice C\u00f4te d'Azur Airport",
     "lat": 43.6597,
@@ -888,6 +931,14 @@
     "visits": [
       "D"
     ]
+  },
+  {
+    "code": "TLS",
+    "name": "Toulouse-Blagnac Airport",
+    "lat": 43.629101,
+    "lon": 1.36382,
+    "country": "FRA",
+    "visits": []
   },
   {
     "code": "KSA",
@@ -1282,6 +1333,22 @@
     "name": "Pisa International Airport",
     "lat": 43.68389,
     "lon": 10.39278,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "TRS",
+    "name": "Trieste\u2013Friuli Venezia Giulia Airport",
+    "lat": 45.827499,
+    "lon": 13.4722,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "TSF",
+    "name": "Treviso Antonio Canova Airport",
+    "lat": 45.648399,
+    "lon": 12.1944,
     "country": "ITA",
     "visits": []
   },
@@ -1774,6 +1841,14 @@
     "lat": 7.36731,
     "lon": 134.544236,
     "country": "PLW",
+    "visits": []
+  },
+  {
+    "code": "GDN",
+    "name": "Gda\u0144sk Lech Wa\u0142\u0119sa Airport",
+    "lat": 54.377602,
+    "lon": 18.4662,
+    "country": "POL",
     "visits": []
   },
   {
@@ -3217,6 +3292,14 @@
     "visits": []
   },
   {
+    "code": "HIO",
+    "name": "Portland Hillsboro Airport",
+    "lat": 45.540401,
+    "lon": -122.949997,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "HLN",
     "name": "Helena Regional Airport",
     "lat": 46.6068,
@@ -3539,7 +3622,8 @@
     "lon": -73.874,
     "country": "USA",
     "visits": [
-      "A"
+      "A",
+      "L"
     ]
   },
   {
@@ -3704,6 +3788,14 @@
     "visits": []
   },
   {
+    "code": "MFE",
+    "name": "McAllen Miller International Airport",
+    "lat": 26.176141,
+    "lon": -98.237965,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "MFR",
     "name": "Rogue Valley International\u2013Medford Airport",
     "lat": 42.3742,
@@ -3716,6 +3808,14 @@
     "name": "Montgomery Regional Airport (Dannelly Field)",
     "lat": 32.3006,
     "lon": -86.3939,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MHK",
+    "name": "Manhattan Regional Airport",
+    "lat": 39.14099884033203,
+    "lon": -96.6707992553711,
     "country": "USA",
     "visits": []
   },
@@ -4101,6 +4201,14 @@
     "visits": []
   },
   {
+    "code": "PGV",
+    "name": "Pitt-Greenville Airport",
+    "lat": 35.635535,
+    "lon": -77.384262,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "PHF",
     "name": "Newport News/Williamsburg International Airport",
     "lat": 37.1319,
@@ -4361,6 +4469,14 @@
     "visits": []
   },
   {
+    "code": "RWI",
+    "name": "Rocky Mount Wilson Regional Airport",
+    "lat": 35.8563,
+    "lon": -77.891899,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "SAF",
     "name": "Santa Fe Regional Airport",
     "lat": 35.6171,
@@ -4382,7 +4498,9 @@
     "lat": 29.5267,
     "lon": -98.4719,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "SAV",
@@ -4582,6 +4700,14 @@
     "visits": []
   },
   {
+    "code": "STK",
+    "name": "Sterling Municipal Airport",
+    "lat": 40.613497,
+    "lon": -103.263833,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "STL",
     "name": "St. Louis Lambert International Airport",
     "lat": 38.7487,
@@ -4677,6 +4803,14 @@
     "name": "Tallahassee International Airport",
     "lat": 30.3968,
     "lon": -84.3509,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "TOA",
+    "name": "Zamperini Field",
+    "lat": 33.803398132324,
+    "lon": -118.33999633789,
     "country": "USA",
     "visits": []
   },
