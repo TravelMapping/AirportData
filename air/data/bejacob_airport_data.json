@@ -3763,6 +3763,17 @@
     "visits": []
   },
   {
+    "code": "LCK",
+    "name": "Rickenbacker International Airport",
+    "lat": 39.813801,
+    "lon": -82.927803,
+    "country": "USA",
+    "visits": [
+      "A",
+      "D"
+    ]
+  },
+  {
     "code": "LEX",
     "name": "Blue Grass Airport",
     "lat": 38.0364,
