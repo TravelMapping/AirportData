@@ -90,6 +90,14 @@
     "visits": []
   },
   {
+    "code": "RTS",
+    "name": "Rottnest Island Airport",
+    "lat": -32.006699,
+    "lon": 115.540001,
+    "country": "AUS",
+    "visits": []
+  },
+  {
     "code": "SYD",
     "name": "Sydney Kingsford Smith Airport",
     "lat": -33.9461,
