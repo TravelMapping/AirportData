@@ -349,7 +349,8 @@
     "lon": -120.448641,
     "country": "CAN",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -358,7 +359,10 @@
     "lat": 49.9561,
     "lon": -119.3778,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YMM",
@@ -459,7 +463,8 @@
     "country": "CAN",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
