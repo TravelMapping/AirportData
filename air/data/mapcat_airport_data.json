@@ -2292,7 +2292,9 @@
     "lat": 30.1944,
     "lon": -97.67,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "AVL",
@@ -2420,7 +2422,9 @@
     "lat": 36.1317,
     "lon": -86.6688,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "BNF",
