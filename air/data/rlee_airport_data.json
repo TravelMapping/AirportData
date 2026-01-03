@@ -2345,7 +2345,9 @@
     "lat": 33.5629,
     "lon": -86.7535,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "BIL",
