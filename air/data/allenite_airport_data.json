@@ -144,6 +144,14 @@
     "visits": []
   },
   {
+    "code": "SOF",
+    "name": "Sofia Airport",
+    "lat": 42.696357,
+    "lon": 23.417671,
+    "country": "BGR",
+    "visits": []
+  },
+  {
     "code": "BAH",
     "name": "Bahrain International Airport",
     "lat": 26.2708,
@@ -2963,6 +2971,8 @@
     "lon": -74.1745,
     "country": "USA",
     "visits": [
+      "A",
+      "D",
       "L"
     ]
   },
