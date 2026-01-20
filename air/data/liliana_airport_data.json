@@ -1200,6 +1200,14 @@
     "visits": []
   },
   {
+    "code": "IOM",
+    "name": "Isle of Man Airport",
+    "lat": 54.083081,
+    "lon": -4.623871,
+    "country": "IMN",
+    "visits": []
+  },
+  {
     "code": "BLR",
     "name": "Kempegowda International Airport",
     "lat": 13.19938,
