@@ -3797,7 +3797,10 @@
     "lat": 25.7959,
     "lon": -80.287,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MKE",
