@@ -1,4 +1,4 @@
-# Airport Mapping (updated 2025-08-04)
+# Airport Mapping (updated 2025-08-07)
 
 This is a very early form of a TravelMapping-adjacent idea for mapping airports visited. The current site is found here: https://tmairports.teresco.org/AirportData/air/web/index.html
 
@@ -12,23 +12,24 @@ Maps are generated from "alist" files submitted via GitHub. The filename should 
 
 *the third and fourth fields are optional.
 
-N can be any of the following codes: A (for arrival), D (for departure), and L (for layover).
+N can be any of the following codes: A (for arrival), D (for departure), L (for layover), or X (for any visit to the airport outside the secure area, e.g. to tour the facility or to pick up a traveler).
 
 **Example file lines:**
 
-| Code       | Meaning                                                                 |
-|------------|-------------------------------------------------------------------------|
-| `ATL A D L`| Traveler arrived at and departed from Atlanta, and had a layover there. |
-| `LAX A D`  | Traveler arrived at and departed from Los Angeles.                      |
-| `ORD L`    | Traveler had a layover at Chicago O'Hare, but no arrival or departure.  |
+| Code       | Meaning                                                             |
+|------------|---------------------------------------------------------------------|
+| `ATL A D L`| User arrived at and departed from Atlanta, and had a layover there. |
+| `LAX A D`  | User arrived at and departed from Los Angeles.                      |
+| `ORD L`    | User had a layover at Chicago O'Hare, but no arrival or departure.  |
+| `FFO X`    | User toured Wright-Patterson AFB but did not fly.                   |
 
-Each airport should be on a separate line. The order of the A, D, and L does not matter. The file should be submitted via a GitHub pull request, currently to TravelMapping/AirportData (email submissions will be available soon but are not currently supported). Once the file is merged, their map should update automatically within a few minutes.
+Each airport should be on a separate line. X is used only when the user has not visited the airport as a traveler. The order of the A, D, and L does not matter. The file should be submitted via a GitHub pull request, currently to TravelMapping/AirportData/air/data (email submissions will be available soon but are not currently supported). Once the file is merged, their map will update automatically within an hour.
 
-If you have visited an airport not currently included in the project, please put it in your alist anyway. When your alist is processed, unknown airports are flagged for addition to the airport database (airports.csv) and should be added as part of the update process.
+If you have visited an airport not currently included in the project, please put it in your alist anyway. When your alist is processed, unknown airports are added automatically to the airport database (airports.csv). There's never a need to edit the database manually.
 
 When you receive a notification that your alist has been pulled in, expect to see your updated map on Airport Mapping at the next :15 past the hour.
 
-## The map
+## Viewing and interacting with the map
 
 The user's airport map will appear at https://tmairports.teresco.org/AirportData/air/web/user.html?user=[usernamre]. A list of all users can be found via the link at the top of that page, or at https://tmairports.teresco.org/AirportData/air/web/user.html (without the user parameter).
 
@@ -38,13 +39,13 @@ Clicking on the icon will identify the airport with a popup message. The popup w
 
 The map of all airports currently included is located at https://tmairports.teresco.org/AirportData/air/web/airports.html. This page provides a locator map for all airports (color-coded by number of visitors) and a table with the same information.
 
-## Known issues:
+## Known issues
 
 * After a user's .alist is updated, the browser cache must be cleared manually in order to see the updated map.
 * Many airports are missing. So far only airports visited by at least one user have been added.
 * Airport placement is inconsistent. Some icons are centered on runways, some on terminals, and some at other positions on airport property. Many locations were automatically generated using Copilot.
 
-## Future plans:
+## Future plans
 
 * Additional basemaps may become available.
 * The map currently shows any airports requested by users. This may become difficult to maintain. A decision will need to be reached regarding which airports should be included. Public airports with scheduled commercial flights are the main scope for the project, but "public", "scheduled", and "commercial" may need to be clarified.
