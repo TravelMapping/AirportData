@@ -469,10 +469,7 @@
     "lat": 51.1139,
     "lon": -114.0203,
     "country": "CAN",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "YYG",
@@ -512,7 +509,10 @@
     "lat": 43.6777,
     "lon": -79.6248,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YZF",
@@ -704,7 +704,9 @@
     "lat": 50.0379,
     "lon": 8.5622,
     "country": "DEU",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "HAM",
@@ -912,7 +914,11 @@
     "lat": 49.0097,
     "lon": 2.5479,
     "country": "FRA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "MRS",
@@ -1000,7 +1006,9 @@
     "lat": 55.9485,
     "lon": -3.3634,
     "country": "GBR",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "GLA",
@@ -1040,10 +1048,7 @@
     "lat": 51.47,
     "lon": -0.4543,
     "country": "GBR",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "LTN",
@@ -1059,7 +1064,9 @@
     "lat": 53.3554,
     "lon": -2.2775,
     "country": "GBR",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "STN",
@@ -1195,7 +1202,9 @@
     "lat": 54.083081,
     "lon": -4.623871,
     "country": "IMN",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "BLR",
@@ -1251,7 +1260,10 @@
     "lat": 53.421389,
     "lon": -6.27,
     "country": "IRL",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SNN",
@@ -1259,7 +1271,9 @@
     "lat": 52.7019,
     "lon": -8.9248,
     "country": "IRL",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "KEF",
@@ -1699,7 +1713,9 @@
     "lat": 52.3081,
     "lon": 4.7642,
     "country": "NLD",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "BGO",
@@ -2259,7 +2275,10 @@
     "lat": 33.6407,
     "lon": -84.4277,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ATW",
@@ -2291,7 +2310,14 @@
     "lat": 35.4361,
     "lon": -82.542,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#Dad",
+      "-",
+      "Asheville",
+      "Geowoodstock",
+      "Pickup",
+      "X"
+    ]
   },
   {
     "code": "AVP",
@@ -2315,7 +2341,9 @@
     "lat": 42.235,
     "lon": -85.5519,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "BDL",
@@ -2371,9 +2399,7 @@
     "lat": 45.8078,
     "lon": -108.5428,
     "country": "USA",
-    "visits": [
-      "A"
-    ]
+    "visits": []
   },
   {
     "code": "BIS",
@@ -2438,8 +2464,7 @@
     "lon": -71.0096,
     "country": "USA",
     "visits": [
-      "A",
-      "D"
+      "L"
     ]
   },
   {
@@ -2504,10 +2529,7 @@
     "lat": 34.2006,
     "lon": -118.3586,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "BWI",
@@ -2515,10 +2537,7 @@
     "lat": 39.1754,
     "lon": -76.6684,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "BZN",
@@ -2734,10 +2753,7 @@
     "lat": 44.7778,
     "lon": -89.6658,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "CXC",
@@ -2777,10 +2793,7 @@
     "lat": 42.402,
     "lon": -90.7095,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "DCA",
@@ -2805,8 +2818,6 @@
     "lon": -104.6737,
     "country": "USA",
     "visits": [
-      "A",
-      "D",
       "L"
     ]
   },
@@ -2816,7 +2827,11 @@
     "lat": 32.8998,
     "lon": -97.0403,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "DHN",
@@ -2947,7 +2962,9 @@
     "lat": 38.0383,
     "lon": -87.5308,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "EWN",
@@ -2965,7 +2982,8 @@
     "country": "USA",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
@@ -3014,7 +3032,12 @@
     "lat": 36.0181999207,
     "lon": -75.67130279540001,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#National",
+      "Park",
+      "Visit",
+      "X"
+    ]
   },
   {
     "code": "FFO",
@@ -3038,7 +3061,10 @@
     "lat": 43.7711982727,
     "lon": -88.48840332030001,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "FLL",
@@ -3110,7 +3136,10 @@
     "lat": 40.9783,
     "lon": -85.1953,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "FXE",
@@ -3134,7 +3163,10 @@
     "lat": 35.9524,
     "lon": -112.147003,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "GEG",
@@ -3143,8 +3175,12 @@
     "lon": -117.534,
     "country": "USA",
     "visits": [
-      "A",
-      "D"
+      "#Dad",
+      "Drop",
+      "Glacier",
+      "Off",
+      "Trip",
+      "X"
     ]
   },
   {
@@ -3209,7 +3245,9 @@
     "lat": 42.8808,
     "lon": -85.5228,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "GSB",
@@ -3233,7 +3271,13 @@
     "lat": 34.8956,
     "lon": -82.2189,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#FBG",
+      "Berman",
+      "Pickup",
+      "Spartanburg",
+      "X"
+    ]
   },
   {
     "code": "GST",
@@ -3257,9 +3301,7 @@
     "lat": 47.48199844,
     "lon": -111.3710022,
     "country": "USA",
-    "visits": [
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "GUM",
@@ -3307,7 +3349,13 @@
     "lat": 46.6068,
     "lon": -111.983002,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#Dad",
+      "Glacier",
+      "Pickup",
+      "Trip",
+      "X"
+    ]
   },
   {
     "code": "HMN",
@@ -3323,10 +3371,7 @@
     "lat": 21.3187,
     "lon": -157.9225,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "HOU",
@@ -3374,7 +3419,9 @@
     "lat": 38.9519,
     "lon": -77.4481,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "IAG",
@@ -3390,7 +3437,10 @@
     "lat": 29.9902,
     "lon": -95.3368,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ICT",
@@ -3518,10 +3568,7 @@
     "lat": 19.738889,
     "lon": -156.045556,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "KSM",
@@ -3545,7 +3592,12 @@
     "lat": 42.778639,
     "lon": -84.586194,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#Rental",
+      "Car",
+      "Pickup",
+      "X"
+    ]
   },
   {
     "code": "LAR",
@@ -3572,10 +3624,7 @@
     "lat": 33.9416,
     "lon": -118.4085,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "LBB",
@@ -3727,7 +3776,10 @@
     "lat": 45.86489868,
     "lon": -84.63729858,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MCF",
@@ -3751,7 +3803,10 @@
     "lat": 28.4312,
     "lon": -81.3081,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MDT",
@@ -3767,7 +3822,9 @@
     "lat": 41.7868,
     "lon": -87.7522,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "MEI",
@@ -3783,10 +3840,7 @@
     "lat": 35.04,
     "lon": -89.9819,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "MFE",
@@ -3842,10 +3896,7 @@
     "lat": 42.9469,
     "lon": -87.9022,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "MKK",
@@ -3877,10 +3928,7 @@
     "lat": 41.4486,
     "lon": -90.5075,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "MLU",
@@ -3944,10 +3992,7 @@
     "lat": 43.14,
     "lon": -89.3375,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "MSO",
@@ -3955,10 +4000,7 @@
     "lat": 46.9164,
     "lon": -114.0906,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "MSP",
@@ -3968,8 +4010,7 @@
     "country": "USA",
     "visits": [
       "A",
-      "D",
-      "L"
+      "D"
     ]
   },
   {
@@ -3978,7 +4019,9 @@
     "lat": 29.9933,
     "lon": -90.2581,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "MTJ",
@@ -4034,10 +4077,7 @@
     "lat": 37.7214,
     "lon": -122.2208,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "OFF",
@@ -4110,8 +4150,6 @@
     "lon": -87.9073,
     "country": "USA",
     "visits": [
-      "A",
-      "D",
       "L"
     ]
   },
@@ -4201,7 +4239,11 @@
     "lat": 45.5898,
     "lon": -122.5951,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "PGD",
@@ -4241,10 +4283,7 @@
     "lat": 39.8744,
     "lon": -75.2424,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "PHX",
@@ -4415,10 +4454,7 @@
     "lat": 45.63119888305664,
     "lon": -89.46749877929688,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "RIC",
@@ -4506,7 +4542,10 @@
     "lat": 32.7338,
     "lon": -117.1933,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SAT",
@@ -4562,7 +4601,12 @@
     "lat": 38.1742,
     "lon": -85.7364,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#Rental",
+      "Car",
+      "Exchange",
+      "X"
+    ]
   },
   {
     "code": "SDP",
@@ -4578,7 +4622,9 @@
     "lat": 47.4502,
     "lon": -122.3088,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "SFO",
@@ -4650,7 +4696,9 @@
     "lat": 40.7899,
     "lon": -111.9791,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "SMF",
@@ -4658,10 +4706,7 @@
     "lat": 38.6956,
     "lon": -121.5908,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "SNA",
@@ -4725,7 +4770,12 @@
     "lat": 38.7487,
     "lon": -90.37,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#Geocaching",
+      "Dropoff",
+      "Lackey",
+      "X"
+    ]
   },
   {
     "code": "STS",
@@ -4829,7 +4879,12 @@
     "lat": 41.5868,
     "lon": -83.8078,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#Dad",
+      "Drop",
+      "Off",
+      "X"
+    ]
   },
   {
     "code": "TPA",

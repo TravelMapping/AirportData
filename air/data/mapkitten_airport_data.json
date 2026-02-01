@@ -88,6 +88,14 @@
     "visits": []
   },
   {
+    "code": "RTS",
+    "name": "Rottnest Island Airport",
+    "lat": -32.006699,
+    "lon": 115.540001,
+    "country": "AUS",
+    "visits": []
+  },
+  {
     "code": "SYD",
     "name": "Sydney Kingsford Smith Airport",
     "lat": -33.9461,
@@ -136,6 +144,14 @@
     "visits": []
   },
   {
+    "code": "SOF",
+    "name": "Sofia Airport",
+    "lat": 42.696357,
+    "lon": 23.417671,
+    "country": "BGR",
+    "visits": []
+  },
+  {
     "code": "BAH",
     "name": "Bahrain International Airport",
     "lat": 26.2708,
@@ -180,6 +196,14 @@
     "name": "Philip S. W. Goldson International Airport",
     "lat": 17.539951,
     "lon": -88.303556,
+    "country": "BLZ",
+    "visits": []
+  },
+  {
+    "code": "SPR",
+    "name": "John Greif II Airport",
+    "lat": 17.9139,
+    "lon": -87.9711,
     "country": "BLZ",
     "visits": []
   },
@@ -320,6 +344,14 @@
     "visits": []
   },
   {
+    "code": "YKA",
+    "name": "Kamloops John Moose Fulton Field Regional Airport",
+    "lat": 50.703038,
+    "lon": -120.448641,
+    "country": "CAN",
+    "visits": []
+  },
+  {
     "code": "YLW",
     "name": "Kelowna International Airport",
     "lat": 49.9561,
@@ -397,7 +429,10 @@
     "lat": 45.4657,
     "lon": -73.7481,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YVP",
@@ -629,6 +664,22 @@
     "lat": 12.1889,
     "lon": -68.9598,
     "country": "CUW",
+    "visits": []
+  },
+  {
+    "code": "JCL",
+    "name": "\u010cesk\u00e9 Bud\u011bjovice South Bohemian Airport",
+    "lat": 48.9464,
+    "lon": 14.4275,
+    "country": "CZE",
+    "visits": []
+  },
+  {
+    "code": "OSR",
+    "name": "Ostrava Leos Jan\u00e1\u010dek Airport",
+    "lat": 49.696301,
+    "lon": 18.111099,
+    "country": "CZE",
     "visits": []
   },
   {
@@ -870,6 +921,14 @@
     "visits": []
   },
   {
+    "code": "MRS",
+    "name": "Marseille Provence Airport",
+    "lat": 43.438088,
+    "lon": 5.2125,
+    "country": "FRA",
+    "visits": []
+  },
+  {
     "code": "NCE",
     "name": "Nice C\u00f4te d'Azur Airport",
     "lat": 43.6597,
@@ -882,6 +941,14 @@
     "name": "Paris Orly Airport",
     "lat": 48.7262,
     "lon": 2.3652,
+    "country": "FRA",
+    "visits": []
+  },
+  {
+    "code": "TLS",
+    "name": "Toulouse-Blagnac Airport",
+    "lat": 43.629101,
+    "lon": 1.36382,
     "country": "FRA",
     "visits": []
   },
@@ -1126,6 +1193,14 @@
     "visits": []
   },
   {
+    "code": "IOM",
+    "name": "Isle of Man Airport",
+    "lat": 54.083081,
+    "lon": -4.623871,
+    "country": "IMN",
+    "visits": []
+  },
+  {
     "code": "BLR",
     "name": "Kempegowda International Airport",
     "lat": 13.19938,
@@ -1274,6 +1349,22 @@
     "name": "Pisa International Airport",
     "lat": 43.68389,
     "lon": 10.39278,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "TRS",
+    "name": "Trieste\u2013Friuli Venezia Giulia Airport",
+    "lat": 45.827499,
+    "lon": 13.4722,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "TSF",
+    "name": "Treviso Antonio Canova Airport",
+    "lat": 45.648399,
+    "lon": 12.1944,
     "country": "ITA",
     "visits": []
   },
@@ -1766,6 +1857,14 @@
     "lat": 7.36731,
     "lon": 134.544236,
     "country": "PLW",
+    "visits": []
+  },
+  {
+    "code": "GDN",
+    "name": "Gda\u0144sk Lech Wa\u0142\u0119sa Airport",
+    "lat": 54.377602,
+    "lon": 18.4662,
+    "country": "POL",
     "visits": []
   },
   {
@@ -2762,7 +2861,9 @@
     "lat": 42.2162,
     "lon": -83.3554,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "DUT",
@@ -2901,6 +3002,14 @@
     "visits": []
   },
   {
+    "code": "FFA",
+    "name": "First Flight Airport",
+    "lat": 36.0181999207,
+    "lon": -75.67130279540001,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "FFO",
     "name": "Wright-Patterson Air Force Base",
     "lat": 39.826099,
@@ -2913,6 +3022,14 @@
     "name": "Capital City Airport",
     "lat": 38.1819,
     "lon": -84.9061,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "FLD",
+    "name": "Fond du Lac County Airport",
+    "lat": 43.7711982727,
+    "lon": -88.48840332030001,
     "country": "USA",
     "visits": []
   },
@@ -3001,6 +3118,14 @@
     "name": "Gillette-Campbell County Airport",
     "lat": 44.34889,
     "lon": -105.53944,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "GCN",
+    "name": "Grand Canyon National Park Airport",
+    "lat": 35.9524,
+    "lon": -112.147003,
     "country": "USA",
     "visits": []
   },
@@ -3157,6 +3282,14 @@
     "visits": []
   },
   {
+    "code": "HIO",
+    "name": "Portland Hillsboro Airport",
+    "lat": 45.540401,
+    "lon": -122.949997,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "HLN",
     "name": "Helena Regional Airport",
     "lat": 46.6068,
@@ -3292,6 +3425,14 @@
     "name": "Falls International Airport",
     "lat": 48.5661,
     "lon": -93.4031,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "ISP",
+    "name": "Long Island Mac Arthur Airport",
+    "lat": 40.79520035,
+    "lon": -73.10019684,
     "country": "USA",
     "visits": []
   },
@@ -3435,6 +3576,14 @@
     "visits": []
   },
   {
+    "code": "LCK",
+    "name": "Rickenbacker International Airport",
+    "lat": 39.813801,
+    "lon": -82.927803,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "LEX",
     "name": "Blue Grass Airport",
     "lat": 38.0364,
@@ -3464,7 +3613,9 @@
     "lat": 40.7769,
     "lon": -73.874,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "LGB",
@@ -3555,6 +3706,14 @@
     "visits": []
   },
   {
+    "code": "MCD",
+    "name": "Mackinac Island Airport",
+    "lat": 45.86489868,
+    "lon": -84.63729858,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "MCF",
     "name": "MacDill Air Force Base",
     "lat": 27.8493,
@@ -3614,6 +3773,14 @@
     "visits": []
   },
   {
+    "code": "MFE",
+    "name": "McAllen Miller International Airport",
+    "lat": 26.176141,
+    "lon": -98.237965,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "MFR",
     "name": "Rogue Valley International\u2013Medford Airport",
     "lat": 42.3742,
@@ -3626,6 +3793,14 @@
     "name": "Montgomery Regional Airport (Dannelly Field)",
     "lat": 32.3006,
     "lon": -86.3939,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MHK",
+    "name": "Manhattan Regional Airport",
+    "lat": 39.14099884033203,
+    "lon": -96.6707992553711,
     "country": "USA",
     "visits": []
   },
@@ -4004,6 +4179,14 @@
     "visits": []
   },
   {
+    "code": "PGV",
+    "name": "Pitt-Greenville Airport",
+    "lat": 35.635535,
+    "lon": -77.384262,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "PHF",
     "name": "Newport News/Williamsburg International Airport",
     "lat": 37.1319,
@@ -4262,6 +4445,14 @@
     "visits": []
   },
   {
+    "code": "RWI",
+    "name": "Rocky Mount Wilson Regional Airport",
+    "lat": 35.8563,
+    "lon": -77.891899,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "SAF",
     "name": "Santa Fe Regional Airport",
     "lat": 35.6171,
@@ -4486,6 +4677,14 @@
     "visits": []
   },
   {
+    "code": "STK",
+    "name": "Sterling Municipal Airport",
+    "lat": 40.613497,
+    "lon": -103.263833,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "STL",
     "name": "St. Louis Lambert International Airport",
     "lat": 38.7487,
@@ -4578,6 +4777,14 @@
     "name": "Tallahassee International Airport",
     "lat": 30.3968,
     "lon": -84.3509,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "TOA",
+    "name": "Zamperini Field",
+    "lat": 33.803398132324,
+    "lon": -118.33999633789,
     "country": "USA",
     "visits": []
   },
