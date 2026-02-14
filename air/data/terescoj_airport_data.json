@@ -1504,10 +1504,42 @@
     "visits": []
   },
   {
+    "code": "KTJ",
+    "name": "Kichwa Tembo Airport",
+    "lat": -1.263497,
+    "lon": 35.027533,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "MDR",
+    "name": "Musiara Airstrip",
+    "lat": -1.298636,
+    "lon": 35.063885,
+    "country": "KEN",
+    "visits": []
+  },
+  {
     "code": "NBO",
     "name": "Jomo Kenyatta International Airport",
     "lat": -1.3192,
     "lon": 36.9275,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "UKA",
+    "name": "Ukunda Airstrip",
+    "lat": -4.29333,
+    "lon": 39.571098,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "WIL",
+    "name": "Nairobi Wilson Airport",
+    "lat": -1.321720004081726,
+    "lon": 36.81480026245117,
     "country": "KEN",
     "visits": []
   },
