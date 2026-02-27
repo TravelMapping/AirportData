@@ -3047,7 +3047,9 @@
     "lat": 46.842098,
     "lon": -92.193604,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "DMA",
