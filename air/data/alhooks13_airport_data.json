@@ -3187,7 +3187,10 @@
     "lat": 43.582,
     "lon": -96.7419,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "FSM",
@@ -3235,7 +3238,9 @@
     "lat": 47.6199,
     "lon": -117.534,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "GGG",
@@ -4726,7 +4731,9 @@
     "lat": 37.2456,
     "lon": -93.3886,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "SGU",
@@ -4894,10 +4901,7 @@
     "lat": 42.4025,
     "lon": -96.3844,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "SWF",
