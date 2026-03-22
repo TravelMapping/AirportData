@@ -3076,7 +3076,8 @@
     "lon": -105.0114,
     "country": "USA",
     "visits": [
-      "X"
+      "A",
+      "D"
     ]
   },
   {
@@ -4042,7 +4043,10 @@
     "lat": 35.3931,
     "lon": -97.6008,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "OMA",
