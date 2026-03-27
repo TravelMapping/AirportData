@@ -5140,7 +5140,10 @@
     "lat": 27.3956,
     "lon": -82.5544,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SRW",
