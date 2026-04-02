@@ -3368,7 +3368,10 @@
     "lat": 40.9783,
     "lon": -85.1953,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "FXE",
