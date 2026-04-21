@@ -1,5 +1,4 @@
 1H2
 1HO
 NOL
-SET
 ZZZ
