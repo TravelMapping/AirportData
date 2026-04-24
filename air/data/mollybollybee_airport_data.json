@@ -2185,7 +2185,10 @@
     "lat": 35.0403,
     "lon": -106.6092,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ABR",
