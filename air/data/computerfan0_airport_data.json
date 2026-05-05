@@ -2450,6 +2450,14 @@
     "visits": []
   },
   {
+    "code": "BLI",
+    "name": "Bellingham International Airport",
+    "lat": 48.79280090332031,
+    "lon": -122.53800201416016,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BLV",
     "name": "Scott AFB/Midamerica Airport",
     "lat": 38.5452,
