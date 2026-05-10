@@ -1929,7 +1929,9 @@
     "lat": 50.07778,
     "lon": 19.78472,
     "country": "POL",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "WAW",
