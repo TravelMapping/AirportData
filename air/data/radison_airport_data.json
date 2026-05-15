@@ -2862,7 +2862,8 @@
     "country": "USA",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
@@ -2923,7 +2924,9 @@
     "lat": 42.2162,
     "lon": -83.3554,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "DUT",
@@ -4246,7 +4249,10 @@
     "lat": 45.5898,
     "lon": -122.5951,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "PGD",
