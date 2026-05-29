@@ -4191,7 +4191,9 @@
     "lat": 36.8944,
     "lon": -76.2008,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "ORH",
