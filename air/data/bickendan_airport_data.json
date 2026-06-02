@@ -251,6 +251,14 @@
     "visits": []
   },
   {
+    "code": "SET",
+    "name": "Santa Magalh\u00e3es Airport",
+    "lat": -8.061433,
+    "lon": -38.328888,
+    "country": "BRA",
+    "visits": []
+  },
+  {
     "code": "BGI",
     "name": "Grantley Adams International Airport",
     "lat": 13.0744,
@@ -2453,6 +2461,14 @@
       "A",
       "D"
     ]
+  },
+  {
+    "code": "BLI",
+    "name": "Bellingham International Airport",
+    "lat": 48.79280090332031,
+    "lon": -122.53800201416016,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "BLV",

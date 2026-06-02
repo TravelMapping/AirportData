@@ -253,6 +253,14 @@
     "visits": []
   },
   {
+    "code": "SET",
+    "name": "Santa Magalh\u00e3es Airport",
+    "lat": -8.061433,
+    "lon": -38.328888,
+    "country": "BRA",
+    "visits": []
+  },
+  {
     "code": "BGI",
     "name": "Grantley Adams International Airport",
     "lat": 13.0744,
@@ -1921,7 +1929,9 @@
     "lat": 50.07778,
     "lon": 19.78472,
     "country": "POL",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "WAW",
@@ -2442,6 +2452,14 @@
     "name": "Bemidji Regional Airport",
     "lat": 47.51083,
     "lon": -94.93472,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "BLI",
+    "name": "Bellingham International Airport",
+    "lat": 48.79280090332031,
+    "lon": -122.53800201416016,
     "country": "USA",
     "visits": []
   },

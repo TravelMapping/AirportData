@@ -251,6 +251,14 @@
     "visits": []
   },
   {
+    "code": "SET",
+    "name": "Santa Magalh\u00e3es Airport",
+    "lat": -8.061433,
+    "lon": -38.328888,
+    "country": "BRA",
+    "visits": []
+  },
+  {
     "code": "BGI",
     "name": "Grantley Adams International Airport",
     "lat": 13.0744,
@@ -2505,6 +2513,14 @@
     "visits": []
   },
   {
+    "code": "BLI",
+    "name": "Bellingham International Airport",
+    "lat": 48.79280090332031,
+    "lon": -122.53800201416016,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BLV",
     "name": "Scott AFB/Midamerica Airport",
     "lat": 38.5452,
@@ -3323,7 +3339,10 @@
     "lat": 42.9656,
     "lon": -83.7436,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "FRG",
@@ -3861,7 +3880,9 @@
     "lat": 42.778639,
     "lon": -84.586194,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "LAR",
