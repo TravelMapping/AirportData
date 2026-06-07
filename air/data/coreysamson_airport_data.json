@@ -3671,6 +3671,16 @@
     "visits": []
   },
   {
+    "code": "LJN",
+    "name": "Texas Gulf Coast Regional Airport",
+    "lat": 29.108601,
+    "lon": -95.462097,
+    "country": "USA",
+    "visits": [
+      "X"
+    ]
+  },
+  {
     "code": "LNK",
     "name": "Lincoln Airport",
     "lat": 40.85208,
