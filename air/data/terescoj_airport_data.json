@@ -4735,7 +4735,9 @@
     "lat": 37.2456,
     "lon": -93.3886,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "SGU",
@@ -5002,7 +5004,8 @@
     "lon": -95.8881,
     "country": "USA",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
