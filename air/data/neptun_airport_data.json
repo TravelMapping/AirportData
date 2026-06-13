@@ -1329,7 +1329,9 @@
     "lat": 41.8003,
     "lon": 12.2389,
     "country": "ITA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "FLR",
