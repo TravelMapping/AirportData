@@ -26,17 +26,13 @@ def count_visited_airports(airport_data):
 
 def get_git_modification_time(file_path):
     """Get the true Unix timestamp of the last global git commit touching a file."""
-    # Convert file path to a relative repository format (e.g., 'air/data/username.alist')
-    # Because Git works relative to the repository root directory
     try:
-        # Determine branch name dynamically (master or main)
         branch = "origin/master"
         check_branch = subprocess.run(['git', 'rev-parse', '--verify', 'origin/master'], 
                                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if check_branch.returncode != 0:
             branch = "origin/main"
 
-        # Ask git explicitly for the global origin branch history of this file path
         result = subprocess.run(
             ['git', 'log', '-1', '--format=%ct', branch, '--', str(file_path)],
             stdout=subprocess.PIPE,
@@ -49,8 +45,6 @@ def get_git_modification_time(file_path):
             return int(timestamp_str)
     except Exception as e:
         print(f"Warning: Could not get global git timestamp for {file_path.name}: {e}")
-    
-    # Fallback to local file timestamp if git completely fails
     return os.path.getmtime(file_path)
 
 def load_user_data():
@@ -60,23 +54,20 @@ def load_user_data():
     if not data_dir.exists():
         raise FileNotFoundError(f"Data directory not found: {data_dir}")
     
-    # Load manifest to get list of users
     manifest_path = data_dir / 'manifest.json'
     with open(manifest_path, 'r', encoding='utf-8') as f:
         users = json.load(f)
     
-    user_airports = {}  # username -> count of visited airports
-    airport_visitors = defaultdict(set)  # airport_code -> set of usernames
-    alist_timestamps = {}  # username -> true git commit timestamp
+    user_airports = {}
+    airport_visitors = defaultdict(set)
+    alist_timestamps = {}
     total_visits = 0
     total_unique_airports = set()
     
-    # Process each user's airport data
     for username in users:
         json_file = data_dir / f'{username}_airport_data.json'
         alist_file = data_dir / f'{username}.alist'
         
-        # Extract the true global commit date of the user's .alist entry file
         if alist_file.exists():
             alist_timestamps[username] = get_git_modification_time(alist_file)
         
@@ -88,11 +79,9 @@ def load_user_data():
             with open(json_file, 'r', encoding='utf-8') as f:
                 airport_data = json.load(f)
             
-            # Count visited airports for this user
             visited_count = count_visited_airports(airport_data)
             user_airports[username] = visited_count
             
-            # Track which users visited which airports
             for airport in airport_data:
                 if airport.get('visits') and len(airport['visits']) > 0:
                     airport_code = airport['code']
@@ -118,18 +107,15 @@ def generate_homepage_data():
     print("Loading user data...")
     data = load_user_data()
     
-    # Get all users (excluding empty ones)
     all_users = [u for u in data['users'] if data['user_airports'].get(u, 0) > 0]
     active_users_count = len(all_users)
     
-    # Top Travelers - sort by airports visited, take top 3
     top_travelers = sorted(
         data['user_airports'].items(),
         key=lambda x: x[1],
         reverse=True
     )[:3]
     
-    # Most Visited Airports - sort by visitor count, take top 3
     airport_visitors_list = [
         (code, visitors)
         for code, visitors in data['airport_visitors'].items()
@@ -140,7 +126,6 @@ def generate_homepage_data():
         reverse=True
     )[:3]
     
-    # Recent Updates - filter timestamps to active users only, sort, take top 6
     active_timestamps = {
         user: ts for user, ts in data['alist_timestamps'].items() if user in all_users
     }
@@ -152,20 +137,15 @@ def generate_homepage_data():
     
     recent_updates = []
     for username, _ in recent_users:
-        # URL encode the username to safely handle spaces or special characters in the query parameter
         encoded_user = urllib.parse.quote(username)
-        
         link_style = "color: #3182ce; font-weight: bold; text-decoration: none;"
         hover_effects = 'onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'"'
-        
         user_link = f'<a href="/AirportData/air/web/user.html?user={encoded_user}" style="{link_style}" {hover_effects}>{username}</a>'
         recent_updates.append(f"{user_link} updated their flight map.")
     
-    # Load airport data to get airport names for most visited airports
     data_dir = get_data_dir()
     airport_names = {}
     
-    # Use any user's airport data to get airport details
     if all_users:
         first_user = all_users[0]
         json_file = data_dir / f'{first_user}_airport_data.json'
@@ -177,33 +157,68 @@ def generate_homepage_data():
         except:
             pass
             
-    # Track Recently Added Airports from the bottom rows of airports-master.csv
+    # === CRITERIA UPDATE: Query Git history for raw additions ===
     master_csv_path = data_dir.parent / 'airports-master.csv'
     recently_added = []
+    seen_codes = set()
     
     if master_csv_path.exists():
         try:
+            # Dynamically determine default branch history
+            branch = "origin/master"
+            check_branch = subprocess.run(['git', 'rev-parse', '--verify', 'origin/master'], 
+                                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            if check_branch.returncode != 0:
+                branch = "origin/main"
+
+            # Ask git logs to look back at commits hitting the master file, showing line differences
+            result = subprocess.run(
+                ['git', 'log', '-p', '-n', '20', branch, '--', str(master_csv_path)],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                check=True
+            )
+            
+            # Look for lines starting with a "+" sign (signaling a brand new line insertion in Git history)
+            for line in result.stdout.splitlines():
+                if line.startswith('+') and not line.startswith('+++'):
+                    clean_line = line[1:].strip()
+                    row = clean_line.split(',')
+                    if len(row) >= 2:
+                        code = row[0].strip('" \t\'')
+                        name = row[1].strip('" \t\'')
+                        # Skip if it matches our header line or if we already caught it higher up in history
+                        if code == "code" or code in seen_codes:
+                            continue
+                        
+                        recently_added.append({
+                            'code': code,
+                            'name': name
+                        })
+                        seen_codes.add(code)
+                        
+                        if len(recently_added) >= 5:
+                            break
+        except Exception as e:
+            print(f"Warning: Could not query Git additions history: {e}")
+            
+    # Fallback back to file bottom slice if Git query returns empty results
+    if not recently_added and master_csv_path.exists():
+        try:
             with open(master_csv_path, 'r', encoding='utf-8') as f:
                 lines = f.readlines()
-            
-            # Filter empty lines, strip whitespace, and exclude header row
             data_lines = [l.strip().split(',') for l in lines if l.strip()][1:]
-            
-            # Take the last 5 rows appended to the file
             for row in data_lines[-5:]:
                 if len(row) >= 2:
                     code = row[0].strip('"')
                     name = row[1].strip('"')
-                    recently_added.append({
-                        'code': code,
-                        'name': name
-                    })
-            # Reverse list so the absolute newest additions display at the top
+                    recently_added.append({'code': code, 'name': name})
             recently_added.reverse()
-        except Exception as e:
-            print(f"Warning: Could not parse recently added airports: {e}")
+        except:
+            pass
+    # =============================================================
     
-    # Build homepage data
     homepage_data = {
         'generated_at': __import__('datetime').datetime.utcnow().isoformat() + 'Z',
         'stats': {
@@ -239,7 +254,6 @@ def main():
         print("Generating homepage data...")
         homepage_data = generate_homepage_data()
         
-        # Write to output file in same directory as script
         data_dir = get_data_dir()
         output_file = data_dir / 'homepage_data.json'
         
@@ -247,21 +261,12 @@ def main():
             json.dump(homepage_data, f, indent=2, ensure_ascii=False)
         
         print(f"✓ Homepage data generated successfully!")
-        print(f"  Output: {output_file}")
-        print(f"\nSummary:")
-        print(f"  Active Users: {homepage_data['stats']['active_users']}")
-        print(f"  Airports Mapped: {homepage_data['stats']['airports_mapped']}")
-        print(f"  Total Visits: {homepage_data['stats']['total_visits']}")
-        print(f"\nTop Traveler: {homepage_data['top_travelers'][0]['user']} ({homepage_data['top_travelers'][0]['airports_visited']} airports)")
-        print(f"Most Visited: {homepage_data['most_visited_airports'][0]['code']} ({homepage_data['most_visited_airports'][0]['visitor_count']} visitors)")
-        print(f"  Recent Updates Processed: {len(homepage_data['recent_updates'])}")
         
     except Exception as e:
         print(f"✗ Error: {e}")
         import traceback
         traceback.print_exc()
         return 1
-    
     return 0
 
 if __name__ == '__main__':
