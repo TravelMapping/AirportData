@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T18:56:42.264003Z",
+  "generated_at": "2026-06-14T19:13:23.529931Z",
   "stats": {
     "active_users": 38,
     "airports_mapped": 622,
@@ -50,10 +50,5 @@
     "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=coreysamson\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">coreysamson</a> updated their flight map."
   ],
-  "recently_added_airports": [
-    {
-      "code": "XYZ",
-      "name": "Test Discovery Airport"
-    }
-  ]
+  "recently_added_airports": []
 }
