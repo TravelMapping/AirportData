@@ -288,39 +288,44 @@
     </footer>
 
 <script>
+// --- AUTOMATED NEWLY ADDED AIRPORTS LIST ---
 fetch('airports.csv')
   .then(response => response.text())
   .then(csvText => {
+    // Split by line breaks
     const lines = csvText.split('\n');
     const airportData = [];
     
-    // Loop through CSV lines (skip header line 0)
+    // Loop through rows (Skip header line 0)
     for (let i = 1; i < lines.length; i++) {
-        if (!lines[i].trim()) continue;
+        if (!lines[i].trim()) continue; // Skip blank lines
         
-        const columns = lines[i].split(',');
-        // Column 0: IATA Code, Column 1: Name, Last Column: Visitor Count
+        // Split using SEMICOLON based on your actual data structure
+        const columns = lines[i].split(';');
+        
         airportData.push({
-            code: columns[0],
-            name: columns[1],
-            visitors: parseInt(columns[columns.length - 1]) || 0
+            country: columns[0],
+            code: columns[1],
+            name: columns[2]
         });
     }
 
-    // Sort by most visitors
-    airportData.sort((a, b) => b.visitors - a.visitors);
+    // Since new airports are appended to the bottom of the CSV file, 
+    // we reverse the array to show the most recently added ones first.
+    const recentAirports = airportData.reverse();
 
-    // Inject top 5 into the table
+    // Inject into the table layout
     const airportTable = document.getElementById('airport-leaderboard-body');
-    airportTable.innerHTML = ''; 
+    airportTable.innerHTML = ''; // Clear defaults
     
-    airportData.slice(0, 5).forEach((ap, index) => {
+    // Take the 5 most recent additions
+    recentAirports.slice(0, 5).forEach((ap, index) => {
         airportTable.innerHTML += `
             <tr>
                 <td>${index + 1}</td>
                 <td><strong>${ap.code}</strong></td>
-                <td>${ap.name}</td>
-                <td>${ap.visitors}</td>
+                <td>${ap.name} (${ap.country})</td>
+                <td><span style="color: #4a5568; font-size: 0.85rem;">Recently Added</span></td>
             </tr>`;
     });
   })
