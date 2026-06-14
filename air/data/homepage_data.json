@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T12:42:56.373367Z",
+  "generated_at": "2026-06-14T13:37:33.493297Z",
   "stats": {
     "active_users": 38,
     "airports_mapped": 622,
@@ -41,5 +41,13 @@
       "name": "Orlando International Airport",
       "visitor_count": 26
     }
+  ],
+  "recent_updates": [
+    "<strong>si404</strong> updated their flight map.",
+    "<strong>sounderbruce</strong> updated their flight map.",
+    "<strong>ssoworld</strong> updated their flight map.",
+    "<strong>terescoj</strong> updated their flight map.",
+    "<strong>the_spui_ninja</strong> updated their flight map.",
+    "<strong>ovoss</strong> updated their flight map."
   ]
 }
