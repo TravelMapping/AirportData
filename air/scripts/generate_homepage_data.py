@@ -9,6 +9,7 @@ import os
 import subprocess
 from pathlib import Path
 from collections import defaultdict
+import urllib.parse
 
 def get_data_dir():
     """Get the air/data directory path."""
@@ -152,7 +153,7 @@ def generate_homepage_data():
     recent_updates = []
     for username, _ in recent_users:
         # URL encode the username to safely handle spaces or special characters in the query parameter
-        encoded_user = __import__('urllib.parse').quote(username)
+        encoded_user = urllib.parse.quote(username)
         
         link_style = "color: #3182ce; font-weight: bold; text-decoration: none;"
         hover_effects = 'onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'"'
