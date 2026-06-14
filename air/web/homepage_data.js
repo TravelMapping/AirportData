@@ -21,6 +21,9 @@ async function loadHomepageData() {
         // Update recent updates section
         updateRecentUpdates(data.recent_updates);
         
+        // Update recently added airports section
+        updateRecentlyAddedAirports(data.recently_added_airports);
+        
         console.log('Homepage data loaded successfully');
     } catch (error) {
         console.error('Error loading homepage data:', error);
@@ -45,7 +48,7 @@ function updateStats(stats) {
     // Update Total Visits
     const totalVisitsElement = document.querySelector('.stat-card:nth-child(3) .stat-number');
     if (totalVisitsElement) {
-        totalVisitsElement.textContent = stats.total_visits.toLocaleString();
+        totalVisitsElement.textContent = stats.total_visits;
     }
 }
 
@@ -61,7 +64,7 @@ function updateTopTravelers(topTravelers) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${traveler.rank}</td>
-            <td><a href="user.html?user=${encodeURIComponent(traveler.user)}">${escapeHtml(traveler.user)}</a></td>
+            <td><strong>${escapeHtml(traveler.user)}</strong></td>
             <td>${traveler.airports_visited}</td>
         `;
         tbody.appendChild(row);
@@ -117,6 +120,34 @@ function updateRecentUpdates(recentUpdates) {
     });
 }
 
+function updateRecentlyAddedAirports(recentAirports) {
+    const listElement = document.getElementById('recently-added-list');
+    if (!listElement) return;
+    
+    // Clear placeholder
+    listElement.innerHTML = '';
+    
+    if (!recentAirports || recentAirports.length === 0) {
+        listElement.innerHTML = '<li style="color: #666; list-style-type: none; margin-left: -1.2rem;">No new airports added recently.</li>';
+        return;
+    }
+    
+    // Populate dynamic rows
+    recentAirports.forEach(airport => {
+        const li = document.createElement('li');
+        li.style.marginBottom = '0.5rem';
+        li.innerHTML = `
+            <a href="/AirportData/air/web/airports.html?airport=${airport.code}" 
+               style="color: #3182ce; font-weight: bold; text-decoration: none;"
+               onmouseover="this.style.textDecoration='underline'" 
+               onmouseout="this.style.textDecoration='none'">
+                ${airport.code}
+            </a> - ${escapeHtml(airport.name)} was indexed.
+        `;
+        listElement.appendChild(li);
+    });
+}
+
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
@@ -129,7 +160,11 @@ function showErrorMessage() {
     if (listElement) {
         listElement.innerHTML = '<li style="color: #c0392b; list-style-type: none; margin-left: -1.2rem;">Error loading live updates.</li>';
     }
+    const addedElement = document.getElementById('recently-added-list');
+    if (addedElement) {
+        addedElement.innerHTML = '<li style="color: #c0392b; list-style-type: none; margin-left: -1.2rem;">Error loading system additions.</li>';
+    }
 }
 
-// Load data when page loads
+// Load data when the page finishes loading
 document.addEventListener('DOMContentLoaded', loadHomepageData);
