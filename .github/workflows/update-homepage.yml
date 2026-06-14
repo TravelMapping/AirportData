@@ -23,10 +23,9 @@ jobs:
       with:
         python-version: '3.10'
 
-    # 3. Run the script your friend wrote
+# 3. Run the script your friend wrote
     - name: Run homepage data generator
       run: |
-        cd scripts
         python generate_homepage_data.py
 
     # 4. Save and commit the newly updated json file back to the repo
