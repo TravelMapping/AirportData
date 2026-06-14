@@ -13,9 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Download the code from the repository
+# 1. Download the code from the repository (including full git history)
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     # 2. Set up Python on the automated runner
     - name: Set up Python
