@@ -80,7 +80,14 @@ function updateMostVisitedAirports(mostVisitedAirports) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${airport.rank}</td>
-            <td><strong>${airport.code}</strong></td>
+            <td>
+                <a href="/AirportData/air/web/airports.html?airport=${airport.code}" 
+                   style="color: #3182ce; font-weight: bold; text-decoration: none;"
+                   onmouseover="this.style.textDecoration='underline'" 
+                   onmouseout="this.style.textDecoration='none'">
+                    ${airport.code}
+                </a>
+            </td>
             <td>${escapeHtml(airport.name)}</td>
             <td>${airport.visitor_count}</td>
         `;
