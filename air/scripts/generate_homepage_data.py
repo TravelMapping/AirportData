@@ -176,6 +176,32 @@ def generate_homepage_data():
                     airport_names[airport['code']] = airport['name']
         except:
             pass
+            
+    # Track Recently Added Airports from the bottom rows of airports-master.csv
+    master_csv_path = data_dir.parent / 'airports-master.csv'
+    recently_added = []
+    
+    if master_csv_path.exists():
+        try:
+            with open(master_csv_path, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+            
+            # Filter empty lines, strip whitespace, and exclude header row
+            data_lines = [l.strip().split(',') for l in lines if l.strip()][1:]
+            
+            # Take the last 5 rows appended to the file
+            for row in data_lines[-5:]:
+                if len(row) >= 2:
+                    code = row[0].strip('"')
+                    name = row[1].strip('"')
+                    recently_added.append({
+                        'code': code,
+                        'name': name
+                    })
+            # Reverse list so the absolute newest additions display at the top
+            recently_added.reverse()
+        except Exception as e:
+            print(f"Warning: Could not parse recently added airports: {e}")
     
     # Build homepage data
     homepage_data = {
@@ -202,7 +228,8 @@ def generate_homepage_data():
             }
             for i, (code, visitors) in enumerate(most_visited)
         ],
-        'recent_updates': recent_updates
+        'recent_updates': recent_updates,
+        'recently_added_airports': recently_added
     }
     
     return homepage_data
