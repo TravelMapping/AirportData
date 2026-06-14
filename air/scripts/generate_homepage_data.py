@@ -151,7 +151,14 @@ def generate_homepage_data():
     
     recent_updates = []
     for username, _ in recent_users:
-        recent_updates.append(f"<strong>{username}</strong> updated their flight map.")
+        # URL encode the username to safely handle spaces or special characters in the query parameter
+        encoded_user = __import__('urllib.parse').quote(username)
+        
+        link_style = "color: #3182ce; font-weight: bold; text-decoration: none;"
+        hover_effects = 'onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'"'
+        
+        user_link = f'<a href="/AirportData/air/web/user.html?user={encoded_user}" style="{link_style}" {hover_effects}>{username}</a>'
+        recent_updates.append(f"{user_link} updated their flight map.")
     
     # Load airport data to get airport names for most visited airports
     data_dir = get_data_dir()
