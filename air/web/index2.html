@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TM Airports - Home</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: #1a365d;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Container and Layout */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+            .full-width {
+                grid-column: span 2;
+            }
+        }
+
+        /* Panels and Cards */
+        .panel {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .panel h2 {
+            margin-top: 0;
+            color: #1a365d;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .stat-card {
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 1rem;
+            border-radius: 0 4px 4px 0;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2b6cb0;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Forms and Buttons */
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .btn {
+            background-color: #3182ce;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background-color: #2b6cb0;
+        }
+        .btn-secondary {
+            background-color: #4a5568;
+        }
+        .btn-secondary:hover {
+            background-color: #2d3748;
+        }
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f7fafc;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            color: #718096;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TM Airports</h1>
+        <p>Track, map, and share your airport travel history</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="panel full-width">
+            <h2>Welcome to TM Airports</h2>
+            <p>Visualize your personal flight history or see where the entire community has traveled. Upload your custom airport file to map your arrivals, departures, and layovers.</p>
+            
+            <div class="button-group">
+                <a href="airports.html" class="btn">View Global Activity Map</a>
+                <a href="#" class="btn btn-secondary">Submit / Update Your Data</a>
+            </div>
+        </div>
+
+        <div class="panel full-width">
+            <h2>Site Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">42</span> <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">184</span> <span class="stat-label">Airports Mapped</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1,205</span> <span class="stat-label">Total Visits</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-column" style="display: flex; flex-direction: column; gap: 2rem;">
+            
+            <div class="panel">
+                <h2>Top Travelers</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>User</th>
+                            <th>Airports Visited</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="user.html?user=alhooks13">alhooks13</a></td>
+                            <td>74</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="#">traveler_joe</a></td>
+                            <td>52</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="#">sky_high99</a></td>
+                            <td>38</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel">
+                <h2>Most Visited Airports</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Airport Code</th>
+                            <th>Location / Name</th>
+                            <th>Total Visitors</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>ATL</strong></td>
+                            <td>Hartsfield–Jackson Atlanta International</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>ORD</strong></td>
+                            <td>Chicago O'Hare International</td>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>LAX</strong></td>
+                            <td>Los Angeles International</td>
+                            <td>21</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="right-column" style="display: flex; flex-direction: column; gap: 2rem;">
+            
+            <div class="panel">
+                <h2>View User Map</h2>
+                <p>Enter a TM Airports username below to see their custom map:</p>
+                <form action="user.html" method="get" class="search-box">
+                    <input type="text" name="user" placeholder="e.g., alhooks13" required>
+                    <button type="submit" class="btn">Go</button>
+                </form>
+            </div>
+
+            <div class="panel">
+                <h2>Recent Updates</h2>
+                <ul style="padding-left: 1.2rem; margin: 0.5rem 0;">
+                    <li style="margin-bottom: 0.5rem;"><strong>alhooks13</strong> updated their flight map.</li>
+                    <li style="margin-bottom: 0.5rem;">New user <strong>sky_high99</strong> joined the site.</li>
+                    <li style="margin-bottom: 0.5rem;">Added support for regional airport mapping.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TM Airports. Inspired by Travel Mapping.</p>
+    </footer>
+
+</body>
+</html>
