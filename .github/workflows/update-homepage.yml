@@ -29,11 +29,11 @@ jobs:
         cd air/scripts
         python generate_homepage_data.py
 
-    # 4. Save and commit the newly updated json file back to the repo
+# 4. Save and commit the newly updated json file back to the repo
     - name: Commit and push changes
       run: |
         git config --global user.name "GitHub Action Bot"
         git config --global user.email "actions@github.com"
-        git add data/homepage_data.json
+        git add air/data/homepage_data.json
         git diff-index --quiet HEAD || git commit -m "Automated homepage statistics update [skip ci]"
         git push
