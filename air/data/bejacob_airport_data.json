@@ -487,7 +487,9 @@
     "lat": 49.1933,
     "lon": -123.1757,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "YXY",
@@ -2298,7 +2300,10 @@
     "lat": 57.75,
     "lon": -152.4939,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "AEX",
@@ -2338,7 +2343,10 @@
     "lat": 58.6767,
     "lon": -156.6492,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ALB",
@@ -3033,7 +3041,10 @@
     "lat": 59.0454,
     "lon": -158.505,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "DLH",
@@ -4095,6 +4106,14 @@
     "visits": []
   },
   {
+    "code": "MGW",
+    "name": "Morgantown Municipal Airport Walter L. (Bill) Hart Field",
+    "lat": 39.643305,
+    "lon": -79.917598,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "MHK",
     "name": "Manhattan Regional Airport",
     "lat": 39.14099884033203,
@@ -4391,7 +4410,10 @@
     "lat": 64.5122,
     "lon": -165.4453,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ONT",
@@ -4454,7 +4476,10 @@
     "lat": 66.8906,
     "lon": -162.6042,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "OXC",
@@ -4696,7 +4721,10 @@
     "lat": 44.04532,
     "lon": -103.05722,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "RDD",
