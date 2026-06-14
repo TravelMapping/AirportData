@@ -157,67 +157,17 @@ def generate_homepage_data():
         except:
             pass
             
-    # === CRITERIA UPDATE: Query Git history for raw additions ===
-    master_csv_path = data_dir.parent / 'airports-master.csv'
+    # === STRATEGY: Read the dedicated, non-scrambled discovery history log ===
     recently_added = []
-    seen_codes = set()
+    log_path = data_dir / 'recently_indexed.json'
     
-    if master_csv_path.exists():
+    if log_path.exists():
         try:
-            # Dynamically determine default branch history
-            branch = "origin/master"
-            check_branch = subprocess.run(['git', 'rev-parse', '--verify', 'origin/master'], 
-                                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            if check_branch.returncode != 0:
-                branch = "origin/main"
-
-            # Ask git logs to look back at commits hitting the master file, showing line differences
-            result = subprocess.run(
-                ['git', 'log', '-p', '-n', '20', branch, '--', str(master_csv_path)],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True,
-                check=True
-            )
-            
-            # Look for lines starting with a "+" sign (signaling a brand new line insertion in Git history)
-            for line in result.stdout.splitlines():
-                if line.startswith('+') and not line.startswith('+++'):
-                    clean_line = line[1:].strip()
-                    row = clean_line.split(',')
-                    if len(row) >= 2:
-                        code = row[0].strip('" \t\'')
-                        name = row[1].strip('" \t\'')
-                        # Skip if it matches our header line or if we already caught it higher up in history
-                        if code == "code" or code in seen_codes:
-                            continue
-                        
-                        recently_added.append({
-                            'code': code,
-                            'name': name
-                        })
-                        seen_codes.add(code)
-                        
-                        if len(recently_added) >= 5:
-                            break
+            with open(log_path, 'r', encoding='utf-8') as f:
+                recently_added = json.load(f)
         except Exception as e:
-            print(f"Warning: Could not query Git additions history: {e}")
-            
-    # Fallback back to file bottom slice if Git query returns empty results
-    if not recently_added and master_csv_path.exists():
-        try:
-            with open(master_csv_path, 'r', encoding='utf-8') as f:
-                lines = f.readlines()
-            data_lines = [l.strip().split(',') for l in lines if l.strip()][1:]
-            for row in data_lines[-5:]:
-                if len(row) >= 2:
-                    code = row[0].strip('"')
-                    name = row[1].strip('"')
-                    recently_added.append({'code': code, 'name': name})
-            recently_added.reverse()
-        except:
-            pass
-    # =============================================================
+            print(f"Warning: Could not read rolling discovery log file: {e}")
+    # =========================================================================
     
     homepage_data = {
         'generated_at': __import__('datetime').datetime.utcnow().isoformat() + 'Z',
