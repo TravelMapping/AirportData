@@ -1,3 +1,4 @@
+# Triggering a fresh automation run
 name: Update Homepage Data
 
 on:
