@@ -1,5 +1,7 @@
 #US airports
 ABQ A D
+ADQ A D
+AKN A D
 ALB L
 ANC A D L
 ATL A D L
@@ -27,6 +29,7 @@ DAY A D
 DCA A D L
 DEN A D L
 DFW A D L
+DLG A D
 DTW L
 ELP A D
 EWR A D L
@@ -75,6 +78,8 @@ OKC A D
 OMA A D
 ONT A D
 ORD A D L
+OME A D
+OTZ A D
 PDX A D L
 PHL A D L
 PHX A D L
@@ -139,4 +144,5 @@ SIA A D
 SVO D
 SYD A D
 YUL L
+YVR A
 YYZ L
