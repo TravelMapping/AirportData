@@ -36,22 +36,24 @@ def load_user_data():
     
     user_airports = {}  # username -> count of visited airports
     airport_visitors = defaultdict(set)  # airport_code -> set of usernames
-    user_timestamps = {}  # username -> file modification time
+    alist_timestamps = {}  # username -> .alist file modification time
     total_visits = 0
     total_unique_airports = set()
     
     # Process each user's airport data
     for username in users:
         json_file = data_dir / f'{username}_airport_data.json'
+        alist_file = data_dir / f'{username}.alist'
+        
+        # Track the actual modification time of the user's .alist file if it exists
+        if alist_file.exists():
+            alist_timestamps[username] = os.path.getmtime(alist_file)
         
         if not json_file.exists():
             print(f"Warning: {json_file} not found")
             continue
         
         try:
-            # Get the last modified timestamp of the file
-            user_timestamps[username] = os.path.getmtime(json_file)
-            
             with open(json_file, 'r', encoding='utf-8') as f:
                 airport_data = json.load(f)
             
@@ -75,7 +77,7 @@ def load_user_data():
         'users': users,
         'user_airports': user_airports,
         'airport_visitors': {code: list(visitors) for code, visitors in airport_visitors.items()},
-        'user_timestamps': user_timestamps,
+        'alist_timestamps': alist_timestamps,
         'total_visits': total_visits,
         'total_unique_airports': len(total_unique_airports),
     }
@@ -107,9 +109,12 @@ def generate_homepage_data():
         reverse=True
     )[:3]
     
-    # Recent Updates - sort by file modification timestamp, take top 6
+    # Recent Updates - filter timestamps to active users only, sort, take top 6
+    active_timestamps = {
+        user: ts for user, ts in data['alist_timestamps'].items() if user in all_users
+    }
     recent_users = sorted(
-        data['user_timestamps'].items(),
+        active_timestamps.items(),
         key=lambda x: x[1],
         reverse=True
     )[:6]
@@ -159,7 +164,7 @@ def generate_homepage_data():
             }
             for i, (code, visitors) in enumerate(most_visited)
         ],
-        'recent_updates': recent_updates  # Added new property here
+        'recent_updates': recent_updates
     }
     
     return homepage_data
