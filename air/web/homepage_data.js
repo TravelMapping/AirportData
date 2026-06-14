@@ -18,6 +18,9 @@ async function loadHomepageData() {
         updateTopTravelers(data.top_travelers);
         updateMostVisitedAirports(data.most_visited_airports);
         
+        // Update recent updates section
+        updateRecentUpdates(data.recent_updates);
+        
         console.log('Homepage data loaded successfully');
     } catch (error) {
         console.error('Error loading homepage data:', error);
@@ -85,6 +88,28 @@ function updateMostVisitedAirports(mostVisitedAirports) {
     });
 }
 
+function updateRecentUpdates(recentUpdates) {
+    const listElement = document.getElementById('recent-updates-list');
+    if (!listElement) return;
+    
+    // Clear loading placeholder
+    listElement.innerHTML = '';
+    
+    if (!recentUpdates || recentUpdates.length === 0) {
+        listElement.innerHTML = '<li style="color: #666; list-style-type: none; margin-left: -1.2rem;">No recent updates found.</li>';
+        return;
+    }
+    
+    // Populate dynamic rows
+    recentUpdates.forEach(updateText => {
+        const li = document.createElement('li');
+        li.style.marginBottom = '0.5rem';
+        // Note: The Python script controls formatting using safe <strong> tags around usernames
+        li.innerHTML = updateText;
+        listElement.appendChild(li);
+    });
+}
+
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
@@ -93,6 +118,10 @@ function escapeHtml(text) {
 
 function showErrorMessage() {
     console.warn('Could not load live data. Check that homepage_data.json exists in air/data/');
+    const listElement = document.getElementById('recent-updates-list');
+    if (listElement) {
+        listElement.innerHTML = '<li style="color: #c0392b; list-style-type: none; margin-left: -1.2rem;">Error loading live updates.</li>';
+    }
 }
 
 // Load data when page loads
