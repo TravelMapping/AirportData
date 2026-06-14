@@ -62,9 +62,20 @@ function updateTopTravelers(topTravelers) {
     // Add rows for each top traveler
     topTravelers.forEach(traveler => {
         const row = document.createElement('tr');
+        
+        // URL encode the username to handle spaces or special characters safely
+        const encodedUser = encodeURIComponent(traveler.user);
+        
         row.innerHTML = `
             <td>${traveler.rank}</td>
-            <td><strong>${escapeHtml(traveler.user)}</strong></td>
+            <td>
+                <a href="user.html?user=${encodedUser}" 
+                   style="color: #3182ce; font-weight: bold; text-decoration: none;"
+                   onmouseover="this.style.textDecoration='underline'" 
+                   onmouseout="this.style.textDecoration='none'">
+                    ${escapeHtml(traveler.user)}
+                </a>
+            </td>
             <td>${traveler.airports_visited}</td>
         `;
         tbody.appendChild(row);
