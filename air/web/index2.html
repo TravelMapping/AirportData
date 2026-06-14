@@ -205,7 +205,7 @@
                             <th>Airports Visited</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="user-leaderboard-body">
                         <tr>
                             <td>1</td>
                             <td><a href="user.html?user=alhooks13">alhooks13</a></td>
@@ -236,7 +236,7 @@
                             <th>Total Visitors</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="airport-leaderboard-body">
                         <tr>
                             <td>1</td>
                             <td><strong>ATL</strong></td>
@@ -287,5 +287,45 @@
         <p>&copy; 2026 TM Airports. Inspired by Travel Mapping.</p>
     </footer>
 
+<script>
+fetch('airports.csv')
+  .then(response => response.text())
+  .then(csvText => {
+    const lines = csvText.split('\n');
+    const airportData = [];
+    
+    // Loop through CSV lines (skip header line 0)
+    for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        
+        const columns = lines[i].split(',');
+        // Column 0: IATA Code, Column 1: Name, Last Column: Visitor Count
+        airportData.push({
+            code: columns[0],
+            name: columns[1],
+            visitors: parseInt(columns[columns.length - 1]) || 0
+        });
+    }
+
+    // Sort by most visitors
+    airportData.sort((a, b) => b.visitors - a.visitors);
+
+    // Inject top 5 into the table
+    const airportTable = document.getElementById('airport-leaderboard-body');
+    airportTable.innerHTML = ''; 
+    
+    airportData.slice(0, 5).forEach((ap, index) => {
+        airportTable.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td><strong>${ap.code}</strong></td>
+                <td>${ap.name}</td>
+                <td>${ap.visitors}</td>
+            </tr>`;
+    });
+  })
+  .catch(err => console.error('Error loading airport data:', err));
+</script>
+    
 </body>
 </html>
