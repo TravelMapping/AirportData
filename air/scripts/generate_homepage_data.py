@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate homepage statistics for TM Airports from user airport data.
-Creates homepage_data.json with top travelers, most visited airports, and site stats.
+Creates homepage_data.json with top travelers, most visited airports, recent updates, and site stats.
 """
 
 import json
@@ -36,6 +36,7 @@ def load_user_data():
     
     user_airports = {}  # username -> count of visited airports
     airport_visitors = defaultdict(set)  # airport_code -> set of usernames
+    user_timestamps = {}  # username -> file modification time
     total_visits = 0
     total_unique_airports = set()
     
@@ -48,6 +49,9 @@ def load_user_data():
             continue
         
         try:
+            # Get the last modified timestamp of the file
+            user_timestamps[username] = os.path.getmtime(json_file)
+            
             with open(json_file, 'r', encoding='utf-8') as f:
                 airport_data = json.load(f)
             
@@ -71,12 +75,13 @@ def load_user_data():
         'users': users,
         'user_airports': user_airports,
         'airport_visitors': {code: list(visitors) for code, visitors in airport_visitors.items()},
+        'user_timestamps': user_timestamps,
         'total_visits': total_visits,
         'total_unique_airports': len(total_unique_airports),
     }
 
 def generate_homepage_data():
-    """Generate homepage data with stats and tables."""
+    """Generate homepage data with stats, tables, and recent updates."""
     print("Loading user data...")
     data = load_user_data()
     
@@ -101,6 +106,17 @@ def generate_homepage_data():
         key=lambda x: len(x[1]),
         reverse=True
     )[:3]
+    
+    # Recent Updates - sort by file modification timestamp, take top 6
+    recent_users = sorted(
+        data['user_timestamps'].items(),
+        key=lambda x: x[1],
+        reverse=True
+    )[:6]
+    
+    recent_updates = []
+    for username, _ in recent_users:
+        recent_updates.append(f"<strong>{username}</strong> updated their flight map.")
     
     # Load airport data to get airport names for most visited airports
     data_dir = get_data_dir()
@@ -143,6 +159,7 @@ def generate_homepage_data():
             }
             for i, (code, visitors) in enumerate(most_visited)
         ],
+        'recent_updates': recent_updates  # Added new property here
     }
     
     return homepage_data
@@ -167,6 +184,7 @@ def main():
         print(f"  Total Visits: {homepage_data['stats']['total_visits']}")
         print(f"\nTop Traveler: {homepage_data['top_travelers'][0]['user']} ({homepage_data['top_travelers'][0]['airports_visited']} airports)")
         print(f"Most Visited: {homepage_data['most_visited_airports'][0]['code']} ({homepage_data['most_visited_airports'][0]['visitor_count']} visitors)")
+        print(f"  Recent Updates Processed: {len(homepage_data['recent_updates'])}")
         
     except Exception as e:
         print(f"✗ Error: {e}")
