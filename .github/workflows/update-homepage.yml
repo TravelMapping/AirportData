@@ -26,6 +26,7 @@ jobs:
 # 3. Run the script your friend wrote
     - name: Run homepage data generator
       run: |
+        cd air/scripts
         python generate_homepage_data.py
 
     # 4. Save and commit the newly updated json file back to the repo
