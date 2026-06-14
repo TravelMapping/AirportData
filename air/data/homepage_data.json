@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-06-14T08:50:10.028883Z",
+  "stats": {
+    "active_users": 39,
+    "airports_mapped": 620,
+    "total_visits": 3691
+  },
+  "top_travelers": [
+    {
+      "rank": 1,
+      "user": "formulanone",
+      "airports_visited": 199
+    },
+    {
+      "rank": 2,
+      "user": "Jonkle",
+      "airports_visited": 193
+    },
+    {
+      "rank": 3,
+      "user": "JayhawkCO",
+      "airports_visited": 184
+    }
+  ],
+  "most_visited_airports": [
+    {
+      "rank": 1,
+      "code": "DEN",
+      "name": "Denver International Airport",
+      "visitor_count": 27
+    },
+    {
+      "rank": 2,
+      "code": "ATL",
+      "name": "Hartsfield–Jackson Atlanta International Airport",
+      "visitor_count": 26
+    },
+    {
+      "rank": 3,
+      "code": "MCO",
+      "name": "Orlando International Airport",
+      "visitor_count": 26
+    }
+  ]
+}
