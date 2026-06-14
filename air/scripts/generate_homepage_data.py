@@ -24,11 +24,20 @@ def count_visited_airports(airport_data):
     return count
 
 def get_git_modification_time(file_path):
-    """Get the true Unix timestamp of the last git commit that touched a file."""
+    """Get the true Unix timestamp of the last global git commit touching a file."""
+    # Convert file path to a relative repository format (e.g., 'air/data/username.alist')
+    # Because Git works relative to the repository root directory
     try:
-        # Run: git log -1 --format=%ct -- <file_path>
+        # Determine branch name dynamically (master or main)
+        branch = "origin/master"
+        check_branch = subprocess.run(['git', 'rev-parse', '--verify', 'origin/master'], 
+                                      stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if check_branch.returncode != 0:
+            branch = "origin/main"
+
+        # Ask git explicitly for the global origin branch history of this file path
         result = subprocess.run(
-            ['git', 'log', -1, '--format=%ct', str(file_path)],
+            ['git', 'log', '-1', '--format=%ct', branch, '--', str(file_path)],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -38,9 +47,9 @@ def get_git_modification_time(file_path):
         if timestamp_str:
             return int(timestamp_str)
     except Exception as e:
-        print(f"Warning: Could not get git timestamp for {file_path.name}: {e}")
+        print(f"Warning: Could not get global git timestamp for {file_path.name}: {e}")
     
-    # Fallback to standard file timestamp if git fails
+    # Fallback to local file timestamp if git completely fails
     return os.path.getmtime(file_path)
 
 def load_user_data():
@@ -66,7 +75,7 @@ def load_user_data():
         json_file = data_dir / f'{username}_airport_data.json'
         alist_file = data_dir / f'{username}.alist'
         
-        # Extract the true commit date of the user's .alist entry file
+        # Extract the true global commit date of the user's .alist entry file
         if alist_file.exists():
             alist_timestamps[username] = get_git_modification_time(alist_file)
         
