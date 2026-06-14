@@ -6,6 +6,7 @@ Creates homepage_data.json with top travelers, most visited airports, recent upd
 
 import json
 import os
+import subprocess
 from pathlib import Path
 from collections import defaultdict
 
@@ -22,6 +23,26 @@ def count_visited_airports(airport_data):
             count += 1
     return count
 
+def get_git_modification_time(file_path):
+    """Get the true Unix timestamp of the last git commit that touched a file."""
+    try:
+        # Run: git log -1 --format=%ct -- <file_path>
+        result = subprocess.run(
+            ['git', 'log', -1, '--format=%ct', str(file_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True
+        )
+        timestamp_str = result.stdout.strip()
+        if timestamp_str:
+            return int(timestamp_str)
+    except Exception as e:
+        print(f"Warning: Could not get git timestamp for {file_path.name}: {e}")
+    
+    # Fallback to standard file timestamp if git fails
+    return os.path.getmtime(file_path)
+
 def load_user_data():
     """Load all user airport data and calculate statistics."""
     data_dir = get_data_dir()
@@ -36,7 +57,7 @@ def load_user_data():
     
     user_airports = {}  # username -> count of visited airports
     airport_visitors = defaultdict(set)  # airport_code -> set of usernames
-    alist_timestamps = {}  # username -> .alist file modification time
+    alist_timestamps = {}  # username -> true git commit timestamp
     total_visits = 0
     total_unique_airports = set()
     
@@ -45,9 +66,9 @@ def load_user_data():
         json_file = data_dir / f'{username}_airport_data.json'
         alist_file = data_dir / f'{username}.alist'
         
-        # Track the actual modification time of the user's .alist file if it exists
+        # Extract the true commit date of the user's .alist entry file
         if alist_file.exists():
-            alist_timestamps[username] = os.path.getmtime(alist_file)
+            alist_timestamps[username] = get_git_modification_time(alist_file)
         
         if not json_file.exists():
             print(f"Warning: {json_file} not found")
