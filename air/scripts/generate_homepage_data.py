@@ -71,7 +71,35 @@ def get_git_modification_time(file_path):
         print(f"Warning: Could not get global git timestamp for {file_path.name}: {e}")
     return os.path.getmtime(file_path)
 
-def load_user_data():
+def get_top_ranks(sorted_items, score_key_fn, max_ranks=3):
+    """
+    Extracts items from a sorted list, including all ties, until 
+    max_ranks distinct scores have been processed.
+    """
+    if not sorted_items:
+        return []
+        
+    result = []
+    distinct_scores_seen = 0
+    last_score = None
+    
+    for item in sorted_items:
+        score = score_key_fn(item)
+        
+        # If it's a new score, track that we are moving to a lower rank level
+        if score != last_score:
+            distinct_scores_seen += 1
+            last_score = score
+            
+        # Once we've completely filled our target ranks, stop accepting new scores
+        if distinct_scores_seen > max_ranks:
+            break
+            
+        result.append(item)
+        
+    return result
+    
+    def load_user_data():
     """Load all user airport data and calculate statistics."""
     data_dir = get_data_dir()
     
