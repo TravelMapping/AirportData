@@ -216,7 +216,7 @@ def generate_homepage_data():
                 'user': user,
                 'airports_visited': count,
             }
-        : for i, (user, count) in enumerate(top_travelers)
+            for i, (user, count) in enumerate(top_travelers)
         ],
         'most_visited_airports': [
             {
