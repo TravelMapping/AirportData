@@ -118,6 +118,14 @@
     "visits": []
   },
   {
+    "code": "LNZ",
+    "name": "Linz-H\u00f6rsching Airport",
+    "lat": 48.235362,
+    "lon": 14.188128,
+    "country": "AUT",
+    "visits": []
+  },
+  {
     "code": "VIE",
     "name": "Vienna International Airport",
     "lat": 48.1108,
@@ -1363,6 +1371,14 @@
     "name": "Bologna Guglielmo Marconi Airport",
     "lat": 44.5356,
     "lon": 11.28821,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "BRI",
+    "name": "Bari Karol Wojty\u0142a International Airport",
+    "lat": 41.138901,
+    "lon": 16.760599,
     "country": "ITA",
     "visits": []
   },

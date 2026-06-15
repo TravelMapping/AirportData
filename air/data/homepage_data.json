@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-06-15T22:54:49.960518Z",
+  "stats": {
+    "active_users": 39,
+    "airports_mapped": 622,
+    "total_visits": 3646
+  },
+  "top_travelers": [
+    {
+      "rank": 1,
+      "user": "formulanone",
+      "airports_visited": 199
+    },
+    {
+      "rank": 2,
+      "user": "Jonkle",
+      "airports_visited": 193
+    },
+    {
+      "rank": 3,
+      "user": "JayhawkCO",
+      "airports_visited": 184
+    }
+  ],
+  "most_visited_airports": [
+    {
+      "rank": 1,
+      "code": "ATL",
+      "name": "Hartsfield–Jackson Atlanta International Airport",
+      "visitor_count": 27
+    },
+    {
+      "rank": 2,
+      "code": "DEN",
+      "name": "Denver International Airport",
+      "visitor_count": 27
+    },
+    {
+      "rank": 3,
+      "code": "MCO",
+      "name": "Orlando International Airport",
+      "visitor_count": 26
+    }
+  ],
+  "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=cl94\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">cl94</a> updated their flight map.",
+    "<a href=\"/AirportData/air/web/user.html?user=neptun\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">neptun</a> updated their flight map.",
+    "<a href=\"/AirportData/air/web/user.html?user=bejacob\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">bejacob</a> updated their flight map.",
+    "<a href=\"/AirportData/air/web/user.html?user=gpw\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">gpw</a> joined the site as a new traveler!",
+    "<a href=\"/AirportData/air/web/user.html?user=terescoj\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">terescoj</a> updated their flight map.",
+    "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map."
+  ],
+  "recently_added_airports": [
+    {
+      "code": "BRI",
+      "name": "Bari Karol Wojtyła International Airport"
+    },
+    {
+      "code": "LNZ",
+      "name": "Linz-Hörsching Airport"
+    }
+  ]
+}

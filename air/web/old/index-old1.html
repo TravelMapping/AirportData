@@ -125,8 +125,6 @@
         }
         .button-group {
             display: flex;
-            justify-content: center; /* This centers the items horizontally */
-            flex-wrap: wrap;        /* Prevents the buttons from clipping on small phone screens */
             gap: 1rem;
             margin-top: 1rem;
         }
@@ -238,19 +236,12 @@
 </div>
         </div>
 
-<div class="right-column" style="display: flex; flex-direction: column; gap: 2rem;">
+        <div class="right-column" style="display: flex; flex-direction: column; gap: 2rem;">
             
-            <div class="panel">
+<div class="panel">
                 <h2>Recent Updates</h2>
                 <ul id="recent-updates-list" style="padding-left: 1.2rem; margin: 0.5rem 0; line-height: 1.5;">
                     <li style="color: #666; list-style-type: none; margin-left: -1.2rem;">Loading live updates...</li>
-                </ul>
-            </div>
-
-            <div class="panel">
-                <h2>Recently Added Airports</h2>
-                <ul id="recently-added-list" style="padding-left: 1.2rem; margin: 0.5rem 0; line-height: 1.5;">
-                    <li style="color: #666; list-style-type: none; margin-left: -1.2rem;">Tracking system additions...</li>
                 </ul>
             </div>
         </div>

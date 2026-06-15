@@ -112,6 +112,14 @@
     "visits": []
   },
   {
+    "code": "LNZ",
+    "name": "Linz-H\u00f6rsching Airport",
+    "lat": 48.235362,
+    "lon": 14.188128,
+    "country": "AUT",
+    "visits": []
+  },
+  {
     "code": "VIE",
     "name": "Vienna International Airport",
     "lat": 48.1108,
@@ -477,11 +485,7 @@
     "lat": 51.1139,
     "lon": -114.0203,
     "country": "CAN",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "YYG",
@@ -545,7 +549,9 @@
     "lat": 47.4647,
     "lon": 8.5492,
     "country": "CHE",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "CJC",
@@ -697,7 +703,9 @@
     "lat": 50.10083,
     "lon": 14.26,
     "country": "CZE",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "DUS",
@@ -729,7 +737,11 @@
     "lat": 48.3538,
     "lon": 11.7861,
     "country": "DEU",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "TXL",
@@ -753,7 +765,9 @@
     "lat": 55.6136,
     "lon": 12.645,
     "country": "DNK",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "PUJ",
@@ -1050,9 +1064,8 @@
     "lon": -0.4543,
     "country": "GBR",
     "visits": [
-      "#",
       "A",
-      "destination"
+      "D"
     ]
   },
   {
@@ -1300,6 +1313,14 @@
     "name": "Bologna Guglielmo Marconi Airport",
     "lat": 44.5356,
     "lon": 11.28821,
+    "country": "ITA",
+    "visits": []
+  },
+  {
+    "code": "BRI",
+    "name": "Bari Karol Wojty\u0142a International Airport",
+    "lat": 41.138901,
+    "lon": 16.760599,
     "country": "ITA",
     "visits": []
   },
@@ -2173,7 +2194,11 @@
     "lat": 35.0403,
     "lon": -106.6092,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "ABR",
@@ -2253,7 +2278,10 @@
     "lat": 42.7492,
     "lon": -73.8017,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ANC",
@@ -2261,7 +2289,10 @@
     "lat": 61.1743,
     "lon": -149.9975,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "APA",
@@ -2301,7 +2332,9 @@
     "lat": 33.6407,
     "lon": -84.4277,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "ATW",
@@ -2413,11 +2446,7 @@
     "lat": 45.8078,
     "lon": -108.5428,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "BIS",
@@ -2490,9 +2519,7 @@
     "lon": -71.0096,
     "country": "USA",
     "visits": [
-      "#",
-      "A",
-      "destination"
+      "L"
     ]
   },
   {
@@ -2549,7 +2576,10 @@
     "lat": 42.9404,
     "lon": -78.7322,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "BUR",
@@ -2557,11 +2587,7 @@
     "lat": 34.2006,
     "lon": -118.3586,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "BWI",
@@ -2570,9 +2596,9 @@
     "lon": -76.6684,
     "country": "USA",
     "visits": [
-      "#",
       "A",
-      "destination"
+      "D",
+      "L"
     ]
   },
   {
@@ -2677,7 +2703,9 @@
     "lat": 35.214,
     "lon": -80.9431,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "CMH",
@@ -2685,7 +2713,9 @@
     "lat": 39.995,
     "lon": -82.8892,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "CMI",
@@ -2781,7 +2811,9 @@
     "lat": 39.0533,
     "lon": -84.663,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "CWA",
@@ -2789,11 +2821,7 @@
     "lat": 44.7778,
     "lon": -89.6658,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "CXC",
@@ -2833,11 +2861,7 @@
     "lat": 42.402,
     "lon": -90.7095,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "DCA",
@@ -2845,7 +2869,10 @@
     "lat": 38.8512,
     "lon": -77.0402,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "DEC",
@@ -2862,13 +2889,7 @@
     "lon": -104.6737,
     "country": "USA",
     "visits": [
-      "#",
-      "-",
-      "A",
-      "L",
-      "destination",
-      "has",
-      "layovers"
+      "L"
     ]
   },
   {
@@ -2925,11 +2946,7 @@
     "lat": 42.2162,
     "lon": -83.3554,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "DUT",
@@ -3026,9 +3043,8 @@
     "lon": -74.1745,
     "country": "USA",
     "visits": [
-      "#",
       "A",
-      "destination"
+      "D"
     ]
   },
   {
@@ -3205,11 +3221,7 @@
     "lat": 47.6199,
     "lon": -117.534,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "GGG",
@@ -3321,11 +3333,7 @@
     "lat": 47.48199844,
     "lon": -111.3710022,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "GUM",
@@ -3389,14 +3397,7 @@
     "lat": 21.3187,
     "lon": -157.9225,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "D",
-      "and",
-      "destination",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "HOU",
@@ -3444,7 +3445,9 @@
     "lat": 38.9519,
     "lon": -77.4481,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "IAG",
@@ -3532,7 +3535,9 @@
     "lat": 19.7214,
     "lon": -155.048,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "JAN",
@@ -3556,7 +3561,10 @@
     "lat": 40.6413,
     "lon": -73.7781,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "JNU",
@@ -3589,9 +3597,8 @@
     "lon": -156.045556,
     "country": "USA",
     "visits": [
-      "#",
       "A",
-      "destination"
+      "D"
     ]
   },
   {
@@ -3633,9 +3640,7 @@
     "lon": -115.1537,
     "country": "USA",
     "visits": [
-      "#",
-      "A",
-      "destination"
+      "L"
     ]
   },
   {
@@ -3645,9 +3650,7 @@
     "lon": -118.4085,
     "country": "USA",
     "visits": [
-      "#",
-      "D",
-      "origin"
+      "L"
     ]
   },
   {
@@ -3672,7 +3675,9 @@
     "lat": 39.813801,
     "lon": -82.927803,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "LEX",
@@ -3704,7 +3709,9 @@
     "lat": 40.7769,
     "lon": -73.874,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "LGB",
@@ -3848,7 +3855,11 @@
     "lat": 41.7868,
     "lon": -87.7522,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "MEI",
@@ -3864,11 +3875,7 @@
     "lat": 35.04,
     "lon": -89.9819,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "MFE",
@@ -3932,11 +3939,7 @@
     "lat": 42.9469,
     "lon": -87.9022,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "MKK",
@@ -3968,11 +3971,7 @@
     "lat": 41.4486,
     "lon": -90.5075,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "MLU",
@@ -4036,11 +4035,7 @@
     "lat": 43.14,
     "lon": -89.3375,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "MSO",
@@ -4048,11 +4043,7 @@
     "lat": 46.9164,
     "lon": -114.0906,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "MSP",
@@ -4061,13 +4052,8 @@
     "lon": -93.2223,
     "country": "USA",
     "visits": [
-      "#",
-      "-",
-      "D",
-      "L",
-      "has",
-      "layovers",
-      "origin"
+      "A",
+      "D"
     ]
   },
   {
@@ -4076,7 +4062,10 @@
     "lat": 29.9933,
     "lon": -90.2581,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MTJ",
@@ -4133,9 +4122,7 @@
     "lon": -122.2208,
     "country": "USA",
     "visits": [
-      "#",
-      "A",
-      "destination"
+      "X"
     ]
   },
   {
@@ -4209,17 +4196,7 @@
     "lon": -87.9073,
     "country": "USA",
     "visits": [
-      "#",
-      "-",
-      "A",
-      "D",
-      "L",
-      "and",
-      "both",
-      "dest",
-      "has",
-      "layovers",
-      "origin"
+      "L"
     ]
   },
   {
@@ -4348,11 +4325,7 @@
     "lat": 39.8744,
     "lon": -75.2424,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "PHX",
@@ -4361,9 +4334,7 @@
     "lon": -112.0,
     "country": "USA",
     "visits": [
-      "#",
-      "A",
-      "destination"
+      "L"
     ]
   },
   {
@@ -4524,11 +4495,7 @@
     "lat": 45.63119888305664,
     "lon": -89.46749877929688,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "RIC",
@@ -4552,7 +4519,10 @@
     "lat": 39.4992,
     "lon": -119.7681,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "ROA",
@@ -4688,7 +4658,11 @@
     "lat": 47.4502,
     "lon": -122.3088,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "SFO",
@@ -4696,7 +4670,9 @@
     "lat": 37.6213,
     "lon": -122.379,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "SGF",
@@ -4760,7 +4736,9 @@
     "lat": 40.7899,
     "lon": -111.9791,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "SMF",
@@ -4768,11 +4746,7 @@
     "lat": 38.6956,
     "lon": -121.5908,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "SNA",
@@ -4876,7 +4850,9 @@
     "lat": 41.5042,
     "lon": -74.1047,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "SYR",
