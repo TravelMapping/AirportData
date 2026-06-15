@@ -24,6 +24,30 @@ def count_visited_airports(airport_data):
             count += 1
     return count
 
+def get_file_commit_count(file_path):
+    """Counts how many times a file has been committed to the repository history."""
+    try:
+        # Check remote master tracking branch first, fall back to main if needed
+        branch = "origin/master"
+        check_branch = subprocess.run(['git', 'rev-parse', '--verify', 'origin/master'], 
+                                      stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if check_branch.returncode != 0:
+            branch = "origin/main"
+
+        result = subprocess.run(
+            ['git', 'rev-list', '--count', branch, '--', str(file_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True
+        )
+        commit_count_str = result.stdout.strip()
+        if commit_count_str:
+            return int(commit_count_str)
+    except Exception as e:
+        print(f"Warning: Could not get git commit count for {file_path.name}: {e}")
+    return 2 # Safe fallback: treat as a regular update if Git history is unreadable
+
 def get_git_modification_time(file_path):
     """Get the true Unix timestamp of the last global git commit touching a file."""
     try:
@@ -135,15 +159,25 @@ def generate_homepage_data():
         reverse=True
     )[:6]
     
+    data_dir = get_data_dir()
+    
     recent_updates = []
     for username, _ in recent_users:
         encoded_user = urllib.parse.quote(username)
         link_style = "color: #3182ce; font-weight: bold; text-decoration: none;"
         hover_effects = 'onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'"'
         user_link = f'<a href="/AirportData/air/web/user.html?user={encoded_user}" style="{link_style}" {hover_effects}>{username}</a>'
-        recent_updates.append(f"{user_link} updated their flight map.")
+        
+        # Check how many times this specific user file has been pushed to history
+        alist_file = data_dir / f'{username}.alist'
+        commit_count = get_file_commit_count(alist_file)
+        
+        # If it has only 1 commit ever, they are a brand-new traveler!
+        if commit_count == 1:
+            recent_updates.append(f"{user_link} joined the site as a new traveler!")
+        else:
+            recent_updates.append(f"{user_link} updated their flight map.")
     
-    data_dir = get_data_dir()
     airport_names = {}
     
     if all_users:
@@ -182,7 +216,7 @@ def generate_homepage_data():
                 'user': user,
                 'airports_visited': count,
             }
-            for i, (user, count) in enumerate(top_travelers)
+        : for i, (user, count) in enumerate(top_travelers)
         ],
         'most_visited_airports': [
             {
