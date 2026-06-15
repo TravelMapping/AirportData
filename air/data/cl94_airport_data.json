@@ -344,6 +344,16 @@
     "visits": []
   },
   {
+    "code": "YHM",
+    "name": "John C. Munro Hamilton International Airport",
+    "lat": 43.17348,
+    "lon": -79.931185,
+    "country": "CAN",
+    "visits": [
+      "X"
+    ]
+  },
+  {
     "code": "YHO",
     "name": "Hopedale Airport",
     "lat": 55.4489,
@@ -3118,6 +3128,16 @@
     "lon": -88.48840332030001,
     "country": "USA",
     "visits": []
+  },
+  {
+    "code": "FLG",
+    "name": "Flagstaff Pulliam Airport",
+    "lat": 35.139757,
+    "lon": -111.669826,
+    "country": "USA",
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "FLL",
