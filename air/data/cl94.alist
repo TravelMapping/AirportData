@@ -8,12 +8,19 @@ BUF A D
 BWI A D L
 
 CLT L
+CMH X
 CPH L
+CVG X
 
 DCA A D
 DEN L
 
 EWR A D
+
+FLG X
+
+IAD X
+ITO X
 
 JFK A D
 
@@ -21,6 +28,7 @@ KOA A D
 
 LAS L
 LAX L
+LCK X
 LGA D
 LHR A D
 
@@ -29,6 +37,7 @@ MSP A D
 MSY A D
 MUC A D L
 
+OAK X
 ORD L
 
 PHX L
@@ -39,5 +48,8 @@ RNO A D
 SEA A D L
 SFO L
 SLC L
+SWF X
+
+YHM X
 
 ZRH D
