@@ -38,5 +38,14 @@ jobs:
         git config --global user.name "GitHub Action Bot"
         git config --global user.email "actions@github.com"
         git add air/data/homepage_data.json
-        git diff-index --quiet HEAD || git commit -m "Automated homepage statistics update [skip ci]"
-        git push
+        
+        # Only commit if the python script actually changed the statistics
+        if ! git diff-index --quiet HEAD; then
+          git commit -m "Automated homepage statistics update [skip ci]"
+          
+          # Fetch any new changes that happened while the script ran and sync smoothly
+          git pull origin master --rebase
+          
+          # Force the bot to push straight to the master branch, bypassing detached HEAD errors
+          git push origin HEAD:master
+        fi
