@@ -114,18 +114,18 @@ function addRow(tableBody, values) {
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasX && !hasA && !hasD && !hasL) {
-    // Only 'X': A clean, softer charcoal circle
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-      <circle cx="12" cy="12" r="5" fill="#2d3748" />
+    // Only 'X': A clean, softer charcoal circle centered on the new 32x32 grid
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+      <circle cx="16" cy="16" r="5" fill="#2d3748" />
     </svg>`;
     return window.L.divIcon({
       html: svg,
       className: 'svg-icon',
-      iconSize: [24, 24],
+      iconSize: [32, 32],
+      iconAnchor: [16, 16] // Keeps the marker perfectly pinned over the coordinates
     });
   }
 
-  // Generate unique IDs for both masks so separate markers don't cross wires
   const randomId = Math.random().toString(36).substr(2, 9);
   const ringMaskId = `ring-cut-${randomId}`;
   const gapMaskId = `gap-cut-${randomId}`;
@@ -134,56 +134,56 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   
   svgParts.push('<defs>');
   
-  // MASK 1: Slices the blue ring open using a 12px wide 45° rotated square
+  // MASK 1: Slices the blue ring using a circle cutout centered at (16,16)
   if (hasL && (hasD || hasA)) {
     svgParts.push(`
       <mask id="${ringMaskId}">
-        <rect width="24" height="24" fill="white" />
-        <rect x="6" y="6" width="12" height="12" fill="black" transform="rotate(45 12 12)" />
+        <rect width="32" height="32" fill="white" />
+        <circle cx="16" cy="16" r="8.5" fill="black" />
       </mask>
     `);
   }
   
-  // MASK 2: Slices a true 1.5px horizontal gap straight through the center line (Y=12)
+  // MASK 2: Slices a true 1.5px horizontal gap straight through the new center line (Y=16)
   if (hasD && hasA) {
     svgParts.push(`
       <mask id="${gapMaskId}">
-        <rect width="24" height="24" fill="white" />
-        <line x1="2" y1="12" x2="22" y2="12" stroke="black" stroke-width="1.5" />
+        <rect width="32" height="32" fill="white" />
+        <line x1="2" y1="16" x2="30" y2="16" stroke="black" stroke-width="1.5" />
       </mask>
     `);
   }
   
   svgParts.push('</defs>');
 
-  // 1. Layover (L): Muted blue ring pushed outward (r="8") and thickened (stroke-width="7")
+  // 1. Layover (L): Perfect circular blue ring with 5px thickness, centered at (16,16)
   if (hasL) {
     const ringMaskAttr = (hasD || hasA) ? `mask="url(#${ringMaskId})"` : '';
-    svgParts.push(`<circle cx="12" cy="12" r="8" fill="none" stroke="#3182ce" stroke-width="7" ${ringMaskAttr} />`);
+    svgParts.push(`<circle cx="16" cy="16" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
   }
   
-  // 2. Wrap the triangles in a group tag. We ONLY apply the horizontal slicing gap mask 
-  // if BOTH an arrival and departure exist. Otherwise, it stays unmasked and fully visible.
+  // Apply the horizontal slicing gap mask to the triangle group if both exist
   const triMaskAttr = (hasD && hasA) ? `mask="url(#${gapMaskId})"` : '';
   svgParts.push(`<g ${triMaskAttr}>`);
 
-  // Departure (D): Shrunk down by 5% (Snug, clean dimensions)
+  // 2. Departure (D): Triangles shifted perfectly to center at (16,16)
   if (hasD) {
-    svgParts.push(`<polygon points="12,4.5 4.5,12 19.5,12" fill="#38a169" />`);
+    svgParts.push(`<polygon points="16,8.5 8.5,16 23.5,16" fill="#38a169" />`);
   }
   
-  // Arrival (A): Shrunk down by 5% (Snug, clean dimensions)
+  // 3. Arrival (A): Triangles shifted perfectly to center at (16,16)
   if (hasA) {
-    svgParts.push(`<polygon points="12,19.5 4.5,12 19.5,12" fill="#e53e3e" />`);
+    svgParts.push(`<polygon points="16,23.5 8.5,16 23.5,16" fill="#e53e3e" />`);
   }
   
   svgParts.push('</g>');
   
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">${svgParts.join('')}</svg>`;
   return window.L.divIcon({
     html: svg,
     className: 'svg-icon',
-    iconSize: [24, 24],
+    iconSize: [32, 32],
+    iconAnchor: [16, 16] // Pins the true geometric center over the map coordinate
   });
 }
 
