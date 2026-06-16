@@ -114,9 +114,9 @@ function addRow(tableBody, values) {
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasX && !hasA && !hasD && !hasL) {
-    // Only 'X': A clean, borderless black circle
+    // Only 'X': A slightly softer charcoal-black circle
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-      <circle cx="12" cy="12" r="5" fill="black" />
+      <circle cx="12" cy="12" r="5" fill="#2d3748" />
     </svg>`;
     return window.L.divIcon({
       html: svg,
@@ -127,21 +127,33 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
 
   const svgParts = [];
   
-  // 1. Layover (L): Converted to a 5px thick blue ring (stroke-width="5")
-  // Using fill="none" keeps the inside completely transparent.
-  // Radius is set to 7.5 so the total width (7.5 + 2.5 on each side) stays perfectly contained.
+  // Muted Color Palette:
+  // Layover: Softer slate blue (#3182ce)
+  // Departure: Clean emerald green (#38a169)
+  // Arrival: Softer crimson red (#e53e3e)
+
+  // 1. Layover (L): 5px thick ring with a 1.5px mask on either side
   if (hasL) {
-    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="blue" stroke-width="5" />`);
+    // Underlay: Creates the transparent-looking cutout boundary
+    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="white" stroke-width="8" />`);
+    // Core color shape
+    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" />`);
   }
   
-  // 2. Departure (D): Borderless green triangle
+  // 2. Departure (D): Triangle with a 1.5px mask outline
   if (hasD) {
-    svgParts.push(`<polygon points="12,4 4,12 20,12" fill="green" />`);
+    // Underlay: White boundary mask
+    svgParts.push(`<polygon points="12,4 4,12 20,12" fill="none" stroke="white" stroke-width="3" stroke-linejoin="round" />`);
+    // Core color shape
+    svgParts.push(`<polygon points="12,4 4,12 20,12" fill="#38a169" />`);
   }
   
-  // 3. Arrival (A): Borderless red triangle
+  // 3. Arrival (A): Triangle with a 1.5px mask outline
   if (hasA) {
-    svgParts.push(`<polygon points="12,20 4,12 20,12" fill="red" />`);
+    // Underlay: White boundary mask
+    svgParts.push(`<polygon points="12,20 4,12 20,12" fill="none" stroke="white" stroke-width="3" stroke-linejoin="round" />`);
+    // Core color shape
+    svgParts.push(`<polygon points="12,20 4,12 20,12" fill="#e53e3e" />`);
   }
   
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
