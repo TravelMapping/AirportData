@@ -114,7 +114,6 @@ function addRow(tableBody, values) {
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasX && !hasA && !hasD && !hasL) {
-    // Only 'X': A clean, softer charcoal circle centered on the new 32x32 grid
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
       <circle cx="16" cy="16" r="5" fill="#2d3748" />
     </svg>`;
@@ -122,29 +121,30 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
       html: svg,
       className: 'svg-icon',
       iconSize: [32, 32],
-      iconAnchor: [16, 16] // Keeps the marker perfectly pinned over the coordinates
+      iconAnchor: [16, 16]
     });
   }
 
   const randomId = Math.random().toString(36).substr(2, 9);
-  const ringMaskId = `ring-cut-${randomId}`;
+  const ringClipId = `ring-clip-${randomId}`;
   const gapMaskId = `gap-cut-${randomId}`;
   
   const svgParts = [];
   
   svgParts.push('<defs>');
   
-  // MASK 1: Slices the blue ring using a circle cutout centered at (16,16)
+  // A ClipPath defines the ONLY area where the ring is allowed to draw.
+  // By creating an outer circle and cutting out an inner circle geometrically,
+  // the browser maintains a flawless circular rendering engine path.
   if (hasL && (hasD || hasA)) {
     svgParts.push(`
-      <mask id="${ringMaskId}">
-        <rect width="32" height="32" fill="white" />
-        <circle cx="16" cy="16" r="8.5" fill="black" />
-      </mask>
+      <clipPath id="${ringClipId}">
+        <path d="M 0,0 L 32,0 L 32,32 L 0,32 Z M 16,7.5 A 8.5,8.5 0 1,0 16,24.5 A 8.5,8.5 0 1,0 16,7.5 Z" clip-rule="evenodd" />
+      </clipPath>
     `);
   }
   
-  // MASK 2: Slices a true 1.5px horizontal gap straight through the new center line (Y=16)
+  // Keeping the simple horizontal separation line mask for the triangles
   if (hasD && hasA) {
     svgParts.push(`
       <mask id="${gapMaskId}">
@@ -156,22 +156,21 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   
   svgParts.push('</defs>');
 
-  // 1. Layover (L): Perfect circular blue ring with 5px thickness, centered at (16,16)
+  // 1. Layover (L): Restored size, using geometric clipPath to guarantee it stays perfectly round
   if (hasL) {
-    const ringMaskAttr = (hasD || hasA) ? `mask="url(#${ringMaskId})"` : '';
-    svgParts.push(`<circle cx="16" cy="16" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
+    const ringClipAttr = (hasD || hasA) ? `clip-path="url(#${ringClipId})"` : '';
+    svgParts.push(`<circle cx="16" cy="16" r="11.5" fill="none" stroke="#3182ce" stroke-width="5" ${ringClipAttr} />`);
   }
   
-  // Apply the horizontal slicing gap mask to the triangle group if both exist
   const triMaskAttr = (hasD && hasA) ? `mask="url(#${gapMaskId})"` : '';
   svgParts.push(`<g ${triMaskAttr}>`);
 
-  // 2. Departure (D): Triangles shifted perfectly to center at (16,16)
+  // 2. Departure (D)
   if (hasD) {
     svgParts.push(`<polygon points="16,8.5 8.5,16 23.5,16" fill="#38a169" />`);
   }
   
-  // 3. Arrival (A): Triangles shifted perfectly to center at (16,16)
+  // 3. Arrival (A)
   if (hasA) {
     svgParts.push(`<polygon points="16,23.5 8.5,16 23.5,16" fill="#e53e3e" />`);
   }
@@ -183,7 +182,7 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     html: svg,
     className: 'svg-icon',
     iconSize: [32, 32],
-    iconAnchor: [16, 16] // Pins the true geometric center over the map coordinate
+    iconAnchor: [16, 16]
   });
 }
 
