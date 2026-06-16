@@ -17,10 +17,12 @@ def get_data_dir():
     return script_dir.parent / 'data'
 
 def count_visited_airports(airport_data):
-    """Count unique airports with at least one visit for a user."""
+    """Count unique airports with at least one valid visit (A, D, L) for a user."""
     count = 0
     for airport in airport_data:
-        if airport.get('visits') and len(airport['visits']) > 0:
+        # Check if they have visits, and filter out 'X' actions
+        valid_visits = [v for v in airport.get('visits', []) if v.get('action') in ['A', 'D', 'L']]
+        if len(valid_visits) > 0:
             count += 1
     return count
 
@@ -130,11 +132,14 @@ def load_user_data():
             user_airports[username] = visited_count
             
             for airport in airport_data:
-                if airport.get('visits') and len(airport['visits']) > 0:
+                # Only look at valid visits (A, D, L)
+                valid_visits = [v for v in airport.get('visits', []) if v.get('action') in ['A', 'D', 'L']]
+                
+                if len(valid_visits) > 0:
                     airport_code = airport['code']
                     airport_visitors[airport_code].add(username)
                     total_unique_airports.add(airport_code)
-                    total_visits += len(airport['visits'])
+                    total_visits += len(valid_visits)
         
         except json.JSONDecodeError as e:
             print(f"Error reading {json_file}: {e}")
