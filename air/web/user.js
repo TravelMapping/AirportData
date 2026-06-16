@@ -114,6 +114,7 @@ function addRow(tableBody, values) {
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasX && !hasA && !hasD && !hasL) {
+    // Only 'X': A clean, borderless black circle
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
       <circle cx="12" cy="12" r="5" fill="black" />
     </svg>`;
@@ -124,10 +125,19 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
+  // The 'gap' effect is achieved using a white stroke to slice through the shapes,
+  // providing a beautiful, clean separator without harsh black borders.
   const svgParts = [];
-  svgParts.push(`<circle cx="12" cy="12" r="10" stroke="black" fill="${hasL ? 'blue' : 'white'}" />`);
-  svgParts.push(`<polygon points="12,5 5,12 19,12" fill="${hasD ? 'green' : 'white'}" stroke="black" />`);
-  svgParts.push(`<polygon points="12,19 5,12 19,12" fill="${hasA ? 'red' : 'white'}" stroke="black" />`);
+  
+  // Base circle (Layover)
+  svgParts.push(`<circle cx="12" cy="12" r="10" fill="${hasL ? 'blue' : 'none'}" stroke="white" stroke-width="1.5" />`);
+  
+  // Top triangle (Departure) - Adjusted slightly to account for the separation gap
+  svgParts.push(`<polygon points="12,4 4,12 20,12" fill="${hasD ? 'green' : 'none'}" stroke="white" stroke-width="1.5" stroke-linejoin="round" />`);
+  
+  // Bottom triangle (Arrival) - Adjusted slightly to account for the separation gap
+  svgParts.push(`<polygon points="12,20 4,12 20,12" fill="${hasA ? 'red' : 'none'}" stroke="white" stroke-width="1.5" stroke-linejoin="round" />`);
+  
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
   return window.L.divIcon({
     html: svg,
