@@ -37,6 +37,35 @@
       margin-bottom: 1rem;
     }
 
+    /* Header & Navigation Layout */
+    .site-header {
+      margin-bottom: 2rem;
+    }
+    
+    .site-subtitle {
+      font-size: 1.1rem;
+      color: #718096;
+      margin-top: -1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .nav-link {
+      color: #3182ce;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
     /* Interactive Dropdown Styles */
     .controls-container {
       background-color: #ffffff;
@@ -69,19 +98,6 @@
 
     select:focus {
       border-color: #3182ce;
-    }
-
-    /* Back & Totals Layout */
-    .nav-link {
-      display: inline-block;
-      color: #3182ce;
-      font-weight: 600;
-      text-decoration: none;
-      margin-bottom: 1rem;
-    }
-
-    .nav-link:hover {
-      text-decoration: underline;
     }
 
     #totals {
@@ -210,15 +226,39 @@
       vertical-align: middle;
       margin-right: 0.5rem;
     }
+
+    /* Unified Footer Styles */
+    .site-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    
+    .site-footer a {
+      color: #3182ce;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-  <div id="backToSummary" style="display: none;">
-    <a href="user.html" class="nav-link">← See summary for all users</a>
-  </div>
-  
-  <h1 id="title">Visited Airports</h1>
+  <header class="site-header">
+    <div class="nav-bar">
+      <a href="../../index.html" class="nav-link">← Home</a>
+      <span id="nav-separator" style="display: none; color: #cbd5e0; margin: 0 0.25rem;">/</span>
+      <a id="backToSummary" href="user.html" class="nav-link" style="display: none;">All Travelers</a>
+    </div>
+    <h1 id="title">Visited Airports</h1>
+    <div class="site-subtitle">TM Airports Data Exploration</div>
+  </header>
   
   <div class="controls-container">
     <label for="userSelect">Select traveler:</label>
@@ -267,7 +307,14 @@
     <tbody></tbody>
   </table>
 
+  <footer class="site-footer">
+    <p>A project of <a href="https://travelmapping.net/" target="_blank" rel="noopener noreferrer">Travel Mapping</a></p>
+  </footer>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    console.log("Leaflet loaded?", typeof L, "L.marker?", typeof L.marker);
+  </script>
   <script src="user.js" defer></script>
 </body>
 </html>
