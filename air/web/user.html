@@ -8,12 +8,12 @@
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
   <style>
-    /* Global Base & Modern Fonts with Tailwind's Exact Smoothing */
+    /* Global Base & Modern Fonts */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased; /* Cleans up white text bleed on dark backgrounds */
-      -moz-osx-font-smoothing: grayscale;    /* Fixes font rendering for Firefox on Mac */
       color: #2d3748;
       background-color: #f7fafc;
       line-height: 1.6;
@@ -34,27 +34,6 @@
       max-width: 1200px;
       margin: 0 auto;
       text-align: center; /* Centers all inner text elements */
-    }
-
-    /* Target the large brand title to look exactly like index.html */
-    .site-header h1.main-brand-title {
-      font-family: inherit;
-      font-size: 2.25rem; /* Matches Tailwind's text-4xl */
-      font-weight: 800;    /* Restored to match Tailwind's font-extrabold */
-      margin: 0 0 0.25rem 0;
-      letter-spacing: -0.025em; /* Matches Tailwind's tracking-tight */
-      line-height: 2.5rem;
-      border-bottom: none; 
-      padding-bottom: 0;
-      color: #ffffff;
-    }
-
-    /* Target the small, pale blue subtitle paragraph */
-    .site-header p.site-subtitle {
-      font-size: 1.1rem;
-      color: #90cdf4; /* Very pale blue lettering */
-      font-weight: 400;
-      margin: 0;
     }
 
     /* Floating Breadcrumb Navigation over on the left margin */
@@ -110,20 +89,16 @@
       color: #4a5568;
     }
 
+    /* Prevent Tailwind from crushing native dropdowns */
     select {
-      padding: 0.5rem 2rem 0.5rem 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #cbd5e0;
-      border-radius: 6px;
-      background-color: #fff;
-      color: #2d3748;
+      padding: 0.5rem 2rem 0.5rem 0.75rem !important;
+      font-size: 1rem !important;
+      border: 1px solid #cbd5e0 !important;
+      border-radius: 6px !important;
+      background-color: #fff !important;
+      color: #2d3748 !important;
       cursor: pointer;
       outline: none;
-      transition: border-color 0.2s;
-    }
-
-    select:focus {
-      border-color: #3182ce;
     }
 
     #totals {
@@ -167,7 +142,6 @@
     th.sortable {
       cursor: pointer;
       position: relative;
-      transition: background-color 0.2s;
     }
 
     th.sortable:hover {
@@ -284,9 +258,9 @@
         <a id="backToSummary" href="user.html" class="nav-link" style="display: none;">All Travelers</a>
       </nav>
       
-      <h1 class="main-brand-title">TM Airports</h1>
+      <h1 class="text-4xl font-extrabold tracking-tight text-white mb-2">TM Airports</h1>
       
-      <p id="title" class="site-subtitle">Visited Airports</p>
+      <p id="title" class="text-lg text-blue-200 font-normal m-0">Visited Airports</p>
     </div>
   </header>
   
