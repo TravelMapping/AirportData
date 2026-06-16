@@ -15,40 +15,38 @@
       color: #2d3748;
       background-color: #f7fafc;
       line-height: 1.6;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
+      margin: 0;
+      padding: 0;
     }
 
-    h1, h2 {
-      color: #1a202c;
-      margin-top: 0;
-    }
-
-    h1 {
-      font-size: 2.25rem;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Header & Navigation Layout */
+    /* Brand Header Block matching index.html */
     .site-header {
+      background-color: #1a365d; /* Dark Blue */
+      color: white;
+      padding: 2rem 1.5rem;
       margin-bottom: 2rem;
     }
-    
-    .site-subtitle {
-      font-size: 1.1rem;
-      color: #718096;
-      margin-top: -1rem;
-      margin-bottom: 1.5rem;
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
+    .site-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin: 0 0 0.25rem 0;
+      letter-spacing: -0.025em;
+    }
+
+    .site-subtitle {
+      font-size: 1.1rem;
+      color: #90cdf4; /* Soft lighter blue accent */
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Inline Breadcrumb Navigation */
     .nav-bar {
       display: flex;
       align-items: center;
@@ -57,13 +55,27 @@
     }
 
     .nav-link {
-      color: #3182ce;
+      color: #90cdf4;
       font-weight: 600;
       text-decoration: none;
     }
 
     .nav-link:hover {
       text-decoration: underline;
+    }
+
+    /* Main Workspace Wrapper */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+    h2 {
+      color: #1a202c;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
     }
 
     /* Interactive Dropdown Styles */
@@ -189,7 +201,7 @@
     
     #userSummaryTable th:first-child, #userSummaryTable td:first-child,
     #airportTable th:first-child, #airportTable td:first-child {
-      text-align: left; /* Keep names and countries left-aligned for easy reading */
+      text-align: left;
     }
 
     /* Map Viewport Settings */
@@ -251,65 +263,71 @@
 <body>
 
   <header class="site-header">
-    <div class="nav-bar">
-      <a href="index.html" class="nav-link">← Home</a>
-      <span id="nav-separator" style="display: none; color: #cbd5e0; margin: 0 0.25rem;">/</span>
-      <a id="backToSummary" href="user.html" class="nav-link" style="display: none;">All Travelers</a>
+    <div class="header-content">
+      <nav class="nav-bar">
+        <a href="index.html" class="nav-link">← Home</a>
+        <span id="nav-separator" style="display: none; color: #718096; margin: 0 0.25rem;">/</span>
+        <a id="backToSummary" href="user.html" class="nav-link" style="display: none;">All Travelers</a>
+      </nav>
+      <div class="site-title">TM Airports</div>
+      <div class="site-subtitle">Visited Airports</div>
     </div>
-    <h1 id="title">Visited Airports</h1>
-    <div class="site-subtitle">TM Airports Data Exploration</div>
   </header>
   
-  <div class="controls-container">
-    <label for="userSelect">Select traveler:</label>
-    <select id="userSelect" aria-label="User selection menu"></select>
+  <main class="main-container">
     
-    <span id="totals" style="display:none;"></span>
-    
-    <label style="display:none;" id="showAllLabel">
-      <input type="checkbox" id="showAllCheckbox" aria-label="Toggle to show all airports"> Show unvisited airports
-    </label>
-  </div>
-  
-  <div id="map" style="display:none;"></div>
-  
-  <div id="userSummary" style="display:none;">
-    <h2>Traveler Summary</h2>
-    <div class="table-container">
-      <table id="userSummaryTable">
-        <thead>
-          <tr>
-            <th class="sortable" data-sort="user">User</th>
-            <th class="sortable" data-sort="total">Total Unique</th>
-            <th class="sortable" data-sort="arrivals">Arrivals</th>
-            <th class="sortable" data-sort="departures">Departures</th>
-            <th class="sortable" data-sort="layovers">Layovers</th>
-            <th class="sortable" data-sort="other">Other Tracked</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+    <div class="controls-container">
+      <label for="userSelect">Select traveler:</label>
+      <select id="userSelect" aria-label="User selection menu"></select>
+      
+      <span id="totals" style="display:none;"></span>
+      
+      <label style="display:none;" id="showAllLabel">
+        <input type="checkbox" id="showAllCheckbox" aria-label="Toggle to show all airports"> Show unvisited airports
+      </label>
     </div>
-  </div>
-  
-  <table id="airportTable" class="table-container" style="display:none;">
-    <thead>
-      <tr>
-        <th class="sortable">Country</th>
-        <th class="sortable">IATA</th>
-        <th class="sortable">Airport Name</th>
-        <th class="sortable">Arrival</th>
-        <th class="sortable">Departure</th>
-        <th class="sortable">Layover</th>
-        <th class="sortable">Other</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+    
+    <div id="map" style="display:none;"></div>
+    
+    <div id="userSummary" style="display:none;">
+      <h2>Traveler Summary</h2>
+      <div class="table-container">
+        <table id="userSummaryTable">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="user">User</th>
+              <th class="sortable" data-sort="total">Total Unique</th>
+              <th class="sortable" data-sort="arrivals">Arrivals</th>
+              <th class="sortable" data-sort="departures">Departures</th>
+              <th class="sortable" data-sort="layovers">Layovers</th>
+              <th class="sortable" data-sort="other">Other Tracked</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    
+    <table id="airportTable" class="table-container" style="display:none;">
+      <thead>
+        <tr>
+          <th class="sortable">Country</th>
+          <th class="sortable">IATA</th>
+          <th class="sortable">Airport Name</th>
+          <th class="sortable">Arrival</th>
+          <th class="sortable">Departure</th>
+          <th class="sortable">Layover</th>
+          <th class="sortable">Other</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-  <footer class="site-footer">
-    <p>A project of <a href="https://travelmapping.net/" target="_blank" rel="noopener noreferrer">Travel Mapping</a></p>
-  </footer>
+    <footer class="site-footer">
+      <p>A project of <a href="https://travelmapping.net/" target="_blank" rel="noopener noreferrer">Travel Mapping</a></p>
+    </footer>
+
+  </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
