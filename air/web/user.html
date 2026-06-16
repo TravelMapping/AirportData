@@ -19,49 +19,55 @@
       padding: 0;
     }
 
-    /* Brand Header Block matching index.html perfectly */
+    /* Brand Header Block matching index.html layout & centering */
     .site-header {
-      background-color: #1a365d;
+      background-color: #1a365d; /* Dark Blue */
       color: white;
       padding: 2rem 1.5rem;
       margin-bottom: 2rem;
+      position: relative; /* Allows the absolute positioning of navigation */
     }
 
     .header-content {
       max-width: 1200px;
       margin: 0 auto;
+      text-align: center; /* Centers all inner text elements */
     }
 
-    /* Target the h1 inside the blue header to look like index.html */
-    .site-header h1 {
+    /* Target the large brand title to look exactly like index.html */
+    .site-header h1.main-brand-title {
       font-size: 2.25rem;
       font-weight: 800;
       margin: 0 0 0.25rem 0;
       letter-spacing: -0.025em;
-      border-bottom: none; /* Strip off standard document rules */
+      border-bottom: none; 
       padding-bottom: 0;
+      color: #ffffff;
     }
 
-    /* Target the p subtitle tag inside the blue header */
+    /* Target the small, pale blue subtitle paragraph */
     .site-header p.site-subtitle {
       font-size: 1.1rem;
-      color: #90cdf4;
+      color: #90cdf4; /* Very pale blue lettering */
       font-weight: 400;
       margin: 0;
     }
 
-    /* Inline Breadcrumb Navigation links sitting above titles */
+    /* Floating Breadcrumb Navigation over on the left margin */
     .nav-bar {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      margin-bottom: 1rem;
     }
 
     .nav-link {
       color: #90cdf4;
       font-weight: 600;
       text-decoration: none;
+      font-size: 0.95rem;
     }
 
     .nav-link:hover {
@@ -183,7 +189,7 @@
     }
 
     tbody tr:hover {
-      background-color: #f0fff4; /* Light green highlights on row hover */
+      background-color: #f0fff4; 
     }
 
     /* Hyperlink Styling matching index.html */
@@ -273,8 +279,10 @@
         <span id="nav-separator" style="display: none; color: #718096; margin: 0 0.25rem;">/</span>
         <a id="backToSummary" href="user.html" class="nav-link" style="display: none;">All Travelers</a>
       </nav>
-      <h1 id="title">TM Airports</h1>
-      <p class="site-subtitle">Visited Airports</p>
+      
+      <h1 class="main-brand-title">TM Airports</h1>
+      
+      <p id="title" class="site-subtitle">Visited Airports</p>
     </div>
   </header>
   
