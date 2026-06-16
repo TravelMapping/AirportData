@@ -8,10 +8,9 @@
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
-  <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
-    /* Global Base & Modern Fonts */
+    /* Global Base & Modern Fonts to match index.html exactly */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: #2d3748;
@@ -28,12 +27,28 @@
       padding: 2rem 1.5rem;
       margin-bottom: 2rem;
       position: relative; /* Allows the absolute positioning of navigation */
+      text-align: center;
     }
 
     .header-content {
       max-width: 1200px;
       margin: 0 auto;
-      text-align: center; /* Centers all inner text elements */
+    }
+
+    /* Target h1 to precisely copy index.html style and font weight */
+    .site-header h1 {
+      margin: 0;
+      font-size: 2.5rem; /* Matches index.html size exactly */
+      font-weight: bold; /* Matches index.html default 700 weight exactly */
+      color: #ffffff;
+    }
+
+    /* Target subtitle to match index.html styling */
+    .site-header p.site-subtitle {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.1rem;
+      color: #90cdf4; /* Beautiful pale blue accent */
+      font-weight: normal;
     }
 
     /* Floating Breadcrumb Navigation over on the left margin */
@@ -89,16 +104,20 @@
       color: #4a5568;
     }
 
-    /* Protect dropdown custom styles from Tailwind overrides */
     select {
-      padding: 0.5rem 2rem 0.5rem 0.75rem !important;
-      font-size: 1rem !important;
-      border: 1px solid #cbd5e0 !important;
-      border-radius: 6px !important;
-      background-color: #fff !important;
-      color: #2d3748 !important;
+      padding: 0.5rem 2rem 0.5rem 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #2d3748;
       cursor: pointer;
       outline: none;
+      transition: border-color 0.2s;
+    }
+
+    select:focus {
+      border-color: #3182ce;
     }
 
     #totals {
@@ -142,6 +161,7 @@
     th.sortable {
       cursor: pointer;
       position: relative;
+      transition: background-color 0.2s;
     }
 
     th.sortable:hover {
@@ -258,9 +278,9 @@
         <a id="backToSummary" href="user.html" class="nav-link" style="display: none;">All Travelers</a>
       </nav>
       
-      <h1 class="text-4xl font-extrabold tracking-tight text-white mb-2">TM Airports</h1>
+      <h1>TM Airports</h1>
       
-      <p id="title" class="text-lg text-blue-200 font-normal m-0">Visited Airports</p>
+      <p id="title" class="site-subtitle">Visited Airports</p>
     </div>
   </header>
   
