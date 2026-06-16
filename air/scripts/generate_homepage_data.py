@@ -27,7 +27,6 @@ def count_visited_airports(airport_data):
 def get_file_commit_count(file_path):
     """Counts how many times a file has been committed to the repository history."""
     try:
-        # Check remote master tracking branch first, fall back to main if needed
         branch = "origin/master"
         check_branch = subprocess.run(['git', 'rev-parse', '--verify', 'origin/master'], 
                                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -46,7 +45,7 @@ def get_file_commit_count(file_path):
             return int(commit_count_str)
     except Exception as e:
         print(f"Warning: Could not get git commit count for {file_path.name}: {e}")
-    return 2 # Safe fallback: treat as a regular update if Git history is unreadable
+    return 2
 
 def get_git_modification_time(file_path):
     """Get the true Unix timestamp of the last global git commit touching a file."""
@@ -86,20 +85,18 @@ def get_top_ranks(sorted_items, score_key_fn, max_ranks=3):
     for item in sorted_items:
         score = score_key_fn(item)
         
-        # If it's a new score, track that we are moving to a lower rank level
         if score != last_score:
             distinct_scores_seen += 1
             last_score = score
             
-        # Once we've completely filled our target ranks, stop accepting new scores
         if distinct_scores_seen > max_ranks:
             break
             
         result.append(item)
         
     return result
-    
-    def load_user_data():
+
+def load_user_data():
     """Load all user airport data and calculate statistics."""
     data_dir = get_data_dir()
     
