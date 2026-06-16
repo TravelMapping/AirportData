@@ -77,7 +77,6 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem 2rem 1.5rem;
-      position: relative; /* Context for absolute positioning if map shifts layout */
     }
 
     h2 {
@@ -170,4 +169,232 @@
     }
 
     /* Sorting Chevron indicators */
-    th.sortable.asc::after { content: " ▲"; font-size: 0.7rem; color: #2b
+    th.sortable.asc::after { content: " ▲"; font-size: 0.7rem; color: #2b6cb0; }
+    th.sortable.desc::after { content: " ▼"; font-size: 0.7rem; color: #2b6cb0; }
+
+    td {
+      color: #4a5568;
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Zebra Striping on Rows */
+    tbody tr:nth-child(even) {
+      background-color: #f7fafc;
+    }
+
+    tbody tr:hover {
+      background-color: #f0fff4; 
+    }
+
+    /* Hyperlink Styling matching index.html */
+    a.user-link, td a {
+      text-decoration: none;
+      color: #3182ce;
+      font-weight: 600;
+    }
+
+    a.user-link:hover, td a:hover {
+      text-decoration: underline;
+    }
+
+    /* Alignment Tweaks */
+    #userSummaryTable th, #userSummaryTable td,
+    #airportTable th, #airportTable td {
+      text-align: center;
+    }
+    
+    #userSummaryTable th:first-child, #userSummaryTable td:first-child,
+    #airportTable th:first-child, #airportTable td:first-child {
+      text-align: left;
+    }
+
+    /* Map Viewport Settings */
+    #map {
+      height: 500px;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid #cbd5e0;
+    }
+
+    .svg-icon { text-align: center; }
+
+    /* Map Legend: Restructured to a perfect 2-column container */
+    .map-legend {
+      background-color: #ffffff;
+      border: 1px solid #cbd5e0;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      max-width: 320px;
+    }
+
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .legend-symbol {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .legend-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    /* Unified Footer Styles */
+    .site-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    
+    .site-footer a {
+      color: #3182ce;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <nav class="nav-bar">
+        <a href="index.html" class="nav-link">← Home</a>
+        <span id="nav-separator" style="display: none; color: #718096; margin: 0 0.25rem;">/</span>
+        <a id="backToSummary" href="user.html" class="nav-link" style="display: none;">All Travelers</a>
+      </nav>
+      
+      <h1>TM Airports</h1>
+      
+      <p id="title" class="site-subtitle">Visited Airports</p>
+    </div>
+  </header>
+  
+  <main class="main-container">
+    
+    <div class="controls-container">
+      <label for="userSelect">Select traveler:</label>
+      <select id="userSelect" aria-label="User selection menu"></select>
+      
+      <span id="totals" style="display:none;"></span>
+      
+      <label style="display:none;" id="showAllLabel">
+        <input type="checkbox" id="showAllCheckbox" aria-label="Toggle to show all airports"> Show unvisited airports
+      </label>
+    </div>
+    
+    <div id="map" style="display:none;"></div>
+    
+    <div id="htmlLegend" class="map-legend" style="display:none;">
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <circle cx="16" cy="16" r="5" fill="#2d3748" />
+          </svg>
+        </div>
+        <div class="legend-text">No Activity (X)</div>
+      </div>
+
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <circle cx="16" cy="16" r="9" fill="none" stroke="#3182ce" stroke-width="5" />
+          </svg>
+        </div>
+        <div class="legend-text">Layover Only (L)</div>
+      </div>
+
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <defs>
+              <mask id="leg-ring-cut">
+                <circle cx="16" cy="16" r="11.5" fill="white" />
+                <rect x="9.5" y="9.5" width="13" height="13" fill="black" transform="rotate(45 16 16)" />
+                <rect x="10.5" y="10.5" width="11" height="11" fill="black" transform="rotate(45 16 16)" />
+              </mask>
+              <mask id="leg-gap-cut">
+                <rect width="32" height="32" fill="white" />
+                <line x1="2" y1="16" x2="30" y2="16" stroke="black" stroke-width="1.5" />
+              </mask>
+            </defs>
+            <circle cx="16" cy="16" r="9" fill="none" stroke="#3182ce" stroke-width="5" mask="url(#leg-ring-cut)" />
+            <g mask="url(#leg-gap-cut)">
+              <polygon points="16,6.5 6.5,16 25.5,16" fill="#38a169" />
+              <polygon points="16,25.5 6.5,16 25.5,16" fill="#e53e3e" />
+            </g>
+          </svg>
+        </div>
+        <div class="legend-text">Full Activity (D & A with Layover)</div>
+      </div>
+    </div>
+    
+    <div id="userSummary" style="display:none;">
+      <h2>Traveler Summary</h2>
+      <div class="table-container">
+        <table id="userSummaryTable">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="user">User</th>
+              <th class="sortable" data-sort="total">Total Unique</th>
+              <th class="sortable" data-sort="arrivals">Arrivals</th>
+              <th class="sortable" data-sort="departures">Departures</th>
+              <th class="sortable" data-sort="layovers">Layovers</th>
+              <th class="sortable" data-sort="other">Other Tracked</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    
+    <table id="airportTable" class="table-container" style="display:none;">
+      <thead>
+        <tr>
+          <th class="sortable">Country</th>
+          <th class="sortable">IATA</th>
+          <th class="sortable">Airport Name</th>
+          <th class="sortable">Arrival</th>
+          <th class="sortable">Departure</th>
+          <th class="sortable">Layover</th>
+          <th class="sortable">Other</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <footer class="site-footer">
+      <p>A project of <a href="https://travelmapping.net/" target="_blank" rel="noopener noreferrer">Travel Mapping</a></p>
+    </footer>
+
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="user.js" defer></script>
+</body>
+</html>
