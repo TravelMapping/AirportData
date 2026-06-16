@@ -19,7 +19,7 @@
       padding: 0;
     }
 
-    /* Brand Header Block matching index.html */
+    /* Brand Header Block matching index.html perfectly */
     .site-header {
       background-color: #1a365d; /* Dark Blue */
       color: white;
@@ -32,14 +32,18 @@
       margin: 0 auto;
     }
 
-    .site-title {
+    /* Target the h1 inside the blue header */
+    .site-header h1 {
       font-size: 2.25rem;
       font-weight: 800;
       margin: 0 0 0.25rem 0;
       letter-spacing: -0.025em;
+      border-bottom: none; /* Removes standard title bottom borders */
+      padding-bottom: 0;
     }
 
-    .site-subtitle {
+    /* Target the subtitle paragraph inside the blue header */
+    .site-header p.site-subtitle {
       font-size: 1.1rem;
       color: #90cdf4; /* Soft lighter blue accent */
       font-weight: 400;
@@ -269,8 +273,8 @@
         <span id="nav-separator" style="display: none; color: #718096; margin: 0 0.25rem;">/</span>
         <a id="backToSummary" href="user.html" class="nav-link" style="display: none;">All Travelers</a>
       </nav>
-      <div class="site-title" id="title">TM Airports</div>
-      <div class="site-subtitle">Visited Airports</div>
+      <h1 id="title">TM Airports</h1>
+      <p class="site-subtitle">Visited Airports</p>
     </div>
   </header>
   
