@@ -156,10 +156,10 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   
   svgParts.push('</defs>');
 
-  // 1. Layover (L): Muted blue 5px thick ring
+  // 1. Layover (L): Muted blue ring pushed outward (r="8") and thickened (stroke-width="7")
   if (hasL) {
     const ringMaskAttr = (hasD || hasA) ? `mask="url(#${ringMaskId})"` : '';
-    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
+    svgParts.push(`<circle cx="12" cy="12" r="8" fill="none" stroke="#3182ce" stroke-width="7" ${ringMaskAttr} />`);
   }
   
   // 2. Wrap the triangles in a group tag. We ONLY apply the horizontal slicing gap mask 
