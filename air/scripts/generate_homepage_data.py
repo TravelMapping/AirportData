@@ -21,7 +21,7 @@ def count_visited_airports(airport_data):
     count = 0
     for airport in airport_data:
         # Check if they have visits, and filter out 'X' actions
-        valid_visits = [v for v in airport.get('visits', []) if v.get('action') in ['A', 'D', 'L']]
+        valid_visits = [v for v in airport.get('visits', []) if v in ['A', 'D', 'L']]
         if len(valid_visits) > 0:
             count += 1
     return count
@@ -132,8 +132,8 @@ def load_user_data():
             user_airports[username] = visited_count
             
             for airport in airport_data:
-                # Only look at valid visits (A, D, L)
-                valid_visits = [v for v in airport.get('visits', []) if v.get('action') in ['A', 'D', 'L']]
+                # Only look at valid visit strings (A, D, L) directly
+                valid_visits = [v for v in airport.get('visits', []) if v in ['A', 'D', 'L']]
                 
                 if len(valid_visits) > 0:
                     airport_code = airport['code']
