@@ -125,38 +125,43 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
-  // We use a unique ID for the mask element so the browser applies it cleanly
-  const maskId = `ring-cutout-${Math.random().toString(36).substr(2, 9)}`;
+  // Generate a unique ID so the browser isolates this marker's mask cleanly
+  const maskId = `global-cutout-${Math.random().toString(36).substr(2, 9)}`;
   const svgParts = [];
   
-  // 1. Define the dynamic hole-punch mask if triangles exist
-  if (hasL && (hasD || hasA)) {
-    svgParts.push(`
-      <defs>
-        <mask id="${maskId}">
-          <rect width="24" height="24" fill="white" />
-          <rect x="5.5" y="5.5" width="13" height="13" fill="black" transform="rotate(45 12 12)" />
-        </mask>
-      </defs>
-    `);
-  }
+  svgParts.push('<defs>');
+  svgParts.push(`
+    <mask id="${maskId}">
+      <rect width="24" height="24" fill="white" />
+      
+      <rect x="6" y="6" width="12" height="12" fill="black" transform="rotate(45 12 12)" />
+      
+      <line x1="2" y1="12" x2="22" y2="12" stroke="black" stroke-width="1.5" />
+    </mask>
+  `);
+  svgParts.push('</defs>');
 
-  // 2. Layover (L): Softer slate blue 5px thick ring
+  // 1. Layover (L): Muted blue 5px thick ring (Cut open by our multi-mask)
   if (hasL) {
-    // If triangles exist, we apply our diamond hole-punch mask to the ring
-    const maskAttr = (hasD || hasA) ? `mask="url(#${maskId})"` : '';
-    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" ${maskAttr} />`);
+    const ringMaskAttr = (hasD || hasA) ? `mask="url(#${maskId})"` : '';
+    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
   }
   
-  // 3. Departure (D): Borderless green triangle (Returned to original snug coordinates)
+  // Wrap the triangles in a group tag and apply the mask to them as well
+  const triMaskAttr = (hasD && hasA) ? `mask="url(#${maskId})"` : '';
+  svgParts.push(`<g ${triMaskAttr}>`);
+
+  // 2. Departure (D): Shrunk down by 5% (Snug, clean dimensions)
   if (hasD) {
-    svgParts.push(`<polygon points="12,4 4,12 20,12" fill="#38a169" />`);
+    svgParts.push(`<polygon points="12,4.5 4.5,12 19.5,12" fill="#38a169" />`);
   }
   
-  // 4. Arrival (A): Borderless red triangle (Returned to original snug coordinates)
+  // 3. Arrival (A): Shrunk down by 5% (Snug, clean dimensions)
   if (hasA) {
-    svgParts.push(`<polygon points="12,20 4,12 20,12" fill="#e53e3e" />`);
+    svgParts.push(`<polygon points="12,19.5 4.5,12 19.5,12" fill="#e53e3e" />`);
   }
+  
+  svgParts.push('</g>');
   
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
   return window.L.divIcon({
