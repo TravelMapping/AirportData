@@ -21,7 +21,7 @@
 
     /* Brand Header Block matching index.html perfectly */
     .site-header {
-      background-color: #1a365d; /* Dark Blue */
+      background-color: #1a365d;
       color: white;
       padding: 2rem 1.5rem;
       margin-bottom: 2rem;
@@ -32,25 +32,25 @@
       margin: 0 auto;
     }
 
-    /* Target the h1 inside the blue header */
+    /* Target the h1 inside the blue header to look like index.html */
     .site-header h1 {
       font-size: 2.25rem;
       font-weight: 800;
       margin: 0 0 0.25rem 0;
       letter-spacing: -0.025em;
-      border-bottom: none; /* Removes standard title bottom borders */
+      border-bottom: none; /* Strip off standard document rules */
       padding-bottom: 0;
     }
 
-    /* Target the subtitle paragraph inside the blue header */
+    /* Target the p subtitle tag inside the blue header */
     .site-header p.site-subtitle {
       font-size: 1.1rem;
-      color: #90cdf4; /* Soft lighter blue accent */
+      color: #90cdf4;
       font-weight: 400;
       margin: 0;
     }
 
-    /* Inline Breadcrumb Navigation */
+    /* Inline Breadcrumb Navigation links sitting above titles */
     .nav-bar {
       display: flex;
       align-items: center;
@@ -266,7 +266,7 @@
 </head>
 <body>
 
-<header class="site-header">
+  <header class="site-header">
     <div class="header-content">
       <nav class="nav-bar">
         <a href="index.html" class="nav-link">← Home</a>
