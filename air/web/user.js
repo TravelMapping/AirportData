@@ -78,7 +78,8 @@ const countryMap = {
 
 function setTitleAndVisibility(user) {
   if (user) {
-    title.textContent = `${user}'s Visited Airports`;
+    // Personal Mode: Title remains "TM Airports" (handled by HTML), subtitle changes to centered user context
+    title.textContent = `${user} - Visited Airports`;
     document.title = `${user}'s Visited Airports`;
     totalsSpan.style.display = "inline";
     mapDiv.style.display = "block";
@@ -86,6 +87,7 @@ function setTitleAndVisibility(user) {
     userSummaryDiv.style.display = "none";
     showAllLabel.style.display = "inline";
   } else {
+    // Global Mode: Title remains "TM Airports", subtitle resets to standard centered text
     title.textContent = "Visited Airports";
     document.title = "Traveler Summary";
     totalsSpan.style.display = "none";
@@ -112,7 +114,6 @@ function addRow(tableBody, values) {
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasX && !hasA && !hasD && !hasL) {
-    // Only 'X': draw a smaller black circle instead of square
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
       <circle cx="12" cy="12" r="5" fill="black" />
     </svg>`;
@@ -123,7 +124,6 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
-  // Normal logic for A/D/L icons
   const svgParts = [];
   svgParts.push(`<circle cx="12" cy="12" r="10" stroke="black" fill="${hasL ? 'blue' : 'white'}" />`);
   svgParts.push(`<polygon points="12,5 5,12 19,12" fill="${hasD ? 'green' : 'white'}" stroke="black" />`);
@@ -204,7 +204,7 @@ function displayUserAirports(airportList) {
     if (ap.visits.includes("D")) stats.departures++;
     if (ap.visits.includes("L")) stats.layovers++;
 
-        if (ap.lat && ap.lon) {
+    if (ap.lat && ap.lon) {
       const hasA = ap.visits.includes("A");
       const hasD = ap.visits.includes("D");
       const hasL = ap.visits.includes("L");
@@ -253,7 +253,6 @@ function displayUserSummary(userList) {
         if (hasD) departures++;
         if (hasL) layovers++;
 
-        // If has visits, but none of A, D, L — count as Other
         if (!hasA && !hasD && !hasL && (ap.visits.length > 0)) {
           other++;
         }
@@ -267,7 +266,7 @@ function displayUserSummary(userList) {
         arrivals.toString(),
         departures.toString(),
         layovers.toString(),
-        other.toString()   // <-- Add this for Other
+        other.toString()
       ];
 
       addRow(userSummaryTableBody, row);
@@ -279,7 +278,6 @@ function displayUserSummary(userList) {
   });
 }
 
-// Simple table sorter
 function enableTableSorting() {
   document.querySelectorAll("th.sortable").forEach(header => {
     header.addEventListener("click", () => {
@@ -305,7 +303,6 @@ function enableTableSorting() {
         }
       });
 
-      // Update direction classes
       header.parentNode.querySelectorAll("th").forEach(th => {
         th.classList.remove("asc", "desc");
       });
@@ -316,7 +313,6 @@ function enableTableSorting() {
   });
 }
 
-// Event listeners
 userSelect.addEventListener("change", () => {
   const selected = userSelect.value;
   window.location.href = `user.html?user=${encodeURIComponent(selected)}`;
@@ -328,7 +324,6 @@ showAllCheckbox.addEventListener("change", () => {
   }
 });
 
-// Initialize userSelect options before deciding which mode:
 function loadData() {
   fetch("../data/manifest.json")
     .then(res => res.json())
@@ -346,14 +341,12 @@ function loadData() {
 
       const navSeparator = document.getElementById("nav-separator");
       if (selectedUser) {
-        // User mode
         backToSummaryLink.style.display = "inline";
         navSeparator.style.display = "inline";
 
         const airports = await fetchUserData(selectedUser);
         displayUserAirports(airports);
       } else {
-        // Summary mode
         backToSummaryLink.style.display = "none";
         navSeparator.style.display = "none";
 
@@ -362,6 +355,5 @@ function loadData() {
     });
 }
 
-// Run initial loading
 loadData();
 enableTableSorting();
