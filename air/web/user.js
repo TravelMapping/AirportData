@@ -125,23 +125,37 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
+  // We use a unique ID for the mask element so the browser applies it cleanly
+  const maskId = `ring-cutout-${Math.random().toString(36).substr(2, 9)}`;
   const svgParts = [];
   
-  // 1. Layover (L): Softer slate blue 5px thick ring (No background mask under it)
+  // 1. Define the dynamic hole-punch mask if triangles exist
+  if (hasL && (hasD || hasA)) {
+    svgParts.push(`
+      <defs>
+        <mask id="${maskId}">
+          <rect width="24" height="24" fill="white" />
+          <rect x="5.5" y="5.5" width="13" height="13" fill="black" transform="rotate(45 12 12)" />
+        </mask>
+      </defs>
+    `);
+  }
+
+  // 2. Layover (L): Softer slate blue 5px thick ring
   if (hasL) {
-    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" />`);
+    // If triangles exist, we apply our diamond hole-punch mask to the ring
+    const maskAttr = (hasD || hasA) ? `mask="url(#${maskId})"` : '';
+    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" ${maskAttr} />`);
   }
   
-  // 2. Departure (D): Shrunk and pulled up by 1 pixel to create a real transparent gap
-  // Original coordinates: "12,4 4,12 20,12"
+  // 3. Departure (D): Borderless green triangle (Returned to original snug coordinates)
   if (hasD) {
-    svgParts.push(`<polygon points="12,3 5,11 19,11" fill="#38a169" />`);
+    svgParts.push(`<polygon points="12,4 4,12 20,12" fill="#38a169" />`);
   }
   
-  // 3. Arrival (A): Shrunk and pulled down by 1 pixel to create a real transparent gap
-  // Original coordinates: "12,20 4,12 20,12"
+  // 4. Arrival (A): Borderless red triangle (Returned to original snug coordinates)
   if (hasA) {
-    svgParts.push(`<polygon points="12,21 5,13 19,13" fill="#e53e3e" />`);
+    svgParts.push(`<polygon points="12,20 4,12 20,12" fill="#e53e3e" />`);
   }
   
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
