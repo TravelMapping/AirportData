@@ -114,7 +114,6 @@ function addRow(tableBody, values) {
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasX && !hasA && !hasD && !hasL) {
-    // Only 'X': A clean, softer charcoal circle
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
       <circle cx="16" cy="16" r="5" fill="#2d3748" />
     </svg>`;
@@ -126,7 +125,6 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
-  // Generate unique IDs for both masks so separate markers don't cross wires
   const randomId = Math.random().toString(36).substr(2, 9);
   const ringMaskId = `ring-cut-${randomId}`;
   const gapMaskId = `gap-cut-${randomId}`;
@@ -135,17 +133,20 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   
   svgParts.push('<defs>');
   
-  // MASK 1: The restored 45° rotated diamond square mask, sized to allow a tight, clean overlap gap
+  // Multi-layered Ring Mask to completely isolate the outer edge from flattening
   if (hasL && (hasD || hasA)) {
     svgParts.push(`
       <mask id="${ringMaskId}">
         <circle cx="16" cy="16" r="11.5" fill="white" />
+        
         <rect x="9.5" y="9.5" width="13" height="13" fill="black" transform="rotate(45 16 16)" />
+        
+        <rect x="10.5" y="10.5" width="11" height="11" fill="black" transform="rotate(45 16 16)" />
       </mask>
     `);
   }
   
-  // MASK 2: Slices a true 1.5px horizontal gap straight through the center line (Y=16)
+  // MASK 2: Slices the 1.5px horizontal gap straight through the center line (Y=16)
   if (hasD && hasA) {
     svgParts.push(`
       <mask id="${gapMaskId}">
@@ -157,7 +158,7 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   
   svgParts.push('</defs>');
 
-  // 1. Layover (L): Bolder blue ring (r="9", stroke-width="5") cut cleanly by the diamond mask
+  // 1. Layover (L): Blue ring (r="9", stroke-width="5")
   if (hasL) {
     const ringMaskAttr = (hasD || hasA) ? `mask="url(#${ringMaskId})"` : '';
     svgParts.push(`<circle cx="16" cy="16" r="9" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
@@ -167,12 +168,12 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   const triMaskAttr = (hasD && hasA) ? `mask="url(#${gapMaskId})"` : '';
   svgParts.push(`<g ${triMaskAttr}>`);
 
-  // 2. Departure (D): Arrow points perfectly proportioned to interact with the diamond cutout
+  // 2. Departure (D)
   if (hasD) {
     svgParts.push(`<polygon points="16,6.5 6.5,16 25.5,16" fill="#38a169" />`);
   }
   
-  // 3. Arrival (A): Arrow points perfectly proportioned to interact with the diamond cutout
+  // 3. Arrival (A)
   if (hasA) {
     svgParts.push(`<polygon points="16,25.5 6.5,16 25.5,16" fill="#e53e3e" />`);
   }
