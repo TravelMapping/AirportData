@@ -113,6 +113,7 @@ function addRow(tableBody, values) {
 }
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
+  // Case 1: Just 'Other' activity (X) -> Simple sharp center dot
   if (hasX && !hasA && !hasD && !hasL) {
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
       <circle cx="16" cy="16" r="5" fill="#2d3748" />
@@ -125,60 +126,27 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
-  const randomId = Math.random().toString(36).substr(2, 9);
-  const ringMaskId = `ring-cut-${randomId}`;
-  const gapMaskId = `gap-cut-${randomId}`;
-  
   const svgParts = [];
   
-  svgParts.push('<defs>');
-  
-  // Multi-layered Ring Mask to completely isolate the outer edge from flattening
-  if (hasL && (hasD || hasA)) {
-    svgParts.push(`
-      <mask id="${ringMaskId}">
-        <circle cx="16" cy="16" r="11.5" fill="white" />
-        
-        <rect x="9.5" y="9.5" width="13" height="13" fill="black" transform="rotate(45 16 16)" />
-        
-        <rect x="10.5" y="10.5" width="11" height="11" fill="black" transform="rotate(45 16 16)" />
-      </mask>
-    `);
-  }
-  
-  // MASK 2: Slices the 1.5px horizontal gap straight through the center line (Y=16)
-  if (hasD && hasA) {
-    svgParts.push(`
-      <mask id="${gapMaskId}">
-        <rect width="32" height="32" fill="white" />
-        <line x1="2" y1="16" x2="30" y2="16" stroke="black" stroke-width="1.5" />
-      </mask>
-    `);
-  }
-  
-  svgParts.push('</defs>');
-
-  // 1. Layover (L): Blue ring (r="9", stroke-width="5")
+  // 1. Layover Blue Ring (Rendered underneath triangles to ensure zero overlapping glitches)
   if (hasL) {
-    const ringMaskAttr = (hasD || hasA) ? `mask="url(#${ringMaskId})"` : '';
-    svgParts.push(`<circle cx="16" cy="16" r="9" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
+    // Sharp integer attributes: Center 16,16 with clear 4px thick stroke on an integer radius
+    svgParts.push(`<circle cx="16" cy="16" r="10" fill="none" stroke="#3182ce" stroke-width="4" />`);
   }
-  
-  // Wrap the triangles in a group tag and apply the horizontal gap mask if both exist
-  const triMaskAttr = (hasD && hasA) ? `mask="url(#${gapMaskId})"` : '';
-  svgParts.push(`<g ${triMaskAttr}>`);
 
-  // 2. Departure (D)
+  // 2. Departure (Green Triangle pointing up)
   if (hasD) {
-    svgParts.push(`<polygon points="16,6.5 6.5,16 25.5,16" fill="#38a169" />`);
+    // If the marker also has an arrival, we pull the baseline up 1px to create an explicit separation gap
+    const bottomY = hasA ? 15 : 16; 
+    svgParts.push(`<polygon points="16,4 6,16 26,16" fill="#38a169" stroke="#276749" stroke-width="1" />`);
   }
   
-  // 3. Arrival (A)
+  // 3. Arrival (Red Triangle pointing down)
   if (hasA) {
-    svgParts.push(`<polygon points="16,25.5 6.5,16 25.5,16" fill="#e53e3e" />`);
+    // If the marker also has a departure, we push the top down 1px to create an explicit separation gap
+    const topY = hasD ? 17 : 16;
+    svgParts.push(`<polygon points="16,28 6,16 26,16" fill="#e53e3e" stroke="#9b2c2c" stroke-width="1" />`);
   }
-  
-  svgParts.push('</g>');
   
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">${svgParts.join('')}</svg>`;
   return window.L.divIcon({
@@ -215,14 +183,60 @@ function clearMarkers() {
 }
 
 function addMapLegend() {
-  const legend = document.createElement("div");
-  legend.className = "map-legend";
-  legend.innerHTML = `
-    <svg width="20" height="20"><polygon points="10,3 3,10 17,10" fill="green" stroke="black"/></svg> Departure
-    <svg width="20" height="20"><polygon points="10,17 3,10 17,10" fill="red" stroke="black"/></svg> Arrival
-    <svg width="20" height="20"><circle cx="10" cy="10" r="8" stroke="black" fill="blue"/></svg> Layover
-  `;
-  document.getElementById("map").appendChild(legend);
+  // Prevent duplicate legends if the function runs multiple times
+  if (document.querySelector(".map-legend")) return;
+
+  const legendControl = L.control({ position: "bottomleft" });
+
+  legendControl.onAdd = function () {
+    const div = L.DomUtil.create("div", "map-legend");
+    div.innerHTML = `
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <circle cx="16" cy="16" r="5" fill="#2d3748" />
+          </svg>
+        </div>
+        <div class="legend-text">Other Visited / Pickup / Tour (X)</div>
+      </div>
+
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <circle cx="16" cy="16" r="9" fill="none" stroke="#3182ce" stroke-width="5" />
+          </svg>
+        </div>
+        <div class="legend-text">Layover Only (L)</div>
+      </div>
+
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <defs>
+              <mask id="leg-ring-cut">
+                <circle cx="16" cy="16" r="11.5" fill="white" />
+                <rect x="9.5" y="9.5" width="13" height="13" fill="black" transform="rotate(45 16 16)" />
+                <rect x="10.5" y="10.5" width="11" height="11" fill="black" transform="rotate(45 16 16)" />
+              </mask>
+              <mask id="leg-gap-cut">
+                <rect width="32" height="32" fill="white" />
+                <line x1="2" y1="16" x2="30" y2="16" stroke="black" stroke-width="1.5" />
+              </mask>
+            </defs>
+            <circle cx="16" cy="16" r="9" fill="none" stroke="#3182ce" stroke-width="5" mask="url(#leg-ring-cut)" />
+            <g mask="url(#leg-gap-cut)">
+              <polygon points="16,6.5 6.5,16 25.5,16" fill="#38a169" />
+              <polygon points="16,25.5 6.5,16 25.5,16" fill="#e53e3e" />
+            </g>
+          </svg>
+        </div>
+        <div class="legend-text">Full Activity (Arrival & Departure combo)</div>
+      </div>
+    `;
+    return div;
+  };
+
+  legendControl.addTo(map);
 }
 
 function fetchUserData(user) {
