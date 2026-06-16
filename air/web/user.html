@@ -223,18 +223,20 @@
 
     .svg-icon { text-align: center; }
 
-    /* Map Legend: Restructured to a perfect 2-column container */
+    /* Map Legend: Restructured to fit perfectly over the Leaflet map */
     .map-legend {
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.95); /* Slight transparency looks great over maps */
       border: 1px solid #cbd5e0;
       padding: 0.75rem 1rem;
       border-radius: 8px;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      margin: 1.5rem 0;
       display: flex;
       flex-direction: column;
       gap: 0.65rem;
       max-width: 320px;
+      /* Crucial fix for Leaflet controls integration: */
+      margin: 0 !important; 
+      pointer-events: auto;
     }
 
     .legend-row {
@@ -310,16 +312,6 @@
     
     <div id="map" style="display:none;"></div>
     
-  <div id="htmlLegend" class="map-legend">
-    <div class="legend-row">
-        <div class="legend-symbol">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-            <circle cx="16" cy="16" r="5" fill="#2d3748" />
-          </svg>
-        </div>
-        <div class="legend-text">No Activity (X)</div>
-      </div>
-
       <div class="legend-row">
         <div class="legend-symbol">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
