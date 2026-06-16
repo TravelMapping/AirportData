@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-16T00:37:43.138278Z",
+  "generated_at": "2026-06-16T01:47:47.310155Z",
   "stats": {
     "active_users": 39,
-    "airports_mapped": 622,
-    "total_visits": 3646
+    "airports_mapped": 563,
+    "total_visits": 3490
   },
   "top_travelers": [
     {
@@ -13,13 +13,13 @@
     },
     {
       "rank": 2,
-      "user": "Jonkle",
-      "airports_visited": 193
+      "user": "JayhawkCO",
+      "airports_visited": 180
     },
     {
       "rank": 3,
-      "user": "JayhawkCO",
-      "airports_visited": 184
+      "user": "Jonkle",
+      "airports_visited": 178
     }
   ],
   "most_visited_airports": [
@@ -30,19 +30,19 @@
       "visitor_count": 27
     },
     {
-      "rank": 1,
+      "rank": 2,
       "code": "DEN",
       "name": "Denver International Airport",
-      "visitor_count": 27
+      "visitor_count": 26
     },
     {
-      "rank": 3,
+      "rank": 2,
       "code": "MCO",
       "name": "Orlando International Airport",
       "visitor_count": 26
     },
     {
-      "rank": 3,
+      "rank": 2,
       "code": "LAX",
       "name": "Los Angeles International Airport",
       "visitor_count": 26
