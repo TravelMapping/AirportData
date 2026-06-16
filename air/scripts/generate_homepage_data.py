@@ -72,27 +72,25 @@ def get_git_modification_time(file_path):
 
 def get_top_ranks(sorted_items, score_key_fn, max_ranks=3):
     """
-    Extracts items from a sorted list, including all ties, until 
-    max_ranks distinct scores have been processed.
+    Extracts items from a sorted list, including all ties, cutting off
+    once max_ranks or more items have been included.
     """
     if not sorted_items:
         return []
         
     result = []
-    distinct_scores_seen = 0
     last_score = None
     
     for item in sorted_items:
         score = score_key_fn(item)
         
-        if score != last_score:
-            distinct_scores_seen += 1
-            last_score = score
-            
-        if distinct_scores_seen > max_ranks:
+        # If we have already collected 3 or more items, AND we have moved 
+        # down to a strictly lower score, we stop.
+        if len(result) >= max_ranks and score != last_score:
             break
             
         result.append(item)
+        last_score = score
         
     return result
 
