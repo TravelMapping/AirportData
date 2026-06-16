@@ -125,38 +125,54 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
-  // Generate a unique ID so the browser isolates this marker's mask cleanly
-  const maskId = `global-cutout-${Math.random().toString(36).substr(2, 9)}`;
+  // Generate unique IDs for both masks so separate markers don't cross wires
+  const randomId = Math.random().toString(36).substr(2, 9);
+  const ringMaskId = `ring-cut-${randomId}`;
+  const gapMaskId = `gap-cut-${randomId}`;
+  
   const svgParts = [];
   
   svgParts.push('<defs>');
-  svgParts.push(`
-    <mask id="${maskId}">
-      <rect width="24" height="24" fill="white" />
-      
-      <rect x="6" y="6" width="12" height="12" fill="black" transform="rotate(45 12 12)" />
-      
-      <line x1="2" y1="12" x2="22" y2="12" stroke="black" stroke-width="1.5" />
-    </mask>
-  `);
+  
+  // MASK 1: Slices the blue ring open using a 12px wide 45° rotated square
+  if (hasL && (hasD || hasA)) {
+    svgParts.push(`
+      <mask id="${ringMaskId}">
+        <rect width="24" height="24" fill="white" />
+        <rect x="6" y="6" width="12" height="12" fill="black" transform="rotate(45 12 12)" />
+      </mask>
+    `);
+  }
+  
+  // MASK 2: Slices a true 1.5px horizontal gap straight through the center line (Y=12)
+  if (hasD && hasA) {
+    svgParts.push(`
+      <mask id="${gapMaskId}">
+        <rect width="24" height="24" fill="white" />
+        <line x1="2" y1="12" x2="22" y2="12" stroke="black" stroke-width="1.5" />
+      </mask>
+    `);
+  }
+  
   svgParts.push('</defs>');
 
-  // 1. Layover (L): Muted blue 5px thick ring (Cut open by our multi-mask)
+  // 1. Layover (L): Muted blue 5px thick ring
   if (hasL) {
-    const ringMaskAttr = (hasD || hasA) ? `mask="url(#${maskId})"` : '';
+    const ringMaskAttr = (hasD || hasA) ? `mask="url(#${ringMaskId})"` : '';
     svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
   }
   
-  // Wrap the triangles in a group tag and apply the mask to them as well
-  const triMaskAttr = (hasD && hasA) ? `mask="url(#${maskId})"` : '';
+  // 2. Wrap the triangles in a group tag. We ONLY apply the horizontal slicing gap mask 
+  // if BOTH an arrival and departure exist. Otherwise, it stays unmasked and fully visible.
+  const triMaskAttr = (hasD && hasA) ? `mask="url(#${gapMaskId})"` : '';
   svgParts.push(`<g ${triMaskAttr}>`);
 
-  // 2. Departure (D): Shrunk down by 5% (Snug, clean dimensions)
+  // Departure (D): Shrunk down by 5% (Snug, clean dimensions)
   if (hasD) {
     svgParts.push(`<polygon points="12,4.5 4.5,12 19.5,12" fill="#38a169" />`);
   }
   
-  // 3. Arrival (A): Shrunk down by 5% (Snug, clean dimensions)
+  // Arrival (A): Shrunk down by 5% (Snug, clean dimensions)
   if (hasA) {
     svgParts.push(`<polygon points="12,19.5 4.5,12 19.5,12" fill="#e53e3e" />`);
   }
