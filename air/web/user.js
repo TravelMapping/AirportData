@@ -114,6 +114,7 @@ function addRow(tableBody, values) {
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasX && !hasA && !hasD && !hasL) {
+    // Only 'X': A clean, softer charcoal circle
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
       <circle cx="16" cy="16" r="5" fill="#2d3748" />
     </svg>`;
@@ -126,25 +127,26 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   }
 
   const randomId = Math.random().toString(36).substr(2, 9);
-  const ringClipId = `ring-clip-${randomId}`;
+  const ringMaskId = `ring-cut-${randomId}`;
   const gapMaskId = `gap-cut-${randomId}`;
   
   const svgParts = [];
   
   svgParts.push('<defs>');
   
-  // A ClipPath defines the ONLY area where the ring is allowed to draw.
-  // By creating an outer circle and cutting out an inner circle geometrically,
-  // the browser maintains a flawless circular rendering engine path.
+  // MASK 1: A perfect circle cutout (r="6.5"). 
+  // By using a circle instead of a rotated square, we completely avoid the rendering bug.
+  // This size allows the corners of the triangles to overlap the inner edge of the blue ring.
   if (hasL && (hasD || hasA)) {
     svgParts.push(`
-      <clipPath id="${ringClipId}">
-        <path d="M 0,0 L 32,0 L 32,32 L 0,32 Z M 16,7.5 A 8.5,8.5 0 1,0 16,24.5 A 8.5,8.5 0 1,0 16,7.5 Z" clip-rule="evenodd" />
-      </clipPath>
+      <mask id="${ringMaskId}">
+        <rect width="32" height="32" fill="white" />
+        <circle cx="16" cy="16" r="6.5" fill="black" />
+      </mask>
     `);
   }
   
-  // Keeping the simple horizontal separation line mask for the triangles
+  // MASK 2: Slices the 1.5px horizontal gap straight through the center line (Y=16)
   if (hasD && hasA) {
     svgParts.push(`
       <mask id="${gapMaskId}">
@@ -156,23 +158,24 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   
   svgParts.push('</defs>');
 
-  // 1. Layover (L): Restored size, using geometric clipPath to guarantee it stays perfectly round
+  // 1. Layover (L): Perfectly circular blue ring (r="9", stroke-width="5")
   if (hasL) {
-    const ringClipAttr = (hasD || hasA) ? `clip-path="url(#${ringClipId})"` : '';
-    svgParts.push(`<circle cx="16" cy="16" r="11.5" fill="none" stroke="#3182ce" stroke-width="5" ${ringClipAttr} />`);
+    const ringMaskAttr = (hasD || hasA) ? `mask="url(#${ringMaskId})"` : '';
+    svgParts.push(`<circle cx="16" cy="16" r="9" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
   }
   
+  // Wrap the triangles in a group tag and apply the horizontal gap mask if both exist
   const triMaskAttr = (hasD && hasA) ? `mask="url(#${gapMaskId})"` : '';
   svgParts.push(`<g ${triMaskAttr}>`);
 
-  // 2. Departure (D)
+  // 2. Departure (D): Triangles sized to beautifully overlap the inner ring edge
   if (hasD) {
-    svgParts.push(`<polygon points="16,8.5 8.5,16 23.5,16" fill="#38a169" />`);
+    svgParts.push(`<polygon points="16,6.5 6.5,16 25.5,16" fill="#38a169" />`);
   }
   
-  // 3. Arrival (A)
+  // 3. Arrival (A): Triangles sized to beautifully overlap the inner ring edge
   if (hasA) {
-    svgParts.push(`<polygon points="16,23.5 8.5,16 23.5,16" fill="#e53e3e" />`);
+    svgParts.push(`<polygon points="16,25.5 6.5,16 25.5,16" fill="#e53e3e" />`);
   }
   
   svgParts.push('</g>');
