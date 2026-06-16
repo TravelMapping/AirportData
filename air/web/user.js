@@ -125,18 +125,24 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
-  // The 'gap' effect is achieved using a white stroke to slice through the shapes,
-  // providing a beautiful, clean separator without harsh black borders.
   const svgParts = [];
   
-  // Base circle (Layover)
-  svgParts.push(`<circle cx="12" cy="12" r="10" fill="${hasL ? 'blue' : 'none'}" stroke="white" stroke-width="1.5" />`);
+  // 1. Layover (L): Converted to a 5px thick blue ring (stroke-width="5")
+  // Using fill="none" keeps the inside completely transparent.
+  // Radius is set to 7.5 so the total width (7.5 + 2.5 on each side) stays perfectly contained.
+  if (hasL) {
+    svgParts.push(`<circle cx="12" cy="12" r="7.5" fill="none" stroke="blue" stroke-width="5" />`);
+  }
   
-  // Top triangle (Departure) - Adjusted slightly to account for the separation gap
-  svgParts.push(`<polygon points="12,4 4,12 20,12" fill="${hasD ? 'green' : 'none'}" stroke="white" stroke-width="1.5" stroke-linejoin="round" />`);
+  // 2. Departure (D): Borderless green triangle
+  if (hasD) {
+    svgParts.push(`<polygon points="12,4 4,12 20,12" fill="green" />`);
+  }
   
-  // Bottom triangle (Arrival) - Adjusted slightly to account for the separation gap
-  svgParts.push(`<polygon points="12,20 4,12 20,12" fill="${hasA ? 'red' : 'none'}" stroke="white" stroke-width="1.5" stroke-linejoin="round" />`);
+  // 3. Arrival (A): Borderless red triangle
+  if (hasA) {
+    svgParts.push(`<polygon points="12,20 4,12 20,12" fill="red" />`);
+  }
   
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
   return window.L.divIcon({
