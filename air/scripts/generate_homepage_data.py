@@ -162,21 +162,25 @@ def generate_homepage_data():
     all_users = [u for u in data['users'] if data['user_airports'].get(u, 0) > 0]
     active_users_count = len(all_users)
     
-    top_travelers = sorted(
+    all_sorted_travelers = sorted(
         data['user_airports'].items(),
         key=lambda x: x[1],
         reverse=True
-    )[:3]
+    )
+    # Automatically includes ties for 3rd place
+    top_travelers = get_top_ranks(all_sorted_travelers, score_key_fn=lambda x: x[1])
     
     airport_visitors_list = [
         (code, visitors)
         for code, visitors in data['airport_visitors'].items()
     ]
-    most_visited = sorted(
+    all_sorted_airports = sorted(
         airport_visitors_list,
         key=lambda x: len(x[1]),
         reverse=True
-    )[:3]
+    )
+    # Automatically includes ties for 3rd place
+    most_visited = get_top_ranks(all_sorted_airports, score_key_fn=lambda x: len(x[1]))
     
     active_timestamps = {
         user: ts for user, ts in data['alist_timestamps'].items() if user in all_users
@@ -240,20 +244,20 @@ def generate_homepage_data():
         },
         'top_travelers': [
             {
-                'rank': i + 1,
+                'rank': sum(1 for _, c in top_travelers if c > count) + 1,
                 'user': user,
                 'airports_visited': count,
             }
-            for i, (user, count) in enumerate(top_travelers)
+            for user, count in top_travelers
         ],
         'most_visited_airports': [
             {
-                'rank': i + 1,
+                'rank': sum(1 for _, v in most_visited if len(v) > len(visitors)) + 1,
                 'code': code,
                 'name': airport_names.get(code, 'Unknown Airport'),
                 'visitor_count': len(visitors),
             }
-            for i, (code, visitors) in enumerate(most_visited)
+            for code, visitors in most_visited
         ],
         'recent_updates': recent_updates,
         'recently_added_airports': recently_added
