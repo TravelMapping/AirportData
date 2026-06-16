@@ -139,7 +139,7 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasL && (hasD || hasA)) {
     svgParts.push(`
       <mask id="${ringMaskId}">
-        <rect width="32" height="32" fill="white" />
+        <circle cx="16" cy="16" r="11.5" fill="white" />
         <rect x="9.5" y="9.5" width="13" height="13" fill="black" transform="rotate(45 16 16)" />
       </mask>
     `);
