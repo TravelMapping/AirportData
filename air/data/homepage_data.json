@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T00:31:39.843390Z",
+  "generated_at": "2026-06-16T00:37:43.138278Z",
   "stats": {
     "active_users": 39,
     "airports_mapped": 622,
@@ -46,18 +46,6 @@
       "code": "LAX",
       "name": "Los Angeles International Airport",
       "visitor_count": 26
-    },
-    {
-      "rank": 5,
-      "code": "ORD",
-      "name": "O'Hare International Airport",
-      "visitor_count": 24
-    },
-    {
-      "rank": 5,
-      "code": "SEA",
-      "name": "Seattle–Tacoma International Airport",
-      "visitor_count": 24
     }
   ],
   "recent_updates": [
