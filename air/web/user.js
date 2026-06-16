@@ -138,7 +138,18 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
 
 function createMapIfNeeded() {
   if (!map) {
-    map = L.map("map").setView([20, 0], 2);
+    // 1. Define the hard bounds of the map (South-West corner, North-East corner)
+    const southWest = L.latLng(-90, -180);
+    const northEast = L.latLng(90, 180);
+    const worldBounds = L.latLngBounds(southWest, northEast);
+
+    // 2. Initialize the map with the bounding limits applied
+    map = L.map("map", {
+      maxBounds: worldBounds,        // Locks the camera pan area
+      maxBoundsViscosity: 1.0,       // 1.0 = hard wall (0.0 = elastic bounce)
+      minZoom: 2                     // Stops users from zooming out so far that the map tiles duplicate
+    }).setView([20, 0], 2);
+
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: '&copy; OpenStreetMap contributors',
     }).addTo(map);
