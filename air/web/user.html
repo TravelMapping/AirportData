@@ -9,9 +9,11 @@
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
   <style>
-    /* Global Base & Modern Fonts */
+    /* Global Base & Modern Fonts with Tailwind's Exact Smoothing */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased; /* Cleans up white text bleed on dark backgrounds */
+      -moz-osx-font-smoothing: grayscale;    /* Fixes font rendering for Firefox on Mac */
       color: #2d3748;
       background-color: #f7fafc;
       line-height: 1.6;
@@ -37,10 +39,11 @@
     /* Target the large brand title to look exactly like index.html */
     .site-header h1.main-brand-title {
       font-family: inherit;
-      font-size: 2.25rem;
-      font-weight: 700; /* Adjusted from 800 to 700 to fix the over-bolding text crowding */
+      font-size: 2.25rem; /* Matches Tailwind's text-4xl */
+      font-weight: 800;    /* Restored to match Tailwind's font-extrabold */
       margin: 0 0 0.25rem 0;
-      letter-spacing: normal; /* Reset to match standard homepage spacing */
+      letter-spacing: -0.025em; /* Matches Tailwind's tracking-tight */
+      line-height: 2.5rem;
       border-bottom: none; 
       padding-bottom: 0;
       color: #ffffff;
