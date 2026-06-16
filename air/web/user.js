@@ -344,15 +344,18 @@ function loadData() {
 
       setTitleAndVisibility(selectedUser);
 
+      const navSeparator = document.getElementById("nav-separator");
       if (selectedUser) {
         // User mode
-        backToSummaryLink.style.display = "block";
+        backToSummaryLink.style.display = "inline";
+        navSeparator.style.display = "inline";
 
         const airports = await fetchUserData(selectedUser);
         displayUserAirports(airports);
       } else {
         // Summary mode
         backToSummaryLink.style.display = "none";
+        navSeparator.style.display = "none";
 
         displayUserSummary(users);
       }
