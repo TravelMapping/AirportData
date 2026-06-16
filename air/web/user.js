@@ -126,6 +126,7 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
+  // Generate unique IDs for both masks so separate markers don't cross wires
   const randomId = Math.random().toString(36).substr(2, 9);
   const ringMaskId = `ring-cut-${randomId}`;
   const gapMaskId = `gap-cut-${randomId}`;
@@ -134,19 +135,17 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   
   svgParts.push('<defs>');
   
-  // MASK 1: A perfect circle cutout (r="6.5"). 
-  // By using a circle instead of a rotated square, we completely avoid the rendering bug.
-  // This size allows the corners of the triangles to overlap the inner edge of the blue ring.
+  // MASK 1: The restored 45° rotated diamond square mask, sized to allow a tight, clean overlap gap
   if (hasL && (hasD || hasA)) {
     svgParts.push(`
       <mask id="${ringMaskId}">
         <rect width="32" height="32" fill="white" />
-        <circle cx="16" cy="16" r="6.5" fill="black" />
+        <rect x="9.5" y="9.5" width="13" height="13" fill="black" transform="rotate(45 16 16)" />
       </mask>
     `);
   }
   
-  // MASK 2: Slices the 1.5px horizontal gap straight through the center line (Y=16)
+  // MASK 2: Slices a true 1.5px horizontal gap straight through the center line (Y=16)
   if (hasD && hasA) {
     svgParts.push(`
       <mask id="${gapMaskId}">
@@ -158,7 +157,7 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   
   svgParts.push('</defs>');
 
-  // 1. Layover (L): Perfectly circular blue ring (r="9", stroke-width="5")
+  // 1. Layover (L): Bolder blue ring (r="9", stroke-width="5") cut cleanly by the diamond mask
   if (hasL) {
     const ringMaskAttr = (hasD || hasA) ? `mask="url(#${ringMaskId})"` : '';
     svgParts.push(`<circle cx="16" cy="16" r="9" fill="none" stroke="#3182ce" stroke-width="5" ${ringMaskAttr} />`);
@@ -168,12 +167,12 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   const triMaskAttr = (hasD && hasA) ? `mask="url(#${gapMaskId})"` : '';
   svgParts.push(`<g ${triMaskAttr}>`);
 
-  // 2. Departure (D): Triangles sized to beautifully overlap the inner ring edge
+  // 2. Departure (D): Arrow points perfectly proportioned to interact with the diamond cutout
   if (hasD) {
     svgParts.push(`<polygon points="16,6.5 6.5,16 25.5,16" fill="#38a169" />`);
   }
   
-  // 3. Arrival (A): Triangles sized to beautifully overlap the inner ring edge
+  // 3. Arrival (A): Arrow points perfectly proportioned to interact with the diamond cutout
   if (hasA) {
     svgParts.push(`<polygon points="16,25.5 6.5,16 25.5,16" fill="#e53e3e" />`);
   }
