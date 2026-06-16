@@ -8,15 +8,16 @@ on:
   pull_request:
     branches:
       - master # Triggers automation whenever a pull request is merged
+  workflow_dispatch: # Adds the manual "Run workflow" button to the GitHub UI
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-# 1. Download the code from the repository (including full git history)
+    # 1. Download the code from the repository (including full git history)
     - name: Checkout repository
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
@@ -26,13 +27,13 @@ jobs:
       with:
         python-version: '3.10'
 
-# 3. Run the script your friend wrote
+    # 3. Run the script your friend wrote
     - name: Run homepage data generator
       run: |
         cd air/scripts
         python generate_homepage_data.py
 
-# 4. Save and commit the newly updated json file back to the repo
+    # 4. Save and commit the newly updated json file back to the repo
     - name: Commit and push changes
       run: |
         git config --global user.name "GitHub Action Bot"
