@@ -26,11 +26,11 @@ const countryMap = {
   KAZ: "Kazakhstan", KEN: "Kenya", KIR: "Kiribati", KWT: "Kuwait",
   KGZ: "Kyrgyzstan", LAO: "Laos", LVA: "Latvia", LBN: "Lebanon",
   LSO: "Lesotho", LBR: "Liberia", LBY: "Libya", LIE: "Liechtenstein",
-  LTU: "Lithuania", LUX: "Luxembourg", MDG: "Madagascar", MWI: "Malawi",
+  LTU: "Lithuania", LUX: "School", MDG: "Madagascar", MWI: "Malawi",
   MYS: "Malaysia", MDV: "Maldives", MLI: "Mali", MLT: "Malta",
   MRT: "Mauritania", MUS: "Mauritius", MEX: "Mexico", MDA: "Moldova",
   MCO: "Monaco", MNG: "Mongolia", MNE: "Montenegro", MAR: "Morocco",
-  MOZ: "Boom", MMR: "Myanmar", NAM: "Namibia", NPL: "Nepal",
+  MOZ: "Mozambique", MMR: "Myanmar", NAM: "Namibia", NPL: "Nepal",
   NLD: "Netherlands", NZL: "New Zealand", NIC: "Nicaragua", NER: "Niger",
   NGA: "Nigeria", PRK: "North Korea", MKD: "North Macedonia", NOR: "Norway",
   OMN: "Oman", PAK: "Pakistan", PAN: "Panama", PNG: "Papua New Guinea",
@@ -74,7 +74,6 @@ function initMap() {
   const northEast = L.latLng(90, 180);
   const worldBounds = L.latLngBounds(southWest, northEast);
 
-  // Define basemap layers matching user.html tokens
   const openStreetMap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; OpenStreetMap contributors',
   });
@@ -90,7 +89,6 @@ function initMap() {
     maxZoom: 16
   });
 
-  // Read saved basemap string preference, fall back to CartoDB Positron
   const savedBasemap = localStorage.getItem("preferred_basemap") || "Light Gray (CartoDB)";
   let initialLayer = cartoDbPositron;
   if (savedBasemap === "Standard Map (OSM)") initialLayer = openStreetMap;
@@ -111,13 +109,12 @@ function initMap() {
 
   L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
 
-  // Hook choice updates directly to local retention key
   map.on('baselayerchange', (e) => {
     localStorage.setItem("preferred_basemap", e.name);
   });
 
   selectedMarker = L.circleMarker([0, 0], {
-    radius: 11,
+    radius: 12,
     color: '#1a202c',
     fillColor: '#3182ce',
     fillOpacity: 1,
@@ -167,14 +164,43 @@ function highlightSelectedMarker(code) {
   pulseMarker(selectedMarker);
 }
   
-function updateHomeLinkVisibility() {
+function updateHeaderAndNav() {
   const params = new URLSearchParams(window.location.search);
   const airportParam = params.get('airport');
+  
   const homeLink = document.getElementById('homeLink');
+  const navSeparator = document.getElementById('nav-separator');
+  const backToSummary = document.getElementById('backToSummary');
+  const siteSubtitle = document.getElementById('siteSubtitle');
+
   if (airportParam && airports[airportParam.toUpperCase()]) {
-    homeLink.style.display = 'block';
+    const code = airportParam.toUpperCase();
+    const airport = airports[code];
+    
+    // Local Mode Layout Adjustments
+    navSeparator.style.display = 'inline';
+    backToSummary.style.display = 'inline';
+    siteSubtitle.textContent = `${airport.name} (${code}) Visitors`;
+    document.title = `${code} Visitors - Airport Tracker`;
+    
+    document.getElementById('visitCount').style.display = 'inline-block';
+    document.getElementById('globalTableContainer').style.display = 'none';
   } else {
-    homeLink.style.display = 'none';
+    // Global Mode Layout Adjustments
+    navSeparator.style.display = 'none';
+    backToSummary.style.display = 'none';
+    siteSubtitle.textContent = 'Airport Visit Tracker';
+    document.title = 'Airport Visit Tracker';
+    
+    document.getElementById('visitCount').style.display = 'none';
+    document.getElementById('globalTableContainer').style.display = 'block';
+    document.getElementById('localTableContainer').style.display = 'none';
+    document.getElementById('xOnlyHeader').style.display = 'none';
+    document.getElementById('xOnlyTableContainer').style.display = 'none';
+    
+    if (map && selectedMarker && map.hasLayer(selectedMarker)) {
+      map.removeLayer(selectedMarker);
+    }
   }
 }
 
@@ -201,14 +227,13 @@ async function fetchAirports() {
   placeAllMarkers();
   createAirportSummaryTable();
 
-  updateHomeLinkVisibility();
+  updateHeaderAndNav();
+  
   const params = new URLSearchParams(window.location.search);
   const airportParam = params.get('airport');
   if (airportParam && airports[airportParam.toUpperCase()]) {
     document.getElementById('airportSelect').value = airportParam.toUpperCase();
     handleAirportSelect(airportParam.toUpperCase());
-  } else {
-    document.getElementById('airportSummaryTable').style.display = 'table';
   }
 }
 
@@ -369,7 +394,6 @@ function placeAllMarkers() {
     });
   }
 
-  // Intercept popup link clicks to cycle local states without breaking routes
   map.on('popupopen', () => {
     const link = document.querySelector('.popup-loc-link');
     if (link) {
@@ -419,8 +443,9 @@ function updateTable(data) {
   const tbody = document.querySelector('#visitTable tbody');
   tbody.innerHTML = '';
   const users = Object.keys(data).sort();
-  document.getElementById('visitTable').style.display = users.length ? 'table' : 'none';
-  document.getElementById('visitCount').textContent = `${users.length} user(s) have flying visits to this airport.`;
+  
+  document.getElementById('localTableContainer').style.display = users.length ? 'block' : 'none';
+  document.getElementById('visitCount').textContent = `${users.length} user(s) with flying visits`;
 
   for (const user of users) {
     const row = document.createElement('tr');
@@ -441,13 +466,13 @@ function updateTable(data) {
   
 function updateXOnlyList(usernames) {
   const header = document.getElementById('xOnlyHeader');
-  const table  = document.getElementById('xOnlyTable');
-  const tbody  = table.querySelector('tbody');
+  const container = document.getElementById('xOnlyTableContainer');
+  const tbody = document.querySelector('#xOnlyTable tbody');
 
   tbody.innerHTML = '';
   if (usernames.length > 0) {
-    header.style.display = '';
-    table.style.display  = 'table';
+    header.style.display = 'block';
+    container.style.display = 'block';
 
     usernames.sort().forEach(user => {
       const tr = document.createElement('tr');
@@ -461,7 +486,7 @@ function updateXOnlyList(usernames) {
     });
   } else {
     header.style.display = 'none';
-    table.style.display  = 'none';
+    container.style.display = 'none';
   }
 }
 
@@ -469,10 +494,8 @@ async function handleAirportSelect(code) {
   const airport = airports[code];
   if (!airport) return;
 
-  document.getElementById('airportSummaryTable').style.display = 'none';
-
   history.replaceState(null, '', `?airport=${code}`);
-  updateHomeLinkVisibility();
+  updateHeaderAndNav();
 
   map.setView([airport.lat, airport.lon], 11);
   highlightSelectedMarker(code);
@@ -501,10 +524,7 @@ async function handleAirportSelect(code) {
   
 function createAirportSummaryTable() {
   const params = new URLSearchParams(window.location.search);
-  if (params.get('airport')) {
-    document.getElementById('airportSummaryTable').style.display = 'none';
-    return;
-  }
+  if (params.get('airport')) return;
 
   const tbody = document.querySelector('#airportSummaryTable tbody');
   tbody.innerHTML = '';
@@ -554,8 +574,6 @@ function createAirportSummaryTable() {
 
     tbody.appendChild(tr);
   }
-
-  document.getElementById('airportSummaryTable').style.display = 'table';
 }
 
 function enableTableSorting() {
@@ -573,7 +591,6 @@ function enableTableSorting() {
         const valB = b.cells[index].textContent.trim();
 
         if (sortType === 'number') {
-          // Splitting on space isolates the true flying integer count, cleanly throwing out "+ X"
           const numA = parseInt(valA.split(" ")[0]) || 0;
           const numB = parseInt(valB.split(" ")[0]) || 0;
           return ascending ? numA - numB : numB - numA;
