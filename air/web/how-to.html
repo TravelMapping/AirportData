@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TM Airports - Submission & Maintenance Guide</title>
+  <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+  
+  <style>
+    /* Global Base & Modern Fonts to match index.html exactly */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #2d3748;
+      background-color: #f7fafc;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Brand Header Block matching index.html layout & centering */
+    .site-header {
+      background-color: #1a365d; /* Dark Blue */
+      color: white;
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+      position: relative; /* Allows the absolute positioning of navigation */
+      text-align: center;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Target h1 to precisely copy index.html style and font weight */
+    .site-header h1 {
+      margin: 0;
+      font-size: 2.5rem; /* Matches index.html size exactly */
+      font-weight: bold; /* Matches index.html default 700 weight exactly */
+      color: #ffffff;
+    }
+
+    /* Target subtitle to match index.html styling */
+    .site-header p.site-subtitle {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.1rem;
+      color: #90cdf4; /* Beautiful pale blue accent */
+      font-weight: normal;
+    }
+
+    /* Floating Breadcrumb Navigation over on the left margin */
+    .nav-bar {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: #90cdf4;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Workspace Wrapper (Optimized max-width for documentation readability) */
+    .main-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+    h2 {
+      color: #1a202c;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      color: #2b6cb0;
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Styled documentation syntax variables to keep aesthetic cohesive */
+    code {
+      background-color: #edf2f7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Courier, monospace;
+      font-size: 0.9em;
+      color: #2d3748;
+    }
+
+    pre {
+      background-color: #1a202c;
+      color: #edf2f7;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: Courier, monospace;
+      font-size: 0.95rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    /* Contextual callout block transformations mapping note/warning utilities */
+    .note-box {
+      background-color: #ebf8ff;
+      border-left: 4px solid #3182ce;
+      color: #2b6cb0;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .warning-box {
+      background-color: #fffaf0;
+      border-left: 4px solid #dd6b20;
+      color: #dd6b20;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    /* Elegant & High-Contrast Tables */
+    .table-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background-color: #ebf8ff;
+      color: #2b6cb0;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    td {
+      color: #4a5568;
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Zebra Striping on Rows */
+    tbody tr:nth-child(even) {
+      background-color: #f7fafc;
+    }
+
+    /* Hyperlink Styling matching index.html / user.html layout */
+    a, td a {
+      text-decoration: none;
+      color: #3182ce;
+      font-weight: 600;
+    }
+
+    a:hover, td a:hover {
+      text-decoration: underline;
+    }
+
+    ol, ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #4a5568;
+    }
+
+    /* Unified Footer Styles */
+    .site-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    
+    .site-footer a {
+      color: #3182ce;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <nav class="nav-bar">
+        <a href="index.html" class="nav-link">← Home</a>
+      </nav>
+      
+      <h1>TM Airports</h1>
+      
+      <p class="site-subtitle">Submission & Maintenance Guide</p>
+    </div>
+  </header>
+  
+  <main class="main-container">
+
+    <p>Welcome to the Airport Mapping project! This guide will show you how to create, format, and maintain your personal airport visit data file to generate your interactive map.</p>
+
+    <div class="note-box">
+      <strong>How the Map Works:</strong> Maps are generated from text files called <code>.alist</code> files. Once your file is submitted and merged, your map updates automatically within an hour (expect to see it live at the next <strong>:15 past the hour</strong>).
+    </div>
+
+    <h2>1. How to Format Your File</h2>
+    <p>Whether you are a new or existing user, your data must follow these strict formatting rules:</p>
+    <ul>
+      <li>Your file name must be exactly: <code>[your_username].alist</code> (e.g., <code>worldtraveler.alist</code>).</li>
+      <li>Each airport must be listed on a <strong>separate line</strong>.</li>
+      <li>The line format is: <code>[IATA Airport Code] [Field 2] [Field 3]* [Field 4]*</code> <em>(*Fields 3 and 4 are optional)</em>.</li>
+    </ul>
+
+    <h3>Visit Codes</h3>
+    <p>Use the following letter codes to identify your experience at each airport. The order of <code>A</code>, <code>D</code>, and <code>L</code> does not matter.</p>
+    
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 15%;">Code</th>
+            <th>Meaning / Type of Visit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>A</code></td>
+            <td><strong>Arrival:</strong> You landed at this airport as your destination.</td>
+          </tr>
+          <tr>
+            <td><code>D</code></td>
+            <td><strong>Departure:</strong> You took off from this airport to start a journey.</td>
+          </tr>
+          <tr>
+            <td><code>L</code></td>
+            <td><strong>Layover:</strong> You caught a connecting flight here (with or without changing planes).</td>
+          </tr>
+          <tr>
+            <td><code>X</code></td>
+            <td><strong>Other:</strong> You toured the facility, picked up a traveler, or visited without flying. <em>Note: Use X only if you have never visited the airport as a flyer.</em></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>How to Find IATA Codes</h3>
+    <p>Unsure of a specific 3-letter airport code? You can look up official identifiers using these trusted resources:</p>
+    <ul>
+      <li><a href="http://www.gcmap.com/" target="_blank">Great Circle Mapper:</a> Search by city or airport name to quickly find official 3-letter codes and verify locations.</li>
+      <li><a href="https://www.iata.org/en/publications/directories/code-search/" target="_blank">Official IATA Code Search:</a> The official airline industry designation directory.</li>
+    </ul>
+      
+    <h3>Syntax Examples</h3>
+    <pre>ATL A D L   # Arrived, departed, and had a layover in Atlanta
+LAX A D     # Arrived and departed from Los Angeles
+ORD L       # Only had a layover at Chicago O'Hare
+FFO X       # Toured Wright-Patterson AFB but did not fly there</pre>
+
+    <div class="note-box">
+      <strong>Missing an Airport?</strong> If you have visited an airport that isn't on the main site map yet, put it in your <code>.alist</code> file anyway! The processing system detects unknown airports and adds them to the master database automatically. There is never a need to edit the database manually.
+    </div>
+
+    <h2>2. New Users: Creating &amp; Submitting Your First Map</h2>
+    <p>Ready to see your map live? Create a plain text file on your computer containing your airport list, and save it exactly as <code>[your_username].alist</code> (e.g., <code>worldtraveler.alist</code>).</p>
+
+    <p>You can submit your file to the project using one of two easy methods:</p>
+
+    <h3>Method A: Direct Web Upload via GitHub (Preferred)</h3>
+    <p>If you have a <strong>free GitHub account</strong>, you can upload your file directly to the project folder using your web browser—no Git installation or command line experience required:</p>
+    <ol>
+      <li>Log into your GitHub account and navigate directly to the project data directory: <a href="https://github.com/TravelMapping/AirportData/tree/master/air/data" target="_blank">TravelMapping/AirportData/air/data</a>.</li>
+      <li>In the upper-right corner of the file list, click the <strong>Add file</strong> dropdown button and select <strong>Upload files</strong>.</li>
+      <li>Drag and drop your <code>[your_username].alist</code> file into the box, scroll to the bottom, and click the green <strong>Propose changes</strong> button. Follow the prompts to finish your submission!</li>
+      <li><strong>Since the site's list of airports updates automatically, there is no need to edit any files besides your <code>.alist</code>.</strong></li>
+    </ol>
+
+    <h3>Method B: Email Submission</h3>
+    <p>If you do not have a GitHub account or prefer not to use it, you can send your file directly to the project host. <b>Send your <code>.alist</code> file as an email attachment to <code>travmap@teresco.org</code></b> with the subject line "New Airport Map Submission".</p>
+
+    <h2>3. Existing Users: Updating Your Map</h2>
+    <p>Keep your travel history accurate as you log new flights by updating your existing data:</p>
+    <ul>
+      <li><strong>Via GitHub Web Interface (Requires GitHub Account):</strong> Go to <a href="https://github.com/TravelMapping/AirportData/tree/master/air/data" target="_blank">TravelMapping/AirportData/air/data</a>, click on your existing <code>.alist</code> file, and click the <strong>✏️ (pencil icon)</strong> to edit. Add your new flights to the bottom of the text box and click <strong>Propose changes</strong>.</li>
+      <li><strong>Via Email:</strong> Simply email your updated file to <code>travmap@teresco.org</code>, and it will be updated for you.</li>
+      <li><strong>Remember, there is never a need to edit or submit any files besides your <code>.alist</code>.</strong></li>
+    </ul>
+      
+    <div class="warning-box">
+      <strong>Known Issue — Browser Cache:</strong> After your updated <code>.alist</code> file is successfully pulled into the main project, you may need to <strong>manually clear your browser cache</strong> (or use an Incognito/Private window) to force the new map markers to render on your screen.
+    </div>
+
+    <h2>4. Accessing Your Map</h2>
+    <p>Once merged, your personal map will be permanently hosted at the following address:</p>
+    <pre>https://tmairports.teresco.org/AirportData/air/web/user.html?user=[your_username]</pre>
+    <p>To see a full register of all participants on the platform, remove the user parameter and visit the <a href="https://tmairports.teresco.org/AirportData/air/web/user.html" target="_blank">User Directory</a>.</p>
+
+    <footer class="site-footer">
+      <p>A project of <a href="https://travelmapping.net/" target="_blank" rel="noopener noreferrer">Travel Mapping</a></p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
