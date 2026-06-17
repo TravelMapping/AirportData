@@ -131,7 +131,6 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   svgParts.push(`<mask id="${maskId}">`);
   svgParts.push('<circle cx="16" cy="16" r="16" fill="white" />');
   
-  // Cutout masks updated to match the new 45-45-90 proportions plus spacing
   if (hasD) {
     svgParts.push('<polygon points="16,7 8.5,14.5 23.5,14.5" fill="black" stroke="black" stroke-width="3" stroke-linejoin="round" />');
   }
@@ -141,17 +140,14 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
   svgParts.push('</mask>');
   svgParts.push('</defs>');
 
-  // 1. Layover Ring
   if (hasL) {
     svgParts.push(`<circle cx="16" cy="16" r="10" fill="none" stroke="#3182ce" stroke-width="4" mask="url(#${maskId})" />`);
   }
 
-  // 2. Departure (True 45°-45°-90° Triangle, scaled down 15% further)
   if (hasD) {
     svgParts.push('<polygon points="16,7 8.5,14.5 23.5,14.5" fill="#38a169" />');
   }
   
-  // 3. Arrival (True 45°-45°-90° Triangle, scaled down 15% further)
   if (hasA) {
     svgParts.push('<polygon points="16,25 8.5,17.5 23.5,17.5" fill="#e53e3e" />');
   }
@@ -171,15 +167,40 @@ function createMapIfNeeded() {
     const northEast = L.latLng(90, 180);
     const worldBounds = L.latLngBounds(southWest, northEast);
 
+    // Standard OpenStreetMap
+    const openStreetMap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; OpenStreetMap contributors',
+    });
+
+    // Clean Light Gray Map
+    const cartoDbPositron = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      subdomains: 'abcd',
+      maxZoom: 20
+    });
+
+    // Ultra-Minimalist Gray Canvas
+    const esriGrayCanvas = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+      attribution: '&copy; Esri, HERE, Garmin, NGA, USGS',
+      maxZoom: 16
+    });
+
+    // Initialize with CartoDB Positron by default
     map = L.map("map", {
       maxBounds: worldBounds,
       maxBoundsViscosity: 1.0,
-      minZoom: 2
+      minZoom: 2,
+      layers: [cartoDbPositron] 
     }).setView([20, 0], 2);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '&copy; OpenStreetMap contributors',
-    }).addTo(map);
+    // Layer switcher box placed cleanly in the top right
+    const baseMaps = {
+      "Light Gray (CartoDB)": cartoDbPositron,
+      "Minimal Canvas (Esri)": esriGrayCanvas,
+      "Standard Map (OSM)": openStreetMap
+    };
+
+    L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
   }
 }
 
