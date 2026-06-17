@@ -38,7 +38,7 @@ const countryMap = {
   EST: "Estonia", SWZ: "eSwatini", ETH: "Ethiopia", FIN: "Finland",
   FRA: "France", GAB: "Gabon", GMB: "Gambia", GEO: "Georgia",
   DEU: "Germany", GHA: "Ghana", GRC: "Greece", GRD: "Grenada",
-  GTM: "Guatemala", GIN: "Guinea", GNB: "Guinea‑Bissau", GUY: "Guyana",
+  GTM: "Guatemala", GIN: "Guinea", GNB: "Guinea‑Bissau", GUY: "Guayana",
   HTI: "Haiti", HND: "Honduras", HUN: "Hungary", ISL: "Iceland",
   IND: "India", IDN: "Indonesia", IRN: "Iran", IRQ: "Iraq", IRL: "Ireland",
   ISR: "Israel", ITA: "Italy", JAM: "Jamaica", JPN: "Japan", JOR: "Jordan",
@@ -123,18 +123,39 @@ function createSVGIcon(hasA, hasD, hasL, hasX) {
     });
   }
 
+  const randomId = Math.random().toString(36).substr(2, 9);
+  const maskId = `ring-cut-${randomId}`;
   const svgParts = [];
   
+  svgParts.push('<defs>');
+  // This mask cuts holes into the blue ring where the triangles sit, plus an extra 1.5px gap area
+  svgParts.push(`<mask id="${maskId}">`);
+  svgParts.push('<circle cx="16" cy="16" r="16" fill="white" />'); // Keep everything else visible
+  
+  if (hasD) {
+    // Cut a slightly oversized top triangle shape out of the ring (stroke width creates the empty space)
+    svgParts.push('<polygon points="16,5 7,16 25,16" fill="black" stroke="black" stroke-width="3" stroke-linejoin="round" />');
+  }
+  if (hasA) {
+    // Cut a slightly oversized bottom triangle shape out of the ring
+    svgParts.push('<polygon points="16,27 7,16 25,16" fill="black" stroke="black" stroke-width="3" stroke-linejoin="round" />');
+  }
+  svgParts.push('</mask>');
+  svgParts.push('</defs>');
+
+  // 1. Layover Ring (with the cutout mask applied)
   if (hasL) {
-    svgParts.push(`<circle cx="16" cy="16" r="10" fill="none" stroke="#3182ce" stroke-width="4" />`);
+    svgParts.push(`<circle cx="16" cy="16" r="10" fill="none" stroke="#3182ce" stroke-width="4" mask="url(#${maskId})" />`);
   }
 
+  // 2. Departure (Scaled down 10% from original sizing)
   if (hasD) {
-    svgParts.push(`<polygon points="16,4 6,16 26,16" fill="#38a169" stroke="#276749" stroke-width="1" />`);
+    svgParts.push('<polygon points="16,5 7,16 25,16" fill="#38a169" />');
   }
   
+  // 3. Arrival (Scaled down 10% from original sizing)
   if (hasA) {
-    svgParts.push(`<polygon points="16,28 6,16 26,16" fill="#e53e3e" stroke="#9b2c2c" stroke-width="1" />`);
+    svgParts.push('<polygon points="16,27 7,16 25,16" fill="#e53e3e" />');
   }
   
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">${svgParts.join('')}</svg>`;
@@ -180,7 +201,7 @@ function addMapLegend() {
       <div class="legend-row">
         <div class="legend-symbol">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-            <polygon points="16,4 6,16 26,16" fill="#38a169" stroke="#276749" stroke-width="1" />
+            <polygon points="16,5 7,16 25,16" fill="#38a169" />
           </svg>
         </div>
         <div class="legend-text">Departure</div>
@@ -189,7 +210,7 @@ function addMapLegend() {
       <div class="legend-row">
         <div class="legend-symbol">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-            <polygon points="16,28 6,16 26,16" fill="#e53e3e" stroke="#9b2c2c" stroke-width="1" />
+            <polygon points="16,27 7,16 25,16" fill="#e53e3e" />
           </svg>
         </div>
         <div class="legend-text">Arrival</div>
