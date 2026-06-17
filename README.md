@@ -1,4 +1,4 @@
-# Airport Mapping (updated 2025-08-07)
+# Airport Mapping (updated 2026-06-17)
 
 This is a very early form of a TravelMapping-adjacent idea for mapping airports visited. The current site is found here: https://tmairports.teresco.org/AirportData/air/web/index.html
 
