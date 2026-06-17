@@ -6,7 +6,7 @@ This is a very early form of a TravelMapping-adjacent idea for mapping airports 
 
 ## How to create a map
 
-Maps are generated from "alist" files submitted via GitHub. The filename should be [username].alist. In the file, user data should use the following format:
+Maps are generated from "alist" files submitted via GitHub or emailed to <code>travmap@teresco.org</code>. The filename should be [username].alist. In the file, user data should use the following format:
 
 [IATA Airport Code] [N] [N]* [N]*
 
