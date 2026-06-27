@@ -2506,7 +2506,9 @@
     "lat": 36.1317,
     "lon": -86.6688,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "BNF",
