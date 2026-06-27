@@ -3096,7 +3096,9 @@
     "lat": 36.7767,
     "lon": -119.7189,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "FAY",
@@ -3672,7 +3674,8 @@
     "country": "USA",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
