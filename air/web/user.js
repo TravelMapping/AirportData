@@ -229,7 +229,7 @@ function addMapLegend() {
       <div class="legend-row">
         <div class="legend-symbol">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-            <polygon points="16,20 8.5,12.5 23.5,12.5" fill="#e53e3e" />
+            <polygon points="16,19.5 8.5,12 23.5,12" fill="#e53e3e" />
           </svg>
         </div>
         <div class="legend-text">Arrival</div>
