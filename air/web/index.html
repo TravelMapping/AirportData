@@ -1,41 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>TM Airports Home</title>
-  <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 600px;
-      margin: auto;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 1em;
-    }
-    a.button {
-      display: inline-block;
-      padding: 1em 2em;
-      margin: 1em;
-      font-size: 1.1em;
-      text-decoration: none;
-      color: white;
-      background-color: #0077cc;
-      border-radius: 8px;
-      transition: background-color 0.2s;
-    }
-    a.button:hover {
-      background-color: #005fa3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TM Airports - Home</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <style>
+        /* General Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: #1a365d;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Container and Layout */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+            .full-width {
+                grid-column: span 2;
+            }
+        }
+
+        /* Panels and Cards */
+        .panel {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .panel h2 {
+            margin-top: 0;
+            color: #1a365d;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .stat-card {
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 1rem;
+            border-radius: 0 4px 4px 0;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2b6cb0;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Forms and Buttons */
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .btn {
+            background-color: #3182ce;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background-color: #2b6cb0;
+        }
+        .btn-secondary {
+            background-color: #4a5568;
+        }
+        .btn-secondary:hover {
+            background-color: #2d3748;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center; /* This centers the items horizontally */
+            flex-wrap: wrap;        /* Prevents the buttons from clipping on small phone screens */
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f7fafc;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            color: #718096;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to TM Airports</h1>
-  <p>Select a view:</p>
-  <a href="airports.html" class="button">Browse Airports</a>
-  <a href="user.html" class="button">View Users</a>
+
+    <header>
+        <h1>TM Airports</h1>
+        <p>Track, map, and share your airport travel history</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="panel full-width">
+            <h2>Welcome to TM Airports</h2>
+            <p>Visualize your personal flight history or see where the entire community has traveled. Upload your custom airport file to map your arrivals, departures, and layovers.</p>
+            
+            <div class="button-group">
+                <a href="airports.html" class="btn">View Global Activity Map</a>
+                <a href="user.html" class="btn">View Travelers</a>
+                <a href="how-to.html" class="btn">Submit / Update Your Data</a>
+            </div>
+        </div>
+
+        <div class="panel full-width">
+            <h2>Site Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">42</span> <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">184</span> <span class="stat-label">Airports Visited</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1,205</span> <span class="stat-label">Total User Visits</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-column" style="display: flex; flex-direction: column; gap: 2rem;">
+            
+<div class="panel">
+    <h2>Top Travelers</h2>
+    <table data-table="top-travelers">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>User</th>
+                <th>Airports Visited</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Will be populated by JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<div class="panel">
+    <h2>Most Visited Airports</h2>
+    <table data-table="most-visited-airports">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Airport Code</th>
+                <th>Location / Name</th>
+                <th>Total Visitors</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Will be populated by JavaScript -->
+        </tbody>
+    </table>
+</div>
+        </div>
+
+<div class="right-column" style="display: flex; flex-direction: column; gap: 2rem;">
+            
+            <div class="panel">
+                <h2>Recent Updates</h2>
+                <ul id="recent-updates-list" style="padding-left: 1.2rem; margin: 0.5rem 0; line-height: 1.5;">
+                    <li style="color: #666; list-style-type: none; margin-left: -1.2rem;">Loading live updates...</li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h2>Recently Added Airports</h2>
+                <ul id="recently-added-list" style="padding-left: 1.2rem; margin: 0.5rem 0; line-height: 1.5;">
+                    <li style="color: #666; list-style-type: none; margin-left: -1.2rem;">Tracking system additions...</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="homepage_data.js"></script>
+
+<hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 3rem 0 2rem 0;">
+
+<div style="max-width: 800px; margin: 0 auto; padding: 0 1rem; color: #4a5568; font-family: system-ui, -apple-system, sans-serif; line-height: 1.6;">
+    
+    <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.5rem; color: #2d3748; margin-bottom: 0.5rem;">About TM Airports</h2>
+        <p style="margin-bottom: 1rem;">
+            Welcome to TM Airports, a member-driven project designed to track, map, and share your lifetime commercial flight history. Inspired by the framework of the original Travel Mapping highway-tracking project, this site shifts the focus from highways to runways, allowing aviation enthusiasts to visualize their travels globally.
+        </p>
+        <p>
+            <strong>How it works:</strong> The site operates on a simple, automated pipeline. Members submit a plain-text <code>.alist</code> file containing their airport data. Every day, an automated backend processes these files to dynamically update our global flight statistics, traveler leaderboards, and interactive airport maps.
+        </p>
+    </section>
+
+    <section style="font-size: 0.9rem; color: #718096; border-top: 1px solid #edf2f7; padding-top: 1rem;">
+        <p style="margin: 0 0 0.5rem 0;">
+            <strong>Site Hosted & Managed by:</strong> Jim Teresco
+        </p>
+        <p style="margin: 0 0 0.5rem 0;">
+            <strong>Project Concept & Development by:</strong> mapcat, thanks to input and feature suggestions from the <a href="https://travelmapping.net/" target="_blank" style="color: #3182ce; text-decoration: none;">Travel Mapping</a> forum community.
+        </p>
+    </section>
+    
+</div>
+    
+    <footer>
+        <p>&copy; 2026 TM Airports. A project of <a href="https://travelmapping.net/">Travel Mapping</a>.</p>
+    </footer>
+
 </body>
 </html>

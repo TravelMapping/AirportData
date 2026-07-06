@@ -118,6 +118,14 @@
     "visits": []
   },
   {
+    "code": "LNZ",
+    "name": "Linz-H\u00f6rsching Airport",
+    "lat": 48.235362,
+    "lon": 14.188128,
+    "country": "AUT",
+    "visits": []
+  },
+  {
     "code": "VIE",
     "name": "Vienna International Airport",
     "lat": 48.1108,
@@ -256,6 +264,14 @@
     "visits": []
   },
   {
+    "code": "SET",
+    "name": "Santa Magalh\u00e3es Airport",
+    "lat": -8.061433,
+    "lon": -38.328888,
+    "country": "BRA",
+    "visits": []
+  },
+  {
     "code": "BGI",
     "name": "Grantley Adams International Airport",
     "lat": 13.0744,
@@ -332,6 +348,14 @@
     "name": "\u00celes-de-la-Madeleine Airport",
     "lat": 47.425,
     "lon": -61.7781,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YHM",
+    "name": "John C. Munro Hamilton International Airport",
+    "lat": 43.17348,
+    "lon": -79.931185,
     "country": "CAN",
     "visits": []
   },
@@ -1359,6 +1383,14 @@
     "visits": []
   },
   {
+    "code": "BRI",
+    "name": "Bari Karol Wojty\u0142a International Airport",
+    "lat": 41.138901,
+    "lon": 16.760599,
+    "country": "ITA",
+    "visits": []
+  },
+  {
     "code": "CIA",
     "name": "Rome Ciampino Airport",
     "lat": 41.7994,
@@ -1579,10 +1611,42 @@
     "visits": []
   },
   {
+    "code": "KTJ",
+    "name": "Kichwa Tembo Airport",
+    "lat": -1.263497,
+    "lon": 35.027533,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "MDR",
+    "name": "Musiara Airstrip",
+    "lat": -1.298636,
+    "lon": 35.063885,
+    "country": "KEN",
+    "visits": []
+  },
+  {
     "code": "NBO",
     "name": "Jomo Kenyatta International Airport",
     "lat": -1.3192,
     "lon": 36.9275,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "UKA",
+    "name": "Ukunda Airstrip",
+    "lat": -4.29333,
+    "lon": 39.571098,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "WIL",
+    "name": "Nairobi Wilson Airport",
+    "lat": -1.321720004081726,
+    "lon": 36.81480026245117,
     "country": "KEN",
     "visits": []
   },
@@ -2541,6 +2605,14 @@
     "visits": []
   },
   {
+    "code": "BLI",
+    "name": "Bellingham International Airport",
+    "lat": 48.79280090332031,
+    "lon": -122.53800201416016,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BLV",
     "name": "Scott AFB/Midamerica Airport",
     "lat": 38.5452,
@@ -3184,6 +3256,14 @@
     "visits": []
   },
   {
+    "code": "FLG",
+    "name": "Flagstaff Pulliam Airport",
+    "lat": 35.139757,
+    "lon": -111.669826,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "FLL",
     "name": "Fort Lauderdale\u2013Hollywood International Airport",
     "lat": 26.0726,
@@ -3820,6 +3900,14 @@
     "visits": []
   },
   {
+    "code": "LJN",
+    "name": "Texas Gulf Coast Regional Airport",
+    "lat": 29.108601,
+    "lon": -95.462097,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "LNK",
     "name": "Lincoln Airport",
     "lat": 40.85208,
@@ -3971,6 +4059,14 @@
     "name": "Montgomery Regional Airport (Dannelly Field)",
     "lat": 32.3006,
     "lon": -86.3939,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MGW",
+    "name": "Morgantown Municipal Airport Walter L. (Bill) Hart Field",
+    "lat": 39.643305,
+    "lon": -79.917598,
     "country": "USA",
     "visits": []
   },

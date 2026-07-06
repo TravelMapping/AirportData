@@ -112,6 +112,14 @@
     "visits": []
   },
   {
+    "code": "LNZ",
+    "name": "Linz-H\u00f6rsching Airport",
+    "lat": 48.235362,
+    "lon": 14.188128,
+    "country": "AUT",
+    "visits": []
+  },
+  {
     "code": "VIE",
     "name": "Vienna International Airport",
     "lat": 48.1108,
@@ -248,6 +256,14 @@
     "visits": []
   },
   {
+    "code": "SET",
+    "name": "Santa Magalh\u00e3es Airport",
+    "lat": -8.061433,
+    "lon": -38.328888,
+    "country": "BRA",
+    "visits": []
+  },
+  {
     "code": "BGI",
     "name": "Grantley Adams International Airport",
     "lat": 13.0744,
@@ -324,6 +340,14 @@
     "name": "\u00celes-de-la-Madeleine Airport",
     "lat": 47.425,
     "lon": -61.7781,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YHM",
+    "name": "John C. Munro Hamilton International Airport",
+    "lat": 43.17348,
+    "lon": -79.931185,
     "country": "CAN",
     "visits": []
   },
@@ -469,11 +493,7 @@
     "lat": 51.1139,
     "lon": -114.0203,
     "country": "CAN",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "YYG",
@@ -1041,11 +1061,7 @@
     "lat": 51.47,
     "lon": -0.4543,
     "country": "GBR",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "LTN",
@@ -1296,6 +1312,14 @@
     "visits": []
   },
   {
+    "code": "BRI",
+    "name": "Bari Karol Wojty\u0142a International Airport",
+    "lat": 41.138901,
+    "lon": 16.760599,
+    "country": "ITA",
+    "visits": []
+  },
+  {
     "code": "CIA",
     "name": "Rome Ciampino Airport",
     "lat": 41.7994,
@@ -1480,10 +1504,42 @@
     "visits": []
   },
   {
+    "code": "KTJ",
+    "name": "Kichwa Tembo Airport",
+    "lat": -1.263497,
+    "lon": 35.027533,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "MDR",
+    "name": "Musiara Airstrip",
+    "lat": -1.298636,
+    "lon": 35.063885,
+    "country": "KEN",
+    "visits": []
+  },
+  {
     "code": "NBO",
     "name": "Jomo Kenyatta International Airport",
     "lat": -1.3192,
     "lon": 36.9275,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "UKA",
+    "name": "Ukunda Airstrip",
+    "lat": -4.29333,
+    "lon": 39.571098,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "WIL",
+    "name": "Nairobi Wilson Airport",
+    "lat": -1.321720004081726,
+    "lon": 36.81480026245117,
     "country": "KEN",
     "visits": []
   },
@@ -2261,7 +2317,9 @@
     "lat": 33.6407,
     "lon": -84.4277,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "ATW",
@@ -2373,11 +2431,7 @@
     "lat": 45.8078,
     "lon": -108.5428,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "BIS",
@@ -2392,6 +2446,14 @@
     "name": "Bemidji Regional Airport",
     "lat": 47.51083,
     "lon": -94.93472,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "BLI",
+    "name": "Bellingham International Airport",
+    "lat": 48.79280090332031,
+    "lon": -122.53800201416016,
     "country": "USA",
     "visits": []
   },
@@ -2441,11 +2503,7 @@
     "lat": 42.3656,
     "lon": -71.0096,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "BPT",
@@ -2509,11 +2567,7 @@
     "lat": 34.2006,
     "lon": -118.3586,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "BWI",
@@ -2521,11 +2575,7 @@
     "lat": 39.1754,
     "lon": -76.6684,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "BZN",
@@ -2629,7 +2679,10 @@
     "lat": 35.214,
     "lon": -80.9431,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "CMH",
@@ -2741,11 +2794,7 @@
     "lat": 44.7778,
     "lon": -89.6658,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "CXC",
@@ -2785,11 +2834,7 @@
     "lat": 42.402,
     "lon": -90.7095,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "DCA",
@@ -2813,15 +2858,7 @@
     "lat": 39.8561,
     "lon": -104.6737,
     "country": "USA",
-    "visits": [
-      "#",
-      "-",
-      "A",
-      "L",
-      "destination",
-      "has",
-      "layovers"
-    ]
+    "visits": []
   },
   {
     "code": "DFW",
@@ -2877,11 +2914,7 @@
     "lat": 42.2162,
     "lon": -83.3554,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "DUT",
@@ -2977,11 +3010,7 @@
     "lat": 40.6895,
     "lon": -74.1745,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "EYW",
@@ -3052,6 +3081,14 @@
     "name": "Fond du Lac County Airport",
     "lat": 43.7711982727,
     "lon": -88.48840332030001,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "FLG",
+    "name": "Flagstaff Pulliam Airport",
+    "lat": 35.139757,
+    "lon": -111.669826,
     "country": "USA",
     "visits": []
   },
@@ -3157,11 +3194,7 @@
     "lat": 47.6199,
     "lon": -117.534,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "GGG",
@@ -3273,11 +3306,7 @@
     "lat": 47.48199844,
     "lon": -111.3710022,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "GUM",
@@ -3341,14 +3370,7 @@
     "lat": 21.3187,
     "lon": -157.9225,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "D",
-      "and",
-      "destination",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "HOU",
@@ -3356,7 +3378,11 @@
     "lat": 29.6456,
     "lon": -95.2789,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "HPN",
@@ -3412,7 +3438,9 @@
     "lat": 29.9902,
     "lon": -95.3368,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "ICT",
@@ -3540,11 +3568,7 @@
     "lat": 19.738889,
     "lon": -156.045556,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "KSM",
@@ -3585,9 +3609,7 @@
     "lon": -115.1537,
     "country": "USA",
     "visits": [
-      "#",
-      "A",
-      "destination"
+      "L"
     ]
   },
   {
@@ -3597,9 +3619,7 @@
     "lon": -118.4085,
     "country": "USA",
     "visits": [
-      "#",
-      "D",
-      "origin"
+      "L"
     ]
   },
   {
@@ -3681,6 +3701,16 @@
     "lon": -92.2244,
     "country": "USA",
     "visits": []
+  },
+  {
+    "code": "LJN",
+    "name": "Texas Gulf Coast Regional Airport",
+    "lat": 29.108601,
+    "lon": -95.462097,
+    "country": "USA",
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "LNK",
@@ -3776,7 +3806,10 @@
     "lat": 28.4312,
     "lon": -81.3081,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MDT",
@@ -3809,9 +3842,7 @@
     "lon": -89.9819,
     "country": "USA",
     "visits": [
-      "#",
-      "A",
-      "destination"
+      "L"
     ]
   },
   {
@@ -3835,6 +3866,14 @@
     "name": "Montgomery Regional Airport (Dannelly Field)",
     "lat": 32.3006,
     "lon": -86.3939,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MGW",
+    "name": "Morgantown Municipal Airport Walter L. (Bill) Hart Field",
+    "lat": 39.643305,
+    "lon": -79.917598,
     "country": "USA",
     "visits": []
   },
@@ -3868,11 +3907,7 @@
     "lat": 42.9469,
     "lon": -87.9022,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "MKK",
@@ -3904,11 +3939,7 @@
     "lat": 41.4486,
     "lon": -90.5075,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "MLU",
@@ -3972,11 +4003,7 @@
     "lat": 43.14,
     "lon": -89.3375,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "MSO",
@@ -3984,11 +4011,7 @@
     "lat": 46.9164,
     "lon": -114.0906,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "MSP",
@@ -3997,13 +4020,8 @@
     "lon": -93.2223,
     "country": "USA",
     "visits": [
-      "#",
-      "-",
-      "D",
-      "L",
-      "has",
-      "layovers",
-      "origin"
+      "A",
+      "D"
     ]
   },
   {
@@ -4012,7 +4030,10 @@
     "lat": 29.9933,
     "lon": -90.2581,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MTJ",
@@ -4068,11 +4089,7 @@
     "lat": 37.7214,
     "lon": -122.2208,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "OFF",
@@ -4144,19 +4161,7 @@
     "lat": 41.9742,
     "lon": -87.9073,
     "country": "USA",
-    "visits": [
-      "#",
-      "-",
-      "A",
-      "D",
-      "L",
-      "and",
-      "both",
-      "dest",
-      "has",
-      "layovers",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "ORF",
@@ -4284,11 +4289,7 @@
     "lat": 39.8744,
     "lon": -75.2424,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "PHX",
@@ -4297,9 +4298,7 @@
     "lon": -112.0,
     "country": "USA",
     "visits": [
-      "#",
-      "A",
-      "destination"
+      "L"
     ]
   },
   {
@@ -4460,11 +4459,7 @@
     "lat": 45.63119888305664,
     "lon": -89.46749877929688,
     "country": "USA",
-    "visits": [
-      "#",
-      "D",
-      "origin"
-    ]
+    "visits": []
   },
   {
     "code": "RIC",
@@ -4552,7 +4547,10 @@
     "lat": 32.7338,
     "lon": -117.1933,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SAT",
@@ -4672,7 +4670,10 @@
     "lat": 37.36395,
     "lon": -121.92894,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SJT",
@@ -4704,11 +4705,7 @@
     "lat": 38.6956,
     "lon": -121.5908,
     "country": "USA",
-    "visits": [
-      "#",
-      "A",
-      "destination"
-    ]
+    "visits": []
   },
   {
     "code": "SNA",
@@ -4716,7 +4713,10 @@
     "lat": 33.6756,
     "lon": -117.8683,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SPF",
@@ -4900,7 +4900,10 @@
     "lat": 36.1983,
     "lon": -95.8881,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "TUP",
@@ -4916,7 +4919,10 @@
     "lat": 32.1161,
     "lon": -110.9411,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "TVC",
