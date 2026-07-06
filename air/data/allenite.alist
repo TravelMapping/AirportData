@@ -55,9 +55,9 @@ BOS L
 
 ### MI
 AZO A
-DTW A D
+DTW A D L
 GRR D
-LAN X  #Rental Car Pickup
+LAN A D # formerly X  #Rental Car Pickup
 MCD A D
 # 83D Mackinac County
 
@@ -167,7 +167,7 @@ SNN D
 ###    NETHERLANDS   ###
 ########################
 
-AMS A
+AMS A D
 
 
 ########################
