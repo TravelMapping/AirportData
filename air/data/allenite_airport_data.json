@@ -1778,7 +1778,8 @@
     "lon": 4.7642,
     "country": "NLD",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -2953,7 +2954,8 @@
     "country": "USA",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
@@ -3673,10 +3675,14 @@
     "lon": -84.586194,
     "country": "USA",
     "visits": [
+      "#",
       "#Rental",
+      "A",
       "Car",
+      "D",
       "Pickup",
-      "X"
+      "X",
+      "formerly"
     ]
   },
   {
