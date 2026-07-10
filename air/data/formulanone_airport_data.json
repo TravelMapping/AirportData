@@ -2336,7 +2336,9 @@
     "lat": 61.1743,
     "lon": -149.9975,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "APA",
