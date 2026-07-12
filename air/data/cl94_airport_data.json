@@ -3111,7 +3111,9 @@
     "lat": 39.826099,
     "lon": -84.048302,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "FFT",
@@ -3433,7 +3435,9 @@
     "lat": 41.067,
     "lon": -73.7076,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "HSV",
