@@ -4879,6 +4879,14 @@
     "visits": []
   },
   {
+    "code": "RLD",
+    "name": "Richland Airport",
+    "lat": 46.305599,
+    "lon": -119.304001,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "RND",
     "name": "Randolph Air Force Base",
     "lat": 29.529699,
