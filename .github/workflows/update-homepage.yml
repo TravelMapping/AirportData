@@ -1,0 +1,55 @@
+# Triggering a fresh automation run
+name: Update Homepage Data
+
+on:
+  push:
+    branches:
+      - master # Triggers automation whenever code is pushed to master
+  pull_request:
+    branches:
+      - master # Triggers automation whenever a pull request is merged
+  workflow_dispatch: # Adds the manual "Run workflow" button to the GitHub UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      # 1. Download the code from the repository (including full git history)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Set up Python on the automated runner
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 3. Run the script your friend wrote
+      - name: Run homepage data generator
+        run: |
+          cd air/scripts
+          python generate_homepage_data.py
+
+      # 4. Save and commit the newly updated json file back to the repo
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "actions@github.com"
+          git add air/data/homepage_data.json
+          
+          # Only commit if the python script actually changed the statistics
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "Automated homepage statistics update [skip ci]"
+            
+            # Fetch any new changes that happened while the script ran and sync smoothly
+            git pull origin master --rebase
+            
+            # Force the bot to push straight to the master branch, bypassing detached HEAD errors
+            git push origin HEAD:master
+          fi

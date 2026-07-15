@@ -69,12 +69,16 @@ const countryMap = {
   UKR: "Ukraine", ARE: "United Arab Emirates", GBR: "United Kingdom",
   USA: "United States", URY: "Uruguay", UZB: "Uzbekistan", VUT: "Vanuatu",
   VAT: "Vatican City", VEN: "Venezuela", VNM: "Vietnam", ZMB: "Zambia",
-  ZWE: "Zimbabwe"
+  ZWE: "Zimbabwe", BLM: "Saint Barthélemy", CUW: "Curaçao", FJI: "Fiji",
+  FSM: "Micronesia", MAF: "Saint-Martin", PRI: "Puerto Rico",
+  SXM: "Sint Maarten", VIR: "U.S. Virgin Islands", PYF:"French Polynesia",
+  MAC: "Macau", TWN: "Taiwan", GLP: "Guadeloupe", TCA: "Turks and Caicos Islands",
+  SPM: "Saint Pierre & Miquelon"
 };
 
 function setTitleAndVisibility(user) {
   if (user) {
-    title.textContent = `${user}'s Visited Airports`;
+    title.textContent = `${user} - Visited Airports`;
     document.title = `${user}'s Visited Airports`;
     totalsSpan.style.display = "inline";
     mapDiv.style.display = "block";
@@ -108,36 +112,95 @@ function addRow(tableBody, values) {
 
 function createSVGIcon(hasA, hasD, hasL, hasX) {
   if (hasX && !hasA && !hasD && !hasL) {
-    // Only 'X': draw a smaller black circle instead of square
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-      <circle cx="12" cy="12" r="5" fill="black" />
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+      <circle cx="16" cy="16" r="5" fill="#2d3748" />
     </svg>`;
     return window.L.divIcon({
       html: svg,
       className: 'svg-icon',
-      iconSize: [24, 24],
+      iconSize: [32, 32],
+      iconAnchor: [16, 16]
     });
   }
 
-  // Normal logic for A/D/L icons
+  const randomId = Math.random().toString(36).substr(2, 9);
+  const maskId = `ring-cut-${randomId}`;
   const svgParts = [];
-  svgParts.push(`<circle cx="12" cy="12" r="10" stroke="black" fill="${hasL ? 'blue' : 'white'}" />`);
-  svgParts.push(`<polygon points="12,5 5,12 19,12" fill="${hasD ? 'green' : 'white'}" stroke="black" />`);
-  svgParts.push(`<polygon points="12,19 5,12 19,12" fill="${hasA ? 'red' : 'white'}" stroke="black" />`);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">${svgParts.join('')}</svg>`;
+  
+  svgParts.push('<defs>');
+  svgParts.push(`<mask id="${maskId}">`);
+  svgParts.push('<circle cx="16" cy="16" r="16" fill="white" />');
+  
+  if (hasD) {
+    svgParts.push('<polygon points="16,7 8.5,14.5 23.5,14.5" fill="black" stroke="black" stroke-width="3" stroke-linejoin="round" />');
+  }
+  if (hasA) {
+    svgParts.push('<polygon points="16,25 8.5,17.5 23.5,17.5" fill="black" stroke="black" stroke-width="3" stroke-linejoin="round" />');
+  }
+  svgParts.push('</mask>');
+  svgParts.push('</defs>');
+
+  if (hasL) {
+    svgParts.push(`<circle cx="16" cy="16" r="10" fill="none" stroke="#3182ce" stroke-width="4" mask="url(#${maskId})" />`);
+  }
+
+  if (hasD) {
+    svgParts.push('<polygon points="16,7 8.5,14.5 23.5,14.5" fill="#38a169" />');
+  }
+  
+  if (hasA) {
+    svgParts.push('<polygon points="16,25 8.5,17.5 23.5,17.5" fill="#e53e3e" />');
+  }
+  
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">${svgParts.join('')}</svg>`;
   return window.L.divIcon({
     html: svg,
     className: 'svg-icon',
-    iconSize: [24, 24],
+    iconSize: [32, 32],
+    iconAnchor: [16, 16]
   });
 }
 
 function createMapIfNeeded() {
   if (!map) {
-    map = L.map("map").setView([20, 0], 2);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    const southWest = L.latLng(-90, -180);
+    const northEast = L.latLng(90, 180);
+    const worldBounds = L.latLngBounds(southWest, northEast);
+
+    // Standard OpenStreetMap
+    const openStreetMap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: '&copy; OpenStreetMap contributors',
-    }).addTo(map);
+    });
+
+    // Clean Light Gray Map
+    const cartoDbPositron = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      subdomains: 'abcd',
+      maxZoom: 20
+    });
+
+    // Ultra-Minimalist Gray Canvas
+    const esriGrayCanvas = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+      attribution: '&copy; Esri, HERE, Garmin, NGA, USGS',
+      maxZoom: 16
+    });
+
+    // Initialize with CartoDB Positron by default
+    map = L.map("map", {
+      maxBounds: worldBounds,
+      maxBoundsViscosity: 1.0,
+      minZoom: 2,
+      layers: [cartoDbPositron] 
+    }).setView([20, 0], 2);
+
+    // Layer switcher box placed cleanly in the top right
+    const baseMaps = {
+      "Light Gray (CartoDB)": cartoDbPositron,
+      "Minimal Canvas (Esri)": esriGrayCanvas,
+      "Standard Map (OSM)": openStreetMap
+    };
+
+    L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
   }
 }
 
@@ -147,14 +210,53 @@ function clearMarkers() {
 }
 
 function addMapLegend() {
-  const legend = document.createElement("div");
-  legend.className = "map-legend";
-  legend.innerHTML = `
-    <svg width="20" height="20"><polygon points="10,3 3,10 17,10" fill="green" stroke="black"/></svg> Departure
-    <svg width="20" height="20"><polygon points="10,17 3,10 17,10" fill="red" stroke="black"/></svg> Arrival
-    <svg width="20" height="20"><circle cx="10" cy="10" r="8" stroke="black" fill="blue"/></svg> Layover
-  `;
-  document.getElementById("map").appendChild(legend);
+  if (document.querySelector(".map-legend")) return;
+
+  const legendControl = L.control({ position: "bottomleft" });
+
+  legendControl.onAdd = function () {
+    const div = L.DomUtil.create("div", "map-legend");
+    div.innerHTML = `
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <polygon points="16,12 8.5,19.5 23.5,19.5" fill="#38a169" />
+          </svg>
+        </div>
+        <div class="legend-text">Departure</div>
+      </div>
+
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <polygon points="16,19.5 8.5,12 23.5,12" fill="#e53e3e" />
+          </svg>
+        </div>
+        <div class="legend-text">Arrival</div>
+      </div>
+
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <circle cx="16" cy="16" r="10" fill="none" stroke="#3182ce" stroke-width="4" />
+          </svg>
+        </div>
+        <div class="legend-text">Layover</div>
+      </div>
+
+      <div class="legend-row">
+        <div class="legend-symbol">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <circle cx="16" cy="16" r="5" fill="#2d3748" />
+          </svg>
+        </div>
+        <div class="legend-text">Other</div>
+      </div>
+    `;
+    return div;
+  };
+
+  legendControl.addTo(map);
 }
 
 function fetchUserData(user) {
@@ -200,7 +302,7 @@ function displayUserAirports(airportList) {
     if (ap.visits.includes("D")) stats.departures++;
     if (ap.visits.includes("L")) stats.layovers++;
 
-        if (ap.lat && ap.lon) {
+    if (ap.lat && ap.lon) {
       const hasA = ap.visits.includes("A");
       const hasD = ap.visits.includes("D");
       const hasL = ap.visits.includes("L");
@@ -236,16 +338,22 @@ function displayUserSummary(userList) {
       const airportList = await fetchUserData(user);
       let arrivals = 0, departures = 0, layovers = 0;
       let visitedCount = 0;
+      let other = 0;
 
       airportList.forEach(ap => {
         const hasA = ap.visits.includes("A");
         const hasD = ap.visits.includes("D");
         const hasL = ap.visits.includes("L");
+        const hasX = ap.visits.includes("X");
 
         if (hasA || hasD || hasL) visitedCount++;
         if (hasA) arrivals++;
         if (hasD) departures++;
         if (hasL) layovers++;
+
+        if (!hasA && !hasD && !hasL && (ap.visits.length > 0)) {
+          other++;
+        }
       });
 
       const total = visitedCount;
@@ -256,6 +364,7 @@ function displayUserSummary(userList) {
         arrivals.toString(),
         departures.toString(),
         layovers.toString(),
+        other.toString()
       ];
 
       addRow(userSummaryTableBody, row);
@@ -267,7 +376,6 @@ function displayUserSummary(userList) {
   });
 }
 
-// Simple table sorter
 function enableTableSorting() {
   document.querySelectorAll("th.sortable").forEach(header => {
     header.addEventListener("click", () => {
@@ -293,7 +401,6 @@ function enableTableSorting() {
         }
       });
 
-      // Update direction classes
       header.parentNode.querySelectorAll("th").forEach(th => {
         th.classList.remove("asc", "desc");
       });
@@ -304,7 +411,6 @@ function enableTableSorting() {
   });
 }
 
-// Event listeners
 userSelect.addEventListener("change", () => {
   const selected = userSelect.value;
   window.location.href = `user.html?user=${encodeURIComponent(selected)}`;
@@ -316,12 +422,11 @@ showAllCheckbox.addEventListener("change", () => {
   }
 });
 
-// Initialize userSelect options before deciding which mode:
 function loadData() {
   fetch("../data/manifest.json")
     .then(res => res.json())
     .then(async users => {
-      users.sort();
+      users.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true }));
       users.forEach(user => {
         const option = document.createElement("option");
         option.value = user;
@@ -332,21 +437,21 @@ function loadData() {
 
       setTitleAndVisibility(selectedUser);
 
+      const navSeparator = document.getElementById("nav-separator");
       if (selectedUser) {
-        // User mode
-        backToSummaryLink.style.display = "block";
+        backToSummaryLink.style.display = "inline";
+        navSeparator.style.display = "inline";
 
         const airports = await fetchUserData(selectedUser);
         displayUserAirports(airports);
       } else {
-        // Summary mode
         backToSummaryLink.style.display = "none";
+        navSeparator.style.display = "none";
 
         displayUserSummary(users);
       }
     });
 }
 
-// Run initial loading
 loadData();
 enableTableSorting();

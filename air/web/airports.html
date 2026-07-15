@@ -2,387 +2,337 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Airport Visits</title>
+  <title>Airport Visit Tracker</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    body { font-family: sans-serif; padding: 1em; }
-    #map { height: 600px; margin-top: 1em; }
-    table { border-collapse: collapse; margin-top: 1em; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 0.5em; text-align: center; }
-    th { background: #eee; }
-    .legend {
-      position: absolute;
-      bottom: 30px;
-      left: 10px;
-      background: white;
-      padding: 8px;
-      border-radius: 6px;
-      font-size: 0.9em;
-      box-shadow: 0 0 5px rgba(0,0,0,0.3);
-      line-height: 1.4;
+    /* Global Base & Modern Fonts matching user.html exactly */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #2d3748;
+      background-color: #f7fafc;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
-    .legend i {
+
+    /* Brand Header Block matching user.html layout & centering */
+    .site-header {
+      background-color: #1a365d; /* Dark Blue */
+      color: white;
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+      position: relative; /* Allows absolute positioning of navigation */
+      text-align: center;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .site-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    /* Subtitle matches user.html styling with pale blue accent */
+    .site-header p.site-subtitle {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.1rem;
+      color: #90cdf4; 
+      font-weight: normal;
+    }
+
+    /* Floating Navigation Breadcrumb Block */
+    .nav-bar {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: #90cdf4;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Workspace Wrapper */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+    h2 {
+      color: #1a202c;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    /* Controls Container Matching user.html Layout */
+    .controls-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    select {
+      padding: 0.5rem 2rem 0.5rem 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #2d3748;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    select:focus {
+      border-color: #3182ce;
+    }
+
+    #visitCount {
+      font-size: 1.1rem;
+      color: #4a5568;
+      background: #edf2f7;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      margin: 0;
+      font-weight: normal;
+    }
+    
+    /* Map Viewport Settings */
+    #map {
+      height: 500px;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid #cbd5e0;
+    }
+
+    /* Elegant Tables Styling matching user.html */
+    .table-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    th {
+      background-color: #ebf8ff;
+      color: #2b6cb0;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    th.sortable {
+      cursor: pointer;
+      position: relative;
+      transition: background-color 0.2s;
+    }
+
+    th.sortable:hover {
+      background-color: #bee3f8;
+    }
+
+    th.sortable.asc::after { content: " ▲"; font-size: 0.7rem; color: #2b6cb0; }
+    th.sortable.desc::after { content: " ▼"; font-size: 0.7rem; color: #2b6cb0; }
+
+    td {
+      color: #4a5568;
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f7fafc;
+    }
+
+    tbody tr:hover {
+      background-color: #f0fff4; 
+    }
+
+    td a {
+      text-decoration: none;
+      color: #3182ce;
+      font-weight: 600;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    /* Custom Leaflet Map Popup Legend Restructuring */
+    .map-legend {
+      background-color: rgba(255, 255, 255, 0.95);
+      border: 1px solid #cbd5e0;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 320px;
+      margin: 0 !important; 
+      pointer-events: auto;
+    }
+
+    .map-legend div {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    .map-legend i {
       display: inline-block;
-      width: 20px;
-      height: 12px;
-      margin-right: 6px;
-      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .site-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    
+    .site-footer a {
+      color: #3182ce;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .site-footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Airport Visit Tracker</h1>
-  <p id="homeLink"><a href="airports.html" style="font-size: 1em;">← Airports home</a></p>
-  <label for="airportSelect">Select an airport:</label>
-  <select id="airportSelect">
-    <option value="">-- Choose --</option>
-  </select>
 
-  <div id="map"></div>
-  <h2 id="visitCount"></h2>
-  <table id="airportSummaryTable" style="margin-top: 1em; width: 100%; display: none; border-collapse: collapse;">
-    <thead>
-        <tr>
-          <th data-sort="string">Country</th>
-          <th data-sort="string">IATA</th>
-          <th data-sort="string">Airport Name</th>
-          <th data-sort="number">Visitors</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <table id="visitTable" style="display:none;">
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Arrival</th>
-        <th>Departure</th>
-        <th>Layover</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-const csvUrl = '../data/airports.csv';
-const manifestUrl = '../data/manifest.json';
-const dataPath = '../data/';
-
-let airports = {};
-let airportList = [];
-let airportVisitCounts = {}; // airport IATA -> number of users
-
-const map = L.map('map').setView([20, 0], 2);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
-const selectedMarker = L.marker([0, 0]);
-
-function updateHomeLinkVisibility() {
-  const params = new URLSearchParams(window.location.search);
-  const airportParam = params.get('airport');
-  const homeLink = document.getElementById('homeLink');
-  if (airportParam && airports[airportParam.toUpperCase()]) {
-    homeLink.style.display = 'block';
-  } else {
-    homeLink.style.display = 'none';
-  }
-}
-
-async function fetchAirports() {
-  const res = await fetch(csvUrl);
-  const text = await res.text();
-  const lines = text.trim().split('\n');
-  lines.shift(); // remove header
-  for (const line of lines) {
-    const [country, code, name, lat, lon] = line.split(';');
-    if (!code) continue;
-    airports[code.toUpperCase()] = {
-      country: country,    // store the 3-letter ISO code as-is
-      code: code.toUpperCase(),
-      name,
-      lat: parseFloat(lat),
-      lon: parseFloat(lon)
-    };
-    airportList.push({ code: code.toUpperCase(), name });
-  }
-  populateDropdown();
-
-await computeAirportVisitCounts();
-placeAllMarkers();
-createAirportSummaryTable();  // Add this line to show the summary table if no airport selected
-
-updateHomeLinkVisibility();
-const params = new URLSearchParams(window.location.search);
-const airportParam = params.get('airport');
-if (airportParam && airports[airportParam.toUpperCase()]) {
-  document.getElementById('airportSelect').value = airportParam.toUpperCase();
-  handleAirportSelect(airportParam.toUpperCase());
-} else {
-  // If no airport param, make sure the summary table is visible
-  document.getElementById('airportSummaryTable').style.display = 'table';
-}
-}
-
-function populateDropdown() {
-  const sel = document.getElementById('airportSelect');
-  for (const airport of airportList.sort((a, b) => a.code.localeCompare(b.code))) {
-    const opt = document.createElement('option');
-    opt.value = airport.code;
-    opt.textContent = `${airport.code} - ${airport.name}`;
-    sel.appendChild(opt);
-  }
-}
-
-async function fetchManifest() {
-  const res = await fetch(manifestUrl);
-  return await res.json();
-}
-
-async function fetchAlist(username) {
-  const res = await fetch(`${dataPath}${username}.alist`);
-  const text = await res.text();
-  return text.split('\n').filter(line => !line.startsWith('#'));
-}
-
-async function computeAirportVisitCounts() {
-  const manifest = await fetchManifest();
-  const counts = {};
-
-  for (const user of manifest) {
-    try {
-      const lines = await fetchAlist(user);
-      const visitedAirports = new Set();
-
-      for (const line of lines) {
-        const [code] = line.trim().split(/\s+/);
-        if (!code) continue;
-        const iata = code.toUpperCase();
-        if (iata in airports) {
-          visitedAirports.add(iata);
-        }
-      }
-
-      for (const iata of visitedAirports) {
-        counts[iata] = (counts[iata] || 0) + 1;
-      }
-    } catch (e) {
-      console.warn(`Error loading ALIST for ${user}`);
-    }
-  }
-
-  airportVisitCounts = counts;
-}
-
-function getColorForCount(count, maxCount) {
-  const ratio = Math.min(count / maxCount, 1);
-  const r = Math.floor(255 * ratio);        // Red increases
-  const g = Math.floor(255 * (1 - ratio));  // Green decreases
-  const b = Math.floor(255 * (1 - ratio));  // Blue decreases
-  return `rgb(${r},${g},${b})`;             // Reddish = more popular
-}
-
-function createLegend(maxVisits) {
-  if (map.legendControl) {
-    map.removeControl(map.legendControl);
-  }
-
-  const legend = L.control({ position: 'bottomleft' });
-  legend.onAdd = function () {
-    const div = L.DomUtil.create('div', 'legend');
-    div.innerHTML = '<strong>Users per airport</strong><br>';
-
-    const stops = [
-      { label: '1', count: 1 },
-      { label: `${Math.floor(maxVisits / 2)}`, count: Math.floor(maxVisits / 2) },
-      { label: `${maxVisits}`, count: maxVisits }
-    ];
-
-    for (const stop of stops) {
-      const color = getColorForCount(stop.count, maxVisits);
-      div.innerHTML += `<i style="background:${color}"></i> ${stop.label}<br>`;
-    }
-
-    return div;
-  };
-
-  legend.addTo(map);
-  map.legendControl = legend; // so we can remove it later if needed
-}
-
-function placeAllMarkers() {
-  const maxVisits = Math.max(...Object.values(airportVisitCounts), 1);
-  createLegend(maxVisits); 
+  <header class="site-header">
+    <div class="header-content">
+      <nav class="nav-bar">
+        <a href="index.html" class="nav-link">← Home</a>
+        <span id="nav-separator" style="display: none; color: #718096; margin: 0 0.25rem;">/</span>
+        <a id="backToSummary" href="airports.html" class="nav-link" style="display: none;">All Airports</a>
+      </nav>
+      
+      <h1>TM Airports</h1>
+      <p id="siteSubtitle" class="site-subtitle">Airport Visit Tracker</p>
+    </div>
+  </header>
   
-  for (const code in airports) {
-    const a = airports[code];
-    const count = airportVisitCounts[code] || 0;
-    const color = getColorForCount(count, maxVisits);
+  <main class="main-container">
+    
+    <div class="controls-container">
+      <label for="airportSelect">Select an airport:</label>
+      <select id="airportSelect" aria-label="Airport selection menu">
+        <option value="">-- Choose --</option>
+      </select>
+      
+      <span id="visitCount" style="display: none;"></span>
+    </div>
 
-    const marker = L.circleMarker([a.lat, a.lon], {
-      radius: 6,
-      color: color,
-      fillColor: color,
-      fillOpacity: 0.9,
-      weight: 1
-    })
-    .addTo(map)
-    .bindPopup(`<b>${a.code}</b><br>${a.name}<br>${count} user(s) visited<br><a href="?airport=${a.code}">View visits</a>`);
+    <div id="map"></div>
 
-    marker.on('click', () => handleAirportSelect(code));
-  }
-}
+    <div id="globalTableContainer" class="table-container" style="display: none;">
+      <table id="airportSummaryTable">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="string">Country</th>
+            <th class="sortable" data-sort="string">IATA</th>
+            <th class="sortable" data-sort="string">Airport Name</th>
+            <th class="sortable" data-sort="number">Visitors</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
-function parseAlist(lines, selectedCode) {
-  const result = {};
-  for (const line of lines) {
-    const [code, ...flags] = line.trim().split(/\s+/);
-    if (!code || !flags) continue;
-    if (code.toUpperCase() !== selectedCode) continue;
-    for (const flag of flags) {
-      for (const ch of flag.toUpperCase()) {
-        if ('ADL'.includes(ch)) result[ch] = true;
-      }
-    }
-  }
-  return result;
-}
+    <div id="localTableContainer" class="table-container" style="display: none;">
+      <table id="visitTable">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="string">User</th>
+            <th>Arrival</th>
+            <th>Departure</th>
+            <th>Layover</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    
+    <h3 id="xOnlyHeader" style="display:none; margin-top: 1.5em; color: #4a5568;">Non-flying users (X)</h3>
+    <div id="xOnlyTableContainer" class="table-container" style="display: none;">
+      <table id="xOnlyTable">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="string">User</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
-async function handleAirportSelect(code) {
-  const airport = airports[code];
-  if (!airport) return;
+    <footer class="site-footer">
+      <p>A project of <a href="https://travelmapping.net/" target="_blank" rel="noopener noreferrer">Travel Mapping</a></p>
+    </footer>
 
-    // ✅ HIDE the summary table if an airport is selected
-  document.getElementById('airportSummaryTable').style.display = 'none';
+  </main>
 
-  history.replaceState(null, '', `?airport=${code}`);
-  updateHomeLinkVisibility();
-
-  map.setView([airport.lat, airport.lon], 13);
-
-  if (!map.hasLayer(selectedMarker)) {
-    selectedMarker.addTo(map);
-  }
-  selectedMarker.setLatLng([airport.lat, airport.lon])
-    .bindPopup(`${airport.code} - ${airport.name}`)
-    .openPopup();
-
-  const manifest = await fetchManifest();
-  const visitData = {};
-  for (const user of manifest) {
-    try {
-      const lines = await fetchAlist(user);
-      const visits = parseAlist(lines, code);
-      if (Object.keys(visits).length > 0) {
-        visitData[user] = visits;
-      }
-    } catch (e) {
-      console.warn(`Error loading ALIST for ${user}`);
-    }
-  }
-
-  updateTable(visitData);
-}
-
-function updateTable(data) {
-  const tbody = document.querySelector('#visitTable tbody');
-  tbody.innerHTML = '';
-  const users = Object.keys(data).sort();
-  document.getElementById('visitTable').style.display = users.length ? 'table' : 'none';
-  document.getElementById('visitCount').textContent = `${users.length} user(s) have visited this airport.`;
-
-  for (const user of users) {
-    const row = document.createElement('tr');
-    const tdUser = document.createElement('td');
-    const link = document.createElement('a');
-    link.href = `user.html?user=${encodeURIComponent(user)}`;
-    link.textContent = user;
-    tdUser.appendChild(link);
-    row.appendChild(tdUser);
-    for (const type of ['A', 'D', 'L']) {
-      const td = document.createElement('td');
-      td.textContent = data[user][type] ? '✔' : '';
-      row.appendChild(td);
-    }
-    tbody.appendChild(row);
-  }
-}
-
-document.getElementById('airportSelect').addEventListener('change', (e) => {
-  handleAirportSelect(e.target.value.toUpperCase());
-});
-function createAirportSummaryTable() {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('airport')) {
-    // Hide summary table if specific airport selected
-    document.getElementById('airportSummaryTable').style.display = 'none';
-    return;
-  }
-
-  const tbody = document.querySelector('#airportSummaryTable tbody');
-  tbody.innerHTML = '';
-
-  // Build an array of airport info + visitor count (default 0)
-  const rows = Object.values(airports).map(a => ({
-    country: a.country || '',  // ISO 3-letter code from CSV
-    code: a.code,
-    name: a.name,
-    visitors: airportVisitCounts[a.code] || 0,
-  }));
-
-  // Sort by visitor count descending by default (optional)
-  rows.sort((a, b) => b.visitors - a.visitors);
-
-  for (const row of rows) {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${row.country}</td>
-      <td><a href="?airport=${row.code}">${row.code}</a></td>
-      <td>${row.name}</td>
-      <td>${row.visitors}</td>
-    `;
-    tbody.appendChild(tr);
-  }
-
-  document.getElementById('airportSummaryTable').style.display = 'table';
-  makeTableSortable(document.getElementById('airportSummaryTable'));
-}
-
-// Simple sort on click handler
-function makeTableSortable(table) {
-  const headers = table.querySelectorAll('th');
-  headers.forEach((header, i) => {
-    header.style.cursor = 'pointer';
-    header.addEventListener('click', () => {
-      const sortType = header.dataset.sort || 'string';
-      const tbody = table.tBodies[0];
-      const rows = Array.from(tbody.rows);
-      const ascending = !header.classList.contains('asc');
-
-      rows.sort((a, b) => {
-        const cellA = a.cells[i].textContent.trim();
-        const cellB = b.cells[i].textContent.trim();
-
-        if (sortType === 'number') {
-          return ascending ? (parseInt(cellA) - parseInt(cellB)) : (parseInt(cellB) - parseInt(cellA));
-        } else {
-          return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-        }
-      });
-
-      // Remove asc/desc classes from all headers
-      headers.forEach(h => h.classList.remove('asc', 'desc'));
-      header.classList.add(ascending ? 'asc' : 'desc');
-
-      // Re-attach rows in sorted order
-      rows.forEach(row => tbody.appendChild(row));
-    });
-  });
-}
-
-fetchAirports();
-</script>
-
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="airports.js" defer></script>
 </body>
 </html>

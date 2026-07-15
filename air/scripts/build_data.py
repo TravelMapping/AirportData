@@ -28,11 +28,18 @@ def load_user_visits(filename):
     visits = {}
     with open(filename, encoding='utf-8') as f:
         for line in f:
-            parts = line.strip().split()
+            line = line.strip()
+            # Skip comments and blank lines
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split()
             if len(parts) >= 2:
                 code = parts[0].upper()
                 types = set(parts[1:])
-                visits[code] = types
+                if code in visits:
+                    visits[code].update(types)
+                else:
+                    visits[code] = set(types)
     return visits
 
 def match_user_visits(airport_data, user_visits):
@@ -83,15 +90,15 @@ if __name__ == '__main__':
                 json.dump(output_data, f, indent=2)
             print(f'✅ Data file written to {output_path}')
 
-    # Write manifest.json
+    # Write manifest.json (case-insensitive sort, preserve original casing)
     manifest_path = 'air/data/manifest.json'
     with open(manifest_path, 'w', encoding='utf-8') as f:
-        json.dump(sorted(manifest), f)
+        json.dump(sorted(manifest, key=str.lower), f, indent=2)
     print(f'📄 Manifest file written to {manifest_path}')
 
-    # Write users.txt
+    # Write users.txt (case-insensitive sort, preserve original casing)
     users_txt_path = 'air/data/users.txt'
     with open(users_txt_path, 'w', encoding='utf-8') as f:
-        for user in sorted(manifest):
+        for user in sorted(manifest, key=str.lower):
             f.write(user + '\n')
     print(f'🧾 Users file written to {users_txt_path}')

@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Color Scale and Marker Style Preview</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2em;
+    }
+    .scale {
+      margin-bottom: 2em;
+    }
+    .scale-title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    .markers {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+    }
+    .marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.9em;
+    }
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Scale and Marker Style Preview</h1>
+  <div id="container"></div>
+
+  <script>
+    const values = [0, 25, 50, 75, 100];
+
+    const scale1 = {
+      name: "Scale 1: Cyan to Red (no outline)",
+      getColor: (val) => {
+        const ratio = val / 100;
+        const r = Math.floor(255 * ratio);
+        const g = Math.floor(255 * (1 - ratio));
+        const b = Math.floor(255 * (1 - ratio));
+        return `rgb(${r},${g},${b})`;
+      },
+      stroke: "none"
+    };
+
+    const scale2 = {
+      name: "Scale 2: Cyan to Red (with outline)",
+      getColor: (val) => {
+        const ratio = val / 100;
+        const r = Math.floor(255 * ratio);
+        const g = Math.floor(255 * (1 - ratio));
+        const b = Math.floor(255 * (1 - ratio));
+        return `rgb(${r},${g},${b})`;
+      },
+      stroke: "black"
+    };
+
+    const scale3 = {
+      name: "Scale 3: Blue to Yellow to Red",
+      getColor: (val) => {
+        const ratio = val / 100;
+        let r, g, b;
+        if (ratio < 0.5) {
+          r = Math.floor(0 + (ratio * 2) * 255);
+          g = Math.floor((ratio * 2) * 255);
+          b = 255;
+        } else {
+          r = 255;
+          g = Math.floor((1 - (ratio - 0.5) * 2) * 255);
+          b = 0;
+        }
+        return `rgb(${r},${g},${b})`;
+      },
+      stroke: "black"
+    };
+
+    const scale4 = {
+      name: "Scale 4: Gray to Black",
+      getColor: (val) => {
+        const v = Math.floor(255 * (1 - val / 100));
+        return `rgb(${v},${v},${v})`;
+      },
+      stroke: "black"
+    };
+
+    const container = document.getElementById("container");
+    const scales = [scale1, scale2, scale3, scale4];
+
+    scales.forEach(scale => {
+      const section = document.createElement("div");
+      section.className = "scale";
+
+      const title = document.createElement("div");
+      title.className = "scale-title";
+      title.textContent = scale.name;
+
+      const markerRow = document.createElement("div");
+      markerRow.className = "markers";
+
+      values.forEach(val => {
+        const color = scale.getColor(val);
+        const marker = document.createElement("div");
+        marker.className = "marker";
+        marker.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="${color}" stroke="${scale.stroke}" />
+          </svg>
+          <div>${val}</div>
+        `;
+        markerRow.appendChild(marker);
+      });
+
+      section.appendChild(title);
+      section.appendChild(markerRow);
+      container.appendChild(section);
+    });
+
+    // Add marker style comparison using Scale 1 colors
+    const styleSection = document.createElement("div");
+    styleSection.className = "scale";
+
+    const styleTitle = document.createElement("div");
+    styleTitle.className = "scale-title";
+    styleTitle.textContent = "Marker Styles (using Scale 1 color)";
+
+    const markerStylesDiv = document.createElement("div");
+    markerStylesDiv.className = "markers";
+
+    const midValue = 50;
+    const color = scale1.getColor(midValue);
+
+    const styleExamples = [
+      {
+        name: "Filled Circle",
+        svg: `<circle cx="12" cy="12" r="10" fill="${color}" />`
+      },
+      {
+        name: "Ring",
+        svg: `<circle cx="12" cy="12" r="10" fill="none" stroke="${color}" stroke-width="4" />`
+      },
+      {
+        name: "Bullseye",
+        svg: `<circle cx="12" cy="12" r="10" fill="${color}" />
+              <circle cx="12" cy="12" r="4" fill="white" />`
+      },
+      {
+        name: "Map Pin",
+        svg: `<path d="M12 2 C7 2, 4 6, 4 10 C4 15, 12 22, 12 22 C12 22, 20 15, 20 10 C20 6, 17 2, 12 2 Z" fill="${color}"/> 
+              <circle cx="12" cy="10" r="3" fill="white"/>`
+      },
+      {
+        name: "Droplet Pin",
+        svg: `<path d="M12 2 C6 8, 6 14, 12 22 C18 14, 18 8, 12 2 Z" fill="${color}" />
+              <circle cx="12" cy="12" r="3" fill="white" />`
+      },
+      {
+        name: "Pin with Ring",
+        svg: `<path d="M12 2 C7 2, 4 6, 4 10 C4 15, 12 22, 12 22 C12 22, 20 15, 20 10 C20 6, 17 2, 12 2 Z" fill="${color}"/> 
+              <circle cx="12" cy="10" r="5" fill="white"/>`
+      }
+    ];
+
+    styleExamples.forEach(example => {
+      const marker = document.createElement("div");
+      marker.className = "marker";
+      marker.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          ${example.svg}
+        </svg>
+        <div>${example.name}</div>
+      `;
+      markerStylesDiv.appendChild(marker);
+    });
+
+    styleSection.appendChild(styleTitle);
+    styleSection.appendChild(markerStylesDiv);
+    container.appendChild(styleSection);
+  </script>
+</body>
+</html>

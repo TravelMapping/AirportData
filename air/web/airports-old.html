@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Airport Visits</title>
+  <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     body { font-family: sans-serif; padding: 1em; }
@@ -10,6 +11,24 @@
     table { border-collapse: collapse; margin-top: 1em; width: 100%; }
     th, td { border: 1px solid #ccc; padding: 0.5em; text-align: center; }
     th { background: #eee; }
+    .legend {
+      position: absolute;
+      bottom: 30px;
+      left: 10px;
+      background: white;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      line-height: 1.4;
+    }
+    .legend i {
+      display: inline-block;
+      width: 20px;
+      height: 12px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -22,7 +41,18 @@
 
   <div id="map"></div>
   <h2 id="visitCount"></h2>
-  <table id="visitTable" style="display:none;">
+  <table id="airportSummaryTable" style="margin-top: 1em; width: 100%; display: none; border-collapse: collapse;">
+    <thead>
+        <tr>
+          <th data-sort="string">Country</th>
+          <th data-sort="string">IATA</th>
+          <th data-sort="string">Airport Name</th>
+          <th data-sort="number">Visitors</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <table id="visitTable" style="display:none;">
     <thead>
       <tr>
         <th>User</th>
@@ -34,14 +64,79 @@
     <tbody></tbody>
   </table>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+/* ---- Country mapping (copied from your user.js) ---- */
+const countryMap = {
+  AFG: "Afghanistan", ALB: "Albania", DZA: "Algeria", AND: "Andorra",
+  AGO: "Angola", AIA: "Anguilla", ATA: "Antarctica", ARG: "Argentina",
+  ARM: "Armenia", ABW: "Aruba", AUS: "Australia", AUT: "Austria",
+  AZE: "Azerbaijan", BHS: "Bahamas", BHR: "Bahrain", BGD: "Bangladesh",
+  BRB: "Barbados", BLR: "Belarus", BEL: "Belgium", BLZ: "Belize",
+  BEN: "Benin", BMU: "Bermuda", BTN: "Bhutan", BOL: "Bolivia",
+  BIH: "Bosnia & Herzegovina", BWA: "Botswana", BRA: "Brazil",
+  BRN: "Brunei", BGR: "Bulgaria", BFA: "Burkina Faso", BDI: "Burundi",
+  KHM: "Cambodia", CMR: "Cameroon", CAN: "Canada", CPV: "Cape Verde",
+  CAF: "Central African Republic", TCD: "Chad", CHL: "Chile", CHN: "China",
+  COL: "Colombia", COM: "Comoros", COD: "DR Congo", COG: "Congo",
+  CRI: "Costa Rica", CIV: "Ivory Coast", HRV: "Croatia", CUB: "Cuba",
+  CYP: "Cyprus", CZE: "Czech Republic", DNK: "Denmark", DJI: "Djibouti",
+  DMA: "Dominica", DOM: "Dominican Republic", ECU: "Ecuador", EGY: "Egypt",
+  SLV: "El Salvador", GNQ: "Equatorial Guinea", ERI: "Eritrea",
+  EST: "Estonia", SWZ: "eSwatini", ETH: "Ethiopia", FIN: "Finland",
+  FRA: "France", GAB: "Gabon", GMB: "Gambia", GEO: "Georgia",
+  DEU: "Germany", GHA: "Ghana", GRC: "Greece", GRD: "Grenada",
+  GTM: "Guatemala", GIN: "Guinea", GNB: "Guinea-Bissau", GUY: "Guyana",
+  HTI: "Haiti", HND: "Honduras", HUN: "Hungary", ISL: "Iceland",
+  IND: "India", IDN: "Indonesia", IRN: "Iran", IRQ: "Iraq", IRL: "Ireland",
+  ISR: "Israel", ITA: "Italy", JAM: "Jamaica", JPN: "Japan", JOR: "Jordan",
+  KAZ: "Kazakhstan", KEN: "Kenya", KIR: "Kiribati", KWT: "Kuwait",
+  KGZ: "Kyrgyzstan", LAO: "Laos", LVA: "Latvia", LBN: "Lebanon",
+  LSO: "Lesotho", LBR: "Liberia", LBY: "Libya", LIE: "Liechtenstein",
+  LTU: "Lithuania", LUX: "Luxembourg", MDG: "Madagascar", MWI: "Malawi",
+  MYS: "Malaysia", MDV: "Maldives", MLI: "Mali", MLT: "Malta",
+  MRT: "Mauritania", MUS: "Mauritius", MEX: "Mexico", MDA: "Moldova",
+  MCO: "Monaco", MNG: "Mongolia", MNE: "Montenegro", MAR: "Morocco",
+  MOZ: "Mozambique", MMR: "Myanmar", NAM: "Namibia", NPL: "Nepal",
+  NLD: "Netherlands", NZL: "New Zealand", NIC: "Nicaragua", NER: "Niger",
+  NGA: "Nigeria", PRK: "North Korea", MKD: "North Macedonia", NOR: "Norway",
+  OMN: "Oman", PAK: "Pakistan", PAN: "Panama", PNG: "Papua New Guinea",
+  PRY: "Paraguay", PER: "Peru", PHL: "Philippines", POL: "Poland",
+  PRT: "Portugal", QAT: "Qatar", ROU: "Romania", RUS: "Russia",
+  RWA: "Rwanda", KNA: "Saint Kitts & Nevis", LCA: "Saint Lucia",
+  VCT: "Saint Vincent & Grenadines", WSM: "Samoa", SMR: "San Marino",
+  STP: "São Tomé & Príncipe", SAU: "Saudi Arabia", SEN: "Senegal",
+  SRB: "Serbia", SYC: "Seychelles", SLE: "Sierra Leone", SGP: "Singapore",
+  SVK: "Slovakia", SVN: "Slovenia", SLB: "Solomon Islands",
+  SOM: "Somalia", ZAF: "South Africa", KOR: "South Korea",
+  SSD: "South Sudan", ESP: "Spain", LKA: "Sri Lanka", SDN: "Sudan",
+  SUR: "Suriname", SWE: "Sweden", CHE: "Switzerland", SYR: "Syria",
+  TJK: "Tajikistan", TZA: "Tanzania", THA: "Thailand", TLS: "Timor-Leste",
+  TGO: "Togo", TON: "Tonga", TTO: "Trinidad & Tobago", TUN: "Tunisia",
+  TUR: "Turkey", TKM: "Turkmenistan", TUV: "Tuvalu", UGA: "Uganda",
+  UKR: "Ukraine", ARE: "United Arab Emirates", GBR: "United Kingdom",
+  USA: "United States", URY: "Uruguay", UZB: "Uzbekistan", VUT: "Vanuatu",
+  VAT: "Vatican City", VEN: "Venezuela", VNM: "Vietnam", ZMB: "Zambia",
+  ZWE: "Zimbabwe", BLM: "Saint Barthélemy", CUW: "Curaçao", FJI: "Fiji",
+  FSM: "Micronesia", MAF: "Saint-Martin", PRI: "Puerto Rico",
+  SXM: "Sint Maarten", VIR: "U.S. Virgin Islands", PYF:"French Polynesia",
+  MAC: "Macau", TWN: "Taiwan", GLP: "Guadeloupe", TCA: "Turks and Caicos Islands",
+  SPM: "Saint Pierre & Miquelon"
+};
+
 const csvUrl = '../data/airports.csv';
 const manifestUrl = '../data/manifest.json';
 const dataPath = '../data/';
 
 let airports = {};
 let airportList = [];
+let airportVisitCounts = {}; // airport IATA -> number of users
+
+const map = L.map('map').setView([20, 0], 2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+const selectedMarker = L.marker([0, 0]);
 
 function updateHomeLinkVisibility() {
   const params = new URLSearchParams(window.location.search);
@@ -63,6 +158,7 @@ async function fetchAirports() {
     const [country, code, name, lat, lon] = line.split(';');
     if (!code) continue;
     airports[code.toUpperCase()] = {
+      country: country,    // store the 3-letter ISO code as-is
       code: code.toUpperCase(),
       name,
       lat: parseFloat(lat),
@@ -71,16 +167,20 @@ async function fetchAirports() {
     airportList.push({ code: code.toUpperCase(), name });
   }
   populateDropdown();
+
+  await computeAirportVisitCounts();
   placeAllMarkers();
+  createAirportSummaryTable();  // show the summary table if no airport selected
 
-  // Set Home link visibility on initial load
   updateHomeLinkVisibility();
-
   const params = new URLSearchParams(window.location.search);
   const airportParam = params.get('airport');
   if (airportParam && airports[airportParam.toUpperCase()]) {
     document.getElementById('airportSelect').value = airportParam.toUpperCase();
     handleAirportSelect(airportParam.toUpperCase());
+  } else {
+    // If no airport param, make sure the summary table is visible
+    document.getElementById('airportSummaryTable').style.display = 'table';
   }
 }
 
@@ -105,6 +205,140 @@ async function fetchAlist(username) {
   return text.split('\n').filter(line => !line.startsWith('#'));
 }
 
+async function computeAirportVisitCounts() {
+  const manifest = await fetchManifest();
+  const counts = {};
+
+  for (const user of manifest) {
+    try {
+      const lines = await fetchAlist(user);
+      const visitedAirports = new Set();
+
+      for (const line of lines) {
+        const [code] = line.trim().split(/\s+/);
+        if (!code) continue;
+        const iata = code.toUpperCase();
+        if (iata in airports) {
+          visitedAirports.add(iata);
+        }
+      }
+
+      for (const iata of visitedAirports) {
+        counts[iata] = (counts[iata] || 0) + 1;
+      }
+    } catch (e) {
+      console.warn(`Error loading ALIST for ${user}`);
+    }
+  }
+
+  airportVisitCounts = counts;
+}
+
+// linear interpolation helper
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+function getColorForCount(count, maxCount) {
+  if (count === 0) return '#aaaaaa'; // gray for no visits
+
+  // Normalize so 1..maxCount -> 0..1
+  const ratio = Math.min(Math.max((count - 1) / (Math.max(1, maxCount - 1)), 0), 1);
+
+  // Hue sweep: 240 (blue) -> 60 (yellow) -> 0 (red)
+  let hue;
+  if (ratio <= 0.5) {
+    const t = ratio / 0.5; // 0..1
+    hue = lerp(240, 60, t); // blue -> yellow
+  } else {
+    const t = (ratio - 0.5) / 0.5; // 0..1
+    hue = lerp(60, 0, t); // yellow -> red
+  }
+
+  // Adjust saturation and lightness to mute cool colors and boost warm colors
+  let saturation, lightness;
+
+  if (ratio <= 0.5) {
+    // Cool side: keep saturation moderate and lightness lower so blues/cyans look darker
+    const t = ratio / 0.5; // 0..1
+    // Saturation: 60% at the very low end -> 100% near midpoint
+    saturation = Math.round(lerp(60, 100, Math.pow(t, 0.9)));
+    // Lightness: start darker (30%) and increase to 50% at the midpoint (nonlinear)
+    lightness = Math.round(lerp(30, 50, Math.pow(t, 0.8)));
+  } else {
+    // Warm side: keep saturation high and make lightness brighter so yellows/oranges/red pop
+    const t = (ratio - 0.5) / 0.5; // 0..1
+    saturation = Math.round(lerp(100, 90, t)); // stays high
+    // Lightness increases from 50% (midpoint) to 68% (max) to emphasize warmth
+    lightness = Math.round(lerp(50, 68, Math.pow(t, 1.0)));
+  }
+
+  // Return HSL color string (nice smooth perceptual sweep)
+  return `hsl(${Math.round(hue)}, ${saturation}%, ${lightness}%)`;
+}
+
+function createLegend(maxVisits) {
+  if (map.legendControl) {
+    map.removeControl(map.legendControl);
+  }
+
+  const legend = L.control({ position: 'bottomleft' });
+  legend.onAdd = function () {
+    const div = L.DomUtil.create('div', 'legend');
+    div.innerHTML = '<strong>Users per airport</strong><br>';
+
+    // Provide 0, 1, midpoint, max (midpoint chosen as exact half of max)
+    const mid = Math.max(1, Math.floor(maxVisits / 2));
+    const stops = [
+      { label: '0', count: 0 },
+      { label: '1', count: 1 },
+      { label: `${mid}`, count: mid },
+      { label: `${maxVisits}`, count: maxVisits }
+    ];
+
+    for (const stop of stops) {
+      const color = getColorForCount(stop.count, maxVisits);
+      div.innerHTML += `<i style="background:${color}"></i> ${stop.label}<br>`;
+    }
+    return div;
+  };
+
+  legend.addTo(map);
+  map.legendControl = legend;
+}
+  
+function placeAllMarkers() {
+  const maxVisits = Math.max(...Object.values(airportVisitCounts), 1);
+  createLegend(maxVisits); 
+
+  // Build array of airport objects with counts
+  const airportArr = Object.values(airports).map(a => ({
+    code: a.code,
+    lat: a.lat,
+    lon: a.lon,
+    count: airportVisitCounts[a.code] || 0,
+    name: a.name
+  }));
+
+  // Sort ascending by count so low counts get drawn first, high counts last
+  airportArr.sort((a, b) => a.count - b.count);
+
+  // Now add markers in sorted order
+  for (const a of airportArr) {
+    const color = getColorForCount(a.count, maxVisits);
+
+    const marker = L.circleMarker([a.lat, a.lon], {
+      radius: 6,
+      color: color,
+      fillColor: color,
+      fillOpacity: 0.9,
+      weight: 1
+    })
+    .addTo(map)
+    .bindPopup(`<b>${a.code}</b><br>${a.name}<br>${a.count} user(s) visited<br><a href="?airport=${a.code}">View visits</a>`);
+
+    marker.on('click', () => handleAirportSelect(a.code));
+  }
+}
+
 function parseAlist(lines, selectedCode) {
   const result = {};
   for (const line of lines) {
@@ -124,14 +358,18 @@ async function handleAirportSelect(code) {
   const airport = airports[code];
   if (!airport) return;
 
-  // Update URL param without page reload
-  history.replaceState(null, '', `?airport=${code}`);
+  // ✅ HIDE the summary table if an airport is selected
+  document.getElementById('airportSummaryTable').style.display = 'none';
 
-  // Update Home link visibility after URL change
+  history.replaceState(null, '', `?airport=${code}`);
   updateHomeLinkVisibility();
 
   map.setView([airport.lat, airport.lon], 13);
-  marker.setLatLng([airport.lat, airport.lon])
+
+  if (!map.hasLayer(selectedMarker)) {
+    selectedMarker.addTo(map);
+  }
+  selectedMarker.setLatLng([airport.lat, airport.lon])
     .bindPopup(`${airport.code} - ${airport.name}`)
     .openPopup();
 
@@ -162,13 +400,10 @@ function updateTable(data) {
   for (const user of users) {
     const row = document.createElement('tr');
     const tdUser = document.createElement('td');
-
-    // Make user name clickable linking to user.html?user=username
     const link = document.createElement('a');
     link.href = `user.html?user=${encodeURIComponent(user)}`;
     link.textContent = user;
     tdUser.appendChild(link);
-
     row.appendChild(tdUser);
     for (const type of ['A', 'D', 'L']) {
       const td = document.createElement('td');
@@ -179,30 +414,82 @@ function updateTable(data) {
   }
 }
 
-// Map setup
-const map = L.map('map').setView([20, 0], 2);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
-const marker = L.marker([0, 0]).addTo(map);
-
-function placeAllMarkers() {
-  for (const code in airports) {
-    const a = airports[code];
-    const m = L.marker([a.lat, a.lon])
-      .addTo(map)
-      .bindPopup(`<b>${a.code}</b><br>${a.name}<br><a href="?airport=${a.code}">View visits</a>`);
-    m.on('click', () => handleAirportSelect(code));
-  }
-}
-
 document.getElementById('airportSelect').addEventListener('change', (e) => {
   handleAirportSelect(e.target.value.toUpperCase());
 });
 
-// Init
-fetchAirports();
+function createAirportSummaryTable() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('airport')) {
+    // Hide summary table if specific airport selected
+    document.getElementById('airportSummaryTable').style.display = 'none';
+    return;
+  }
 
-  </script>
+  const tbody = document.querySelector('#airportSummaryTable tbody');
+  tbody.innerHTML = '';
+
+  // Build an array of airport info + visitor count (default 0)
+  const rows = Object.values(airports).map(a => ({
+    country: a.country || '',  // ISO 3-letter code from CSV
+    code: a.code,
+    name: a.name,
+    visitors: airportVisitCounts[a.code] || 0,
+  }));
+
+  // Sort by visitor count descending by default
+  rows.sort((a, b) => b.visitors - a.visitors);
+
+  for (const row of rows) {
+    const countryName = countryMap[row.country] || countryMap[(row.country || '').toUpperCase()] || row.country || '';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${countryName}</td>
+      <td><a href="?airport=${row.code}">${row.code}</a></td>
+      <td>${row.name}</td>
+      <td>${row.visitors}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  document.getElementById('airportSummaryTable').style.display = 'table';
+  makeTableSortable(document.getElementById('airportSummaryTable'));
+}
+
+// Simple sort on click handler
+function makeTableSortable(table) {
+  const headers = table.querySelectorAll('th');
+  headers.forEach((header, i) => {
+    header.style.cursor = 'pointer';
+    header.addEventListener('click', () => {
+      const sortType = header.dataset.sort || 'string';
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.rows);
+      const ascending = !header.classList.contains('asc');
+
+      rows.sort((a, b) => {
+        const cellA = a.cells[i].textContent.trim();
+        const cellB = b.cells[i].textContent.trim();
+
+        if (sortType === 'number') {
+          return ascending ? (parseInt(cellA) - parseInt(cellB)) : (parseInt(cellB) - parseInt(cellA));
+        } else {
+          return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+        }
+      });
+
+      // Remove asc/desc classes from all headers
+      headers.forEach(h => h.classList.remove('asc', 'desc'));
+      header.classList.add(ascending ? 'asc' : 'desc');
+
+      // Re-attach rows in sorted order
+      rows.forEach(row => tbody.appendChild(row));
+    });
+  });
+}
+
+fetchAirports();
+</script>
+
 </body>
 </html>
