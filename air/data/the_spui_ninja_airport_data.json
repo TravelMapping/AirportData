@@ -2838,7 +2838,9 @@
     "lat": 39.0533,
     "lon": -84.663,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "CWA",
@@ -3590,7 +3592,10 @@
     "lat": 39.7172,
     "lon": -86.2944,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "INL",
