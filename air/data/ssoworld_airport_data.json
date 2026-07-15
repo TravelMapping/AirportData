@@ -2982,6 +2982,14 @@
     "visits": []
   },
   {
+    "code": "EKO",
+    "name": "Elko Regional Airport",
+    "lat": 40.82490158081055,
+    "lon": -115.79199981689453,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "ELM",
     "name": "Elmira Corning Regional Airport",
     "lat": 42.16,
@@ -2994,6 +3002,14 @@
     "name": "El Paso International Airport",
     "lat": 31.8072,
     "lon": -106.3775,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "ELY",
+    "name": "Ely Airport Yelland Field",
+    "lat": 39.29970169,
+    "lon": -114.8420029,
     "country": "USA",
     "visits": []
   },
@@ -3226,6 +3242,14 @@
       "A",
       "D"
     ]
+  },
+  {
+    "code": "GFL",
+    "name": "Floyd Bennett Memorial Airport",
+    "lat": 43.3412017822,
+    "lon": -73.6102981567,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "GGG",
@@ -3762,6 +3786,14 @@
     "visits": []
   },
   {
+    "code": "LOL",
+    "name": "Derby Field",
+    "lat": 40.0663986206,
+    "lon": -118.565002441,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "LSE",
     "name": "La Crosse Regional Airport",
     "lat": 43.8793,
@@ -3877,6 +3909,14 @@
     ]
   },
   {
+    "code": "MEV",
+    "name": "Minden-Tahoe Airport",
+    "lat": 39.00030136,
+    "lon": -119.7509995,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "MFE",
     "name": "McAllen Miller International Airport",
     "lat": 26.176141,
@@ -3983,6 +4023,14 @@
     "name": "Monroe Regional Airport",
     "lat": 32.5108,
     "lon": -92.0378,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MMH",
+    "name": "Mammoth Yosemite Airport",
+    "lat": 37.625381,
+    "lon": -118.84306,
     "country": "USA",
     "visits": []
   },
@@ -4904,6 +4952,14 @@
     "visits": []
   },
   {
+    "code": "TKF",
+    "name": "Truckee Tahoe Airport",
+    "lat": 39.318628,
+    "lon": -120.140562,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "TLH",
     "name": "Tallahassee International Airport",
     "lat": 30.3968,
@@ -4976,6 +5032,14 @@
     "visits": []
   },
   {
+    "code": "TVL",
+    "name": "Lake Tahoe Airport",
+    "lat": 38.89390182495117,
+    "lon": -119.99500274658203,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "TYR",
     "name": "Tyler Pounds Regional Airport",
     "lat": 32.3539,
@@ -5028,6 +5092,14 @@
     "name": "Enid Woodring Regional Airport",
     "lat": 36.3791999817,
     "lon": -97.7910995483,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "WMC",
+    "name": "Winnemucca Municipal Airport",
+    "lat": 40.8965988159,
+    "lon": -117.805999756,
     "country": "USA",
     "visits": []
   },
