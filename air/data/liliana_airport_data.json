@@ -2464,6 +2464,14 @@
     "visits": []
   },
   {
+    "code": "BKX",
+    "name": "Brookings Regional Airport",
+    "lat": 44.304798,
+    "lon": -96.816902,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BLI",
     "name": "Bellingham International Airport",
     "lat": 48.79280090332031,
@@ -3404,6 +3412,14 @@
     "name": "Daniel K. Inouye International Airport",
     "lat": 21.3187,
     "lon": -157.9225,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "HON",
+    "name": "Huron Regional Airport",
+    "lat": 44.385201,
+    "lon": -98.2285,
     "country": "USA",
     "visits": []
   },

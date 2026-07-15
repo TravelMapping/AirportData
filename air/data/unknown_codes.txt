@@ -1,7 +1,6 @@
 1H2
 1HO
 1L1
-BKX
-HON
 NOL
+RLD
 ZZZ
