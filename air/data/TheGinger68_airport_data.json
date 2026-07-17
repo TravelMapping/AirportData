@@ -2381,10 +2381,7 @@
     "lat": 33.3078,
     "lon": -111.6556,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "AZO",
@@ -2704,7 +2701,10 @@
     "lat": 39.995,
     "lon": -82.8892,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "CMI",
@@ -2872,9 +2872,7 @@
     "lat": 39.8561,
     "lon": -104.6737,
     "country": "USA",
-    "visits": [
-      "L"
-    ]
+    "visits": []
   },
   {
     "code": "DFW",
@@ -2924,10 +2922,7 @@
     "lat": 41.53389,
     "lon": -93.66306,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "DTW",
@@ -3183,10 +3178,7 @@
     "lat": 43.582,
     "lon": -96.7419,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "FSM",
@@ -3650,9 +3642,7 @@
     "lat": 36.084,
     "lon": -115.1537,
     "country": "USA",
-    "visits": [
-      "L"
-    ]
+    "visits": []
   },
   {
     "code": "LAX",
@@ -4212,9 +4202,7 @@
     "lat": 41.9742,
     "lon": -87.9073,
     "country": "USA",
-    "visits": [
-      "L"
-    ]
+    "visits": []
   },
   {
     "code": "ORF",
@@ -4350,10 +4338,7 @@
     "lat": 33.4353,
     "lon": -112.0,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "PIA",
@@ -4601,10 +4586,7 @@
     "lat": 32.7338,
     "lon": -117.1933,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "SAT",
@@ -4676,10 +4658,7 @@
     "lat": 47.4502,
     "lon": -122.3088,
     "country": "USA",
-    "visits": [
-      "A",
-      "D"
-    ]
+    "visits": []
   },
   {
     "code": "SFO",

@@ -1559,6 +1559,14 @@
     "visits": []
   },
   {
+    "code": "ALA",
+    "name": "Almaty International Airport",
+    "lat": 43.354267,
+    "lon": 77.042828,
+    "country": "KAZ",
+    "visits": []
+  },
+  {
     "code": "KEU",
     "name": "Keekorok Airport",
     "lat": -1.5864,
@@ -1684,6 +1692,14 @@
     "lat": 35.731741,
     "lon": -5.921459,
     "country": "MAR",
+    "visits": []
+  },
+  {
+    "code": "RMO",
+    "name": "Chi\u015fin\u0103u International Airport",
+    "lat": 46.92774,
+    "lon": 28.931704,
+    "country": "MDA",
     "visits": []
   },
   {
@@ -5332,6 +5348,22 @@
       "D",
       "L"
     ]
+  },
+  {
+    "code": "TAS",
+    "name": "Tashkent International Airport",
+    "lat": 41.2579,
+    "lon": 69.281197,
+    "country": "UZB",
+    "visits": []
+  },
+  {
+    "code": "UGC",
+    "name": "Urgench International Airport",
+    "lat": 41.58274,
+    "lon": 60.64338,
+    "country": "UZB",
+    "visits": []
   },
   {
     "code": "SPB",
