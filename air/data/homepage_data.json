@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-15T22:46:14.110143Z",
+  "generated_at": "2026-07-17T18:44:28.194127Z",
   "stats": {
     "active_users": 39,
     "airports_mapped": 563,
-    "total_visits": 3502
+    "total_visits": 3512
   },
   "top_travelers": [
     {
@@ -14,7 +14,7 @@
     {
       "rank": 2,
       "user": "JayhawkCO",
-      "airports_visited": 180
+      "airports_visited": 184
     },
     {
       "rank": 3,
