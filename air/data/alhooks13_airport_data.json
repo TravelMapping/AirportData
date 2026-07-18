@@ -2509,6 +2509,14 @@
     "visits": []
   },
   {
+    "code": "BKX",
+    "name": "Brookings Regional Airport",
+    "lat": 44.304798,
+    "lon": -96.816902,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BLI",
     "name": "Bellingham International Airport",
     "lat": 48.79280090332031,
@@ -3510,6 +3518,14 @@
     "visits": []
   },
   {
+    "code": "HON",
+    "name": "Huron Regional Airport",
+    "lat": 44.385201,
+    "lon": -98.2285,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "HOU",
     "name": "William P. Hobby Airport",
     "lat": 29.6456,
@@ -3523,7 +3539,10 @@
     "lat": 41.067,
     "lon": -73.7076,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "HRL",
@@ -3758,7 +3777,9 @@
     "lat": 36.084,
     "lon": -115.1537,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "LAX",
@@ -4002,7 +4023,9 @@
     "lat": 35.04,
     "lon": -89.9819,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "MEV",
@@ -4694,6 +4717,14 @@
     "visits": []
   },
   {
+    "code": "RLD",
+    "name": "Richland Airport",
+    "lat": 46.305599,
+    "lon": -119.304001,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "RND",
     "name": "Randolph Air Force Base",
     "lat": 29.529699,
@@ -4777,7 +4808,9 @@
     "lat": 32.7338,
     "lon": -117.1933,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "SAT",

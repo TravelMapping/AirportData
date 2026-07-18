@@ -2493,6 +2493,14 @@
     "visits": []
   },
   {
+    "code": "BKX",
+    "name": "Brookings Regional Airport",
+    "lat": 44.304798,
+    "lon": -96.816902,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BLI",
     "name": "Bellingham International Airport",
     "lat": 48.79280090332031,
@@ -3452,6 +3460,14 @@
       "A",
       "D"
     ]
+  },
+  {
+    "code": "HON",
+    "name": "Huron Regional Airport",
+    "lat": 44.385201,
+    "lon": -98.2285,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "HOU",
@@ -4594,6 +4610,14 @@
     "visits": [
       "A"
     ]
+  },
+  {
+    "code": "RLD",
+    "name": "Richland Airport",
+    "lat": 46.305599,
+    "lon": -119.304001,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "RND",
