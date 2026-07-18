@@ -3812,6 +3812,14 @@
     ]
   },
   {
+    "code": "HRL",
+    "name": "Valley International Airport",
+    "lat": 26.228500366210938,
+    "lon": -97.65440368652344,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "HSV",
     "name": "Huntsville International Airport",
     "lat": 34.6372,
@@ -4827,6 +4835,14 @@
     "visits": [
       "L"
     ]
+  },
+  {
+    "code": "PKB",
+    "name": "Mid Ohio Valley Regional Airport",
+    "lat": 39.3451,
+    "lon": -81.439201,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "PNS",
