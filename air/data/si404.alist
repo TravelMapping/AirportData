@@ -1,124 +1,21 @@
-#Trip to Florida '97
-##OUT##
-LGW D
-MCO A
-##HOME##
-MCO D
-LGW A
-
-#Trip to Hesse '01
-##OUT##
-LHR D
-FRA A
-##HOME##
-FRA D
-LHR A
-
-#Trip to Florida '03
-##OUT##
-LGW D
+LGW D A
+MCO A D
+LHR D A
+FRA A D
 DTW L
-MCO A
-##HOME##
-MCO D
-DTW L
-LGW A
-
-#Trip to South West USA '03
-##OUT##
-LHR D
-LAX A
-##SIDETRIP##
-LAX D
-LAS A
-LAS D
-LAX A
-##HOME##
-LAX D
-LHR A
-
-#Trip to Sardinia '05
-##OUT##
-STN D
-AHO A
-##HOME##
-AHO D
-STN A
-
-#Trip to Malta '05
-##OUT##
-STN D
-MLA A
-##HOME##
-MLA D
-STN A
-
-#Trip to Lombardy '06
-##OUT##
-LTN D
-BGY A
-##HOME##
-BGY D
-STN A
-
-#Trip to Catalunia '07
-##OUT##
-BOH D
-GRO A
-##HOME##
-GRO D
-BOH A
-
-#Trip to South East Asia '07
-##OUT##
-LHR D
+LAX A D
+LAS A D
+STN D A
+AHO A D
+MLA A D
+LTN D A
+BGY A D
+BOH D A
+GRO A D
 BKK L
-CGK A
-CGK D
+CGK A D
 BDJ A
-##SIDETRIP##
 PKY D
-CGK A
-CGK D
-BKK L
-CNX A
-##HOME##
-CNX D
-BKK L
-LHR A
-
-#Trip to Los Angeles & Las Vegas '07-08
-##OUT##
-LHR D
-LAX A
-##SIDETRIP##
-LAX D
-LAS A
-LAS D
-LAX A
-##HOME##
-LAX D
-LHR A
-
-#Trip to Los Angeles '15
-##OUT##
-LHR D
-LAX A
-##HOME##
-LAX D
-LHR A
-
-#Trip to Dublin '22
-##OUT##
-LHR D
-DUB A
-##HOME##
-DUB D
-LHR A
-
-#Trip to BC '26
-##OUT##
-LHR D
+CNX A D
+DUB A D
 YYR A
-
-
