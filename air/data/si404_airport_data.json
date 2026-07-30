@@ -509,7 +509,9 @@
     "lat": 53.3192,
     "lon": -60.4258,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "YYT",
