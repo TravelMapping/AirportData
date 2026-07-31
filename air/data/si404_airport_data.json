@@ -1056,7 +1056,9 @@
     "lat": 51.505299,
     "lon": 0.055278,
     "country": "GBR",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "LGW",
@@ -1106,7 +1108,8 @@
     "lon": 0.235,
     "country": "GBR",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
