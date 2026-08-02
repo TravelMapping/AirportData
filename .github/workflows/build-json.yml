@@ -31,8 +31,17 @@ jobs:
       - name: Debug alt_codes parsing
         run: python air/scripts/debug_alt_codes.py
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt || true
+      - name: Install dependencies (if present)
+        run: |
+          echo "Python version:"
+          python -V
+          if [ -f requirements.txt ]; then
+            echo "requirements.txt found; installing..."
+            python -m pip install --upgrade pip
+            python -m pip install -r requirements.txt
+          else
+            echo "No requirements.txt found — skipping dependency install"
+          fi
 
       - name: Extract airport codes  # ✅ NEW STEP
         run: python air/scripts/extract_codes.py
@@ -48,8 +57,10 @@ jobs:
 
       - name: Show modified files
         run: |
-          git status
-          git diff --name-only
+          echo "=== git status ==="
+          git status --porcelain=2 --branch || true
+          echo "=== modified files (git diff) ==="
+          git --no-pager diff --name-only || true
 
       - name: Commit all modified files safely
         if: github.ref == 'refs/heads/master'
