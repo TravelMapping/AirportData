@@ -108,24 +108,23 @@ def get_recently_added_airports(limit=5):
         return []
     
     try:
-        # Use git log to find when each line was last added/modified
+        # Get the commit hashes for airports.csv in reverse chronological order
         result = subprocess.run(
-            ['git', 'log', '--follow', '--format=%ct', '--', str(airports_csv_path)],
+            ['git', 'log', '--follow', '--format=%H', '--', str(airports_csv_path)],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
             check=True
         )
         
-        # Get all commit timestamps in reverse chronological order
-        commit_timestamps = result.stdout.strip().split('\n')
-        if not commit_timestamps or not commit_timestamps[0]:
+        commit_hashes = result.stdout.strip().split('\n')
+        if not commit_hashes or not commit_hashes[0]:
             return []
         
-        # Get the most recent commit timestamp
-        most_recent_commit = commit_timestamps[0]
+        # Get the most recent commit hash
+        most_recent_commit = commit_hashes[0]
         
-        # Use git show to get the file at that commit, then parse lines
+        # Use git show to get the file at that commit
         result = subprocess.run(
             ['git', 'show', f'{most_recent_commit}:{airports_csv_path}'],
             stdout=subprocess.PIPE,
