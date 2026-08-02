@@ -13,6 +13,10 @@ on:
       - 'air/scripts/build_data.py'
   workflow_dispatch: {}
 
+concurrency:
+  group: build-json-master
+  cancel-in-progress: false
+
 jobs:
   build:
     if: >
