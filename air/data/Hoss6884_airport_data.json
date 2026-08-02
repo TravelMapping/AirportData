@@ -4115,6 +4115,14 @@
     "visits": []
   },
   {
+    "code": "MNN",
+    "name": "Marion Municipal Airport",
+    "lat": 40.6161994934,
+    "lon": -83.06349945070001,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "MOB",
     "name": "Mobile Regional Airport",
     "lat": 30.69142,
