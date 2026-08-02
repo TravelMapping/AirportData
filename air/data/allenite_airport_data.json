@@ -1093,6 +1093,14 @@
     ]
   },
   {
+    "code": "SOU",
+    "name": "Southampton Airport",
+    "lat": 50.950298,
+    "lon": -1.3568,
+    "country": "GBR",
+    "visits": []
+  },
+  {
     "code": "STN",
     "name": "London Stansted Airport",
     "lat": 51.885,

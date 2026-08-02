@@ -285,7 +285,10 @@
     "lat": 49.2944,
     "lon": -123.1114,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YCB",
@@ -477,7 +480,9 @@
     "lat": 49.1933,
     "lon": -123.1757,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "YXY",
@@ -509,9 +514,7 @@
     "lat": 53.3192,
     "lon": -60.4258,
     "country": "CAN",
-    "visits": [
-      "A"
-    ]
+    "visits": []
   },
   {
     "code": "YYT",
@@ -1100,6 +1103,16 @@
     "lon": -2.2775,
     "country": "GBR",
     "visits": []
+  },
+  {
+    "code": "SOU",
+    "name": "Southampton Airport",
+    "lat": 50.950298,
+    "lon": -1.3568,
+    "country": "GBR",
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "STN",
