@@ -29,4 +29,3 @@ jobs:
           git commit -m "Update airports-master.csv automatically" || echo "Nothing to commit"
           git pull --rebase origin master
           git push
-
