@@ -114,6 +114,7 @@ def get_recently_added_airports(limit=5):
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
+            cwd=str(airports_csv_path.parent.parent.parent),  # Run from repo root
             check=True
         )
         
@@ -124,12 +125,13 @@ def get_recently_added_airports(limit=5):
         # Get the most recent commit hash
         most_recent_commit = commit_hashes[0]
         
-        # Use git show to get the file at that commit
+        # Use git show to get the file at that commit (use relative path from repo root)
         result = subprocess.run(
-            ['git', 'show', f'{most_recent_commit}:{airports_csv_path}'],
+            ['git', 'show', f'{most_recent_commit}:air/data/airports.csv'],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
+            cwd=str(airports_csv_path.parent.parent.parent),  # Run from repo root
             check=True
         )
         
