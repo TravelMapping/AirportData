@@ -2,13 +2,11 @@
 name: Update Homepage Data
 
 on:
-  push:
-    branches:
-      - master # Triggers automation whenever code is pushed to master
-  pull_request:
-    branches:
-      - master # Triggers automation whenever a pull request is merged
-  workflow_dispatch: # Adds the manual "Run workflow" button to the GitHub UI
+  workflow_run:
+    workflows: ["Build JSON from .alist"]
+    types:
+      - completed
+  workflow_dispatch:
 
 jobs:
   build:
