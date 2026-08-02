@@ -5,9 +5,13 @@ on:
     workflows: ["Build JSON from .alist"]
     types:
       - completed
+  workflow_dispatch: {}
 
 jobs:
   deploy:
+    if: >
+      (github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'master')
+      || (github.event_name == 'workflow_dispatch' && (github.actor == 'mapcat' || github.actor == 'jteresco'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -41,6 +45,9 @@ jobs:
         run: python air/scripts/build_data.py
 
       - name: Commit updated airports.csv and unknown_codes.txt
+        if: >
+          (github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'master')
+          || (github.event_name == 'workflow_dispatch' && (github.actor == 'mapcat' || github.actor == 'jteresco'))
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
