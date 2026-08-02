@@ -38,6 +38,37 @@ def map_to_custom_format(row):
         "alt_codes": ""  # add blank alt_codes field
     }
 
+def update_recently_indexed(new_airport_codes_and_names):
+    """
+    Update the recently_indexed.json file with new airports.
+    new_airport_codes_and_names: list of dicts with 'code' and 'name' keys
+    """
+    try:
+        existing_recent = []
+        if os.path.exists(RECENTLY_INDEXED_FILE):
+            with open(RECENTLY_INDEXED_FILE, 'r', encoding='utf-8') as f:
+                existing_recent = json.load(f)
+        
+        # Put the brand new ones at the very front, followed by the older history
+        combined_recent = new_airport_codes_and_names + existing_recent
+        
+        # De-duplicate entries if the same code is indexed multiple times
+        seen = set()
+        deduped_recent = []
+        for item in combined_recent:
+            if item["code"] not in seen:
+                seen.add(item["code"])
+                deduped_recent.append(item)
+        
+        # Keep only the top 5 most recent discoveries
+        final_recent = deduped_recent[:5]
+        
+        with open(RECENTLY_INDEXED_FILE, 'w', encoding='utf-8') as f:
+            json.dump(final_recent, f, indent=2, ensure_ascii=False)
+        print(f"Updated rolling discovery history log in {RECENTLY_INDEXED_FILE}")
+    except Exception as e:
+        print(f"Warning: Failed to update recently indexed history log: {e}")
+
 def main():
     # Load unknown codes from file
     unknown_codes = set()
@@ -68,42 +99,6 @@ def main():
                 writer.writerow(row)
         print(f"Appended {len(new_rows)} new airports to {OUTPUT_FILE}")
 
-        # === NEW: Update Recently Indexed History Log ===
-        try:
-            existing_recent = []
-            if os.path.exists(RECENTLY_INDEXED_FILE):
-                with open(RECENTLY_INDEXED_FILE, 'r', encoding='utf-8') as f:
-                    existing_recent = json.load(f)
-            
-            # Package the fresh additions
-            fresh_additions = []
-            for row in new_rows:
-                fresh_additions.append({
-                    "code": row["iata_code"],
-                    "name": row["name"]
-                })
-            
-            # Put the brand new ones at the very front, followed by the older history
-            combined_recent = fresh_additions + existing_recent
-            
-            # De-duplicate entries if the same code is indexed multiple times
-            seen = set()
-            deduped_recent = []
-            for item in combined_recent:
-                if item["code"] not in seen:
-                    seen.add(item["code"])
-                    deduped_recent.append(item)
-            
-            # Keep only the top 5 most recent discoveries
-            final_recent = deduped_recent[:5]
-            
-            with open(RECENTLY_INDEXED_FILE, 'w', encoding='utf-8') as f:
-                json.dump(final_recent, f, indent=2, ensure_ascii=False)
-            print(f"Updated rolling discovery history log in {RECENTLY_INDEXED_FILE}")
-        except Exception as e:
-            print(f"Warning: Failed to update recently indexed history log: {e}")
-        # ===============================================
-
         # Step 2: Read full file and sort (excluding header)
         with open(OUTPUT_FILE, newline='', encoding='utf-8') as f:
             reader = csv.DictReader(f, delimiter=';')
@@ -119,6 +114,10 @@ def main():
             writer.writerows(all_rows)
 
         print(f"Sorted {OUTPUT_FILE} alphabetically by country, then IATA code.")
+
+        # Step 4: Update recently indexed log with the new airports
+        new_airport_list = [{'code': row['iata_code'], 'name': row['name']} for row in new_rows]
+        update_recently_indexed(new_airport_list)
 
     else:
         print("No matching airports found in lookup file.")
