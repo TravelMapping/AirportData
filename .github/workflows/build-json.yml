@@ -5,6 +5,8 @@ permissions:
 
 on:
   push:
+    branches:
+      - master
     paths:
       - 'air/data/**.alist'
       - 'air/data/airports.csv'
@@ -13,6 +15,9 @@ on:
 
 jobs:
   build:
+    if: >
+      (github.event_name == 'push' && github.ref == 'refs/heads/master')
+      || (github.event_name == 'workflow_dispatch' && (github.actor == 'mapcat' || github.actor == 'jteresco'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -47,6 +52,7 @@ jobs:
           git diff --name-only
 
       - name: Commit all modified files safely
+        if: github.ref == 'refs/heads/master'
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
@@ -56,6 +62,7 @@ jobs:
           git push
 
       - name: Commit and push updated JSON
+        if: github.ref == 'refs/heads/master'
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"

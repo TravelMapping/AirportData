@@ -2,18 +2,24 @@ name: Generate airports-master.csv
 
 on:
   push:
+    branches:
+      - master
     paths:
       - air/data/airports.csv
+  workflow_dispatch: {}
 
 jobs:
   build:
+    if: >
+      (github.event_name == 'push' && github.ref == 'refs/heads/master')
+      || (github.event_name == 'workflow_dispatch' && (github.actor == 'mapcat' || github.actor == 'jteresco'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -22,6 +28,7 @@ jobs:
           python air/scripts/extract_codes.py
 
       - name: Commit generated file safely
+        if: github.ref == 'refs/heads/master'
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
