@@ -96,6 +96,78 @@ def get_top_ranks(sorted_items, score_key_fn, max_ranks=3):
         
     return result
 
+def get_recently_added_airports(limit=5):
+    """
+    Determine the 5 most recently added airports by analyzing the git history
+    of airports.csv. Returns a list of dicts with 'code' and 'name' keys.
+    """
+    data_dir = get_data_dir()
+    airports_csv_path = data_dir / 'airports.csv'
+    
+    if not airports_csv_path.exists():
+        return []
+    
+    try:
+        # Use git log to find when each line was last added/modified
+        result = subprocess.run(
+            ['git', 'log', '--follow', '--format=%ct', '--', str(airports_csv_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True
+        )
+        
+        # Get all commit timestamps in reverse chronological order
+        commit_timestamps = result.stdout.strip().split('\n')
+        if not commit_timestamps or not commit_timestamps[0]:
+            return []
+        
+        # Get the most recent commit timestamp
+        most_recent_commit = commit_timestamps[0]
+        
+        # Use git show to get the file at that commit, then parse lines
+        result = subprocess.run(
+            ['git', 'show', f'{most_recent_commit}:{airports_csv_path}'],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True
+        )
+        
+        lines = result.stdout.strip().split('\n')
+        if not lines:
+            return []
+        
+        # Skip header row, reverse to get newest first
+        data_lines = lines[1:] if len(lines) > 1 else []
+        data_lines_reversed = list(reversed(data_lines))
+        
+        # Parse each line as semicolon-delimited (country;code;name;lat;lon;alt_codes)
+        recently_added = []
+        seen_codes = set()
+        
+        for line in data_lines_reversed:
+            if not line.strip():
+                continue
+            
+            parts = line.split(';')
+            if len(parts) >= 3:
+                code = parts[1].strip()
+                name = parts[2].strip()
+                
+                if code and code not in seen_codes:
+                    recently_added.append({'code': code, 'name': name})
+                    seen_codes.add(code)
+                    
+                    if len(recently_added) >= limit:
+                        break
+        
+        return recently_added
+    
+    except Exception as e:
+        print(f"Warning: Could not determine recently added airports from git history: {e}")
+        return []
+
 def load_user_data():
     """Load all user airport data and calculate statistics."""
     data_dir = get_data_dir()
@@ -223,17 +295,10 @@ def generate_homepage_data():
         except:
             pass
             
-    # === STRATEGY: Read the dedicated, non-scrambled discovery history log ===
-    recently_added = []
-    log_path = data_dir / 'recently_indexed.json'
-    
-    if log_path.exists():
-        try:
-            with open(log_path, 'r', encoding='utf-8') as f:
-                recently_added = json.load(f)
-        except Exception as e:
-            print(f"Warning: Could not read rolling discovery log file: {e}")
-    # =========================================================================
+    # === Determine recently added airports from git history ===
+    print("Analyzing git history for recently added airports...")
+    recently_added = get_recently_added_airports(limit=5)
+    # ================================================================
     
     homepage_data = {
         'generated_at': __import__('datetime').datetime.utcnow().isoformat() + 'Z',
