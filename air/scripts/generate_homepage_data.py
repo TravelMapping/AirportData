@@ -98,76 +98,20 @@ def get_top_ranks(sorted_items, score_key_fn, max_ranks=3):
 
 def get_recently_added_airports(limit=5):
     """
-    Determine the 5 most recently added airports by analyzing the git history
-    of airports.csv. Returns a list of dicts with 'code' and 'name' keys.
+    Read recently added airports from the recently_indexed.json file.
+    This file is maintained by enrich_airports.py.
     """
     data_dir = get_data_dir()
-    airports_csv_path = data_dir / 'airports.csv'
-    
-    if not airports_csv_path.exists():
-        return []
+    log_path = data_dir / 'recently_indexed.json'
     
     try:
-        # Get the commit hashes for airports.csv in reverse chronological order
-        result = subprocess.run(
-            ['git', 'log', '--follow', '--format=%H', '--', str(airports_csv_path)],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            cwd=str(airports_csv_path.parent.parent.parent),  # Run from repo root
-            check=True
-        )
-        
-        commit_hashes = result.stdout.strip().split('\n')
-        if not commit_hashes or not commit_hashes[0]:
-            return []
-        
-        # Get the most recent commit hash
-        most_recent_commit = commit_hashes[0]
-        
-        # Use git show to get the file at that commit (use relative path from repo root)
-        result = subprocess.run(
-            ['git', 'show', f'{most_recent_commit}:air/data/airports.csv'],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            cwd=str(airports_csv_path.parent.parent.parent),  # Run from repo root
-            check=True
-        )
-        
-        lines = result.stdout.strip().split('\n')
-        if not lines:
-            return []
-        
-        # Skip header row, reverse to get newest first
-        data_lines = lines[1:] if len(lines) > 1 else []
-        data_lines_reversed = list(reversed(data_lines))
-        
-        # Parse each line as semicolon-delimited (country;code;name;lat;lon;alt_codes)
-        recently_added = []
-        seen_codes = set()
-        
-        for line in data_lines_reversed:
-            if not line.strip():
-                continue
-            
-            parts = line.split(';')
-            if len(parts) >= 3:
-                code = parts[1].strip()
-                name = parts[2].strip()
-                
-                if code and code not in seen_codes:
-                    recently_added.append({'code': code, 'name': name})
-                    seen_codes.add(code)
-                    
-                    if len(recently_added) >= limit:
-                        break
-        
-        return recently_added
-    
+        if log_path.exists():
+            with open(log_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
     except Exception as e:
-        print(f"Warning: Could not determine recently added airports from git history: {e}")
-        return []
+        print(f"Warning: Could not read recently indexed file: {e}")
+    
+    return []
 
 def load_user_data():
     """Load all user airport data and calculate statistics."""
