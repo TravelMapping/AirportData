@@ -33,7 +33,7 @@ jobs:
           python -m pip install pycountry
 
       - name: Download OurAirports lookup CSV
-        run: curl -o ourairports.csv https://github.com/davidmegginson/ourairports-data/raw/master/airports.csv
+        run: curl -o ourairports.csv https://raw.githubusercontent.com/davidmegginson/ourairports-data/master/airports.csv
 
       - name: Run enrichment script
         run: python air/scripts/enrich_airports.py
