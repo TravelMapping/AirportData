@@ -2,6 +2,8 @@ name: Enrich Airports CSV
 
 on:
   workflow_dispatch:    # Manual trigger
+  schedule:
+    - cron: '0 2 * * *'  # Run daily at 2 AM UTC
   push:
     branches:
       - master
@@ -13,6 +15,7 @@ jobs:
     if: >
       (github.event_name == 'push' && github.ref == 'refs/heads/master')
       || (github.event_name == 'workflow_dispatch' && (github.actor == 'mapcat' || github.actor == 'jteresco'))
+      || (github.event_name == 'schedule')
     runs-on: ubuntu-latest
 
     steps:
