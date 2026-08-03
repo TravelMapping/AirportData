@@ -1121,9 +1121,7 @@
     "lat": 7.810413,
     "lon": -8.702073,
     "country": "GIN",
-    "visits": [
-      "A"
-    ]
+    "visits": []
   },
   {
     "code": "PTP",
@@ -4161,9 +4159,7 @@
     "lat": 40.6161994934,
     "lon": -83.06349945070001,
     "country": "USA",
-    "visits": [
-      "X"
-    ]
+    "visits": []
   },
   {
     "code": "MOB",
