@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-02T22:45:45.902267Z",
+  "generated_at": "2026-08-29T21:26:38.830130Z",
   "stats": {
     "active_users": 41,
     "airports_mapped": 568,
-    "total_visits": 3589
+    "total_visits": 3591
   },
   "top_travelers": [
     {
@@ -49,14 +49,18 @@
     }
   ],
   "recent_updates": [
-    "<a href=\"/AirportData/air/web/user.html?user=mapcat\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapcat</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=si404\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">si404</a> updated their flight map.",
+    "<a href=\"/AirportData/air/web/user.html?user=NocoFlights\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">NocoFlights</a> updated their flight map.",
+    "<a href=\"/AirportData/air/web/user.html?user=mapcat\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapcat</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=clong\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">clong</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=Hoss6884\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">Hoss6884</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=alhooks13\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">alhooks13</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=the_spui_ninja\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">the_spui_ninja</a> updated their flight map."
+    "<a href=\"/AirportData/air/web/user.html?user=alhooks13\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">alhooks13</a> updated their flight map."
   ],
   "recently_added_airports": [
+    {
+      "code": "SOU",
+      "name": "Southampton Airport"
+    },
     {
       "code": "BRI",
       "name": "Bari Karol Wojtyła International Airport"
