@@ -26,6 +26,10 @@ jobs:
       pages: write
       id-token: write
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout repo (master)
         uses: actions/checkout@v4
@@ -36,7 +40,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -74,8 +78,6 @@ jobs:
           git pull --rebase origin master
           git push origin HEAD:master
 
-      # If you're using Pages via Actions, keep these deploy steps.
-      # If your repo uses "Deploy from a branch", these steps are harmless but not required.
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -85,4 +87,5 @@ jobs:
           path: .
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
