@@ -7,21 +7,34 @@ on:
       - completed
   workflow_dispatch: {}
 
+concurrency:
+  group: deploy-airport-maps-master
+  cancel-in-progress: false
+
 jobs:
   deploy:
     if: >
-      (github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'master')
-      || (github.event_name == 'workflow_dispatch' && (github.actor == 'mapcat' || github.actor == 'jteresco'))
+      (github.event_name == 'workflow_run'
+        && github.event.workflow_run.conclusion == 'success'
+        && github.event.workflow_run.head_branch == 'master')
+      || (github.event_name == 'workflow_dispatch'
+        && (github.actor == 'mapcat' || github.actor == 'jteresco'))
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v7
+      - name: Checkout repo (master)
+        uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: master
           fetch-depth: 0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
 
@@ -36,7 +49,9 @@ jobs:
           pip install pycountry
 
       - name: Download OurAirports CSV
-        run: curl -L -o ourairports.csv https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/airports.csv
+        run: |
+          curl -L -o ourairports.csv \
+            https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/airports.csv
 
       - name: Enrich airports.csv
         run: python air/scripts/enrich_airports.py
@@ -45,15 +60,29 @@ jobs:
         run: python air/scripts/build_data.py
 
       - name: Commit updated airports.csv and unknown_codes.txt
-        if: >
-          (github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'master')
-          || (github.event_name == 'workflow_dispatch' && (github.actor == 'mapcat' || github.actor == 'jteresco'))
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add air/data/airports.csv air/data/unknown_codes.txt
-          git diff --cached --quiet || git commit -m "Auto-enriched airports.csv and updated unknown_codes.txt"
-          git push
 
-      - name: Build and Deploy to GitHub Pages
-        uses: actions/configure-pages@v6
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Auto-enriched airports.csv and updated unknown_codes.txt"
+          git pull --rebase origin master
+          git push origin HEAD:master
+
+      # If you're using Pages via Actions, keep these deploy steps.
+      # If your repo uses "Deploy from a branch", these steps are harmless but not required.
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
