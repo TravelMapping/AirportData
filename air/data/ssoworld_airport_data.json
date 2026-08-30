@@ -2214,6 +2214,30 @@
     "visits": []
   },
   {
+    "code": "1H2",
+    "name": "Effingham County Memorial Airport",
+    "lat": 39.070400238,
+    "lon": -88.5335006714,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "1HO",
+    "name": "Highmore Municipal Airport",
+    "lat": 44.3847999573,
+    "lon": -99.4373016357,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "1L1",
+    "name": "Lincoln County Airport",
+    "lat": 37.7874984741,
+    "lon": -114.42199707,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "ABE",
     "name": "Lehigh Valley International Airport",
     "lat": 40.6523,
@@ -3657,6 +3681,14 @@
     "visits": []
   },
   {
+    "code": "K59",
+    "name": "Amelia Earhart Airport",
+    "lat": 39.570499420166,
+    "lon": -95.1802978515625,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "KCG",
     "name": "Chignik Fisheries Airport",
     "lat": 56.3119,
@@ -4225,6 +4257,14 @@
     "name": "Myrtle Beach International Airport",
     "lat": 33.6797,
     "lon": -78.9283,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "NOL",
+    "name": "Naval Air Station Joint Reserve Base New Orleans (Alvin Callender Field)",
+    "lat": 29.825300216674805,
+    "lon": -90.03500366210938,
     "country": "USA",
     "visits": []
   },
