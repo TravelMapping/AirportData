@@ -2854,7 +2854,9 @@
     "lat": 42.9081,
     "lon": -106.4644,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "CRP",
