@@ -1,5 +1,13 @@
 [
   {
+    "code": "JAC",
+    "name": "Jackson Hole Airport"
+  },
+  {
+    "code": "RKV",
+    "name": "Reykjavík Domestic Airport"
+  },
+  {
     "code": "SOU",
     "name": "Southampton Airport"
   },
