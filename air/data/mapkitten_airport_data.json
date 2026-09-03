@@ -3652,7 +3652,9 @@
     "lat": 43.6073,
     "lon": -110.737999,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "JAN",
