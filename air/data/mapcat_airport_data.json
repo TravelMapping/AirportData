@@ -1316,6 +1316,14 @@
     "visits": []
   },
   {
+    "code": "RKV",
+    "name": "Reykjav\u00edk Domestic Airport",
+    "lat": 64.128732,
+    "lon": -21.93759,
+    "country": "ISL",
+    "visits": []
+  },
+  {
     "code": "AHO",
     "name": "Alghero - Riviera del Corallo Airport",
     "lat": 40.631111,
@@ -3690,6 +3698,16 @@
     "lon": -155.048,
     "country": "USA",
     "visits": []
+  },
+  {
+    "code": "JAC",
+    "name": "Jackson Hole Airport",
+    "lat": 43.6073,
+    "lon": -110.737999,
+    "country": "USA",
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "JAN",
