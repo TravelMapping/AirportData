@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-03T00:08:00.220607Z",
+  "generated_at": "2026-09-03T00:09:48.888848Z",
   "stats": {
     "active_users": 43,
     "airports_mapped": 572,
-    "total_visits": 3626
+    "total_visits": 3627
   },
   "top_travelers": [
     {
@@ -49,9 +49,9 @@
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=mapkitten\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapkitten</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mapcat\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapcat</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=mapkitten\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapkitten</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=griffith\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">griffith</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=the_spui_ninja\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">the_spui_ninja</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=the_spui_ninja_micro\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">the_spui_ninja_micro</a> joined the site as a new traveler!"
