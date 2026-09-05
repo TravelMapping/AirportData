@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-05T22:59:38.584869Z",
+  "generated_at": "2026-09-05T23:01:39.088828Z",
   "stats": {
     "active_users": 45,
     "airports_mapped": 573,
-    "total_visits": 3822
+    "total_visits": 3824
   },
   "top_travelers": [
     {
@@ -49,10 +49,10 @@
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=mapkitten\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapkitten</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mapcat\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapcat</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=ntallyn\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">ntallyn</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=julmac\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">julmac</a> joined the site as a new traveler!",
-    "<a href=\"/AirportData/air/web/user.html?user=mapkitten\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapkitten</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=griffith\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">griffith</a> updated their flight map."
   ],
