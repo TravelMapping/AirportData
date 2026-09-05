@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-03T00:09:48.888848Z",
+  "generated_at": "2026-09-05T21:16:58.434112Z",
   "stats": {
-    "active_users": 43,
-    "airports_mapped": 572,
-    "total_visits": 3627
+    "active_users": 44,
+    "airports_mapped": 573,
+    "total_visits": 3679
   },
   "top_travelers": [
     {
@@ -27,7 +27,7 @@
       "rank": 1,
       "code": "DEN",
       "name": "Denver International Airport",
-      "visitor_count": 30
+      "visitor_count": 31
     },
     {
       "rank": 2,
@@ -36,25 +36,25 @@
       "visitor_count": 28
     },
     {
-      "rank": 3,
+      "rank": 2,
       "code": "MCO",
       "name": "Orlando International Airport",
-      "visitor_count": 27
+      "visitor_count": 28
     },
     {
-      "rank": 3,
+      "rank": 2,
       "code": "LAX",
       "name": "Los Angeles International Airport",
-      "visitor_count": 27
+      "visitor_count": 28
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=julmac\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">julmac</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=mapkitten\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapkitten</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mapcat\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapcat</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=griffith\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">griffith</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=the_spui_ninja\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">the_spui_ninja</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=the_spui_ninja_micro\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">the_spui_ninja_micro</a> joined the site as a new traveler!"
+    "<a href=\"/AirportData/air/web/user.html?user=the_spui_ninja\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">the_spui_ninja</a> updated their flight map."
   ],
   "recently_added_airports": [
     {
