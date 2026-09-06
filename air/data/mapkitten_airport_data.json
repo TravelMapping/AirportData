@@ -3653,7 +3653,8 @@
     "lon": -110.737999,
     "country": "USA",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -4345,7 +4346,9 @@
     "lat": 41.9742,
     "lon": -87.9073,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "ORF",

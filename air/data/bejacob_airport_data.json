@@ -2826,7 +2826,10 @@
     "lat": 40.915,
     "lon": -81.4437,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "CDB",
@@ -3798,7 +3801,9 @@
     "lat": 34.2711,
     "lon": -77.9029,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "IMM",
@@ -4652,7 +4657,9 @@
     "lat": 36.8944,
     "lon": -76.2008,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "ORH",
