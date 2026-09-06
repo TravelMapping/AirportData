@@ -32,6 +32,14 @@
     "visits": []
   },
   {
+    "code": "ADL",
+    "name": "Adelaide International Airport",
+    "lat": -34.947512,
+    "lon": 138.533393,
+    "country": "AUS",
+    "visits": []
+  },
+  {
     "code": "ASP",
     "name": "Alice Springs Airport",
     "lat": -23.8045,
@@ -76,6 +84,14 @@
     "name": "Lord Howe Island Airport",
     "lat": -31.5384,
     "lon": 159.076,
+    "country": "AUS",
+    "visits": []
+  },
+  {
+    "code": "MEL",
+    "name": "Melbourne Airport",
+    "lat": -37.670732,
+    "lon": 144.837898,
     "country": "AUS",
     "visits": []
   },
@@ -291,10 +307,26 @@
     "visits": []
   },
   {
+    "code": "YBL",
+    "name": "Campbell River Airport",
+    "lat": 49.950802,
+    "lon": -125.271004,
+    "country": "CAN",
+    "visits": []
+  },
+  {
     "code": "YCB",
     "name": "Cambridge Bay Airport",
     "lat": 69.1081,
     "lon": -105.1383,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YCD",
+    "name": "Nanaimo Airport",
+    "lat": 49.05497,
+    "lon": -123.869863,
     "country": "CAN",
     "visits": []
   },
@@ -411,6 +443,22 @@
     "visits": []
   },
   {
+    "code": "YQQ",
+    "name": "Comox Valley International Airport / CFB Comox",
+    "lat": 49.7108,
+    "lon": -124.887001,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YQR",
+    "name": "Regina International Airport",
+    "lat": 50.431938,
+    "lon": -104.660906,
+    "country": "CAN",
+    "visits": []
+  },
+  {
     "code": "YQX",
     "name": "Gander International Airport",
     "lat": 48.9369,
@@ -482,6 +530,14 @@
     "name": "Vancouver International Airport",
     "lat": 49.1933,
     "lon": -123.1757,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YXE",
+    "name": "Saskatoon John G. Diefenbaker International Airport",
+    "lat": 52.170723,
+    "lon": -106.700793,
     "country": "CAN",
     "visits": []
   },
@@ -677,6 +733,14 @@
     "name": "Juan Santamar\u00eda International Airport",
     "lat": 9.9939,
     "lon": -84.2089,
+    "country": "CRI",
+    "visits": []
+  },
+  {
+    "code": "SYQ",
+    "name": "Tob\u00edas Bola\u00f1os International Airport",
+    "lat": 9.95705,
+    "lon": -84.139801,
     "country": "CRI",
     "visits": []
   },
@@ -1037,6 +1101,14 @@
     "visits": []
   },
   {
+    "code": "EMA",
+    "name": "East Midlands Airport",
+    "lat": 52.8311,
+    "lon": -1.32806,
+    "country": "GBR",
+    "visits": []
+  },
+  {
     "code": "GLA",
     "name": "Glasgow International Airport",
     "lat": 55.8651,
@@ -1245,6 +1317,14 @@
     "visits": []
   },
   {
+    "code": "AMD",
+    "name": "Sardar Vallabh Patel International Airport",
+    "lat": 23.0772,
+    "lon": 72.634697,
+    "country": "IND",
+    "visits": []
+  },
+  {
     "code": "BLR",
     "name": "Kempegowda International Airport",
     "lat": 13.19938,
@@ -1433,6 +1513,14 @@
     "visits": []
   },
   {
+    "code": "VCE",
+    "name": "Venice Marco Polo Airport",
+    "lat": 45.505299,
+    "lon": 12.3519,
+    "country": "ITA",
+    "visits": []
+  },
+  {
     "code": "KIN",
     "name": "Norman Manley International Airport",
     "lat": 17.9356,
@@ -1560,6 +1648,14 @@
     "name": "Kichwa Tembo Airport",
     "lat": -1.263497,
     "lon": 35.027533,
+    "country": "KEN",
+    "visits": []
+  },
+  {
+    "code": "MBA",
+    "name": "Moi International Airport",
+    "lat": -4.03483,
+    "lon": 39.5942,
     "country": "KEN",
     "visits": []
   },
@@ -1724,6 +1820,14 @@
     "visits": []
   },
   {
+    "code": "PVR",
+    "name": "Puerto Vallarta International Airport",
+    "lat": 20.679913,
+    "lon": -105.254391,
+    "country": "MEX",
+    "visits": []
+  },
+  {
     "code": "QRO",
     "name": "Quer\u00e9taro Intercontinental Airport",
     "lat": 20.6173,
@@ -1788,6 +1892,14 @@
     "visits": []
   },
   {
+    "code": "FDF",
+    "name": "Martinique Aim\u00e9 C\u00e9saire International Airport",
+    "lat": 14.591,
+    "lon": -61.003201,
+    "country": "MTQ",
+    "visits": []
+  },
+  {
     "code": "MRU",
     "name": "Sir Seewoosagur Ramgoolam International Airport",
     "lat": -20.430201,
@@ -1801,6 +1913,22 @@
     "lat": 5.932743,
     "lon": 116.049324,
     "country": "MYS",
+    "visits": []
+  },
+  {
+    "code": "KUL",
+    "name": "Kuala Lumpur International Airport",
+    "lat": 2.74558,
+    "lon": 101.709999,
+    "country": "MYS",
+    "visits": []
+  },
+  {
+    "code": "WDH",
+    "name": "Hosea Kutako International Airport",
+    "lat": -22.4799,
+    "lon": 17.4709,
+    "country": "NAM",
     "visits": []
   },
   {
@@ -2233,6 +2361,14 @@
     "lat": -3.42941,
     "lon": 37.074501,
     "country": "TZA",
+    "visits": []
+  },
+  {
+    "code": "EBB",
+    "name": "Entebbe International Airport",
+    "lat": 0.042386,
+    "lon": 32.443501,
+    "country": "UGA",
     "visits": []
   },
   {
@@ -4092,6 +4228,14 @@
     "name": "Morgantown Municipal Airport Walter L. (Bill) Hart Field",
     "lat": 39.643305,
     "lon": -79.917598,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "MGY",
+    "name": "Dayton-Wright Brothers Airport",
+    "lat": 39.5890007019,
+    "lon": -84.224899292,
     "country": "USA",
     "visits": []
   },
