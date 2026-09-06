@@ -1,22 +1,22 @@
 [
   {
-    "code": "JAC",
-    "name": "Jackson Hole Airport"
+    "code": "ADL",
+    "name": "Adelaide International Airport"
   },
   {
-    "code": "RKV",
-    "name": "Reykjavík Domestic Airport"
+    "code": "AMD",
+    "name": "Sardar Vallabh Patel International Airport"
   },
   {
-    "code": "SOU",
-    "name": "Southampton Airport"
+    "code": "EBB",
+    "name": "Entebbe International Airport"
   },
   {
-    "code": "BRI",
-    "name": "Bari Karol Wojtyła International Airport"
+    "code": "EMA",
+    "name": "East Midlands Airport"
   },
   {
-    "code": "LNZ",
-    "name": "Linz-Hörsching Airport"
+    "code": "FDF",
+    "name": "Martinique Aimé Césaire International Airport"
   }
 ]
