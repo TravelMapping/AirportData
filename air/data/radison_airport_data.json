@@ -4419,6 +4419,22 @@
     "visits": []
   },
   {
+    "code": "NIP",
+    "name": "Naval Air Station Kingsville",
+    "lat": 27.5164,
+    "lon": -97.8267,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "NLC",
+    "name": "Naval Air Station Lemoore",
+    "lat": 36.0833,
+    "lon": -119.9833,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "NOL",
     "name": "Naval Air Station Joint Reserve Base New Orleans (Alvin Callender Field)",
     "lat": 29.825300216674805,
@@ -4428,6 +4444,22 @@
       "A",
       "D"
     ]
+  },
+  {
+    "code": "NTU",
+    "name": "Naval Auxiliary Air Station Tucson",
+    "lat": 32.1165,
+    "lon": -110.9408,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "NUW",
+    "name": "Naval Air Station Whidbey Island",
+    "lat": 48.3642,
+    "lon": -122.6542,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "OAJ",
