@@ -1,16 +1,23 @@
 ABQ A D
 ADL A D
+# Air Force Academy
 AFF X
 ATL A D L
 AMS A D
+AZA X
 BDL A D
+#Boeing Field (King County)
+BFI X
 BLI X
 BNA A D L
 BNE A D
 BOI A
 BOS A D
+BQK X
 BUF A D
 BWI A D L
+#College Park MD
+CGS X
 CHS A D
 CLT L
 CMH A D
@@ -26,35 +33,51 @@ DTW A D L
 DUB L
 EDI A D
 FAT A D
+# WPAFB
 FFO X
 FRA L
+GNV X
 GSP A D L
 GUA A D L
 HOU L
 HSV A D
 IAH L
-IND A D
+# Kankakee
+IKK A D
+IND A D L
 JAX A D
 LAS A D L
 LAX A D L
 LGA L
 LHR L
+# RAF Lossiemouth
+LMO X
 MCI A D
 MCO A D L
+# Harrisburg PA
 MDT A D
 MDW A D L
 MEL L
 MEX L
 MIA A D L
+# Montgomery County (OH)
 MGY A D
 MHT A D
 MKE A D
 MSP L
 MSY A D
+# NAS JAX
 NIP X
+# NAS Lemoore
 NLC X
+# NAS Oceana
 NTU X
+# NAS Whidbey Island
 NUW X
+# Cecil Airport (Jacksonville)
+NZC X
+# Offutt AFB
+OFF X
 OMA A D
 ORD A D L
 ORF A D
@@ -70,19 +93,26 @@ RNO A D
 SAL L
 SAN L
 SAT A D
+SAV X
 SEA A D
 SFO A D
 SJC A D
 SLC A D
+# Sheppard AFB (TX)
+SPS X
+SSI X
 STL A D L
+# Spirit of St Louis
 SUS A D
 SYD A D L
+# San Jose, Costa Rica
 SYQ A D
 TPA A D L
 VCE A D
 YUL L
 YYZ A D L
-3KK A D
 
+# RAAF Amberley
 YAMB X
+# RAAF Edinburgh
 YPED X
