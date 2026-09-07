@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-06T01:28:48.117771Z",
+  "generated_at": "2026-09-07T02:54:38.607646Z",
   "stats": {
     "active_users": 45,
-    "airports_mapped": 573,
-    "total_visits": 3829
+    "airports_mapped": 589,
+    "total_visits": 3861
   },
   "top_travelers": [
     {
@@ -49,33 +49,33 @@
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=ntallyn\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">ntallyn</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=bejacob\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">bejacob</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mapkitten\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapkitten</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=mapcat\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapcat</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=ntallyn\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">ntallyn</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=julmac\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">julmac</a> joined the site as a new traveler!"
   ],
   "recently_added_airports": [
     {
-      "code": "JAC",
-      "name": "Jackson Hole Airport"
+      "code": "ADL",
+      "name": "Adelaide International Airport"
     },
     {
-      "code": "RKV",
-      "name": "Reykjavík Domestic Airport"
+      "code": "AMD",
+      "name": "Sardar Vallabh Patel International Airport"
     },
     {
-      "code": "SOU",
-      "name": "Southampton Airport"
+      "code": "EBB",
+      "name": "Entebbe International Airport"
     },
     {
-      "code": "BRI",
-      "name": "Bari Karol Wojtyła International Airport"
+      "code": "EMA",
+      "name": "East Midlands Airport"
     },
     {
-      "code": "LNZ",
-      "name": "Linz-Hörsching Airport"
+      "code": "FDF",
+      "name": "Martinique Aimé Césaire International Airport"
     }
   ]
 }
