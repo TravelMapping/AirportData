@@ -4471,9 +4471,9 @@
   },
   {
     "code": "NIP",
-    "name": "Naval Air Station Kingsville",
-    "lat": 27.5164,
-    "lon": -97.8267,
+    "name": "Naval Air Station Jacksonville",
+    "lat": 30.2344,
+    "lon": -81.6871,
     "country": "USA",
     "visits": []
   },
@@ -4495,9 +4495,9 @@
   },
   {
     "code": "NTU",
-    "name": "Naval Auxiliary Air Station Tucson",
-    "lat": 32.1165,
-    "lon": -110.9408,
+    "name": "Naval Air Station Oceana",
+    "lat": 36.8181,
+    "lon": -76.0356,
     "country": "USA",
     "visits": []
   },
