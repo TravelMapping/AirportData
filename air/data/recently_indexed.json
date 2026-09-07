@@ -1,22 +1,22 @@
 [
   {
-    "code": "ADL",
-    "name": "Adelaide International Airport"
+    "code": "BFI",
+    "name": "King County International Airport - Boeing Field"
   },
   {
-    "code": "AMD",
-    "name": "Sardar Vallabh Patel International Airport"
+    "code": "CGS",
+    "name": "College Park Airport"
   },
   {
-    "code": "EBB",
-    "name": "Entebbe International Airport"
+    "code": "IKK",
+    "name": "Greater Kankakee Airport"
   },
   {
-    "code": "EMA",
-    "name": "East Midlands Airport"
+    "code": "LMO",
+    "name": "RAF Lossiemouth"
   },
   {
-    "code": "FDF",
-    "name": "Martinique Aimé Césaire International Airport"
+    "code": "NZC",
+    "name": "Maria Reiche Neuman Airport"
   }
 ]
