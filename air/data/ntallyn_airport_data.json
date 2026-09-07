@@ -2618,7 +2618,9 @@
     "lat": 33.3078,
     "lon": -111.6556,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "AZO",
@@ -2792,7 +2794,9 @@
     "lat": 31.2589,
     "lon": -81.4664,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "BRO",
@@ -3561,7 +3565,9 @@
     "lat": 29.69,
     "lon": -82.2717,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "GON",
@@ -3846,7 +3852,8 @@
     "country": "USA",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
@@ -4596,7 +4603,9 @@
     "lat": 41.119307,
     "lon": -95.90851,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "OGG",
@@ -5116,7 +5125,9 @@
     "lat": 32.1275,
     "lon": -81.2022,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "SBN",
