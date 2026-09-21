@@ -1199,6 +1199,14 @@
     ]
   },
   {
+    "code": "LMO",
+    "name": "RAF Lossiemouth",
+    "lat": 57.7052,
+    "lon": -3.33917,
+    "country": "GBR",
+    "visits": []
+  },
+  {
     "code": "LTN",
     "name": "London Luton Airport",
     "lat": 51.874722,
@@ -2105,6 +2113,14 @@
     "visits": []
   },
   {
+    "code": "NZC",
+    "name": "Maria Reiche Neuman Airport",
+    "lat": -14.854,
+    "lon": -74.961502,
+    "country": "PER",
+    "visits": []
+  },
+  {
     "code": "CEB",
     "name": "Mactan Cebu International Airport",
     "lat": 10.309261,
@@ -2726,6 +2742,14 @@
     "visits": []
   },
   {
+    "code": "BFI",
+    "name": "King County International Airport - Boeing Field",
+    "lat": 47.527042,
+    "lon": -122.29995,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BGM",
     "name": "Greater Binghamton Airport",
     "lat": 42.2086,
@@ -2984,6 +3008,14 @@
     "visits": [
       "L"
     ]
+  },
+  {
+    "code": "CGS",
+    "name": "College Park Airport",
+    "lat": 38.9805984497,
+    "lon": -76.9223022461,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "CHA",
@@ -3922,6 +3954,14 @@
       "A",
       "D"
     ]
+  },
+  {
+    "code": "IKK",
+    "name": "Greater Kankakee Airport",
+    "lat": 41.07139968869999,
+    "lon": -87.8462982178,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "ILG",
@@ -5476,6 +5516,14 @@
     "visits": []
   },
   {
+    "code": "SPS",
+    "name": "Wichita Falls Municipal Airport / Sheppard Air Force Base",
+    "lat": 33.9888,
+    "lon": -98.491898,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "SRQ",
     "name": "Sarasota\u2013Bradenton International Airport",
     "lat": 27.3956,
@@ -5498,6 +5546,14 @@
     "name": "Stinson Municipal Airport",
     "lat": 29.336999893188,
     "lon": -98.471099853516,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "SSI",
+    "name": "St Simons Island Airport",
+    "lat": 31.1518,
+    "lon": -81.391296,
     "country": "USA",
     "visits": []
   },
