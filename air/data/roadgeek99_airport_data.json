@@ -2809,7 +2809,9 @@
     "lat": 34.2006,
     "lon": -118.3586,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "BWI",
@@ -3249,7 +3251,9 @@
     "lat": 44.12459945678711,
     "lon": -123.21199798583984,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "EVV",
@@ -3991,7 +3995,9 @@
     "lat": 33.8178,
     "lon": -118.1516,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "LIH",
