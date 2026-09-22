@@ -1046,7 +1046,8 @@
     "lon": 1.36382,
     "country": "FRA",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -1179,7 +1180,10 @@
     "lat": 53.3554,
     "lon": -2.2775,
     "country": "GBR",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SOU",
@@ -1398,7 +1402,9 @@
     "lat": 53.421389,
     "lon": -6.27,
     "country": "IRL",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "SNN",
@@ -3432,7 +3438,9 @@
     "lat": 35.139757,
     "lon": -111.669826,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "FLL",
@@ -3868,7 +3876,10 @@
     "lat": 39.7172,
     "lon": -86.2944,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "INL",
@@ -4263,9 +4274,7 @@
     "lat": 35.04,
     "lon": -89.9819,
     "country": "USA",
-    "visits": [
-      "A"
-    ]
+    "visits": []
   },
   {
     "code": "MEV",
