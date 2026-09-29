@@ -3720,7 +3720,7 @@
     "lon": -77.4481,
     "country": "USA",
     "visits": [
-      "X"
+      "L"
     ]
   },
   {
@@ -4697,7 +4697,9 @@
     "lat": 33.4353,
     "lon": -112.0,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "PIA",
