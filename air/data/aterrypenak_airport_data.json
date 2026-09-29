@@ -341,7 +341,10 @@
     "lat": 53.31,
     "lon": -113.5794,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YEV",
@@ -591,7 +594,8 @@
     "country": "CAN",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
