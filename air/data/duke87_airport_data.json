@@ -549,7 +549,10 @@
     "lat": 51.1139,
     "lon": -114.0203,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "YYG",
@@ -589,7 +592,11 @@
     "lat": 43.6777,
     "lon": -79.6248,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "A",
+      "D",
+      "L"
+    ]
   },
   {
     "code": "YZF",
@@ -2615,7 +2622,9 @@
     "lat": 41.9389,
     "lon": -72.6833,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "BDR",
