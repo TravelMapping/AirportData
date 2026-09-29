@@ -1,5 +1,13 @@
 [
   {
+    "code": "YWG",
+    "name": "Winnipeg / James Armstrong Richardson International Airport"
+  },
+  {
+    "code": "YYQ",
+    "name": "Churchill Airport"
+  },
+  {
     "code": "BFI",
     "name": "King County International Airport - Boeing Field"
   },
@@ -10,13 +18,5 @@
   {
     "code": "IKK",
     "name": "Greater Kankakee Airport"
-  },
-  {
-    "code": "LMO",
-    "name": "RAF Lossiemouth"
-  },
-  {
-    "code": "NZC",
-    "name": "Maria Reiche Neuman Airport"
   }
 ]
