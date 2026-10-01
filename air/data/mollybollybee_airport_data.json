@@ -534,6 +534,14 @@
     "visits": []
   },
   {
+    "code": "YWG",
+    "name": "Winnipeg / James Armstrong Richardson International Airport",
+    "lat": 49.909999847399995,
+    "lon": -97.2398986816,
+    "country": "CAN",
+    "visits": []
+  },
+  {
     "code": "YXE",
     "name": "Saskatoon John G. Diefenbaker International Airport",
     "lat": 52.170723,
@@ -562,6 +570,14 @@
     "name": "Charlottetown Airport",
     "lat": 46.2892,
     "lon": -63.121,
+    "country": "CAN",
+    "visits": []
+  },
+  {
+    "code": "YYQ",
+    "name": "Churchill Airport",
+    "lat": 58.739200592041016,
+    "lon": -94.06500244140625,
     "country": "CAN",
     "visits": []
   },
