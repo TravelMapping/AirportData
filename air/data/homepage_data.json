@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-01T11:10:24.611031Z",
+  "generated_at": "2026-10-07T23:33:35.049363Z",
   "stats": {
     "active_users": 45,
     "airports_mapped": 594,
-    "total_visits": 3890
+    "total_visits": 3891
   },
   "top_travelers": [
     {
@@ -49,11 +49,11 @@
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=rlee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">rlee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=aterrypenak\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">aterrypenak</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=duke87\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">duke87</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=cockroachking\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">cockroachking</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=alhooks13\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">alhooks13</a> updated their flight map."
   ],
   "recently_added_airports": [
