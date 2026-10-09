@@ -3743,7 +3743,9 @@
     "lat": 29.6456,
     "lon": -95.2789,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "HPN",
@@ -4234,7 +4236,9 @@
     "lat": 41.7868,
     "lon": -87.7522,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "L"
+    ]
   },
   {
     "code": "MEI",
@@ -4470,7 +4474,10 @@
     "lat": 29.9933,
     "lon": -90.2581,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "MTJ",
