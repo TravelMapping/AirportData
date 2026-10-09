@@ -2973,7 +2973,9 @@
     "lat": 35.214,
     "lon": -80.9431,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "CMH",
