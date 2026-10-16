@@ -4013,6 +4013,7 @@
     "country": "USA",
     "visits": [
       "A",
+      "D",
       "L"
     ]
   },
@@ -4213,7 +4214,8 @@
     "country": "USA",
     "visits": [
       "A",
-      "D"
+      "D",
+      "L"
     ]
   },
   {
