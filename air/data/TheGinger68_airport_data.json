@@ -3016,7 +3016,9 @@
     "lat": 38.3758,
     "lon": -81.5931,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "CSG",
