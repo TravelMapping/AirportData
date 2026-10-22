@@ -105,11 +105,14 @@ function initMap() {
     maxZoom: 16
   });
 
-  // OpenTopoMap
-  const openTopoMap = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-    attribution: '&copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap (CC-BY-SA)',
-    maxZoom: 17
-  });
+  // Esri Topographic
+  const esriTopographic = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: '&copy; Esri, HERE, Garmin, Intermap, increment P Corp., GEBCO, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), OpenStreetMap contributors, and the GIS User Community',
+      maxZoom: 16
+    }
+  );
 
   // Default to Esri Light Gray + labels
   let savedBasemap = localStorage.getItem("preferred_basemap") || "Light Gray + Labels (Esri)";
@@ -122,7 +125,7 @@ function initMap() {
   // Initial layer selection
   let initialLayer = esriGrayCanvas;
   if (savedBasemap === "Minimal Canvas (Esri)") initialLayer = esriMinimalCanvas;
-  if (savedBasemap === "OpenTopoMap") initialLayer = openTopoMap;
+  if (savedBasemap === "Topographic (Esri)") initialLayer = esriTopographic;
   if (savedBasemap === "Standard Map (OSM)") initialLayer = openStreetMap;
   if (savedBasemap === "Light Gray (CartoDB)") initialLayer = cartoDbPositron;
 
@@ -137,7 +140,7 @@ function initMap() {
   const baseMaps = {
     "Light Gray + Labels (Esri)": esriGrayCanvas,
     "Minimal Canvas (Esri)": esriMinimalCanvas,
-    "OpenTopoMap": openTopoMap,
+    "Topographic (Esri)": esriTopographic,
     "Standard Map (OSM)": openStreetMap
   };
 
