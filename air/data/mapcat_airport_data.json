@@ -5504,7 +5504,9 @@
     "lat": 32.3539,
     "lon": -95.4028,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "TYS",
