@@ -26,7 +26,7 @@ const countryMap = {
   KAZ: "Kazakhstan", KEN: "Kenya", KIR: "Kiribati", KWT: "Kuwait",
   KGZ: "Kyrgyzstan", LAO: "Laos", LVA: "Latvia", LBN: "Lebanon",
   LSO: "Lesotho", LBR: "Liberia", LBY: "Libya", LIE: "Liechtenstein",
-  LTU: "Lithuania", LUX: "School", MDG: "Madagascar", MWI: "Malawi",
+  LTU: "Lithuania", LUX: "Luxembourg", MDG: "Madagascar", MWI: "Malawi",
   MYS: "Malaysia", MDV: "Maldives", MLI: "Mali", MLT: "Malta",
   MRT: "Mauritania", MUS: "Mauritius", MEX: "Mexico", MDA: "Moldova",
   MCO: "Monaco", MNG: "Mongolia", MNE: "Montenegro", MAR: "Morocco",
@@ -74,6 +74,8 @@ function initMap() {
   const northEast = L.latLng(90, 180);
   const worldBounds = L.latLngBounds(southWest, northEast);
 
+  const ENABLE_CARTODB = false; // set to true once a CartoDB API key is arranged
+
   const openStreetMap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; OpenStreetMap contributors',
   });
@@ -84,41 +86,69 @@ function initMap() {
     maxZoom: 20
   });
 
-  const esriGrayCanvas = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+  // Esri Light Gray base + labels
+  const esriGrayBase = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
     attribution: '&copy; Esri, HERE, Garmin, NGA, USGS',
     maxZoom: 16
   });
 
-  const savedBasemap = localStorage.getItem("preferred_basemap") || "Light Gray (CartoDB)";
-  let initialLayer = cartoDbPositron;
+  const esriGrayLabels = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
+    attribution: '',
+    maxZoom: 16
+  });
+
+  const esriGrayCanvas = L.layerGroup([esriGrayBase, esriGrayLabels]);
+
+  // Esri Minimal Canvas (light gray, no labels), same as the original layer
+  const esriMinimalCanvas = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+    attribution: '&copy; Esri, HERE, Garmin, NGA, USGS',
+    maxZoom: 16
+  });
+
+  // OpenTopoMap
+  const openTopoMap = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap (CC-BY-SA)',
+    maxZoom: 17
+  });
+
+  // Default to Esri Light Gray + labels
+  let savedBasemap = localStorage.getItem("preferred_basemap") || "Light Gray + Labels (Esri)";
+
+  // If CartoDB is disabled, send anyone who saved it to a working layer
+  if (savedBasemap === "Light Gray (CartoDB)" && !ENABLE_CARTODB) {
+    savedBasemap = "Light Gray + Labels (Esri)";
+  }
+
+  // Initial layer selection
+  let initialLayer = esriGrayCanvas;
+  if (savedBasemap === "Minimal Canvas (Esri)") initialLayer = esriMinimalCanvas;
+  if (savedBasemap === "OpenTopoMap") initialLayer = openTopoMap;
   if (savedBasemap === "Standard Map (OSM)") initialLayer = openStreetMap;
-  if (savedBasemap === "Minimal Canvas (Esri)") initialLayer = esriGrayCanvas;
+  if (savedBasemap === "Light Gray (CartoDB)") initialLayer = cartoDbPositron;
 
   map = L.map('map', {
     maxBounds: worldBounds,
     maxBoundsViscosity: 1.0,
+    maxZoom: 16,
     minZoom: 2,
     layers: [initialLayer]
   }).setView([20, 0], 2);
 
   const baseMaps = {
-    "Light Gray (CartoDB)": cartoDbPositron,
-    "Minimal Canvas (Esri)": esriGrayCanvas,
+    "Light Gray + Labels (Esri)": esriGrayCanvas,
+    "Minimal Canvas (Esri)": esriMinimalCanvas,
+    "OpenTopoMap": openTopoMap,
     "Standard Map (OSM)": openStreetMap
   };
+
+  if (ENABLE_CARTODB) {
+    baseMaps["Light Gray (CartoDB)"] = cartoDbPositron;
+  }
 
   L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
 
   map.on('baselayerchange', (e) => {
     localStorage.setItem("preferred_basemap", e.name);
-  });
-
-  selectedMarker = L.circleMarker([0, 0], {
-    radius: 12,
-    color: '#1a202c',
-    fillColor: '#3182ce',
-    fillOpacity: 1,
-    weight: 3
   });
 }
 
@@ -168,7 +198,6 @@ function updateHeaderAndNav() {
   const params = new URLSearchParams(window.location.search);
   const airportParam = params.get('airport');
   
-  const homeLink = document.getElementById('homeLink');
   const navSeparator = document.getElementById('nav-separator');
   const backToSummary = document.getElementById('backToSummary');
   const siteSubtitle = document.getElementById('siteSubtitle');
