@@ -167,40 +167,84 @@ function createMapIfNeeded() {
     const northEast = L.latLng(90, 180);
     const worldBounds = L.latLngBounds(southWest, northEast);
 
-    // Standard OpenStreetMap
+    const ENABLE_CARTODB = false; // set to true once a CartoDB API key is arranged
+
     const openStreetMap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: '&copy; OpenStreetMap contributors',
     });
 
-    // Clean Light Gray Map
     const cartoDbPositron = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
       attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
       subdomains: 'abcd',
       maxZoom: 20
     });
 
-    // Ultra-Minimalist Gray Canvas
-    const esriGrayCanvas = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+    // Esri Light Gray base + labels
+    const esriGrayBase = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
       attribution: '&copy; Esri, HERE, Garmin, NGA, USGS',
       maxZoom: 16
     });
 
-    // Initialize with CartoDB Positron by default
+    const esriGrayLabels = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
+      attribution: '',
+      maxZoom: 16
+    });
+
+    const esriGrayCanvas = L.layerGroup([esriGrayBase, esriGrayLabels]);
+
+    // Esri Minimal Canvas (light gray, no labels)
+    const esriMinimalCanvas = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+      attribution: '&copy; Esri, HERE, Garmin, NGA, USGS',
+      maxZoom: 16
+    });
+
+    // Esri Topographic
+    const esriTopographic = L.tileLayer(
+      "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+      {
+        attribution: '&copy; Esri, HERE, Garmin, Intermap, increment P Corp., GEBCO, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), OpenStreetMap contributors, and the GIS User Community',
+        maxZoom: 16
+      }
+    );
+
+    // Default to Esri Light Gray + labels
+    let savedBasemap = localStorage.getItem("preferred_basemap") || "Light Gray + Labels (Esri)";
+
+    // If CartoDB is disabled, send anyone who saved it to a working layer
+    if (savedBasemap === "Light Gray (CartoDB)" && !ENABLE_CARTODB) {
+      savedBasemap = "Light Gray + Labels (Esri)";
+    }
+
+    let initialLayer = esriGrayCanvas;
+    if (savedBasemap === "Minimal Canvas (Esri)") initialLayer = esriMinimalCanvas;
+    if (savedBasemap === "Topographic (Esri)") initialLayer = esriTopographic;
+    if (savedBasemap === "Standard Map (OSM)") initialLayer = openStreetMap;
+    if (savedBasemap === "Light Gray (CartoDB)") initialLayer = cartoDbPositron;
+
     map = L.map("map", {
       maxBounds: worldBounds,
       maxBoundsViscosity: 1.0,
+      maxZoom: 16,
       minZoom: 2,
-      layers: [cartoDbPositron] 
+      layers: [initialLayer]
     }).setView([20, 0], 2);
 
-    // Layer switcher box placed cleanly in the top right
     const baseMaps = {
-      "Light Gray (CartoDB)": cartoDbPositron,
-      "Minimal Canvas (Esri)": esriGrayCanvas,
+      "Light Gray + Labels (Esri)": esriGrayCanvas,
+      "Minimal Canvas (Esri)": esriMinimalCanvas,
+      "Topographic (Esri)": esriTopographic,
       "Standard Map (OSM)": openStreetMap
     };
 
+    if (ENABLE_CARTODB) {
+      baseMaps["Light Gray (CartoDB)"] = cartoDbPositron;
+    }
+
     L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
+
+    map.on('baselayerchange', (e) => {
+      localStorage.setItem("preferred_basemap", e.name);
+    });
   }
 }
 
