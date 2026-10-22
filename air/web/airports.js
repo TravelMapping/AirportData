@@ -153,6 +153,14 @@ function initMap() {
   map.on('baselayerchange', (e) => {
     localStorage.setItem("preferred_basemap", e.name);
   });
+
+  selectedMarker = L.circleMarker([0, 0], {
+    radius: 12,
+    color: '#1a202c',
+    fillColor: '#3182ce',
+    fillOpacity: 1,
+    weight: 3
+  });
 }
 
 function pulseMarker(marker) {
