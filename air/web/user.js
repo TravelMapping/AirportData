@@ -38,7 +38,7 @@ const countryMap = {
   EST: "Estonia", SWZ: "eSwatini", ETH: "Ethiopia", FIN: "Finland",
   FRA: "France", GAB: "Gabon", GMB: "Gambia", GEO: "Georgia",
   DEU: "Germany", GHA: "Ghana", GRC: "Greece", GRD: "Grenada",
-  GTM: "Guatemala", GIN: "Guinea", GNB: "Guinea‑Bissau", GUY: "Guyana",
+  GTM: "Guatemala", GIN: "Guinea", GNB: "Guinea-Bissau", GUY: "Guyana",
   HTI: "Haiti", HND: "Honduras", HUN: "Hungary", ISL: "Iceland",
   IND: "India", IDN: "Indonesia", IRN: "Iran", IRQ: "Iraq", IRL: "Ireland",
   ISR: "Israel", ITA: "Italy", JAM: "Jamaica", JPN: "Japan", JOR: "Jordan",
@@ -414,7 +414,7 @@ function displayUserSummary(userList) {
       addRow(userSummaryTableBody, row);
     } catch (err) {
       console.error(`Error loading data for user ${user}:`, err);
-      const row = [userLink, "", "", "", ""];
+      const row = [userLink, "", "", "", "", ""];
       addRow(userSummaryTableBody, row);
     }
   });
