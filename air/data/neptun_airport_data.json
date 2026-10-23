@@ -990,7 +990,9 @@
     "lat": 59.4133,
     "lon": 24.8328,
     "country": "EST",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "ADD",
@@ -2169,7 +2171,9 @@
     "lat": 52.165699,
     "lon": 20.9671,
     "country": "POL",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "WMI",
