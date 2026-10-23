@@ -5075,7 +5075,10 @@
     "lat": 29.5267,
     "lon": -98.4719,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SAV",
