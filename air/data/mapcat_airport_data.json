@@ -2647,7 +2647,9 @@
     "lat": 41.9389,
     "lon": -72.6833,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "BDR",
@@ -3231,7 +3233,9 @@
     "lat": 42.2162,
     "lon": -83.3554,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "D"
+    ]
   },
   {
     "code": "DUT",
