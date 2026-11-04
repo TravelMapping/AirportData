@@ -456,7 +456,9 @@
     "lat": 46.7911,
     "lon": -71.3933,
     "country": "CAN",
-    "visits": []
+    "visits": [
+      "X"
+    ]
   },
   {
     "code": "YQQ",
