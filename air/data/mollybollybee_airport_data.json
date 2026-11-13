@@ -5228,7 +5228,9 @@
     "lat": 33.6756,
     "lon": -117.8683,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "SPF",
