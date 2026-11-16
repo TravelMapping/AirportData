@@ -24,7 +24,7 @@ ANC A D        #Anchorage
 HNL A D L      #Honolulu
 KOA A D        #Kona
 OGG A D        #Kahului
-LAS A D        #Las Vegas
+LAS A D L      #Las Vegas
 BOS A D        #Boston
 JFK A D L      #New York JFK
 EWR A D        #Newark
@@ -45,6 +45,7 @@ MCO A D        #Orlando
 BUR X          #Burbank
 COS X          #Colorado Springs
 MVY X          #Martha's Vineyard
+PVD X          #Providence
 
 #Airports_Non-USA
 
@@ -67,3 +68,4 @@ YVR A D        #Vancouver
 CHC A D        #Christchurch
 AKL L          #Auckland
 "PPT A D        #Papeete, Tahiti"
+DUB A D        #Dublin
