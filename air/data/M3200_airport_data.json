@@ -1485,7 +1485,11 @@
     "lat": 53.421389,
     "lon": -6.27,
     "country": "IRL",
-    "visits": []
+    "visits": [
+      "#Dublin",
+      "A",
+      "D"
+    ]
   },
   {
     "code": "SNN",
@@ -4155,6 +4159,7 @@
       "#Las",
       "A",
       "D",
+      "L",
       "Vegas"
     ]
   },
@@ -5080,7 +5085,10 @@
     "lat": 41.7239,
     "lon": -71.4283,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "#Providence",
+      "X"
+    ]
   },
   {
     "code": "PWM",
