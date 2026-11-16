@@ -32,6 +32,14 @@
     "visits": []
   },
   {
+    "code": "PPG",
+    "name": "Pago Pago International Airport",
+    "lat": -14.331,
+    "lon": -170.710007,
+    "country": "ASM",
+    "visits": []
+  },
+  {
     "code": "ADL",
     "name": "Adelaide International Airport",
     "lat": -34.947512,
@@ -1034,6 +1042,14 @@
     "name": "Charles de Gaulle Airport",
     "lat": 49.0097,
     "lon": 2.5479,
+    "country": "FRA",
+    "visits": []
+  },
+  {
+    "code": "LBG",
+    "name": "Paris-Le Bourget International Airport",
+    "lat": 48.962276,
+    "lon": 2.436539,
     "country": "FRA",
     "visits": []
   },
@@ -2749,6 +2765,14 @@
     "visits": []
   },
   {
+    "code": "BMT",
+    "name": "Beaumont Municipal Airport",
+    "lat": 30.070635,
+    "lon": -94.215746,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "BNA",
     "name": "Nashville International Airport",
     "lat": 36.1317,
@@ -3077,6 +3101,14 @@
     "name": "Central Wisconsin Airport",
     "lat": 44.7778,
     "lon": -89.6658,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "CWF",
+    "name": "Chennault International Airport",
+    "lat": 30.2106,
+    "lon": -93.143204,
     "country": "USA",
     "visits": []
   },
