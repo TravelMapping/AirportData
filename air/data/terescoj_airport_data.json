@@ -16,6 +16,14 @@
     "visits": []
   },
   {
+    "code": "AUH",
+    "name": "Zayed International Airport",
+    "lat": 24.440966,
+    "lon": 54.649237,
+    "country": "ARE",
+    "visits": []
+  },
+  {
     "code": "DXB",
     "name": "Dubai International Airport",
     "lat": 25.2528,
@@ -785,6 +793,14 @@
     "lat": 12.1889,
     "lon": -68.9598,
     "country": "CUW",
+    "visits": []
+  },
+  {
+    "code": "GCM",
+    "name": "Owen Roberts International Airport",
+    "lat": 19.292801,
+    "lon": -81.357697,
+    "country": "CYM",
     "visits": []
   },
   {
@@ -2949,6 +2965,14 @@
     "visits": []
   },
   {
+    "code": "CGI",
+    "name": "Cape Girardeau Regional Airport",
+    "lat": 37.2253,
+    "lon": -89.570801,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "CGS",
     "name": "College Park Airport",
     "lat": 38.9805984497,
@@ -4743,6 +4767,14 @@
     "name": "Seattle Paine Field International Airport",
     "lat": 47.9061,
     "lon": -122.2814,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "PAH",
+    "name": "Barkley Regional Airport",
+    "lat": 37.06079864501953,
+    "lon": -88.7738037109375,
     "country": "USA",
     "visits": []
   },
