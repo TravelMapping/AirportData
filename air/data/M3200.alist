@@ -1,0 +1,69 @@
+#M3200 Airports_USA
+
+LAX A D        #Los Angeles International
+LBG A D        #Long Beach
+SFO A D        #San Francisco
+SJC A D        #San Jose
+RNO A D        #Reno
+PHX A D L      #Phoenix
+TUS A D        #Tucson
+ABQ A D        #Albuquerque
+DEN A D L      #Denver
+SLC A D        #Salt Lake City
+SEA L          #Seattle-Tacoma
+"PDX A D        #Portland, OR"
+MCI A D        #Kansas City
+OKC A D        #Oklahoma City
+TUL A D        #Tulsa
+DFW A D L      #Dallas-Ft Worth
+BMT A D        #Beaumont-Port Arthur
+ORD A D L      #Chicago O'Hare
+DTW A D        #Detroit
+CLE A D        #Cleveland
+ANC A D        #Anchorage
+HNL A D L      #Honolulu
+KOA A D        #Kona
+OGG A D        #Kahului
+LAS A D        #Las Vegas
+BOS A D        #Boston
+JFK A D L      #New York JFK
+EWR A D        #Newark
+IAH A D        #Houston
+MSY A D        #New Orleans
+BNA A D        #Nashville
+IAD A D        #Washington Dulles
+DCA A D        #Washington National
+PHL A D L      #Philadelphia
+MDT D          #Harrisburg
+BWI A D        #Baltimore Washington
+CLT L          #Charlotte
+HSV A D        #Huntsville
+CWF A D        #Lake Charles
+ATL A D        #Atlanta
+MCO A D        #Orlando
+"MLB X          #Melbourne, FL"
+BUR X          #Burbank
+COS X          #Colorado Springs
+MVY X          #Martha's Vineyard
+
+#Airports_Non-USA
+
+PPG L          #Pago Pago
+NAN A D        #Nadi
+ADL A D        #Adelaide
+"MBW L          #Melbourne, Vic, Aus"
+SYD A D L      #Sydney
+ASP A D        #Alice Springs
+BNE L          #Brisbane
+LHR A D L      #London Heathrow
+MAN A D L      #Manchester
+GLA A D        #Glasgow
+EDI A D        #Edinburgh
+GVA A          #Geneva
+ZRH A D        #Zurich
+MXP A D        #Milan Malpensa
+YYC A D        #Calgary
+YVR A D        #Vancouver
+CHC A D        #Christchurch
+AKL L          #Auckland
+"PPT A D        #Papeete, Tahiti"
