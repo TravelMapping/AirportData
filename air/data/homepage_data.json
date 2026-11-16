@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-16T00:57:58.632095Z",
+  "generated_at": "2026-11-16T14:37:35.789968Z",
   "stats": {
     "active_users": 46,
-    "airports_mapped": 594,
-    "total_visits": 4023
+    "airports_mapped": 598,
+    "total_visits": 4030
   },
   "top_travelers": [
     {
@@ -58,24 +58,24 @@
   ],
   "recently_added_airports": [
     {
+      "code": "BMT",
+      "name": "Beaumont Municipal Airport"
+    },
+    {
+      "code": "CWF",
+      "name": "Chennault International Airport"
+    },
+    {
+      "code": "LBG",
+      "name": "Paris-Le Bourget International Airport"
+    },
+    {
+      "code": "PPG",
+      "name": "Pago Pago International Airport"
+    },
+    {
       "code": "YWG",
       "name": "Winnipeg / James Armstrong Richardson International Airport"
-    },
-    {
-      "code": "YYQ",
-      "name": "Churchill Airport"
-    },
-    {
-      "code": "BFI",
-      "name": "King County International Airport - Boeing Field"
-    },
-    {
-      "code": "CGS",
-      "name": "College Park Airport"
-    },
-    {
-      "code": "IKK",
-      "name": "Greater Kankakee Airport"
     }
   ]
 }
