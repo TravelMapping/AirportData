@@ -2569,7 +2569,8 @@
     "lon": -149.9975,
     "country": "USA",
     "visits": [
-      "A"
+      "A",
+      "D"
     ]
   },
   {
@@ -5107,7 +5108,9 @@
     "lat": 35.635535,
     "lon": -77.384262,
     "country": "USA",
-    "visits": []
+    "visits": [
+      "A"
+    ]
   },
   {
     "code": "PHF",
