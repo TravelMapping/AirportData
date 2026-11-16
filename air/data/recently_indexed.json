@@ -1,22 +1,22 @@
 [
   {
+    "code": "AUH",
+    "name": "Zayed International Airport"
+  },
+  {
+    "code": "CGI",
+    "name": "Cape Girardeau Regional Airport"
+  },
+  {
+    "code": "GCM",
+    "name": "Owen Roberts International Airport"
+  },
+  {
+    "code": "PAH",
+    "name": "Barkley Regional Airport"
+  },
+  {
     "code": "BMT",
     "name": "Beaumont Municipal Airport"
-  },
-  {
-    "code": "CWF",
-    "name": "Chennault International Airport"
-  },
-  {
-    "code": "LBG",
-    "name": "Paris-Le Bourget International Airport"
-  },
-  {
-    "code": "PPG",
-    "name": "Pago Pago International Airport"
-  },
-  {
-    "code": "YWG",
-    "name": "Winnipeg / James Armstrong Richardson International Airport"
   }
 ]
