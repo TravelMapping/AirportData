@@ -857,10 +857,26 @@
     "visits": []
   },
   {
+    "code": "BER",
+    "name": "Berlin Brandenburg Airport",
+    "lat": 52.361738,
+    "lon": 13.502341,
+    "country": "DEU",
+    "visits": []
+  },
+  {
     "code": "DUS",
     "name": "D\u00fcsseldorf Airport",
     "lat": 51.2894,
     "lon": 6.7667,
+    "country": "DEU",
+    "visits": []
+  },
+  {
+    "code": "FDH",
+    "name": "Bodensee Airport Friedrichshafen",
+    "lat": 47.671299,
+    "lon": 9.51149,
     "country": "DEU",
     "visits": []
   },
@@ -885,6 +901,14 @@
     "name": "Munich Airport",
     "lat": 48.3538,
     "lon": 11.7861,
+    "country": "DEU",
+    "visits": []
+  },
+  {
+    "code": "STR",
+    "name": "Stuttgart Airport",
+    "lat": 48.689899,
+    "lon": 9.22196,
     "country": "DEU",
     "visits": []
   },
@@ -950,6 +974,14 @@
     "lat": -0.1133,
     "lon": -78.3586,
     "country": "ECU",
+    "visits": []
+  },
+  {
+    "code": "ASW",
+    "name": "Aswan International Airport",
+    "lat": 23.961075,
+    "lon": 32.820382,
+    "country": "EGY",
     "visits": []
   },
   {
@@ -1021,6 +1053,14 @@
     "name": "Mor\u00f3n Air Base",
     "lat": 37.1749,
     "lon": -5.6159,
+    "country": "ESP",
+    "visits": []
+  },
+  {
+    "code": "PMI",
+    "name": "Palma de Mallorca Airport",
+    "lat": 39.551701,
+    "lon": 2.73881,
     "country": "ESP",
     "visits": []
   },
@@ -1632,6 +1672,14 @@
     "lat": 18.5036,
     "lon": -77.9133,
     "country": "JAM",
+    "visits": []
+  },
+  {
+    "code": "AMM",
+    "name": "Queen Alia International Airport",
+    "lat": 31.7226009369,
+    "lon": 35.9931983948,
+    "country": "JOR",
     "visits": []
   },
   {
@@ -2299,6 +2347,46 @@
     "visits": []
   },
   {
+    "code": "BBU",
+    "name": "Bucharest B\u0103neasa Aurel Vlaicu International Airport",
+    "lat": 44.503133,
+    "lon": 26.102944,
+    "country": "ROU",
+    "visits": []
+  },
+  {
+    "code": "CLJ",
+    "name": "Avram Iancu Cluj International Airport",
+    "lat": 46.786042,
+    "lon": 23.685733,
+    "country": "ROU",
+    "visits": []
+  },
+  {
+    "code": "OTP",
+    "name": "Bucharest Henri Coand\u0103 International Airport",
+    "lat": 44.571792,
+    "lon": 26.103285,
+    "country": "ROU",
+    "visits": []
+  },
+  {
+    "code": "SBZ",
+    "name": "Sibiu International Airport",
+    "lat": 45.785841,
+    "lon": 24.086666,
+    "country": "ROU",
+    "visits": []
+  },
+  {
+    "code": "TSR",
+    "name": "Timi\u0219oara Traian Vuia International Airport",
+    "lat": 45.809898,
+    "lon": 21.3379,
+    "country": "ROU",
+    "visits": []
+  },
+  {
     "code": "LED",
     "name": "Pulkovo Airport",
     "lat": 59.8003,
@@ -2379,6 +2467,14 @@
     "visits": []
   },
   {
+    "code": "DAM",
+    "name": "Damascus International Airport",
+    "lat": 33.4114990234375,
+    "lon": 36.51559829711914,
+    "country": "SYR",
+    "visits": []
+  },
+  {
     "code": "PLS",
     "name": "Providenciales International Airport",
     "lat": 21.7736,
@@ -2432,6 +2528,22 @@
     "lat": 10.5953,
     "lon": -61.3372,
     "country": "TTO",
+    "visits": []
+  },
+  {
+    "code": "ASR",
+    "name": "Kayseri Erkilet International Airport",
+    "lat": 38.770401,
+    "lon": 35.495399,
+    "country": "TUR",
+    "visits": []
+  },
+  {
+    "code": "DIY",
+    "name": "Diyarbak\u0131r Airport",
+    "lat": 37.893902,
+    "lon": 40.201,
+    "country": "TUR",
     "visits": []
   },
   {
@@ -5640,6 +5752,14 @@
     "name": "Buon Ma Thuot Airport",
     "lat": 12.668299675,
     "lon": 108.120002747,
+    "country": "VNM",
+    "visits": []
+  },
+  {
+    "code": "DAD",
+    "name": "Da Nang International Airport",
+    "lat": 16.0439,
+    "lon": 108.198997,
     "country": "VNM",
     "visits": []
   },
