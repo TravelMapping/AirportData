@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T18:55:16.641531Z",
+  "generated_at": "2026-11-18T19:28:51.871634Z",
   "stats": {
-    "active_users": 48,
-    "airports_mapped": 603,
-    "total_visits": 4304
+    "active_users": 49,
+    "airports_mapped": 621,
+    "total_visits": 4709
   },
   "top_travelers": [
     {
@@ -18,8 +18,8 @@
     },
     {
       "rank": 3,
-      "user": "Jonkle",
-      "airports_visited": 178
+      "user": "dharwood",
+      "airports_visited": 186
     }
   ],
   "most_visited_airports": [
@@ -27,55 +27,55 @@
       "rank": 1,
       "code": "DEN",
       "name": "Denver International Airport",
-      "visitor_count": 34
+      "visitor_count": 35
     },
     {
       "rank": 2,
       "code": "LAX",
       "name": "Los Angeles International Airport",
-      "visitor_count": 32
+      "visitor_count": 33
     },
     {
       "rank": 3,
       "code": "ATL",
       "name": "Hartsfield–Jackson Atlanta International Airport",
-      "visitor_count": 31
+      "visitor_count": 32
     },
     {
       "rank": 3,
       "code": "MCO",
       "name": "Orlando International Airport",
-      "visitor_count": 31
+      "visitor_count": 32
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=dharwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">dharwood</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=Mihai\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">Mihai</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=M3200\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">M3200</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=johninkingwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">johninkingwood</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=formulanone\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">formulanone</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=mapcat\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mapcat</a> updated their flight map."
+    "<a href=\"/AirportData/air/web/user.html?user=formulanone\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">formulanone</a> updated their flight map."
   ],
   "recently_added_airports": [
     {
-      "code": "AUH",
-      "name": "Zayed International Airport"
+      "code": "AMM",
+      "name": "Queen Alia International Airport"
     },
     {
-      "code": "CGI",
-      "name": "Cape Girardeau Regional Airport"
+      "code": "ASR",
+      "name": "Kayseri Erkilet International Airport"
     },
     {
-      "code": "GCM",
-      "name": "Owen Roberts International Airport"
+      "code": "ASW",
+      "name": "Aswan International Airport"
     },
     {
-      "code": "PAH",
-      "name": "Barkley Regional Airport"
+      "code": "BBU",
+      "name": "Bucharest Băneasa Aurel Vlaicu International Airport"
     },
     {
-      "code": "BMT",
-      "name": "Beaumont Municipal Airport"
+      "code": "BER",
+      "name": "Berlin Brandenburg Airport"
     }
   ]
 }
