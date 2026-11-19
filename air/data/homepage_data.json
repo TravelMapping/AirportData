@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-11-18T19:28:51.871634Z",
+  "generated_at": "2026-11-19T16:19:33.999967Z",
   "stats": {
-    "active_users": 49,
-    "airports_mapped": 621,
-    "total_visits": 4709
+    "active_users": 50,
+    "airports_mapped": 643,
+    "total_visits": 4993
   },
   "top_travelers": [
     {
       "rank": 1,
+      "user": "dharwood",
+      "airports_visited": 208
+    },
+    {
+      "rank": 2,
       "user": "formulanone",
       "airports_visited": 201
     },
     {
-      "rank": 2,
+      "rank": 3,
       "user": "JayhawkCO",
       "airports_visited": 189
-    },
-    {
-      "rank": 3,
-      "user": "dharwood",
-      "airports_visited": 186
     }
   ],
   "most_visited_airports": [
@@ -27,55 +27,55 @@
       "rank": 1,
       "code": "DEN",
       "name": "Denver International Airport",
-      "visitor_count": 35
+      "visitor_count": 36
     },
     {
       "rank": 2,
       "code": "LAX",
       "name": "Los Angeles International Airport",
-      "visitor_count": 33
+      "visitor_count": 34
     },
     {
       "rank": 3,
       "code": "ATL",
       "name": "Hartsfield–Jackson Atlanta International Airport",
-      "visitor_count": 32
+      "visitor_count": 33
     },
     {
       "rank": 3,
       "code": "MCO",
       "name": "Orlando International Airport",
-      "visitor_count": 32
+      "visitor_count": 33
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=sneezy\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">sneezy</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=dharwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">dharwood</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=Mihai\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">Mihai</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=M3200\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">M3200</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=johninkingwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">johninkingwood</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=formulanone\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">formulanone</a> updated their flight map."
+    "<a href=\"/AirportData/air/web/user.html?user=johninkingwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">johninkingwood</a> updated their flight map."
   ],
   "recently_added_airports": [
     {
-      "code": "AMM",
-      "name": "Queen Alia International Airport"
+      "code": "ACK",
+      "name": "Nantucket Memorial Airport"
     },
     {
-      "code": "ASR",
-      "name": "Kayseri Erkilet International Airport"
+      "code": "AMA",
+      "name": "Rick Husband Amarillo International Airport"
     },
     {
-      "code": "ASW",
-      "name": "Aswan International Airport"
+      "code": "ASU",
+      "name": "Silvio Pettirossi International Airport"
     },
     {
-      "code": "BBU",
-      "name": "Bucharest Băneasa Aurel Vlaicu International Airport"
+      "code": "CGH",
+      "name": "Congonhas–Deputado Freitas Nobre Airport"
     },
     {
-      "code": "BER",
-      "name": "Berlin Brandenburg Airport"
+      "code": "CHQ",
+      "name": "Chania International Airport"
     }
   ]
 }
