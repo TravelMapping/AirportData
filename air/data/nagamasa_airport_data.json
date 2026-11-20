@@ -16,6 +16,14 @@
     "visits": []
   },
   {
+    "code": "TIA",
+    "name": "Tirana International Airport Mother Teresa",
+    "lat": 41.4147,
+    "lon": 19.7206,
+    "country": "ALB",
+    "visits": []
+  },
+  {
     "code": "AUH",
     "name": "Zayed International Airport",
     "lat": 24.440966,
@@ -35,10 +43,34 @@
     ]
   },
   {
+    "code": "AEP",
+    "name": "Aeroparque Jorge Newbery",
+    "lat": -34.559419,
+    "lon": -58.415536,
+    "country": "ARG",
+    "visits": []
+  },
+  {
     "code": "EZE",
     "name": "Ezeiza International Airport - Ministro Pistarini",
     "lat": -34.8222,
     "lon": -58.5358,
+    "country": "ARG",
+    "visits": []
+  },
+  {
+    "code": "IGR",
+    "name": "Cataratas Del Iguaz\u00fa International Airport",
+    "lat": -25.737301,
+    "lon": -54.4734,
+    "country": "ARG",
+    "visits": []
+  },
+  {
+    "code": "SLA",
+    "name": "Mart\u00edn Miguel de G\u00fcemes International Airport",
+    "lat": -24.856001,
+    "lon": -65.486198,
     "country": "ARG",
     "visits": []
   },
@@ -761,10 +793,26 @@
     "visits": []
   },
   {
+    "code": "BHY",
+    "name": "Beihai Fucheng Airport",
+    "lat": 21.538659,
+    "lon": 109.293683,
+    "country": "CHN",
+    "visits": []
+  },
+  {
     "code": "CAN",
     "name": "Guangzhou Baiyun International Airport",
     "lat": 23.392401,
     "lon": 113.299004,
+    "country": "CHN",
+    "visits": []
+  },
+  {
+    "code": "CSX",
+    "name": "Changsha Huanghua International Airport",
+    "lat": 28.189199,
+    "lon": 113.220001,
     "country": "CHN",
     "visits": []
   },
@@ -1423,6 +1471,14 @@
     "visits": []
   },
   {
+    "code": "ACC",
+    "name": "Kotoka International Airport",
+    "lat": 5.605189800262451,
+    "lon": -0.16678600013256073,
+    "country": "GHA",
+    "visits": []
+  },
+  {
     "code": "NZE",
     "name": "Nz\u00e9r\u00e9kor\u00e9 Airport",
     "lat": 7.810413,
@@ -1484,6 +1540,14 @@
     "lat": 14.0609,
     "lon": -87.217201,
     "country": "HND",
+    "visits": []
+  },
+  {
+    "code": "DBV",
+    "name": "Dubrovnik Ru\u0111er Bo\u0161kovi\u0107 Airport",
+    "lat": 42.562247,
+    "lon": 18.265543,
+    "country": "HRV",
     "visits": []
   },
   {
@@ -1644,6 +1708,14 @@
     "lat": 64.128732,
     "lon": -21.93759,
     "country": "ISL",
+    "visits": []
+  },
+  {
+    "code": "TLV",
+    "name": "Ben Gurion International Airport",
+    "lat": 32.011398,
+    "lon": 34.8867,
+    "country": "ISR",
     "visits": []
   },
   {
@@ -2025,6 +2097,14 @@
     "visits": []
   },
   {
+    "code": "VNO",
+    "name": "Vilnius International Airport",
+    "lat": 54.634102,
+    "lon": 25.285801,
+    "country": "LTU",
+    "visits": []
+  },
+  {
     "code": "LUX",
     "name": "Luxembourg Airport",
     "lat": 49.6266,
@@ -2033,6 +2113,14 @@
     "visits": [
       "L"
     ]
+  },
+  {
+    "code": "RIX",
+    "name": "Riga International Airport",
+    "lat": 56.920752,
+    "lon": 23.970711,
+    "country": "LVA",
+    "visits": []
   },
   {
     "code": "MFM",
@@ -2226,6 +2314,14 @@
     "lat": -22.4799,
     "lon": 17.4709,
     "country": "NAM",
+    "visits": []
+  },
+  {
+    "code": "LOS",
+    "name": "Murtala Muhammed International Airport",
+    "lat": 6.57737,
+    "lon": 3.32116,
+    "country": "NGA",
     "visits": []
   },
   {
@@ -2492,6 +2588,22 @@
     "visits": []
   },
   {
+    "code": "DIA",
+    "name": "Doha International Airport",
+    "lat": 25.259431,
+    "lon": 51.565528,
+    "country": "QAT",
+    "visits": []
+  },
+  {
+    "code": "DOH",
+    "name": "Hamad International Airport",
+    "lat": 25.273056,
+    "lon": 51.608056,
+    "country": "QAT",
+    "visits": []
+  },
+  {
     "code": "XJD",
     "name": "Al Udeid Air Base",
     "lat": 25.1173,
@@ -2553,6 +2665,14 @@
     "lat": 55.9728,
     "lon": 37.4147,
     "country": "RUS",
+    "visits": []
+  },
+  {
+    "code": "KGL",
+    "name": "Kigali International Airport",
+    "lat": -1.96863,
+    "lon": 30.1395,
+    "country": "RWA",
     "visits": []
   },
   {
@@ -2694,6 +2814,14 @@
     "lat": 10.5953,
     "lon": -61.3372,
     "country": "TTO",
+    "visits": []
+  },
+  {
+    "code": "ADB",
+    "name": "Adnan Menderes International Airport",
+    "lat": 38.2924,
+    "lon": 27.157,
+    "country": "TUR",
     "visits": []
   },
   {
@@ -3405,6 +3533,14 @@
     "visits": []
   },
   {
+    "code": "CNO",
+    "name": "Chino Airport",
+    "lat": 33.97470093,
+    "lon": -117.637001,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "CNY",
     "name": "Canyonlands Regional Airport",
     "lat": 38.7615,
@@ -3650,6 +3786,14 @@
     "name": "Northwest Florida Beaches International Airport",
     "lat": 30.3582,
     "lon": -85.7956,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "EDF",
+    "name": "Elmendorf Air Force Base",
+    "lat": 61.251709,
+    "lon": -149.807097,
     "country": "USA",
     "visits": []
   },
@@ -4592,6 +4736,14 @@
     "name": "Kalaupapa Airport",
     "lat": 21.2111,
     "lon": -156.9736,
+    "country": "USA",
+    "visits": []
+  },
+  {
+    "code": "LYH",
+    "name": "Lynchburg Regional Airport - Preston Glenn Field",
+    "lat": 37.326698,
+    "lon": -79.200401,
     "country": "USA",
     "visits": []
   },
@@ -5985,6 +6137,14 @@
     "visits": []
   },
   {
+    "code": "VNY",
+    "name": "Van Nuys Airport",
+    "lat": 34.209801,
+    "lon": -118.489998,
+    "country": "USA",
+    "visits": []
+  },
+  {
     "code": "VPS",
     "name": "Destin\u2013Fort Walton Beach Airport",
     "lat": 30.4955,
@@ -6125,10 +6285,34 @@
     "visits": []
   },
   {
+    "code": "DUR",
+    "name": "King Shaka International Airport",
+    "lat": -29.613381,
+    "lon": 31.117942,
+    "country": "ZAF",
+    "visits": []
+  },
+  {
     "code": "JNB",
     "name": "O.R. Tambo International Airport",
     "lat": -26.1392,
     "lon": 28.246,
+    "country": "ZAF",
+    "visits": []
+  },
+  {
+    "code": "NLP",
+    "name": "Nelspruit Airport",
+    "lat": -25.5,
+    "lon": 30.9137992859,
+    "country": "ZAF",
+    "visits": []
+  },
+  {
+    "code": "PLZ",
+    "name": "Chief Dawid Stuurman International Airport",
+    "lat": -33.989715,
+    "lon": 25.617353,
     "country": "ZAF",
     "visits": []
   }
