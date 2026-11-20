@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-19T16:19:33.999967Z",
+  "generated_at": "2026-11-20T20:58:46.317289Z",
   "stats": {
-    "active_users": 50,
-    "airports_mapped": 643,
-    "total_visits": 4993
+    "active_users": 51,
+    "airports_mapped": 664,
+    "total_visits": 5070
   },
   "top_travelers": [
     {
@@ -27,55 +27,55 @@
       "rank": 1,
       "code": "DEN",
       "name": "Denver International Airport",
-      "visitor_count": 36
+      "visitor_count": 37
+    },
+    {
+      "rank": 2,
+      "code": "ATL",
+      "name": "Hartsfield–Jackson Atlanta International Airport",
+      "visitor_count": 34
+    },
+    {
+      "rank": 2,
+      "code": "MCO",
+      "name": "Orlando International Airport",
+      "visitor_count": 34
     },
     {
       "rank": 2,
       "code": "LAX",
       "name": "Los Angeles International Airport",
       "visitor_count": 34
-    },
-    {
-      "rank": 3,
-      "code": "ATL",
-      "name": "Hartsfield–Jackson Atlanta International Airport",
-      "visitor_count": 33
-    },
-    {
-      "rank": 3,
-      "code": "MCO",
-      "name": "Orlando International Airport",
-      "visitor_count": 33
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=northernkeys\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">northernkeys</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=sneezy\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">sneezy</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=dharwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">dharwood</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=Mihai\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">Mihai</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=M3200\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">M3200</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=johninkingwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">johninkingwood</a> updated their flight map."
+    "<a href=\"/AirportData/air/web/user.html?user=M3200\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">M3200</a> updated their flight map."
   ],
   "recently_added_airports": [
     {
-      "code": "ACK",
-      "name": "Nantucket Memorial Airport"
+      "code": "ACC",
+      "name": "Kotoka International Airport"
     },
     {
-      "code": "AMA",
-      "name": "Rick Husband Amarillo International Airport"
+      "code": "ADB",
+      "name": "Adnan Menderes International Airport"
     },
     {
-      "code": "ASU",
-      "name": "Silvio Pettirossi International Airport"
+      "code": "AEP",
+      "name": "Aeroparque Jorge Newbery"
     },
     {
-      "code": "CGH",
-      "name": "Congonhas–Deputado Freitas Nobre Airport"
+      "code": "BHY",
+      "name": "Beihai Fucheng Airport"
     },
     {
-      "code": "CHQ",
-      "name": "Chania International Airport"
+      "code": "CNO",
+      "name": "Chino Airport"
     }
   ]
 }
