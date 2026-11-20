@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T20:58:46.317289Z",
+  "generated_at": "2026-11-20T21:07:05.235380Z",
   "stats": {
     "active_users": 51,
     "airports_mapped": 664,
@@ -58,6 +58,14 @@
   ],
   "recently_added_airports": [
     {
+      "code": "BRS",
+      "name": "Bristol Airport"
+    },
+    {
+      "code": "SFB",
+      "name": "Orlando Sanford International Airport"
+    },
+    {
       "code": "ACC",
       "name": "Kotoka International Airport"
     },
@@ -68,14 +76,6 @@
     {
       "code": "AEP",
       "name": "Aeroparque Jorge Newbery"
-    },
-    {
-      "code": "BHY",
-      "name": "Beihai Fucheng Airport"
-    },
-    {
-      "code": "CNO",
-      "name": "Chino Airport"
     }
   ]
 }
