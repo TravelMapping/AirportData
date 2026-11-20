@@ -1,22 +1,22 @@
 [
   {
-    "code": "ACK",
-    "name": "Nantucket Memorial Airport"
+    "code": "ACC",
+    "name": "Kotoka International Airport"
   },
   {
-    "code": "AMA",
-    "name": "Rick Husband Amarillo International Airport"
+    "code": "ADB",
+    "name": "Adnan Menderes International Airport"
   },
   {
-    "code": "ASU",
-    "name": "Silvio Pettirossi International Airport"
+    "code": "AEP",
+    "name": "Aeroparque Jorge Newbery"
   },
   {
-    "code": "CGH",
-    "name": "Congonhas–Deputado Freitas Nobre Airport"
+    "code": "BHY",
+    "name": "Beihai Fucheng Airport"
   },
   {
-    "code": "CHQ",
-    "name": "Chania International Airport"
+    "code": "CNO",
+    "name": "Chino Airport"
   }
 ]
