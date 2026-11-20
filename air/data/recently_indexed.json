@@ -1,5 +1,13 @@
 [
   {
+    "code": "BRS",
+    "name": "Bristol Airport"
+  },
+  {
+    "code": "SFB",
+    "name": "Orlando Sanford International Airport"
+  },
+  {
     "code": "ACC",
     "name": "Kotoka International Airport"
   },
@@ -10,13 +18,5 @@
   {
     "code": "AEP",
     "name": "Aeroparque Jorge Newbery"
-  },
-  {
-    "code": "BHY",
-    "name": "Beihai Fucheng Airport"
-  },
-  {
-    "code": "CNO",
-    "name": "Chino Airport"
   }
 ]
