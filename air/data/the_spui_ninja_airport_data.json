@@ -2634,6 +2634,14 @@
     "visits": []
   },
   {
+    "code": "TAT",
+    "name": "Poprad-Tatry Airport",
+    "lat": 49.070994,
+    "lon": 20.241394,
+    "country": "SVK",
+    "visits": []
+  },
+  {
     "code": "ARN",
     "name": "Stockholm-Arlanda Airport",
     "lat": 59.64849,

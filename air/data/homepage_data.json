@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T18:22:49.518074Z",
+  "generated_at": "2026-11-21T19:01:24.881825Z",
   "stats": {
     "active_users": 51,
-    "airports_mapped": 666,
-    "total_visits": 5074
+    "airports_mapped": 667,
+    "total_visits": 5075
   },
   "top_travelers": [
     {
@@ -58,6 +58,10 @@
   ],
   "recently_added_airports": [
     {
+      "code": "TAT",
+      "name": "Poprad-Tatry Airport"
+    },
+    {
       "code": "BRS",
       "name": "Bristol Airport"
     },
@@ -72,10 +76,6 @@
     {
       "code": "ADB",
       "name": "Adnan Menderes International Airport"
-    },
-    {
-      "code": "AEP",
-      "name": "Aeroparque Jorge Newbery"
     }
   ]
 }

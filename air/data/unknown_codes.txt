@@ -4,7 +4,6 @@
 "PPT
 ISN
 SXF
-TAT
 VUO
 YAMB
 YPED
