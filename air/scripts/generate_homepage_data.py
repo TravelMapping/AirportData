@@ -282,7 +282,16 @@ def main():
         
         data_dir = get_data_dir()
         output_file = data_dir / 'homepage_data.json'
-        
+
+        if output_file.exists():
+            with open(output_file, 'r', encoding='utf-8') as f:
+                previous = json.load(f)
+            if {k: v for k, v in previous.items() if k != 'generated_at'} == {
+                k: v for k, v in homepage_data.items() if k != 'generated_at'
+            }:
+                print("Homepage data unchanged.")
+                return 0
+
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(homepage_data, f, indent=2, ensure_ascii=False)
         

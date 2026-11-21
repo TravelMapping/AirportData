@@ -18,7 +18,14 @@ def load_iata_set(csv_path):
 # Load full OurAirports lookup as dict keyed by IATA
 def load_lookup_dict(csv_path):
     with open(csv_path, newline='', encoding='utf-8') as f:
-        return {row["iata_code"]: row for row in csv.DictReader(f) if row["iata_code"]}
+        reader = csv.DictReader(f)
+        required = {"iata_code", "iso_country", "name", "latitude_deg", "longitude_deg"}
+        if not reader.fieldnames or not required.issubset(reader.fieldnames):
+            raise ValueError("OurAirports lookup CSV is missing required columns")
+        lookup = {row["iata_code"]: row for row in reader if row["iata_code"]}
+        if not lookup:
+            raise ValueError("OurAirports lookup CSV contains no IATA codes")
+        return lookup
 
 # Convert 2-letter to 3-letter ISO country code
 def convert_to_alpha3(alpha2):
@@ -43,31 +50,22 @@ def update_recently_indexed(new_airport_codes_and_names):
     Update the recently_indexed.json file with new airports.
     new_airport_codes_and_names: list of dicts with 'code' and 'name' keys
     """
-    try:
-        existing_recent = []
-        if os.path.exists(RECENTLY_INDEXED_FILE):
-            with open(RECENTLY_INDEXED_FILE, 'r', encoding='utf-8') as f:
-                existing_recent = json.load(f)
-        
-        # Put the brand new ones at the very front, followed by the older history
-        combined_recent = new_airport_codes_and_names + existing_recent
-        
-        # De-duplicate entries if the same code is indexed multiple times
-        seen = set()
-        deduped_recent = []
-        for item in combined_recent:
-            if item["code"] not in seen:
-                seen.add(item["code"])
-                deduped_recent.append(item)
-        
-        # Keep only the top 5 most recent discoveries
-        final_recent = deduped_recent[:5]
-        
-        with open(RECENTLY_INDEXED_FILE, 'w', encoding='utf-8') as f:
-            json.dump(final_recent, f, indent=2, ensure_ascii=False)
-        print(f"Updated rolling discovery history log in {RECENTLY_INDEXED_FILE}")
-    except Exception as e:
-        print(f"Warning: Failed to update recently indexed history log: {e}")
+    existing_recent = []
+    if os.path.exists(RECENTLY_INDEXED_FILE):
+        with open(RECENTLY_INDEXED_FILE, 'r', encoding='utf-8') as f:
+            existing_recent = json.load(f)
+
+    combined_recent = new_airport_codes_and_names + existing_recent
+    seen = set()
+    deduped_recent = []
+    for item in combined_recent:
+        if item["code"] not in seen:
+            seen.add(item["code"])
+            deduped_recent.append(item)
+
+    with open(RECENTLY_INDEXED_FILE, 'w', encoding='utf-8') as f:
+        json.dump(deduped_recent[:5], f, indent=2, ensure_ascii=False)
+    print(f"Updated rolling discovery history log in {RECENTLY_INDEXED_FILE}")
 
 def main():
     # Load unknown codes from file
