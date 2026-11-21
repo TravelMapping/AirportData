@@ -1,0 +1,61 @@
+name: Process Airport Data
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'air/data/*.alist'
+      - 'air/data/airports.csv'
+      - 'air/scripts/build_data.py'
+      - 'air/scripts/check_unknown_codes.py'
+      - 'air/scripts/enrich_airports.py'
+      - 'air/scripts/extract_codes.py'
+      - 'air/scripts/generate_homepage_data.py'
+      - 'air/scripts/process_airports.sh'
+      - '.github/workflows/process-airports.yml'
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: process-airport-data-master
+  cancel-in-progress: false
+
+jobs:
+  process:
+    if: >
+      github.event_name != 'workflow_dispatch'
+      || (github.ref == 'refs/heads/master'
+        && (github.actor == 'mapcat' || github.actor == 'jteresco'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install pycountry
+
+      - name: Download OurAirports data
+        run: |
+          curl --fail --location --retry 3 \
+            --output "$RUNNER_TEMP/ourairports.csv" \
+            https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/airports.csv
+
+      - name: Process and publish airport data
+        env:
+          TMPDIR: ${{ runner.temp }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bash air/scripts/process_airports.sh "$RUNNER_TEMP/ourairports.csv"
