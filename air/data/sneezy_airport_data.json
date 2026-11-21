@@ -1358,6 +1358,14 @@
     "visits": []
   },
   {
+    "code": "BRS",
+    "name": "Bristol Airport",
+    "lat": 51.382326,
+    "lon": -2.716453,
+    "country": "GBR",
+    "visits": []
+  },
+  {
     "code": "EDI",
     "name": "Edinburgh Airport",
     "lat": 55.9485,
@@ -5896,6 +5904,14 @@
       "D",
       "L"
     ]
+  },
+  {
+    "code": "SFB",
+    "name": "Orlando Sanford International Airport",
+    "lat": 28.774277,
+    "lon": -81.234626,
+    "country": "USA",
+    "visits": []
   },
   {
     "code": "SFO",
