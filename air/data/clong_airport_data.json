@@ -160,14 +160,6 @@
     "visits": []
   },
   {
-    "code": "RTS",
-    "name": "Rottnest Island Airport",
-    "lat": -32.006699,
-    "lon": 115.540001,
-    "country": "AUS",
-    "visits": []
-  },
-  {
     "code": "SYD",
     "name": "Sydney Kingsford Smith Airport",
     "lat": -33.9461,
@@ -524,14 +516,6 @@
     "name": "Fort McMurray International Airport",
     "lat": 56.6533,
     "lon": -111.2233,
-    "country": "CAN",
-    "visits": []
-  },
-  {
-    "code": "YOW",
-    "name": "Ottawa Macdonald-Cartier International Airport",
-    "lat": 45.322498,
-    "lon": -75.669197,
     "country": "CAN",
     "visits": []
   },
@@ -1416,14 +1400,6 @@
     "visits": []
   },
   {
-    "code": "NZE",
-    "name": "Nz\u00e9r\u00e9kor\u00e9 Airport",
-    "lat": 7.810413,
-    "lon": -8.702073,
-    "country": "GIN",
-    "visits": []
-  },
-  {
     "code": "PTP",
     "name": "Pointe-\u00e0-Pitre International Airport",
     "lat": 16.2645,
@@ -1557,14 +1533,6 @@
     "lat": 54.083081,
     "lon": -4.623871,
     "country": "IMN",
-    "visits": []
-  },
-  {
-    "code": "AMD",
-    "name": "Sardar Vallabh Patel International Airport",
-    "lat": 23.0772,
-    "lon": 72.634697,
-    "country": "IND",
     "visits": []
   },
   {
@@ -2870,14 +2838,6 @@
     "name": "Air Force Academy Airfield",
     "lat": 38.9747,
     "lon": -104.8228,
-    "country": "USA",
-    "visits": []
-  },
-  {
-    "code": "AGO",
-    "name": "Magnolia Municipal Airport",
-    "lat": 33.2275,
-    "lon": -93.2169,
     "country": "USA",
     "visits": []
   },
@@ -4465,14 +4425,6 @@
     "visits": []
   },
   {
-    "code": "LBE",
-    "name": "Arnold Palmer Regional Airport",
-    "lat": 40.275902,
-    "lon": -79.4048,
-    "country": "USA",
-    "visits": []
-  },
-  {
     "code": "LCK",
     "name": "Rickenbacker International Airport",
     "lat": 39.813801,
@@ -4839,14 +4791,6 @@
     "name": "Morristown Municipal Airport",
     "lat": 40.7994,
     "lon": -74.415,
-    "country": "USA",
-    "visits": []
-  },
-  {
-    "code": "MNN",
-    "name": "Marion Municipal Airport",
-    "lat": 40.6161994934,
-    "lon": -83.06349945070001,
     "country": "USA",
     "visits": []
   },
@@ -5764,14 +5708,6 @@
     "name": "St Simons Island Airport",
     "lat": 31.1518,
     "lon": -81.391296,
-    "country": "USA",
-    "visits": []
-  },
-  {
-    "code": "STK",
-    "name": "Sterling Municipal Airport",
-    "lat": 40.613497,
-    "lon": -103.263833,
     "country": "USA",
     "visits": []
   },
