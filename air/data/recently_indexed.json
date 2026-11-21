@@ -1,5 +1,9 @@
 [
   {
+    "code": "TAT",
+    "name": "Poprad-Tatry Airport"
+  },
+  {
     "code": "BRS",
     "name": "Bristol Airport"
   },
@@ -14,9 +18,5 @@
   {
     "code": "ADB",
     "name": "Adnan Menderes International Airport"
-  },
-  {
-    "code": "AEP",
-    "name": "Aeroparque Jorge Newbery"
   }
 ]
