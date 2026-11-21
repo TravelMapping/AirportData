@@ -261,6 +261,14 @@
     .site-footer a:hover {
       text-decoration: underline;
     }
+    fieldset.controls-container {
+      border: 0;
+      min-width: 0;
+    }
+
+    fieldset.controls-container label {
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -289,6 +297,13 @@
       <span id="visitCount" style="display: none;"></span>
     </div>
 
+    <fieldset class="controls-container">
+      <legend>Show on map</legend>
+      <label><input type="radio" name="mapFilter" value="all" checked> All airports</label>
+      <label><input type="radio" name="mapFilter" value="top10"> Top 10 visited airports</label>
+      <label><input type="radio" name="mapFilter" value="one"> Airports with one user visit</label>
+    </fieldset>
+    
     <div id="map"></div>
 
     <div id="globalTableContainer" class="table-container" style="display: none;">
