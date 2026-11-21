@@ -68,6 +68,9 @@ let airportsWithXOnlyCount = {};
 let airportsWithXOnlySet = new Set();
 let map;
 let selectedMarker;
+let airportMarkerLayer;
+const airportMarkers = new Map();
+let visibleAirportCodes = new Set();
 
 function initMap() {
   const southWest = L.latLng(-90, -180);
@@ -161,6 +164,8 @@ function initMap() {
     fillOpacity: 1,
     weight: 3
   });
+  
+  airportMarkerLayer = L.layerGroup().addTo(map);
 }
 
 function pulseMarker(marker) {
@@ -182,7 +187,10 @@ function pulseMarker(marker) {
 function highlightSelectedMarker(code) {
   const airport = airports[code];
   if (!airport) return;
-
+  if (!visibleAirportCodes.has(code)) {
+    if (map.hasLayer(selectedMarker)) map.removeLayer(selectedMarker);
+    return;
+  }
   const flyingCount = airportVisitCounts[code] || 0;
   const maxVisits = Math.max(...Object.values(airportVisitCounts), 1);
   const color = getMarkerColor(code, flyingCount, maxVisits);
@@ -425,15 +433,18 @@ function placeAllMarkers() {
       fillOpacity: 0.85,
       weight: 1
     })
-    .addTo(map)
     .bindPopup(popupText);
 
     marker.on('click', () => {
       document.getElementById('airportSelect').value = a.code;
       handleAirportSelect(a.code);
     });
+
+    airportMarkers.set(a.code, marker);
   }
 
+  updateMapFilter();
+  
   map.on('popupopen', () => {
     const link = document.querySelector('.popup-loc-link');
     if (link) {
@@ -446,6 +457,41 @@ function placeAllMarkers() {
       });
     }
   });
+}
+
+function updateMapFilter() {
+  const filter = document.querySelector('input[name="mapFilter"]:checked').value;
+  const codes = [...airportMarkers.keys()];
+
+  if (filter === 'top10') {
+    visibleAirportCodes = new Set(
+      codes
+        .filter(code => (airportVisitCounts[code] || 0) > 0)
+        .sort((a, b) =>
+          airportVisitCounts[b] - airportVisitCounts[a] || a.localeCompare(b)
+        )
+        .slice(0, 10)
+    );
+  } else if (filter === 'one') {
+    visibleAirportCodes = new Set(
+      codes.filter(code => airportVisitCounts[code] === 1)
+    );
+  } else {
+    visibleAirportCodes = new Set(codes);
+  }
+
+  airportMarkerLayer.clearLayers();
+  for (const [code, marker] of airportMarkers) {
+    if (visibleAirportCodes.has(code)) airportMarkerLayer.addLayer(marker);
+  }
+
+  const selectedCode = new URLSearchParams(window.location.search)
+    .get('airport')?.toUpperCase();
+  if (selectedCode && airports[selectedCode] && visibleAirportCodes.has(selectedCode)) {
+    highlightSelectedMarker(selectedCode);
+  } else if (map.hasLayer(selectedMarker)) {
+    map.removeLayer(selectedMarker);
+  }
 }
 
 function parseAlist(lines, selectedCode) {
@@ -660,5 +706,8 @@ document.getElementById('airportSelect').addEventListener('change', (e) => {
 
 // Setup execution
 initMap();
+document.querySelectorAll('input[name="mapFilter"]').forEach(radio => {
+  radio.addEventListener('change', updateMapFilter);
+});
 fetchAirports();
 enableTableSorting();
