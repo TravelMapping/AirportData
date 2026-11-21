@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-20T21:07:05.235380Z",
+  "generated_at": "2026-11-21T18:22:49.518074Z",
   "stats": {
     "active_users": 51,
-    "airports_mapped": 664,
-    "total_visits": 5070
+    "airports_mapped": 666,
+    "total_visits": 5074
   },
   "top_travelers": [
     {
@@ -49,12 +49,12 @@
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=neptun\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">neptun</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=northernkeys\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">northernkeys</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=sneezy\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">sneezy</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=dharwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">dharwood</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=Mihai\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">Mihai</a> joined the site as a new traveler!",
-    "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map.",
-    "<a href=\"/AirportData/air/web/user.html?user=M3200\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">M3200</a> updated their flight map."
+    "<a href=\"/AirportData/air/web/user.html?user=mollybollybee\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">mollybollybee</a> updated their flight map."
   ],
   "recently_added_airports": [
     {
