@@ -1,7 +1,7 @@
 [
   {
     "code": "AUA",
-    "name": "Queen Beatrix International Airport",
+    "name": "Queen Beatrix International Airport (Oranjestad)",
     "lat": 12.5014,
     "lon": -70.0153,
     "country": "ABW",
@@ -9,7 +9,7 @@
   },
   {
     "code": "AXA",
-    "name": "Clayton J. Lloyd International Airport",
+    "name": "Clayton J. Lloyd International Airport (The Valley)",
     "lat": 18.2048,
     "lon": -63.0536,
     "country": "AIA",
@@ -25,7 +25,7 @@
   },
   {
     "code": "AUH",
-    "name": "Zayed International Airport",
+    "name": "Zayed International Airport (Abu Dhabi)",
     "lat": 24.440966,
     "lon": 54.649237,
     "country": "ARE",
@@ -41,7 +41,7 @@
   },
   {
     "code": "AEP",
-    "name": "Aeroparque Jorge Newbery",
+    "name": "Aeroparque Jorge Newbery (Buenos Aires)",
     "lat": -34.559419,
     "lon": -58.415536,
     "country": "ARG",
@@ -60,7 +60,7 @@
   },
   {
     "code": "IGR",
-    "name": "Cataratas Del Iguaz\u00fa International Airport",
+    "name": "Cataratas Del Iguaz\u00fa International Airport (Puerto Iguaz\u00fa)",
     "lat": -25.737301,
     "lon": -54.4734,
     "country": "ARG",
@@ -68,7 +68,7 @@
   },
   {
     "code": "SLA",
-    "name": "Mart\u00edn Miguel de G\u00fcemes International Airport",
+    "name": "Mart\u00edn Miguel de G\u00fcemes International Airport (Salta)",
     "lat": -24.856001,
     "lon": -65.486198,
     "country": "ARG",
@@ -215,7 +215,7 @@
   },
   {
     "code": "GYD",
-    "name": "Heydar Aliyev International Airport",
+    "name": "Heydar Aliyev International Airport (Baku)",
     "lat": 40.467498779296875,
     "lon": 50.04669952392578,
     "country": "AZE",
@@ -231,7 +231,7 @@
   },
   {
     "code": "DAC",
-    "name": "Hazrat Shahjalal International Airport",
+    "name": "Hazrat Shahjalal International Airport (Dhaka)",
     "lat": 23.843347,
     "lon": 90.397783,
     "country": "BGD",
@@ -255,7 +255,7 @@
   },
   {
     "code": "MHH",
-    "name": "Leonard M. Thompson International Airport",
+    "name": "Leonard M. Thompson International Airport (Marsh Harbour)",
     "lat": 26.5114,
     "lon": -77.0836,
     "country": "BHS",
@@ -263,7 +263,7 @@
   },
   {
     "code": "NAS",
-    "name": "Lynden Pindling International Airport",
+    "name": "Lynden Pindling International Airport (Nassau)",
     "lat": 25.0389,
     "lon": -77.4662,
     "country": "BHS",
@@ -279,7 +279,7 @@
   },
   {
     "code": "SBH",
-    "name": "Gustaf III Airport",
+    "name": "Gustaf III Airport (Gustavia)",
     "lat": 17.9044,
     "lon": -62.8439,
     "country": "BLM",
@@ -287,7 +287,7 @@
   },
   {
     "code": "BZE",
-    "name": "Philip S. W. Goldson International Airport",
+    "name": "Philip S. W. Goldson International Airport (Belize City)",
     "lat": 17.539951,
     "lon": -88.303556,
     "country": "BLZ",
@@ -309,7 +309,7 @@
   },
   {
     "code": "SPR",
-    "name": "John Greif II Airport",
+    "name": "John Greif II Airport (San Pedro)",
     "lat": 17.9139,
     "lon": -87.9711,
     "country": "BLZ",
@@ -320,7 +320,7 @@
   },
   {
     "code": "BDA",
-    "name": "L.F. Wade International Airport",
+    "name": "L.F. Wade International Airport (Hamilton)",
     "lat": 32.36417,
     "lon": -64.67861,
     "country": "BMU",
@@ -331,7 +331,7 @@
   },
   {
     "code": "CBB",
-    "name": "Jorge Wilsterman International Airport",
+    "name": "Jorge Wilsterman International Airport (Cochabamba)",
     "lat": -17.421100616455078,
     "lon": -66.1771011352539,
     "country": "BOL",
@@ -363,7 +363,7 @@
   },
   {
     "code": "CGH",
-    "name": "Congonhas\u2013Deputado Freitas Nobre Airport",
+    "name": "Congonhas\u2013Deputado Freitas Nobre Airport (S\u00e3o Paulo)",
     "lat": -23.627657,
     "lon": -46.654601,
     "country": "BRA",
@@ -394,7 +394,7 @@
   },
   {
     "code": "IGU",
-    "name": "Cataratas International Airport",
+    "name": "Cataratas International Airport (Foz do Igua\u00e7u)",
     "lat": -25.594167,
     "lon": -54.489444,
     "country": "BRA",
@@ -405,7 +405,7 @@
   },
   {
     "code": "SDU",
-    "name": "Santos Dumont Airport",
+    "name": "Santos Dumont Airport (Rio de Janeiro)",
     "lat": -22.910397,
     "lon": -43.16282,
     "country": "BRA",
@@ -423,7 +423,7 @@
   },
   {
     "code": "BGI",
-    "name": "Grantley Adams International Airport",
+    "name": "Grantley Adams International Airport (Bridgetown)",
     "lat": 13.0744,
     "lon": -59.4922,
     "country": "BRB",
@@ -922,7 +922,7 @@
   },
   {
     "code": "BOG",
-    "name": "El Dorado International Airport",
+    "name": "El Dorado International Airport (Bogot\u00e1)",
     "lat": 4.70159,
     "lon": -74.1469,
     "country": "COL",
@@ -930,7 +930,7 @@
   },
   {
     "code": "LIR",
-    "name": "Daniel Oduber Quir\u00f3s International Airport",
+    "name": "Daniel Oduber Quir\u00f3s International Airport (Liberia)",
     "lat": 10.5933,
     "lon": -85.5444,
     "country": "CRI",
@@ -938,7 +938,7 @@
   },
   {
     "code": "SJO",
-    "name": "Juan Santamar\u00eda International Airport",
+    "name": "Juan Santamar\u00eda International Airport (San Jos\u00e9)",
     "lat": 9.9939,
     "lon": -84.2089,
     "country": "CRI",
@@ -949,7 +949,7 @@
   },
   {
     "code": "SYQ",
-    "name": "Tob\u00edas Bola\u00f1os International Airport",
+    "name": "Tob\u00edas Bola\u00f1os International Airport (San Jos\u00e9)",
     "lat": 9.95705,
     "lon": -84.139801,
     "country": "CRI",
@@ -957,7 +957,7 @@
   },
   {
     "code": "HAV",
-    "name": "Jos\u00e9 Mart\u00ed International Airport",
+    "name": "Jos\u00e9 Mart\u00ed International Airport (Havana)",
     "lat": 22.989200592041016,
     "lon": -82.40910339355469,
     "country": "CUB",
@@ -973,7 +973,7 @@
   },
   {
     "code": "GCM",
-    "name": "Owen Roberts International Airport",
+    "name": "Owen Roberts International Airport (George Town)",
     "lat": 19.292801,
     "lon": -81.357697,
     "country": "CYM",
@@ -1103,7 +1103,7 @@
   },
   {
     "code": "SDQ",
-    "name": "Las Am\u00e9ricas International Airport",
+    "name": "Las Am\u00e9ricas International Airport (Santo Domingo)",
     "lat": 18.42970085144,
     "lon": -69.668899536133,
     "country": "DOM",
@@ -1291,7 +1291,7 @@
   },
   {
     "code": "CDG",
-    "name": "Charles de Gaulle Airport",
+    "name": "Charles de Gaulle Airport (Paris)",
     "lat": 49.0097,
     "lon": 2.5479,
     "country": "FRA",
@@ -1568,7 +1568,7 @@
   },
   {
     "code": "LCE",
-    "name": "Goloson International Airport",
+    "name": "Goloson International Airport (La Ceiba)",
     "lat": 15.7425,
     "lon": -86.852997,
     "country": "HND",
@@ -1576,7 +1576,7 @@
   },
   {
     "code": "RTB",
-    "name": "Juan Manuel G\u00e1lvez International Airport",
+    "name": "Juan Manuel G\u00e1lvez International Airport (Roat\u00e1n)",
     "lat": 16.316799,
     "lon": -86.523003,
     "country": "HND",
@@ -1584,7 +1584,7 @@
   },
   {
     "code": "TGU",
-    "name": "Toncont\u00edn International Airport",
+    "name": "Toncont\u00edn International Airport (Tegucigalpa)",
     "lat": 14.0609,
     "lon": -87.217201,
     "country": "HND",
@@ -1608,7 +1608,7 @@
   },
   {
     "code": "PAP",
-    "name": "Toussaint Louverture International Airport",
+    "name": "Toussaint Louverture International Airport (Port-au-Prince)",
     "lat": 18.5796,
     "lon": -72.292,
     "country": "HTI",
@@ -1672,7 +1672,7 @@
   },
   {
     "code": "BLR",
-    "name": "Kempegowda International Airport",
+    "name": "Kempegowda International Airport (Bengaluru)",
     "lat": 13.19938,
     "lon": 77.71014,
     "country": "IND",
@@ -1680,7 +1680,7 @@
   },
   {
     "code": "CCU",
-    "name": "Netaji Subhas Chandra Bose International Airport",
+    "name": "Netaji Subhas Chandra Bose International Airport (Kolkata)",
     "lat": 22.6528,
     "lon": 88.4413,
     "country": "IND",
@@ -1688,7 +1688,7 @@
   },
   {
     "code": "DEL",
-    "name": "Indira Gandhi International Airport",
+    "name": "Indira Gandhi International Airport (Delhi)",
     "lat": 28.55616,
     "lon": 77.10028,
     "country": "IND",
@@ -1696,7 +1696,7 @@
   },
   {
     "code": "HYD",
-    "name": "Rajiv Gandhi International Airport",
+    "name": "Rajiv Gandhi International Airport (Hyderabad)",
     "lat": 17.2373,
     "lon": 78.4235,
     "country": "IND",
@@ -1756,7 +1756,7 @@
   },
   {
     "code": "TLV",
-    "name": "Ben Gurion International Airport",
+    "name": "Ben Gurion International Airport (Tel Aviv)",
     "lat": 32.011398,
     "lon": 34.8867,
     "country": "ISR",
@@ -2043,7 +2043,7 @@
   },
   {
     "code": "NBO",
-    "name": "Jomo Kenyatta International Airport",
+    "name": "Jomo Kenyatta International Airport (Nairobi)",
     "lat": -1.3192,
     "lon": 36.9275,
     "country": "KEN",
@@ -2300,7 +2300,7 @@
   },
   {
     "code": "MRU",
-    "name": "Sir Seewoosagur Ramgoolam International Airport",
+    "name": "Sir Seewoosagur Ramgoolam International Airport (Port Louis)",
     "lat": -20.430201,
     "lon": 57.683601,
     "country": "MUS",
@@ -2324,7 +2324,7 @@
   },
   {
     "code": "WDH",
-    "name": "Hosea Kutako International Airport",
+    "name": "Hosea Kutako International Airport (Windhoek)",
     "lat": -22.4799,
     "lon": 17.4709,
     "country": "NAM",
@@ -2332,7 +2332,7 @@
   },
   {
     "code": "LOS",
-    "name": "Murtala Muhammed International Airport",
+    "name": "Murtala Muhammed International Airport (Lagos)",
     "lat": 6.57737,
     "lon": 3.32116,
     "country": "NGA",
@@ -2454,7 +2454,7 @@
   },
   {
     "code": "NZC",
-    "name": "Maria Reiche Neuman Airport",
+    "name": "Maria Reiche Neuman Airport (Nazca)",
     "lat": -14.854,
     "lon": -74.961502,
     "country": "PER",
@@ -2486,7 +2486,7 @@
   },
   {
     "code": "MNL",
-    "name": "Ninoy Aquino International Airport",
+    "name": "Ninoy Aquino International Airport (Manila)",
     "lat": 14.5086,
     "lon": 121.019997,
     "country": "PHL",
@@ -2494,7 +2494,7 @@
   },
   {
     "code": "MPH",
-    "name": "Godofredo P. Ramos Airport",
+    "name": "Godofredo P. Ramos Airport (Caticlan)",
     "lat": 11.9245,
     "lon": 121.954002,
     "country": "PHL",
@@ -2558,7 +2558,7 @@
   },
   {
     "code": "SJU",
-    "name": "Luis Mu\u00f1oz Mar\u00edn International Airport",
+    "name": "Luis Mu\u00f1oz Mar\u00edn International Airport (San Juan)",
     "lat": 18.439,
     "lon": -66.0021,
     "country": "PRI",
@@ -2574,7 +2574,7 @@
   },
   {
     "code": "LIS",
-    "name": "Humberto Delgado Airport",
+    "name": "Humberto Delgado Airport (Lisbon)",
     "lat": 38.7742,
     "lon": -9.1342,
     "country": "PRT",
@@ -2585,7 +2585,7 @@
   },
   {
     "code": "OPO",
-    "name": "Francisco de S\u00e1 Carneiro Airport",
+    "name": "Francisco de S\u00e1 Carneiro Airport (Porto)",
     "lat": 41.2481002808,
     "lon": -8.68138980865,
     "country": "PRT",
@@ -2593,7 +2593,7 @@
   },
   {
     "code": "ASU",
-    "name": "Silvio Pettirossi International Airport",
+    "name": "Silvio Pettirossi International Airport (Asunci\u00f3n)",
     "lat": -25.240156,
     "lon": -57.519227,
     "country": "PRY",
@@ -2703,7 +2703,7 @@
   },
   {
     "code": "DKR",
-    "name": "L\u00e9opold S\u00e9dar Senghor International Airport",
+    "name": "L\u00e9opold S\u00e9dar Senghor International Airport (Dakar)",
     "lat": 14.7397,
     "lon": -17.4902,
     "country": "SEN",
@@ -2844,7 +2844,7 @@
   },
   {
     "code": "ADB",
-    "name": "Adnan Menderes International Airport",
+    "name": "Adnan Menderes International Airport (\u0130zmir)",
     "lat": 38.2924,
     "lon": 27.157,
     "country": "TUR",
@@ -2910,7 +2910,7 @@
   },
   {
     "code": "JRO",
-    "name": "Kilimanjaro International Airport",
+    "name": "Kilimanjaro International Airport (Arusha)",
     "lat": -3.42941,
     "lon": 37.074501,
     "country": "TZA",
@@ -3200,7 +3200,7 @@
   },
   {
     "code": "BDR",
-    "name": "Igor I. Sikorsky Memorial Airport",
+    "name": "Igor I. Sikorsky Memorial Airport (Bridgeport, CT)",
     "lat": 41.1633,
     "lon": -73.1261,
     "country": "USA",
@@ -3350,7 +3350,7 @@
   },
   {
     "code": "BOS",
-    "name": "Logan International Airport",
+    "name": "Logan International Airport (Boston, MA)",
     "lat": 42.3656,
     "lon": -71.0096,
     "country": "USA",
@@ -3386,7 +3386,7 @@
   },
   {
     "code": "BRW",
-    "name": "Wiley Post\u2013Will Rogers Memorial Airport",
+    "name": "Wiley Post\u2013Will Rogers Memorial Airport (Utqiagvik, AK)",
     "lat": 71.2856,
     "lon": -156.7661,
     "country": "USA",
@@ -3722,7 +3722,7 @@
   },
   {
     "code": "CWF",
-    "name": "Chennault International Airport",
+    "name": "Chennault International Airport (Lake Charles, LA)",
     "lat": 30.2106,
     "lon": -93.143204,
     "country": "USA",
@@ -3904,7 +3904,7 @@
   },
   {
     "code": "EEN",
-    "name": "Dillant\u2013Hopkins Airport",
+    "name": "Dillant\u2013Hopkins Airport (Keene, NH)",
     "lat": 42.8983,
     "lon": -72.2708,
     "country": "USA",
@@ -3964,7 +3964,7 @@
   },
   {
     "code": "EUG",
-    "name": "Mahlon Sweet Field",
+    "name": "Mahlon Sweet Field (Eugene, OR)",
     "lat": 44.12459945678711,
     "lon": -123.21199798583984,
     "country": "USA",
@@ -4412,7 +4412,7 @@
   },
   {
     "code": "HNL",
-    "name": "Daniel K. Inouye International Airport",
+    "name": "Daniel K. Inouye International Airport (Honolulu, HI)",
     "lat": 21.3187,
     "lon": -157.9225,
     "country": "USA",
@@ -4432,7 +4432,7 @@
   },
   {
     "code": "HOU",
-    "name": "William P. Hobby Airport",
+    "name": "William P. Hobby Airport (Houston, TX)",
     "lat": 29.6456,
     "lon": -95.2789,
     "country": "USA",
@@ -4516,7 +4516,7 @@
   },
   {
     "code": "IAH",
-    "name": "George Bush Intercontinental Airport",
+    "name": "George Bush Intercontinental Airport (Houston, TX)",
     "lat": 29.9902,
     "lon": -95.3368,
     "country": "USA",
@@ -4651,7 +4651,7 @@
   },
   {
     "code": "JFK",
-    "name": "John F. Kennedy International Airport",
+    "name": "John F. Kennedy International Airport (New York City, NY)",
     "lat": 40.6413,
     "lon": -73.7781,
     "country": "USA",
@@ -4671,7 +4671,7 @@
   },
   {
     "code": "K59",
-    "name": "Amelia Earhart Airport",
+    "name": "Amelia Earhart Airport (Atchison, KS)",
     "lat": 39.570499420166,
     "lon": -95.1802978515625,
     "country": "USA",
@@ -4742,7 +4742,7 @@
   },
   {
     "code": "LAS",
-    "name": "Harry Reid International Airport",
+    "name": "Harry Reid International Airport (Las Vegas, NV)",
     "lat": 36.084,
     "lon": -115.1537,
     "country": "USA",
@@ -4774,7 +4774,7 @@
   },
   {
     "code": "LCK",
-    "name": "Rickenbacker International Airport",
+    "name": "Rickenbacker International Airport (Columbus, OH)",
     "lat": 39.813801,
     "lon": -82.927803,
     "country": "USA",
@@ -4840,7 +4840,7 @@
   },
   {
     "code": "LIT",
-    "name": "Clinton National Airport",
+    "name": "Clinton National Airport (Little Rock, AR)",
     "lat": 34.7294,
     "lon": -92.2244,
     "country": "USA",
@@ -4935,7 +4935,7 @@
   },
   {
     "code": "MBS",
-    "name": "MBS International Airport",
+    "name": "MBS International Airport (Saginaw, MI)",
     "lat": 43.5328,
     "lon": -84.0797,
     "country": "USA",
@@ -5108,7 +5108,7 @@
   },
   {
     "code": "MKE",
-    "name": "General Mitchell International Airport",
+    "name": "General Mitchell International Airport (Milwaukee, WI)",
     "lat": 42.9469,
     "lon": -87.9022,
     "country": "USA",
@@ -5451,7 +5451,7 @@
   },
   {
     "code": "ORD",
-    "name": "O'Hare International Airport",
+    "name": "O'Hare International Airport (Chicago, IL)",
     "lat": 41.9742,
     "lon": -87.9073,
     "country": "USA",
@@ -5490,7 +5490,7 @@
   },
   {
     "code": "OTZ",
-    "name": "Ralph Wien Memorial Airport",
+    "name": "Ralph Wien Memorial Airport (Kotzebue, AK)",
     "lat": 66.8906,
     "lon": -162.6042,
     "country": "USA",
@@ -5517,7 +5517,7 @@
   },
   {
     "code": "PAH",
-    "name": "Barkley Regional Airport",
+    "name": "Barkley Regional Airport (Paducah, KY)",
     "lat": 37.06079864501953,
     "lon": -88.7738037109375,
     "country": "USA",
@@ -5769,7 +5769,7 @@
   },
   {
     "code": "PVD",
-    "name": "Theodore Francis Green Memorial State Airport",
+    "name": "Theodore Francis Green Memorial State Airport (Providence, RI)",
     "lat": 41.7239,
     "lon": -71.4283,
     "country": "USA",
@@ -5815,7 +5815,7 @@
   },
   {
     "code": "RDM",
-    "name": "Roberts Field",
+    "name": "Roberts Field (Redmond, OR)",
     "lat": 44.2541,
     "lon": -121.1499,
     "country": "USA",
@@ -6272,7 +6272,7 @@
   },
   {
     "code": "SWF",
-    "name": "Stewart International Airport",
+    "name": "Stewart International Airport (Newburgh, NY)",
     "lat": 41.5042,
     "lon": -74.1047,
     "country": "USA",
@@ -6343,7 +6343,7 @@
   },
   {
     "code": "TOA",
-    "name": "Zamperini Field",
+    "name": "Zamperini Field (Torrance, CA)",
     "lat": 33.803398132324,
     "lon": -118.33999633789,
     "country": "USA",
@@ -6436,7 +6436,7 @@
   },
   {
     "code": "TYS",
-    "name": "McGhee Tyson Airport",
+    "name": "McGhee Tyson Airport (Knoxville, TN)",
     "lat": 35.8111,
     "lon": -83.9941,
     "country": "USA",
@@ -6559,7 +6559,7 @@
   },
   {
     "code": "STT",
-    "name": "Cyril E. King Airport",
+    "name": "Cyril E. King Airport (Charlotte Amalie)",
     "lat": 18.3373,
     "lon": -64.9734,
     "country": "VIR",
@@ -6615,7 +6615,7 @@
   },
   {
     "code": "DUR",
-    "name": "King Shaka International Airport",
+    "name": "King Shaka International Airport (Durban)",
     "lat": -29.613381,
     "lon": 31.117942,
     "country": "ZAF",
@@ -6623,7 +6623,7 @@
   },
   {
     "code": "JNB",
-    "name": "O.R. Tambo International Airport",
+    "name": "O.R. Tambo International Airport (Johannesburg)",
     "lat": -26.1392,
     "lon": 28.246,
     "country": "ZAF",
@@ -6639,7 +6639,7 @@
   },
   {
     "code": "PLZ",
-    "name": "Chief Dawid Stuurman International Airport",
+    "name": "Chief Dawid Stuurman International Airport (Gqeberha)",
     "lat": -33.989715,
     "lon": 25.617353,
     "country": "ZAF",
