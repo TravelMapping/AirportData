@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T20:41:12.166076Z",
+  "generated_at": "2026-11-22T19:54:17.709287Z",
   "stats": {
-    "active_users": 52,
-    "airports_mapped": 668,
-    "total_visits": 5244
+    "active_users": 53,
+    "airports_mapped": 669,
+    "total_visits": 5266
   },
   "top_travelers": [
     {
@@ -31,32 +31,36 @@
     },
     {
       "rank": 2,
+      "code": "LAX",
+      "name": "Los Angeles International Airport",
+      "visitor_count": 36
+    },
+    {
+      "rank": 3,
       "code": "ATL",
       "name": "Hartsfield–Jackson Atlanta International Airport",
       "visitor_count": 35
     },
     {
-      "rank": 2,
+      "rank": 3,
       "code": "MCO",
       "name": "Orlando International Airport",
-      "visitor_count": 35
-    },
-    {
-      "rank": 2,
-      "code": "LAX",
-      "name": "Los Angeles International Airport",
       "visitor_count": 35
     }
   ],
   "recent_updates": [
+    "<a href=\"/AirportData/air/web/user.html?user=cebarb98\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">cebarb98</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=keithcavey\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">keithcavey</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=neptun\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">neptun</a> updated their flight map.",
     "<a href=\"/AirportData/air/web/user.html?user=northernkeys\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">northernkeys</a> joined the site as a new traveler!",
     "<a href=\"/AirportData/air/web/user.html?user=sneezy\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">sneezy</a> joined the site as a new traveler!",
-    "<a href=\"/AirportData/air/web/user.html?user=dharwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">dharwood</a> joined the site as a new traveler!",
-    "<a href=\"/AirportData/air/web/user.html?user=Mihai\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">Mihai</a> joined the site as a new traveler!"
+    "<a href=\"/AirportData/air/web/user.html?user=dharwood\" style=\"color: #3182ce; font-weight: bold; text-decoration: none;\" onmouseover=\"this.style.textDecoration='underline'\" onmouseout=\"this.style.textDecoration='none'\">dharwood</a> joined the site as a new traveler!"
   ],
   "recently_added_airports": [
+    {
+      "code": "SBY",
+      "name": "Salisbury Ocean City Wicomico Regional Airport"
+    },
     {
       "code": "TAT",
       "name": "Poprad-Tatry Airport"
@@ -72,10 +76,6 @@
     {
       "code": "ACC",
       "name": "Kotoka International Airport"
-    },
-    {
-      "code": "ADB",
-      "name": "Adnan Menderes International Airport"
     }
   ]
 }

@@ -1,5 +1,9 @@
 [
   {
+    "code": "SBY",
+    "name": "Salisbury Ocean City Wicomico Regional Airport"
+  },
+  {
     "code": "TAT",
     "name": "Poprad-Tatry Airport"
   },
@@ -14,9 +18,5 @@
   {
     "code": "ACC",
     "name": "Kotoka International Airport"
-  },
-  {
-    "code": "ADB",
-    "name": "Adnan Menderes International Airport"
   }
 ]
